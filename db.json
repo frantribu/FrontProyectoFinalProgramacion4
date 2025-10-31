@@ -1,13 +1,13 @@
 {
     "Usuario": [
         {
-            "id": 1,
+            "id": "1",
             "nombre": "Admin",
             "apellido": "User",
-            "rol": "ADMIN",
+            "idRol": 1,
             "email": "admin@example.com",
-            "contraseña": "hashedpassword123",
-            "deslogeado": false
+            "contraseña": "Hashedpassword123",
+            "isLogged": false
         }
     ],
     "Vehiculo": [],
@@ -16,34 +16,97 @@
     "HistorialVenta": [],
     "HistorialTaller": [],
     "Role": [
-        "ADMIN",
-        "EMPLEADO",
-        "TALLER",
-        "CLIENTE"
+        {
+            "id": 1,
+            "name": "ADMIN"
+        },
+        {
+            "id": 2,
+            "name": "EMPLEADO"
+        },
+        {
+            "id": 3,
+            "name": "ENCARGADO TALLER"
+        },
+        {
+            "id": 4,
+            "name": "CLIENTE"
+        }
     ],
     "Combustion": [
-        "NAFTA",
-        "DIESEL",
-        "ELECTRICO"
+        {
+            "id": 1,
+            "name": "NAFTA"
+        },
+        {
+            "id": 2,
+            "name": "DIESEL"
+        },
+        {
+            "id": 3,
+            "name": "ELECTRICO"
+        }
     ],
     "TipoAuto": [
-        "SEDAN",
-        "HATCHBACK",
-        "COUPE",
-        "SUV",
-        "FURGON"
+        {
+            "id": 1,
+            "name": "SEDAN"
+        },
+        {
+            "id": 2,
+            "name": "HATCHBACK"
+        },
+        {
+            "id": 3,
+            "name": "COUPE"
+        },
+        {
+            "id": 4,
+            "name": "SUV"
+        },
+        {
+            "id": 5,
+            "name": "FURGON"
+        }
     ],
     "TipoMoto": [
-        "URBANA",
-        "DEPORTIVAS",
-        "TURISMO",
-        "OFF-ROAD",
-        "ESPECIALES"
+        {
+            "id": 1,
+            "name": "URBANA"
+        },
+        {
+            "id": 2,
+            "name": "DEPORTIVAS"
+        },
+        {
+            "id": 3,
+            "name": "TURISMO"
+        },
+        {
+            "id": 4,
+            "name": "OFF-ROAD"
+        },
+        {
+            "id": 5,
+            "name": "ESPECIALES"
+        }
     ],
     "Especialidad": [
-        "GENERAL",
-        "MOTORISTA",
-        "CHAPA_Y_PINTURA",
-        "ELECTRICISTA"
+        {
+            "id": 1,
+            "name": "GENERAL"
+        },
+        {
+            "id": 2,
+            "name": "MOTORISTA"
+        },
+        {
+            "id": 3,
+            "name": "CHAPA_Y_PINTURA"
+        },
+        {
+            "id": 4,
+            "name": "ELECTRICISTA"
+        }
     ]
 }
