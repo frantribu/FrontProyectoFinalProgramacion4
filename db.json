@@ -1,0 +1,49 @@
+{
+    "Usuario": [
+        {
+            "id": 1,
+            "nombre": "Admin",
+            "apellido": "User",
+            "rol": "ADMIN",
+            "email": "admin@example.com",
+            "contraseña": "hashedpassword123",
+            "deslogeado": false
+        }
+    ],
+    "Vehiculo": [],
+    "Taller": [],
+    "Historial": [],
+    "HistorialVenta": [],
+    "HistorialTaller": [],
+    "Role": [
+        "ADMIN",
+        "EMPLEADO",
+        "TALLER",
+        "CLIENTE"
+    ],
+    "Combustion": [
+        "NAFTA",
+        "DIESEL",
+        "ELECTRICO"
+    ],
+    "TipoAuto": [
+        "SEDAN",
+        "HATCHBACK",
+        "COUPE",
+        "SUV",
+        "FURGON"
+    ],
+    "TipoMoto": [
+        "URBANA",
+        "DEPORTIVAS",
+        "TURISMO",
+        "OFF-ROAD",
+        "ESPECIALES"
+    ],
+    "Especialidad": [
+        "GENERAL",
+        "MOTORISTA",
+        "CHAPA_Y_PINTURA",
+        "ELECTRICISTA"
+    ]
+}
