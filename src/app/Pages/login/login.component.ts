@@ -18,7 +18,7 @@ export class LoginComponent {
 
   formLogin=this.fb.nonNullable.group({
     email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@miempresa\\.com$")]],
-    password:['', [Validators.required, Validators.pattern("^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$")]]
+    password:['', [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/)]]
   })
 
   login(){
@@ -27,10 +27,10 @@ export class LoginComponent {
 
     this.usuarioService.getUserByEmail(email!).subscribe({
       next:(user)=>{
-        if(!user){
+        if(user.length===0){
           this.mensaje="Usuario no encontrado"
         }else if(user[0].password===password){
-          //this.usuarioService.isLogged.set(true)
+          this.usuarioService.updateIsLogged(user[0])
           this.mensaje="Login exitoso"
         }else{
           this.mensaje="Contraseña o email incorrecto"
@@ -43,7 +43,5 @@ export class LoginComponent {
     
   }
 }
-function toSignal(arg0: Subscription) {
-  throw new Error('Function not implemented.');
-}
+
 

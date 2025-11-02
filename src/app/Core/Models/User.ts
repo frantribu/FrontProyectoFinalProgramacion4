@@ -5,4 +5,5 @@ export interface User{
     idRol:number,
     email:string,
     password:string,
+    isLogged:boolean
 }
