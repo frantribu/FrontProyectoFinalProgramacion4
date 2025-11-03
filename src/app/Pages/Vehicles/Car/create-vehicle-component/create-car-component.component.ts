@@ -5,6 +5,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { TypeCarService } from '../../../../Core/Services/Vehicle/Car/TypeCar/type-car.service';
 import { CombustionService } from '../../../../Core/Services/Vehicle/Car/Combustion/combustion.service';
 import { Auto } from '../../../../Core/Models/Vehicles';
+import { CarService } from '../../../../Core/Services/Vehicle/Car/CarService/car.service';
 
 @Component({
   selector: 'app-create-vehicle-component',
@@ -16,6 +17,7 @@ export class CreateCarComponent {
   fb = inject(FormBuilder);
   servicioTipoAuto = inject(TypeCarService);
   servicioCombustion = inject(CombustionService);
+  servicioVehiculo = inject(CarService);
 
   tiposAuto: Signal<TipoAuto[] | undefined> = toSignal(this.servicioTipoAuto.getTypeCar());
   combustiones: Signal<Combustion[] | undefined> = toSignal(this.servicioCombustion.getCombustion());
@@ -55,6 +57,11 @@ export class CreateCarComponent {
       enReparacion : false,
       vendido : false
     };
+
+    this.servicioVehiculo.postAuto(auto).subscribe({
+      next : () => console.log("Vehiculo cargado")
+    });
+    
 
     
   }

@@ -1,0 +1,24 @@
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Auto } from '../../../../Models/Vehicles';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CarService {
+  http = inject(HttpClient);
+  url = "http://localhost:3000/autos";
+
+  getAutos(): Observable<Auto[]> {
+    return this.http.get<Auto[]>(this.url);
+  }
+
+  getAutoById(id: number): Observable<Auto> {
+    return this.http.get<Auto>(`${this.url}/${id}`);
+  }
+  
+  postAuto(auto : Partial<Auto>){
+    return this.http.post(this.url,auto)
+  }
+}

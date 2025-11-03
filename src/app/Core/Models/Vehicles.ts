@@ -3,6 +3,7 @@
  * Refleja la estructura de la clase Vehiculo en el UML
  */
 export interface Vehiculo {
+  id : string;
   patente: string;
   marca: string;
   modelo: string;

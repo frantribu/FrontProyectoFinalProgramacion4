@@ -1,21 +1,22 @@
 <section>
   <article class="form_container">
     <form [formGroup]="formularioCrearAuto" (ngSubmit)="enviarFormularioCrearAuto()">
+
       <div class="model">
         <label for="input_model">Modelo</label>
-        <input type="text" formControlName="model" id="input_model" />
+        <input type="text" formControlName="modelo" id="input_model" />
       </div>
 
       <div class="brand">
         <label for="input_brand">Marca</label>
-        <input type="text" formControlName="brand" id="input_brand" />
+        <input type="text" formControlName="marca" id="input_brand" />
       </div>
 
       <div class="year">
         <label for="input_year">Año</label>
         <input
           type="number"
-          formControlName="year"
+          formControlName="anio"
           min="0"
           max="9999"
           id="input_year"
@@ -24,14 +25,14 @@
 
       <div class="patent">
         <label for="input_patent">Patente</label>
-        <input type="text" formControlName="patent" id="input_patent" />
+        <input type="text" formControlName="patente" id="input_patent" />
       </div>
 
       <div class="kilometers">
         <label for="input_kilometers">Kilometraje</label>
         <input
           type="number"
-          formControlName="kilometers"
+          formControlName="kilometros"
           min="0"
           id="input_kilometers"
         />
@@ -41,18 +42,18 @@
         <label for="input_description">Descripción</label>
         <input
           type="text"
-          formControlName="description"
+          formControlName="descripcion"
           id="input_description"
         />
       </div>
 
       <div class="engine">
         <label for="input_engine">Motor</label>
-        <input type="text" formControlName="engine" id="input_engine" />
+        <input type="text" formControlName="motor" id="input_engine" />
       </div>
 
       <div class="color">
-        <label for="input_color">Colór</label>
+        <label for="input_color">Color</label>
         <input type="text" formControlName="color" id="input_color" />
       </div>
 
@@ -76,16 +77,16 @@
       </div>
       <div class="doors">
         <label for="input_doors">Puertas</label>
-        <input type="text" formControlName="doors" id="input_doors" />
+        <input type="text" formControlName="puertas" id="input_doors" />
       </div>
       <div class="hp">
         <label for="input_hp">Potencia</label>
-        <input type="number" formControlName="hp" min="0" id="input_hp" />
+        <input type="number" formControlName="potencia" min="0" id="input_hp" />
       </div>
       <div>
         <label for="carType">Tipo de Auto</label>
 
-        <select id="carType" formControlName="carType">
+        <select id="carType" formControlName="tipoAuto">
           <option [ngValue]="null" disabled>-- Seleccione una opción --</option>
 
           @if (tiposAuto(); as types) { @for (tipoAuto of types; track
@@ -101,7 +102,7 @@
 
       <div class="price">
         <label for="input_price">Precio</label>
-        <input type="number" formControlName="price" id="input_price" />
+        <input type="number" formControlName="precio" id="input_price" />
       </div>
 
       <div>
