@@ -48,9 +48,97 @@
       "fechaIngreso": "2025-11-04",
       "enReparacion": false,
       "vendido": false
+    },
+    {
+      "id": "356d",
+      "patente": "AA111RR",
+      "marca": "frerraro",
+      "modelo": "wfim",
+      "precio": 1000000,
+      "color": "rojo",
+      "año": 2016,
+      "kilometros": 10000,
+      "motor": "v10",
+      "idCombustion": "1",
+      "descripcion": "holaaaaaaaaaaaaaa",
+      "puertas": 3,
+      "potencia": 1000,
+      "idTipoCarroceria": "3",
+      "rutasImagen": [
+        "app/Assets/ImgVehiculos/images.jpg"
+      ],
+      "fechaIngreso": "2025-11-04",
+      "enReparacion": false,
+      "vendido": false
+    },
+    {
+      "id": "bef0",
+      "patente": "AA111RR",
+      "marca": "frerraro",
+      "modelo": "wfim",
+      "precio": 1000000,
+      "color": "rojo",
+      "año": 2016,
+      "kilometros": 10000,
+      "motor": "v10",
+      "idCombustion": "1",
+      "descripcion": "holaaaaaaaaaaaaaa",
+      "puertas": 3,
+      "potencia": 1000,
+      "idTipoCarroceria": "3",
+      "rutasImagen": [
+        "app/Assets/ImgVehiculos/images.jpg"
+      ],
+      "fechaIngreso": "2025-11-04",
+      "enReparacion": false,
+      "vendido": false
+    },
+    {
+      "id": "c2f7",
+      "patente": "AA111RR",
+      "marca": "frerraro",
+      "modelo": "wfim",
+      "precio": 1000000,
+      "color": "rojo",
+      "año": 2016,
+      "kilometros": 10000,
+      "motor": "v10",
+      "idCombustion": "1",
+      "descripcion": "holaaaaaaaaaaaaaa",
+      "puertas": 3,
+      "potencia": 1000,
+      "idTipoCarroceria": "3",
+      "rutasImagen": [
+        "app/Assets/ImgVehiculos/images.jpg"
+      ],
+      "fechaIngreso": "2025-11-04",
+      "enReparacion": false,
+      "vendido": false
     }
   ],
-  "motos": [],
+  "motos": [
+    {
+      "id": "6c16",
+      "patente": "AP123AA",
+      "marca": "honda",
+      "modelo": "nx200",
+      "precio": 10000,
+      "color": "rojo",
+      "año": 2018,
+      "kilometros": 100000,
+      "motor": "v6",
+      "idCombustion": "1",
+      "descripcion": "AAAAAAAAAAAAAAAAAAAAA",
+      "cilindrada": 1000,
+      "idTipoCarroceriaMoto": "2",
+      "rutasImagen": [
+        "app/Assets/ImgVehiculos/images.jpg"
+      ],
+      "fechaIngreso": "2025-11-04",
+      "enReparacion": false,
+      "vendido": false
+    }
+  ],
   "talleres": [],
   "historiales": [],
   "historialesVenta": [],

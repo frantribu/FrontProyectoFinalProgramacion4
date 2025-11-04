@@ -3,11 +3,11 @@
     <form [formGroup]="tipoDeFormulario()" (ngSubmit)="enviarVehiculo()">
 
       <div>
-        <button (click)="tipoDeVehiculo('Auto')">
+        <button type="button" (click)="tipoDeVehiculo('Auto')">
           Auto
         </button>
 
-        <button (click)="tipoDeVehiculo('Moto')">
+        <button type="button" (click)="tipoDeVehiculo('Moto')">
           Moto
         </button>
       </div>
@@ -52,14 +52,14 @@
         <input type="text" formControlName="color" id="input_color" />
       </div>
 
-      @if(tipo()==="Auto"){
       <div>
         <label for="combustion">Combustion</label>
 
         <select id="combustion" formControlName="combustion">
           <option [ngValue]="null" disabled>-- Seleccione una opción --</option>
 
-          @if (combustiones(); as types) { @for (combustion of combustiones();
+          @if (combustiones(); as types) {
+          @for (combustion of combustiones();
           track combustion.id){
           <option [value]="combustion.id">
             {{ combustion.name }}
@@ -71,6 +71,9 @@
           }
         </select>
       </div>
+
+      @if(tipo()==="Auto"){
+
       <div class="doors">
         <label for="input_doors">Puertas</label>
         <input type="text" formControlName="puertas" id="input_doors" />
@@ -107,14 +110,14 @@
         <label for="typeMotorbike">Tipo de moto</label>
 
         <select id="motorbikeType" formControlName="tipoMoto">
-          <option [ngValue]="null" disabled>--- Seleccione una opcion ---</option>
+          <option [value]="null" disabled>--- Seleccione una opcion ---</option>
 
           @if (tipoDeCarroceria(); as types) {
           @for (tipoDeMoto of types; track tipoDeMoto.id) {
           <option [value]="tipoDeMoto.id">{{tipoDeMoto.name}}</option>
           }
           } @else {
-          <option [ngValue]="null" disabled>Cargando Tipos...</option>
+          <option [value]="null" disabled>Cargando Tipos...</option>
           }
         </select>
       </div>
@@ -147,7 +150,7 @@
 
 
       <div>
-        <input [disabled]="formularioCrearAuto.invalid" type="submit" />
+        <input [disabled]="tipoDeFormulario().invalid" type="submit" />
       </div>
     </form>
   </article>
