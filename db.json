@@ -7,7 +7,7 @@
       "idRol": 1,
       "email": "admin@miempresa.com",
       "password": "Hashedpassword123",
-      "isLogged": true
+      "isLogged": false
     }
   ],
   "Vehiculo": [],

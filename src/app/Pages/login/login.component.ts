@@ -31,6 +31,7 @@ export class LoginComponent {
           this.mensaje="Usuario no encontrado"
         }else if(user[0].password===password){
           this.usuarioService.updateIsLogged(user[0])
+          this.usuarioService.guardarUsuarioEnSesion(user[0])
           this.mensaje="Login exitoso"
         }else{
           this.mensaje="Contraseña o email incorrecto"
@@ -39,8 +40,17 @@ export class LoginComponent {
     error:(err)=>console.log("Error al buscar usuario", err)
     }
     )
+  }
 
-    
+  logout(){
+    const user=this.usuarioService.obtenerUsuarioEnSesion();
+
+    if(user){
+      this.usuarioService.updateIsLogged(user)
+      this.usuarioService.cerrarSesion()
+    }else{
+      this.mensaje="No hay sesion activa"
+    }
   }
 }
 
