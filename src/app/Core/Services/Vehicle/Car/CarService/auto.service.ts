@@ -6,7 +6,7 @@ import { Auto } from '../../../../Models/Vehicles';
 @Injectable({
   providedIn: 'root'
 })
-export class CarService {
+export class AutoService {
   http = inject(HttpClient);
   url = "http://localhost:3000/autos";
 
@@ -14,7 +14,7 @@ export class CarService {
     return this.http.get<Auto[]>(this.url);
   }
 
-  getAutoById(id: number): Observable<Auto> {
+  getAutoById(id: string): Observable<Auto> {
     return this.http.get<Auto>(`${this.url}/${id}`);
   }
   

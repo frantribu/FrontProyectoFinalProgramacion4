@@ -9,7 +9,7 @@ import { TipoAuto } from '../../../../Models/Enum';
 })
 export class TypeCarService {
   http = inject(HttpClient);
-  url = "http://localhost:3000/TipoAuto";
+  url = "http://localhost:3000/tiposAuto";
 
   getTypeCar() : Observable<TipoAuto[]>{
     return this.http.get<TipoAuto[]>(this.url);

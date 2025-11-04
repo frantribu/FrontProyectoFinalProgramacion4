@@ -10,8 +10,9 @@ export interface Vehiculo {
   precio: number; // long
   color: string;
   año: number; // long
-  kilometraje: number; // long
+  kilometros: number; // long
   motor: string;
+  rutasImagen: string[];
   
   idCombustion: number; // long - Clave foránea al 'Combustion.id'
   

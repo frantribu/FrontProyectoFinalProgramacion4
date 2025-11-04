@@ -1,7 +1,9 @@
 <section>
   <article class="form_container">
-    <form [formGroup]="formularioCrearAuto" (ngSubmit)="enviarFormularioCrearAuto()">
-
+    <form
+      [formGroup]="formularioCrearAuto"
+      (ngSubmit)="enviarFormularioCrearAuto()"
+    >
       <div class="model">
         <label for="input_model">Modelo</label>
         <input type="text" formControlName="modelo" id="input_model" />
@@ -104,6 +106,32 @@
         <label for="input_price">Precio</label>
         <input type="number" formControlName="precio" id="input_price" />
       </div>
+
+      <div class="imagenes">
+        <label for="input_imagenes">-- Subir Imágenes del Vehículo --</label>
+        <input
+          type="file"
+          id="input_imagenes"
+          multiple
+          (change)="onFileSelected($event)"
+          accept="image/png, image/jpeg, image/webp"
+        />
+      </div> 
+
+      @if (archivosSeleccionados.length > 0) {
+        <div class="preview-container">
+          <h4>Vista Previa ({{ archivosSeleccionados.length }} archivos):</h4>
+          <div class="miniaturas-grid">
+            @for (archivo of archivosSeleccionados; track $index) {
+              <div class="file-preview">
+                <img [src]="archivo.urlLocal" [alt]="archivo.name" class="miniatura" />
+                <span>{{ archivo.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+
 
       <div>
         <input [disabled]="formularioCrearAuto.invalid" type="submit" />

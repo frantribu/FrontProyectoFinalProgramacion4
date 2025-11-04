@@ -29,6 +29,25 @@
       "fechaIngreso": "2025-11-02",
       "enReparacion": false,
       "vendido": false
+    },
+    {
+      "id": "9c73",
+      "patente": "AA123BB",
+      "marca": "Honda",
+      "modelo": "Fit",
+      "precio": 20000000,
+      "color": "Negro",
+      "año": 2008,
+      "kilometros": 50000,
+      "motor": "1.5",
+      "idCombustion": "1",
+      "descripcion": "Gran Auto",
+      "puertas": "5",
+      "potencia": 55,
+      "idTipoCarroceria": "2",
+      "fechaIngreso": "2025-11-04",
+      "enReparacion": false,
+      "vendido": false
     }
   ],
   "motos": [],
@@ -38,97 +57,96 @@
   "historialesTaller": [],
   "roles": [
     {
-      "id": 1,
+      "id": "1",
       "name": "ADMIN"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "EMPLEADO"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "ENCARGADO TALLER"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "CLIENTE"
     }
   ],
   "combustiones": [
     {
-      "id": 1,
+      "id": "1",
       "name": "NAFTA"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "DIESEL"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "ELECTRICO"
     }
   ],
   "tiposAuto": [
     {
-      "id": 1,
+      "id": "1",
       "name": "SEDAN"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "HATCHBACK"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "COUPE"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "SUV"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "FURGON"
     }
   ],
   "tiposMoto": [
     {
-      "id": 1,
+      "id": "1",
       "name": "URBANA"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "DEPORTIVAS"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "TURISMO"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "OFF-ROAD"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "ESPECIALES"
     }
   ],
   "especialidades": [
     {
-      "id": 1,
+      "id": "1",
       "name": "GENERAL"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "MOTORISTA"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "CHAPA_Y_PINTURA"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "ELECTRICISTA"
     }
   ]
 }
-

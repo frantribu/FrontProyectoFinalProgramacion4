@@ -8,7 +8,7 @@ import { Combustion, TipoAuto } from '../../../../Models/Enum';
 })
 export class CombustionService {
   http = inject(HttpClient);
-  url = "http://localhost:3000/Combustion";
+  url = "http://localhost:3000/combustiones";
 
   getCombustion() : Observable<TipoAuto[]>{
     return this.http.get<TipoAuto[]>(this.url);

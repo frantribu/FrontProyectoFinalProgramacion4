@@ -13,3 +13,8 @@ export interface Combustion extends LookupItem {}
 export interface TipoAuto extends LookupItem {}
 export interface TipoMoto extends LookupItem {}
 export interface Especialidad extends LookupItem {}
+
+export interface ArchivoVehiculo extends File{
+  urlLocal ?: string
+  rutaSimulada ?: string
+}

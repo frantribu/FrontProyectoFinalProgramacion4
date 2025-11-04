@@ -1,11 +1,12 @@
-import { Component, inject, Signal } from '@angular/core';
+import { Component, inject, OnDestroy, Signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Combustion, TipoAuto } from '../../../../Core/Models/Enum';
+import { ArchivoVehiculo, Combustion, TipoAuto } from '../../../../Core/Models/Enum';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TypeCarService } from '../../../../Core/Services/Vehicle/Car/TypeCar/type-car.service';
 import { CombustionService } from '../../../../Core/Services/Vehicle/Car/Combustion/combustion.service';
 import { Auto } from '../../../../Core/Models/Vehicles';
-import { CarService } from '../../../../Core/Services/Vehicle/Car/CarService/car.service';
+import { AutoService } from '../../../../Core/Services/Vehicle/Car/CarService/auto.service';
+import { ImagenService } from '../../../../Core/Services/ImagenService/imagen-service.service';
 
 @Component({
   selector: 'app-create-vehicle-component',
@@ -13,11 +14,14 @@ import { CarService } from '../../../../Core/Services/Vehicle/Car/CarService/car
   templateUrl: './create-car-component.component.html',
   styleUrl: './create-car-component.component.css'
 })
-export class CreateCarComponent {
+export class CreateCarComponent implements OnDestroy {
   fb = inject(FormBuilder);
   servicioTipoAuto = inject(TypeCarService);
   servicioCombustion = inject(CombustionService);
-  servicioVehiculo = inject(CarService);
+  servicioVehiculo = inject(AutoService);
+  servicioImages = inject(ImagenService);
+
+  archivosSeleccionados: ArchivoVehiculo[] = [];
 
   tiposAuto: Signal<TipoAuto[] | undefined> = toSignal(this.servicioTipoAuto.getTypeCar());
   combustiones: Signal<Combustion[] | undefined> = toSignal(this.servicioCombustion.getCombustion());
@@ -38,31 +42,53 @@ export class CreateCarComponent {
     tipoAuto: [null, [Validators.required]]
   });
 
+  onFileSelected(event: any) {
+    const files = event.target.files;
+
+    this.archivosSeleccionados = this.servicioImages.procesarArchivos(files)
+  }
+
+  ngOnDestroy(): void {
+    this.servicioImages.limpiarURLsTemporales(this.archivosSeleccionados)
+  }
+
   enviarFormularioCrearAuto() {
+    if (this.formularioCrearAuto.invalid) {
+      console.error("El formulario es inválido. Revise los campos.");
+      return;
+    }
+
+    const rutasImagenParaGuardar = this.servicioImages.obtenerRutasParaDB(this.archivosSeleccionados)
+
     const auto: Partial<Auto> = {
-      patente : this.formularioCrearAuto.value.patente,
-      marca : this.formularioCrearAuto.value.marca,
-      modelo : this.formularioCrearAuto.value.modelo,
-      precio : this.formularioCrearAuto.value.precio ?? undefined,
-      color : this.formularioCrearAuto.value.color,
-      año : Number(this.formularioCrearAuto.value.anio),
-      kilometraje : this.formularioCrearAuto.value.kilometros,
-      motor : this.formularioCrearAuto.value.motor,
-      idCombustion : this.formularioCrearAuto.value.combustion ?? undefined,
-      descripcion : this.formularioCrearAuto.value.descripcion,
-      puertas : this.formularioCrearAuto.value.puertas,
-      potencia : this.formularioCrearAuto.value.potencia,
-      idTipoCarroceria : this.formularioCrearAuto.value.tipoAuto ?? undefined,
-      fechaIngreso : new Date().toISOString().split('T')[0],
-      enReparacion : false,
-      vendido : false
+      patente: this.formularioCrearAuto.value.patente,
+      marca: this.formularioCrearAuto.value.marca,
+      modelo: this.formularioCrearAuto.value.modelo,
+      precio: this.formularioCrearAuto.value.precio ?? undefined,
+      color: this.formularioCrearAuto.value.color,
+      año: Number(this.formularioCrearAuto.value.anio),
+      kilometros: this.formularioCrearAuto.value.kilometros,
+      motor: this.formularioCrearAuto.value.motor,
+      idCombustion: this.formularioCrearAuto.value.combustion ?? undefined,
+      descripcion: this.formularioCrearAuto.value.descripcion,
+      puertas: this.formularioCrearAuto.value.puertas,
+      potencia: this.formularioCrearAuto.value.potencia,
+      idTipoCarroceria: this.formularioCrearAuto.value.tipoAuto ?? undefined,
+
+      rutasImagen : rutasImagenParaGuardar,
+
+
+      fechaIngreso: new Date().toISOString().split('T')[0],
+      enReparacion: false,
+      vendido: false
     };
 
     this.servicioVehiculo.postAuto(auto).subscribe({
-      next : () => console.log("Vehiculo cargado")
+      next: () => console.log("Vehiculo cargado")
     });
-    
-
-    
   }
+
+
+
+
 }
