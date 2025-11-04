@@ -1,12 +1,15 @@
 <section>
   <article class="form_container">
-    <form
-      [formGroup]="formularioCrearAuto"
-      (ngSubmit)="enviarFormularioCrearAuto()"
-    >
-      <div class="model">
-        <label for="input_model">Modelo</label>
-        <input type="text" formControlName="modelo" id="input_model" />
+    <form [formGroup]="tipoDeFormulario()" (ngSubmit)="enviarVehiculo()">
+
+      <div>
+        <button (click)="tipoDeVehiculo('Auto')">
+          Auto
+        </button>
+
+        <button (click)="tipoDeVehiculo('Moto')">
+          Moto
+        </button>
       </div>
 
       <div class="brand">
@@ -14,15 +17,14 @@
         <input type="text" formControlName="marca" id="input_brand" />
       </div>
 
+      <div class="model">
+        <label for="input_model">Modelo</label>
+        <input type="text" formControlName="modelo" id="input_model" />
+      </div>
+
       <div class="year">
         <label for="input_year">Año</label>
-        <input
-          type="number"
-          formControlName="anio"
-          min="0"
-          max="9999"
-          id="input_year"
-        />
+        <input type="number" formControlName="anio" min="0" max="9999" id="input_year" />
       </div>
 
       <div class="patent">
@@ -32,21 +34,12 @@
 
       <div class="kilometers">
         <label for="input_kilometers">Kilometraje</label>
-        <input
-          type="number"
-          formControlName="kilometros"
-          min="0"
-          id="input_kilometers"
-        />
+        <input type="number" formControlName="kilometros" min="0" id="input_kilometers" />
       </div>
 
       <div class="description">
         <label for="input_description">Descripción</label>
-        <input
-          type="text"
-          formControlName="descripcion"
-          id="input_description"
-        />
+        <input type="text" formControlName="descripcion" id="input_description" />
       </div>
 
       <div class="engine">
@@ -59,6 +52,7 @@
         <input type="text" formControlName="color" id="input_color" />
       </div>
 
+      @if(tipo()==="Auto"){
       <div>
         <label for="combustion">Combustion</label>
 
@@ -91,8 +85,8 @@
         <select id="carType" formControlName="tipoAuto">
           <option [ngValue]="null" disabled>-- Seleccione una opción --</option>
 
-          @if (tiposAuto(); as types) { @for (tipoAuto of types; track
-          tipoAuto.id){
+          @if (tiposAuto(); as types)
+          { @for (tipoAuto of types; track tipoAuto.id){
           <option [value]="tipoAuto.id">
             {{ tipoAuto.name }}
           </option>
@@ -101,6 +95,30 @@
           }
         </select>
       </div>
+      }
+
+      @if(tipo()==="Moto"){
+      <div class="hp">
+        <label for="input_cilindrada">Cilindrada</label>
+        <input type="number" formControlName="cilindrada" min="0" id="input_cilindrada" />
+      </div>
+
+      <div>
+        <label for="typeMotorbike">Tipo de moto</label>
+
+        <select id="motorbikeType" formControlName="tipoMoto">
+          <option [ngValue]="null" disabled>--- Seleccione una opcion ---</option>
+
+          @if (tipoDeCarroceria(); as types) {
+          @for (tipoDeMoto of types; track tipoDeMoto.id) {
+          <option [value]="tipoDeMoto.id">{{tipoDeMoto.name}}</option>
+          }
+          } @else {
+          <option [ngValue]="null" disabled>Cargando Tipos...</option>
+          }
+        </select>
+      </div>
+      }
 
       <div class="price">
         <label for="input_price">Precio</label>
@@ -109,27 +127,22 @@
 
       <div class="imagenes">
         <label for="input_imagenes">-- Subir Imágenes del Vehículo --</label>
-        <input
-          type="file"
-          id="input_imagenes"
-          multiple
-          (change)="onFileSelected($event)"
-          accept="image/png, image/jpeg, image/webp"
-        />
-      </div> 
+        <input type="file" id="input_imagenes" multiple (change)="onFileSelected($event)"
+          accept="image/png, image/jpeg, image/webp" />
+      </div>
 
       @if (archivosSeleccionados.length > 0) {
-        <div class="preview-container">
-          <h4>Vista Previa ({{ archivosSeleccionados.length }} archivos):</h4>
-          <div class="miniaturas-grid">
-            @for (archivo of archivosSeleccionados; track $index) {
-              <div class="file-preview">
-                <img [src]="archivo.urlLocal" [alt]="archivo.name" class="miniatura" />
-                <span>{{ archivo.name }}</span>
-              </div>
-            }
+      <div class="preview-container">
+        <h4>Vista Previa ({{ archivosSeleccionados.length }} archivos):</h4>
+        <div class="miniaturas-grid">
+          @for (archivo of archivosSeleccionados; track $index) {
+          <div class="file-preview">
+            <img [src]="archivo.urlLocal" [alt]="archivo.name" class="miniatura" />
+            <span>{{ archivo.name }}</span>
           </div>
+          }
         </div>
+      </div>
       }
 
 

@@ -39,5 +39,5 @@ export interface Auto extends Vehiculo {
 export interface Moto extends Vehiculo {
   cilindrada: number; // long
   
-  idTipoCarroceria: number; // long - Clave foránea al 'TipoMoto.id'
+  idTipoCarroceriaMoto: number; // long - Clave foránea al 'TipoMoto.id'
 }
