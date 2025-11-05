@@ -16,7 +16,7 @@
       "patente": "ABC123",
       "marca": "Fiat",
       "modelo": "Palio",
-      "precio": 200,
+      "precio": 100,
       "color": "Rojo",
       "año": 2005,
       "kilometros": 200,
@@ -25,19 +25,17 @@
       "descripcion": "El Fiat Palio se destaca como el vehículo urbano por excelencia, reconocido por su legendaria robustez y su rendimiento económico. Esta unidad, equipada con el confiable motor 1.3 Fire, es la opción ideal para quienes buscan minimizar costos de mantenimiento y maximizar la eficiencia en el consumo de combustible, tanto en el tráfico de la ciudad como en trayectos interurbanos.",
       "puertas": 3,
       "potencia": 100,
-      "idTipoCarroceria": "2",
-      "rutasImagen": [
-        "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp"
-      ],
-      "fechaIngreso": "2025-11-04",
+      "idTipoCarroceria": "1",
+      "fechaIngreso": "2025-11-05",
       "enReparacion": false,
+      "rutasImagen": [],
       "vendido": false
     },
     {
       "id": "858e",
       "patente": "AA000AA",
-      "marca": "dasdsada",
-      "modelo": "asdasda",
+      "marca": "Audi",
+      "modelo": "S3",
       "precio": 12313213,
       "color": "dsadasd",
       "año": 2222,
@@ -47,12 +45,12 @@
       "descripcion": "sadad",
       "puertas": 3,
       "potencia": 100,
-      "idTipoCarroceria": "3",
+      "idTipoCarroceria": "1",
+      "fechaIngreso": "2025-11-05",
+      "enReparacion": false,
       "rutasImagen": [
         "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
       ],
-      "fechaIngreso": "2025-11-05",
-      "enReparacion": false,
       "vendido": false
     },
     {

@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { CreateVehicleComponent } from "./Pages/Vehicles/create-vehicle-component/create-car-component.component";
 import { ListVehiclesComponent } from "./Pages/Vehicles/list-vehicles/list-vehicles.component";
 import { DetalleAutoComponent } from "./Pages/Vehicles/Car/detalle-auto/detalle-auto.component";
+import { ModificarAutoComponent } from "./Pages/Vehicles/Car/modificar-auto/modificar-auto.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CreateVehicleComponent, ListVehiclesComponent, DetalleAutoComponent],
+  imports: [RouterOutlet, CreateVehicleComponent, ListVehiclesComponent, DetalleAutoComponent, ModificarAutoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
