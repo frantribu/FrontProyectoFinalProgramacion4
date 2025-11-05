@@ -12,9 +12,10 @@ import { VehiculoPolimorfico } from '../../../Core/Services/Vehicle/VehiculoServ
 export class CardVehiculoComponent {
   vehiculo = input.required<VehiculoPolimorfico>()
   router = inject(Router)
-
+  
   modificar() {
     this.router.navigate([])
+    this.vehiculo().tipoVehiculo
   }
 
   verDetalleVehiculo(vehiculo: VehiculoPolimorfico) {
@@ -24,6 +25,6 @@ export class CardVehiculoComponent {
     else {
       this.router.navigate([])
     }
-
   }
+
 }

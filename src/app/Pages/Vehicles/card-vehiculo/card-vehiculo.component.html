@@ -1,6 +1,8 @@
-<div (click)="verDetalleVehiculo(vehiculo())" class="card_vehiculo">
-  <h3>{{ vehiculo().marca }}</h3>
-  <h3>{{ vehiculo().modelo }}</h3>
-  <p>{{ vehiculo().descripcion }}</p>
-  <button (click)="modificar()" > Modificar </button>
-</div>
+<section>
+  <div (click)="verDetalleVehiculo(vehiculo())" class="card_vehiculo">
+    <h3>{{ vehiculo().marca }}</h3>
+    <h3>{{ vehiculo().modelo }}</h3>
+    <p>{{ vehiculo().descripcion }}</p>
+    <button (click)="modificar()"> Modificar </button>
+  </div>
+</section>
