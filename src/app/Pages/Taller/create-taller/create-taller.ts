@@ -33,7 +33,6 @@ export class CreateTaller {
       Direccion: this.formulario.value.direccion,
       Especialidad: this.formulario.value.especialidad!
     }
-
-    this.tallerService.postTaller(taller)
+    this.tallerService.putTaller(taller)
   }
 }

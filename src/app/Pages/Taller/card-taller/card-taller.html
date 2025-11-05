@@ -1,1 +1,7 @@
-<p>card-taller works!</p>
+<div>
+    <h3>Nombre del Taller: {{taller().Nombre}}</h3>
+    <h2>Especialidad: {{taller().Especialidad}}</h2>
+    <h2>Direccion: {{taller().Direccion}}</h2>
+    <h2>Encargado: {{taller().Encargado}}</h2>
+    <button (click)="modificar(taller().id)">Modificar</button>
+</div>

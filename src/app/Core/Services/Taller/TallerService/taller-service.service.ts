@@ -8,12 +8,21 @@ import { Taller } from '../../../Models/Taller';
 })
 export class TallerServiceService {
   http = inject(HttpClient)
+  url = ""
 
   getTalleres(){
-    return this.http.get<Taller[]>("")
+    return this.http.get<Taller[]>(this.url)
+  }
+
+  getTallerByID(id:string){
+    return this.http.get<Taller>(`${this.url}/${id}`)
   }
   
-  postTaller(taller:Partial<Taller>){
-    return this.http.post<Taller>("", taller)
+  putTaller(taller:Partial<Taller>){
+    return this.http.put<Taller>(this.url, taller)
+  }
+
+  postTaller(taller:Taller){
+    return this.http.post<Taller>(this.url,taller)
   }
 }
