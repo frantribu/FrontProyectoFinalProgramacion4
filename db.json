@@ -122,27 +122,7 @@
       "vendido": false
     }
   ],
-  "motos": [
-    {
-      "id": "6c16",
-      "patente": "AP123AA",
-      "marca": "honda",
-      "modelo": "nx200",
-      "precio": 10000,
-      "color": "rojo",
-      "año": 2018,
-      "kilometros": 100000,
-      "motor": "i4",
-      "idCombustion": "2",
-      "descripcion": "AAAAAAAAAAAAAAAAAAAAA",
-      "cilindrada": 1000,
-      "idTipoCarroceriaMoto": "2",
-      "rutasImagen": [],
-      "fechaIngreso": "2025-11-05",
-      "enReparacion": false,
-      "vendido": false
-    }
-  ],
+  "motos": [],
   "talleres": [],
   "historiales": [],
   "historialesVenta": [],

@@ -100,7 +100,7 @@ export class ModificarMotoComponent {
       };
   
       this.motoService.updateMoto(motoNueva).subscribe({
-        next: () => console.log("Vehiculo cargado")
+        next: () => console.log("Vehiculo actualizado")
       });
     }
 }

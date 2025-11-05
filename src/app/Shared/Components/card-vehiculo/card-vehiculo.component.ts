@@ -1,7 +1,8 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
 import { Vehiculo } from '../../../Core/Models/Vehicles';
 import { Router } from '@angular/router';
 import { VehiculoPolimorfico } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
+import { MotoService } from '../../../Core/Services/Vehicle/MotorBike/MotorbikeService/moto.service';
 
 @Component({
   selector: 'app-card-vehiculo',
@@ -12,7 +13,9 @@ import { VehiculoPolimorfico } from '../../../Core/Services/Vehicle/VehiculoServ
 export class CardVehiculoComponent {
   vehiculo = input.required<VehiculoPolimorfico>()
   router = inject(Router)
-  
+  motoService=inject(MotoService)
+  vehiculoEliminado=output<string>()
+
   modificar() {
     if(this.vehiculo().tipoVehiculo==="Auto"){
     this.router.navigate([`vehiculos/modificarAuto/${this.vehiculo().id}`])
@@ -21,12 +24,23 @@ export class CardVehiculoComponent {
     }
   }
 
-  verDetalleVehiculo(vehiculo: VehiculoPolimorfico) {
-    if (vehiculo.tipoVehiculo == 'Auto') {
+  verDetalleVehiculo() {
+    if (this.vehiculo().tipoVehiculo === 'Auto') {
       this.router.navigate([])
     }
-    else {
-      this.router.navigate([])
+    else if(this.vehiculo().tipoVehiculo==="Moto") {
+      this.router.navigate([`vehiculos/detalle/${this.vehiculo().id}`])
+    }
+  }
+
+  eliminarVehiculo(){
+    if(this.vehiculo().tipoVehiculo==="Moto"){
+      this.motoService.deleteMoto(this.vehiculo().id).subscribe({
+        next:()=>{
+          alert("Vehiculo eliminado correctamente")
+        },
+        error:(err)=>console.log("Error al eliminar el vehiculo ", err)
+      })
     }
   }
 
