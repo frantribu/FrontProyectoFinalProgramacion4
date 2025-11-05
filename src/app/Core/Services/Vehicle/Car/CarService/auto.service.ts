@@ -21,4 +21,8 @@ export class AutoService {
   postAuto(auto : Partial<Auto>){
     return this.http.post(this.url,auto)
   }
+
+  putAuto(auto : Auto){
+    return this.http.put(`${this.url}/${auto.id}`,auto)
+  }
 }

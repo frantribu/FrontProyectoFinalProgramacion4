@@ -9,8 +9,6 @@
     @if (vehiculo.rutasImagen.length) {
     <img [src]="auto()!.rutasImagen[0]" alt="">
     }
-
-    <button (click)="mostrar()">mostrar</button>
     }@else {
     <p>Cargando detalles del vehículo...</p>
   }
