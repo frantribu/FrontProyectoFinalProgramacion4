@@ -10,8 +10,8 @@ export class CombustionService {
   http = inject(HttpClient);
   url = "http://localhost:3000/combustiones";
 
-  getCombustion() : Observable<TipoAuto[]>{
-    return this.http.get<TipoAuto[]>(this.url);
+  getCombustion() : Observable<Combustion[]>{
+    return this.http.get<Combustion[]>(this.url);
   }
 
   getCombustionById(id : number) : Observable<Combustion>{
