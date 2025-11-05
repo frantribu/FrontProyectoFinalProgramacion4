@@ -23,8 +23,8 @@ export class CreateCarComponent implements OnDestroy {
 
   archivosSeleccionados: ArchivoVehiculo[] = [];
 
-  tiposAuto: Signal<TipoAuto[] | undefined> = toSignal(this.servicioTipoAuto.getTypeCar());
-  combustiones: Signal<Combustion[] | undefined> = toSignal(this.servicioCombustion.getCombustion());
+  tiposAuto = toSignal(this.servicioTipoAuto.getTypeCar(), {initialValue : []});
+  combustiones = toSignal(this.servicioCombustion.getCombustion(), {initialValue : []});
 
   formularioCrearAuto = this.fb.nonNullable.group({
     patente: ["", [Validators.required, Validators.pattern("^(?:[A-Z]{2}[-\s]?[0-9]{3}[-\s]?[A-Z]{2}|[A-Z]{3}[-\s]?[0-9]{3})$")]],

@@ -5,7 +5,8 @@ import { ArchivoVehiculo } from '../../Models/Enum';
   providedIn: 'root'
 })
 export class ImagenService {
-  private BASE_IMAGE_PATH = 'app/Assets/ImgVehiculos/';
+  private BASE_IMAGE_PATH = 'app/assets/imgvehiculos/';
+
 
   procesarArchivos(files: FileList | null): ArchivoVehiculo[] {
     if (!files || files.length === 0) {

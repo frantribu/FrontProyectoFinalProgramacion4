@@ -9,17 +9,17 @@ import { toSignal } from '@angular/core/rxjs-interop';
   imports: [],
   templateUrl: './detalle-auto.component.html',
   styleUrl: './detalle-auto.component.css'
-})
+}) 
 export class DetalleAutoComponent {
   router = inject(ActivatedRoute);
   autoService = inject(AutoService)
-
+  
   //id = this.router.snapshot.paramMap.get('id')
-  id = "4aae";
+  id = "858e";
 
   auto = toSignal(this.autoService.getAutoById(this.id!))
 
   mostrar(){
-    console.log(this.auto()?.kilometros);
+    console.log(this.auto()?.rutasImagen);
   }
 }

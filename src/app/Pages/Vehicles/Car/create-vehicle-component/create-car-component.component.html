@@ -65,8 +65,8 @@
         <select id="combustion" formControlName="combustion">
           <option [ngValue]="null" disabled>-- Seleccione una opción --</option>
 
-          @if (combustiones(); as types) { @for (combustion of combustiones();
-          track combustion.id){
+          @if (combustiones(); as types) { 
+            @for (combustion of combustiones(); track combustion.id){
           <option [value]="combustion.id">
             {{ combustion.name }}
           </option>
@@ -91,8 +91,8 @@
         <select id="carType" formControlName="tipoAuto">
           <option [ngValue]="null" disabled>-- Seleccione una opción --</option>
 
-          @if (tiposAuto(); as types) { @for (tipoAuto of types; track
-          tipoAuto.id){
+          @if (tiposAuto(); as types) 
+          { @for (tipoAuto of types; track tipoAuto.id){
           <option [value]="tipoAuto.id">
             {{ tipoAuto.name }}
           </option>
