@@ -9,7 +9,6 @@ export type VehiculoPolimorfico = (Auto & { tipoVehiculo: 'Auto' } | Moto & { ti
   providedIn: 'root'
 })
 
-
 export class VehiculoService {
   http = inject(HttpClient);
   url = "http://localhost:3000"
