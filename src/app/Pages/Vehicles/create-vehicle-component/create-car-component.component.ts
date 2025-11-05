@@ -27,10 +27,10 @@ export class CreateVehicleComponent implements OnDestroy {
   tipo = signal<string>("");
 
   archivosSeleccionados: ArchivoVehiculo[] = [];
+  combustiones= toSignal(this.servicioCombustion.getCombustion(), {initialValue:[]});
 
   //AUTO
   tiposAuto = toSignal(this.servicioTipoAuto.getTypeCar(), {initialValue:[]});
-  combustiones= toSignal(this.servicioCombustion.getCombustion(), {initialValue:[]});
   
   //MOTO
   tipoDeCarroceria=toSignal(this.servicioTipoCarroceria.getTypeCarroceria(), {initialValue:[]})

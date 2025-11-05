@@ -56,7 +56,7 @@
         <label for="combustion">Combustion</label>
 
         <select id="combustion" formControlName="combustion">
-          <option [ngValue]="null" disabled>-- Seleccione una opción --</option>
+          <option disabled>-- Seleccione una opción --</option>
 
           @if (combustiones(); as types) {
           @for (combustion of combustiones(); track combustion.id){
@@ -64,7 +64,7 @@
             {{ combustion.name }}
           </option>
           } } @else {
-          <option [ngValue]="null" disabled>
+          <option disabled>
             Cargando Tipos de Combustion...
           </option>
           }
@@ -85,7 +85,7 @@
         <label for="carType">Tipo de Auto</label>
 
         <select id="carType" formControlName="tipoAuto">
-          <option [ngValue]="null" disabled>-- Seleccione una opción --</option>
+          <option disabled>-- Seleccione una opción --</option>
 
           @if (tiposAuto(); as types)
           { @for (tipoAuto of types; track tipoAuto.id){
@@ -93,7 +93,7 @@
             {{ tipoAuto.name }}
           </option>
           } } @else {
-          <option [ngValue]="null" disabled>Cargando Tipos...</option>
+          <option disabled>Cargando Tipos...</option>
           }
         </select>
       </div>
@@ -109,14 +109,14 @@
         <label for="typeMotorbike">Tipo de moto</label>
 
         <select id="motorbikeType" formControlName="tipoMoto">
-          <option [value]="null" disabled>--- Seleccione una opcion ---</option>
+          <option disabled>--- Seleccione una opcion ---</option>
 
           @if (tipoDeCarroceria(); as types) {
           @for (tipoDeMoto of types; track tipoDeMoto.id) {
           <option [value]="tipoDeMoto.id">{{tipoDeMoto.name}}</option>
           }
           } @else {
-          <option [value]="null" disabled>Cargando Tipos...</option>
+          <option disabled>Cargando Tipos...</option>
           }
         </select>
       </div>
@@ -146,7 +146,6 @@
         </div>
       </div>
       }
-
 
       <div>
         <input [disabled]="tipoDeFormulario().invalid" type="submit" />

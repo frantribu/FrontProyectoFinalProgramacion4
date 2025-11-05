@@ -14,8 +14,11 @@ export class CardVehiculoComponent {
   router = inject(Router)
   
   modificar() {
-    this.router.navigate([])
-    this.vehiculo().tipoVehiculo
+    if(this.vehiculo().tipoVehiculo==="Auto"){
+    this.router.navigate([`vehiculos/modificarAuto/${this.vehiculo().id}`])
+    }else if(this.vehiculo().tipoVehiculo==="Moto"){
+      this.router.navigate([`vehiculos/modificarMoto/${this.vehiculo().id}`])
+    }
   }
 
   verDetalleVehiculo(vehiculo: VehiculoPolimorfico) {

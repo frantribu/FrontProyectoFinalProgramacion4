@@ -130,15 +130,13 @@
       "color": "rojo",
       "año": 2018,
       "kilometros": 100000,
-      "motor": "v6",
-      "idCombustion": "1",
+      "motor": "i4",
+      "idCombustion": "2",
       "descripcion": "AAAAAAAAAAAAAAAAAAAAA",
       "cilindrada": 1000,
       "idTipoCarroceriaMoto": "2",
-      "rutasImagen": [
-        "app/Assets/ImgVehiculos/images.jpg"
-      ],
-      "fechaIngreso": "2025-11-04",
+      "rutasImagen": [],
+      "fechaIngreso": "2025-11-05",
       "enReparacion": false,
       "vendido": false
     }

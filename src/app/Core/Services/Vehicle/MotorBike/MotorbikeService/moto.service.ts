@@ -9,6 +9,14 @@ export class MotoService {
   http=inject(HttpClient)
   url="http://localhost:3000/motos"
   
+  getMotos(){ 
+    return this.http.get<Moto[]>(this.url)
+  }
+
+  getMotoById(id:string){
+    return this.http.get<Moto>(`${this.url}/${id}`)
+  }
+
   postMoto(moto:Partial<Moto>){
     return this.http.post<Moto>(this.url, moto)
   }
