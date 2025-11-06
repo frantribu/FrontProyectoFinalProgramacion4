@@ -12,48 +12,6 @@
   ],
   "autos": [
     {
-      "id": "8299",
-      "patente": "ABC123",
-      "marca": "Fiat",
-      "modelo": "Palio",
-      "precio": 100,
-      "color": "Rojo",
-      "año": 2005,
-      "kilometros": 200,
-      "motor": "1.3 Fire",
-      "idCombustion": "1",
-      "descripcion": "El Fiat Palio se destaca como el vehículo urbano por excelencia, reconocido por su legendaria robustez y su rendimiento económico. Esta unidad, equipada con el confiable motor 1.3 Fire, es la opción ideal para quienes buscan minimizar costos de mantenimiento y maximizar la eficiencia en el consumo de combustible, tanto en el tráfico de la ciudad como en trayectos interurbanos.",
-      "puertas": 3,
-      "potencia": 100,
-      "idTipoCarroceria": "1",
-      "fechaIngreso": "2025-11-05",
-      "enReparacion": false,
-      "rutasImagen": [],
-      "vendido": false
-    },
-    {
-      "id": "858e",
-      "patente": "AA000AA",
-      "marca": "Audi",
-      "modelo": "S3",
-      "precio": 12313213,
-      "color": "dsadasd",
-      "año": 2222,
-      "kilometros": 100,
-      "motor": "dasdasda",
-      "idCombustion": "1",
-      "descripcion": "sadad",
-      "puertas": 3,
-      "potencia": 100,
-      "idTipoCarroceria": "1",
-      "fechaIngreso": "2025-11-05",
-      "enReparacion": false,
-      "rutasImagen": [
-        "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
-      ],
-      "vendido": false
-    },
-    {
       "id": "356d",
       "patente": "AA111RR",
       "marca": "frerraro",
@@ -104,7 +62,7 @@
       "modelo": "wfim",
       "precio": 1000000,
       "color": "rojo",
-      "año": 2016,
+      "anio": 2016,
       "kilometros": 10000,
       "motor": "v10",
       "idCombustion": "1",
@@ -120,7 +78,27 @@
       "vendido": false
     }
   ],
-  "motos": [],
+  "motos": [
+    {
+      "id": "deb0",
+      "patente": "AP123AA",
+      "marca": "Bmw",
+      "modelo": "s1000rr",
+      "precio": 100000,
+      "color": "multicolor",
+      "anio": 2025,
+      "kilometros": 0,
+      "motor": "V12",
+      "idCombustion": "1",
+      "descripcion": "Alta moto",
+      "cilindrada": 1000,
+      "idTipoCarroceriaMoto": "2",
+      "rutasImagen": [],
+      "fechaIngreso": "2025-11-06",
+      "enReparacion": false,
+      "vendido": false
+    }
+  ],
   "talleres": [],
   "historiales": [],
   "historialesVenta": [],

@@ -20,10 +20,7 @@ export class ModificarMotoComponent {
   motoService=inject(MotoService)
   activatedRouter=inject(ActivatedRoute)
   servicioCombustion=inject(CombustionService)
-  servicioImages = inject(ImagenService);
   servicioTipoCarroceria=inject(TypeMotorbikeService)
-
-  archivosSeleccionados: ArchivoVehiculo[] = [];
 
   id=this.activatedRouter.snapshot.paramMap.get("id")
 
@@ -42,7 +39,7 @@ export class ModificarMotoComponent {
           modelo:motito.modelo,
           precio:motito.precio,
           color:motito.color,
-          anio:String(motito.año),
+          anio:String(motito.anio),
           kilometros:motito.kilometros,
           motor:motito.motor,
           combustion:motito.idCombustion,
@@ -75,8 +72,6 @@ export class ModificarMotoComponent {
         return;
       }
 
-      const rutasImagenParaGuardar = this.servicioImages.obtenerRutasParaDB(this.archivosSeleccionados)
-
       const motoNueva: Moto = {
         id:this.moto()!.id,
         patente: this.formularioCrearMoto.value.patente!,
@@ -84,15 +79,15 @@ export class ModificarMotoComponent {
         modelo: this.formularioCrearMoto.value.modelo!,
         precio: this.formularioCrearMoto.value.precio!,
         color: this.formularioCrearMoto.value.color!,
-        año: Number(this.formularioCrearMoto.value.anio),
+        anio: Number(this.formularioCrearMoto.value.anio),
         kilometros: this.formularioCrearMoto.value.kilometros!,
         motor: this.formularioCrearMoto.value.motor!,
         idCombustion: this.formularioCrearMoto.value.combustion!,
         descripcion: this.formularioCrearMoto.value.descripcion!,
         cilindrada:this.formularioCrearMoto.value.cilindrada!,
         idTipoCarroceriaMoto: this.formularioCrearMoto.value.tipoMoto!,
-    
-        rutasImagen : rutasImagenParaGuardar,
+  
+        rutasImagen : this.moto()?.rutasImagen!,
 
         fechaIngreso: new Date().toISOString().split('T')[0],
         enReparacion: false,

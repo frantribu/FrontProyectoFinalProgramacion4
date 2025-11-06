@@ -25,4 +25,8 @@ export class AutoService {
   putAuto(auto : Auto){
     return this.http.put(`${this.url}/${auto.id}`,auto)
   }
+
+    deleteAuto(id:string){
+      return this.http.delete<Auto>(`${this.url}/${id}`)
+    }
 }

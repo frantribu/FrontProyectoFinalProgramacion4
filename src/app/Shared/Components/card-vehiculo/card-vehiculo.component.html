@@ -2,7 +2,7 @@
   <div (click)="verDetalleVehiculo()" class="card_vehiculo">
     <h3>{{ vehiculo().marca }}</h3>
     <h3>{{ vehiculo().modelo }}</h3>
-    <p>{{ vehiculo().descripcion }}</p>
+    <h3>{{vehiculo().anio}}</h3>
     <button (click)="modificar(); $event.stopPropagation()"> Modificar </button>
     <button (click)="eliminarVehiculo(); $event.stopPropagation()"> Eliminar </button>
   </div>

@@ -11,11 +11,10 @@ import { toSignal } from '@angular/core/rxjs-interop';
   styleUrl: './detalle-auto.component.css'
 }) 
 export class DetalleAutoComponent {
-  router = inject(ActivatedRoute);
+  activatedRouter = inject(ActivatedRoute);
   autoService = inject(AutoService)
-  
-  //id = this.router.snapshot.paramMap.get('id')
-  id = "858e";
+
+  id = this.activatedRouter.snapshot.paramMap.get('id')
 
   auto = toSignal(this.autoService.getAutoById(this.id!))
 

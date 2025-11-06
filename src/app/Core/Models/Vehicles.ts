@@ -9,7 +9,7 @@ export interface Vehiculo {
   modelo: string;
   precio: number; // long
   color: string;
-  año: number; // long
+  anio: number; // long
   kilometros: number; // long
   motor: string;
   rutasImagen: string[];
