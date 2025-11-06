@@ -1,6 +1,6 @@
 <section>
   <article class="form_container">
-    <form [formGroup]="tipoDeFormulario()" (ngSubmit)="enviarVehiculo()">
+    <form [formGroup]="tipoDeFormulario()" (submit)="enviarVehiculo()">
 
       <div>
         <button type="button" (click)="tipoDeVehiculo('Auto')">
