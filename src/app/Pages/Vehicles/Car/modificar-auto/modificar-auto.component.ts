@@ -20,9 +20,10 @@ export class ModificarAutoComponent {
   servicioTipoAuto = inject(TypeCarService)
   servicioAuto = inject(AutoService)
   fb = inject(FormBuilder)
-  id = "858e"
-  // id = this.router.snapshot.paramMap.get("id")
-  auto = toSignal(this.autoService.getAutoById(this.id));
+
+  id = this.router.snapshot.paramMap.get("id")
+
+  auto = toSignal(this.autoService.getAutoById(this.id!));
   combustiones = toSignal(this.combustionService.getCombustion(), {initialValue : []})
   tiposAuto = toSignal(this.servicioTipoAuto.getTypeCar(), {initialValue:[]});
 
