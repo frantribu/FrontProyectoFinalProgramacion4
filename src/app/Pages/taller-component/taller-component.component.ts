@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-taller-component',
-  imports: [FormBuilder],
+  imports: [ReactiveFormsModule],
   templateUrl: './taller-component.component.html',
   styleUrl: './taller-component.component.css'
 })

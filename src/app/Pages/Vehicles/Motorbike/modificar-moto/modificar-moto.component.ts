@@ -3,11 +3,9 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MotoService } from '../../../../Core/Services/Vehicle/MotorBike/MotorbikeService/moto.service';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Moto } from '../../../../Core/Models/Vehicles';
-import { ImagenService } from '../../../../Core/Services/ImagenService/imagen-service.service';
-import { ArchivoVehiculo } from '../../../../Core/Models/Enum';
 import { CombustionService } from '../../../../Core/Services/Vehicle/Combustion/combustion.service';
 import { TypeMotorbikeService } from '../../../../Core/Services/Vehicle/MotorBike/TypeMotorBike/type-motorbike.service';
+import { Moto } from '../../../../Core/Models/Vehiculo';
 
 @Component({
   selector: 'app-modificar-moto',
@@ -45,7 +43,7 @@ export class ModificarMotoComponent {
           combustion:motito.idCombustion,
           descripcion: motito.descripcion,
           cilindrada:motito.cilindrada,
-          tipoMoto:motito.idTipoCarroceriaMoto
+          tipoMoto:motito.idTipoCarroceria
         })
       }
     })
@@ -85,7 +83,7 @@ export class ModificarMotoComponent {
         idCombustion: this.formularioCrearMoto.value.combustion!,
         descripcion: this.formularioCrearMoto.value.descripcion!,
         cilindrada:this.formularioCrearMoto.value.cilindrada!,
-        idTipoCarroceriaMoto: this.formularioCrearMoto.value.tipoMoto!,
+        idTipoCarroceria: this.formularioCrearMoto.value.tipoMoto!,
   
         rutasImagen : this.moto()?.rutasImagen!,
 

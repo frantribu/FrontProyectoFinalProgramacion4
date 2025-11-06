@@ -1,5 +1,4 @@
 import { Component, inject, input, output } from '@angular/core';
-import { Vehiculo } from '../../../Core/Models/Vehicles';
 import { Router } from '@angular/router';
 import { VehiculoPolimorfico } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
 import { MotoService } from '../../../Core/Services/Vehicle/MotorBike/MotorbikeService/moto.service';

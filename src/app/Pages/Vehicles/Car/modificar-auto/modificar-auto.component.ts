@@ -5,7 +5,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CombustionService } from '../../../../Core/Services/Vehicle/Combustion/combustion.service';
 import { TypeCarService } from '../../../../Core/Services/Vehicle/Car/TypeCar/type-car.service';
-import { Auto } from '../../../../Core/Models/Vehicles';
+import { Auto } from '../../../../Core/Models/Vehiculo';
 
 @Component({
   selector: 'app-modificar-auto',

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { forkJoin, map, Observable } from 'rxjs';
-import { Auto, Moto } from '../../../Models/Vehicles';
+import { Auto, Moto } from '../../../Models/Vehiculo';
 
 export type VehiculoPolimorfico = (Auto & { tipoVehiculo: 'Auto' } | Moto & { tipoVehiculo: 'Moto' })
 

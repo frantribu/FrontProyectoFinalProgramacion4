@@ -4,11 +4,11 @@ import { ArchivoVehiculo, Combustion, TipoAuto } from '../../../Core/Models/Enum
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TypeCarService } from '../../../Core/Services/Vehicle/Car/TypeCar/type-car.service';
 import { CombustionService } from '../../../Core/Services/Vehicle/Combustion/combustion.service';
-import { Auto, Moto } from '../../../Core/Models/Vehicles';
 import { AutoService } from '../../../Core/Services/Vehicle/Car/CarService/auto.service';
 import { ImagenService } from '../../../Core/Services/ImagenService/imagen-service.service';
 import { TypeMotorbikeService } from '../../../Core/Services/Vehicle/MotorBike/TypeMotorBike/type-motorbike.service';
 import { MotoService } from '../../../Core/Services/Vehicle/MotorBike/MotorbikeService/moto.service';
+import { Auto, Moto } from '../../../Core/Models/Vehiculo';
 
 @Component({
   selector: 'app-create-vehicle-component',
@@ -136,7 +136,7 @@ export class CreateVehicleComponent implements OnDestroy {
       idCombustion: this.formularioCrearMoto.value.combustion ?? undefined,
       descripcion: this.formularioCrearMoto.value.descripcion,
       cilindrada:this.formularioCrearMoto.value.cilindrada,
-      idTipoCarroceriaMoto: this.formularioCrearMoto.value.tipoMoto ?? undefined,
+      idTipoCarroceria: this.formularioCrearMoto.value.tipoMoto ?? undefined,
 
       rutasImagen : rutasImagenParaGuardar,
 

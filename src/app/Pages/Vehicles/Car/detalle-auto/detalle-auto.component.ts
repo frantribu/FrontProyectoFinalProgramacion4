@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { AutoService } from '../../../../Core/Services/Vehicle/Car/CarService/auto.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 
-
 @Component({
   selector: 'app-detalle-auto',
   imports: [],

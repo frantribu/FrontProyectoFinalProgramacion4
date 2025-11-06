@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Taller } from '../Models/Taller';
+import { Taller } from '../../Models/Taller';
 
 @Injectable({
   providedIn: 'root'

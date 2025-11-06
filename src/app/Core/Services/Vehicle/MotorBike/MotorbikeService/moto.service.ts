@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Moto } from '../../../../Models/Vehicles';
+import { Moto } from '../../../../Models/Vehiculo';
 
 @Injectable({
   providedIn: 'root'
