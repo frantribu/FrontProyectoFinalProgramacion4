@@ -1,0 +1,11 @@
+<header>
+    <h2>{{user()?.apellido}}, {{user()?.nombre}}</h2>
+</header>
+<section>
+    <p>{{ asignRole() }}</p>
+</section>
+<footer>
+    <button (click)="delete()">Eliminar</button>
+    <button (click)="modifyUser(user()!.id)">Modificar</button>
+    <!--         <a routerLink = "  " >Ver Perfil</a>         -->
+</footer>
