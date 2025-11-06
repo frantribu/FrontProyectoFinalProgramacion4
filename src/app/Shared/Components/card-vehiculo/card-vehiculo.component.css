@@ -1,0 +1,11 @@
+.card_vehiculo{
+    border: 1px solid blue;
+    border-radius: 8px;
+    width: 250px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
