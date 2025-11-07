@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { VehiculoService } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
 import { Router } from "@angular/router";
@@ -21,6 +21,8 @@ export class ListVehiclesComponent {
 
   filtro = signal('')
 
+
+
   form = this.fb.nonNullable.group({
     nombre: ['', [Validators.required, Validators.minLength(4)]]
   })
@@ -35,8 +37,17 @@ export class ListVehiclesComponent {
     })
   })
 
+  constructor(){
+    effect(() => console.log(this.listaVehiculos()))
+  }
+
   buscar() {
     this.filtro.set(this.form.value.nombre!)
+  }
+
+  eliminarVehiculoLista(id : string){
+    const nuevaLista = this.listaVehiculos().filter(v => v.id != id);
+    this.listaVehiculos =  signal(nuevaLista);
   }
 
 }

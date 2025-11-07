@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { VehiculoPolimorfico } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
 import { MotoService } from '../../../Core/Services/Vehicle/MotorBike/MotorbikeService/moto.service';
 import { AutoService } from '../../../Core/Services/Vehicle/Car/CarService/auto.service';
+import { Vehiculo } from '../../../Core/Models/Vehiculo';
 
 @Component({
   selector: 'app-card-vehiculo',
@@ -50,6 +51,7 @@ export class CardVehiculoComponent {
       } else if (this.vehiculo().tipoVehiculo === "Auto") {
         this.autoService.deleteAuto(this.vehiculo().id).subscribe({
           next: () => {
+            this.vehiculoEliminado.emit(this.vehiculo().id)
           },
           error: (err) => console.log("Error al eliminar el vehiculo ", err)
         })

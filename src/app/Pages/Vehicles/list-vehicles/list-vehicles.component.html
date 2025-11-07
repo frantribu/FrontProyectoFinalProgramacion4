@@ -8,7 +8,7 @@
 
     <div id="grilla">
         @for (vehiculoV of vehiculosFiltrados(); track vehiculoV.id) {
-        <app-card-vehiculo [vehiculo]="vehiculoV"></app-card-vehiculo>
+        <app-card-vehiculo [vehiculo]="vehiculoV" (vehiculoEliminado)="eliminarVehiculoLista($event)"></app-card-vehiculo>
         }
     </div>
 

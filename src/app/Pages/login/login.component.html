@@ -1,35 +1,42 @@
 <section>
+  <div class="login_container">
     <h2>Login</h2>
     <form [formGroup]="formLogin" (submit)="login()">
-        <div>
-            <label for="email">Email</label>
-            <input type="text" formControlName="email">
+      <div class="email_container">
+        <label for="email">Email</label>
+        <input type="text" formControlName="email" />
 
-            @if (formLogin.get("email")?.hasError('required') && formLogin.get("email")?.touched) {
-            <small>El email es obligatorio</small>
-            }
+        @if (formLogin.get("email")?.hasError('required') &&
+        formLogin.get("email")?.touched) {
+        <small>El email es obligatorio</small>
+        } @if (formLogin.get("email")?.hasError('pattern') &&
+        formLogin.get("email")?.touched) {
+        <small
+          >El correo debe ser de la empresa y terminar en miempresa.com</small
+        >
+        }
+      </div>
+      <div class="password_container">
+        <label for="password">Contraseña</label>
+        <input type="text" formControlName="password" />
 
-            @if (formLogin.get("email")?.hasError('pattern') && formLogin.get("email")?.touched) {
-            <small>El correo debe ser de la empresa y terminar en miempresa.com</small>
-            }
-        </div>
-        <div>
-            <label for="password">Contraseña</label>
-            <input type="text" formControlName="password">
+        @if (formLogin.get("password")?.hasError('required') &&
+        formLogin.get("password")?.touched) {
+        <small>La contraseña es obligatorio</small>
+        } @if (formLogin.get("password")?.hasError('pattern') &&
+        formLogin.get("password")?.touched) {
+        <small
+          >La contraseña debe tener al menos una Mayuscula y un numero</small
+        >
+        }
+      </div>
 
-            @if (formLogin.get("password")?.hasError('required') && formLogin.get("password")?.touched) {
-            <small>La contraseña es obligatorio</small>
-            }
-
-            @if (formLogin.get("password")?.hasError('pattern') && formLogin.get("password")?.touched) {
-            <small>La contraseña debe tener al menos una Mayuscula y un numero</small>
-            }
-
-        </div>
-
-        <div>
-            <button type="submit" [disabled]="formLogin.invalid">Iniciar sesión</button>
-            <small>{{mensaje}}</small>
-        </div>
+      <div class="button_container">
+        <button type="submit" [disabled]="formLogin.invalid">
+          Iniciar sesión
+        </button>
+        <small>{{ mensaje }}</small>
+      </div>
     </form>
+  </div>
 </section>

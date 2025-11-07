@@ -42,48 +42,6 @@
       "fechaIngreso": "2025-11-04",
       "enReparacion": false,
       "vendido": false
-    },
-    {
-      "id": "c2f7",
-      "patente": "AA111RR",
-      "marca": "frerraro",
-      "modelo": "wfim",
-      "precio": 1000000,
-      "color": "rojo",
-      "anio": 2016,
-      "kilometros": 10000,
-      "motor": "v10",
-      "idCombustion": "1",
-      "descripcion": "holaaaaaaaaaaaaaa",
-      "puertas": 3,
-      "potencia": 1000,
-      "idTipoCarroceria": "3",
-      "rutasImagen": [
-        "app/Assets/ImgVehiculos/images.jpg"
-      ],
-      "fechaIngreso": "2025-11-04",
-      "enReparacion": false,
-      "vendido": false
-    },
-    {
-      "id": "b177",
-      "patente": "AH631IP",
-      "marca": "fiat",
-      "modelo": "firebasalt",
-      "precio": 10000,
-      "color": "rojo",
-      "anio": 2025,
-      "kilometros": 0,
-      "motor": "i4",
-      "idCombustion": "1",
-      "descripcion": "auto zafable",
-      "puertas": "5",
-      "potencia": 100,
-      "idTipoCarroceria": "4",
-      "rutasImagen": [],
-      "fechaIngreso": "2025-11-07",
-      "enReparacion": false,
-      "vendido": false
     }
   ],
   "motos": [

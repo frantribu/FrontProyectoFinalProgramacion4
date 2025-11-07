@@ -28,11 +28,11 @@ export class LoginComponent {
     this.usuarioService.getUserByEmail(email!).subscribe({
       next:(user)=>{
         if(user.length===0){
-          this.mensaje="Usuario no encontrado"
+          this.mensaje="Contraseña o email incorrecto"
         }else if(user[0].contrasenia===password){
           this.usuarioService.updateIsLogged(user[0])
           this.usuarioService.guardarUsuarioEnSesion(user[0])
-          this.mensaje="Login exitoso"
+          this.router.navigate(['home'])
         }else{
           this.mensaje="Contraseña o email incorrecto"
         }
