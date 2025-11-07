@@ -23,7 +23,8 @@ export class UserFormComponentComponent {
     lastName: ["", Validators.required],
     rol: [null, Validators.required],
     email: ["", [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@miempresa\.com$")]],
-    dni: [0, [Validators.required, Validators.min(10000000),  Validators.max(99999999)]]
+    dni: [0, [Validators.required, Validators.min(10000000),  Validators.max(99999999)]],
+    password: ["", [Validators.required]]
   })
 
   enviar(){
@@ -33,6 +34,7 @@ export class UserFormComponentComponent {
       idRol: this.formUser.value.rol!,
       email: this.formUser.value.email,
       dni: this.formUser.value.dni,
+      contrasenia: this.formUser.value.password,
       isLogged: false
     })
 

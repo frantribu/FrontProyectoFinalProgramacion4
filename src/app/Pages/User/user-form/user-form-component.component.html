@@ -26,6 +26,10 @@
             <label for="dni">DNI</label>
             <input formControlName="dni" id="dni" type="number">
         </div>
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input formControlName="password" id="password" type="password">
+        </div>
         <small>Todos los campos son obligatorios</small>
         <div class="form-actions">
             <button [disabled]="formUser.invalid" type="submit">Crear Usuario</button>
