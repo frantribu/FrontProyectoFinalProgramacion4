@@ -1,6 +1,7 @@
 import { Component, inject, input } from '@angular/core';
 import { Taller } from '../../../Core/Models/Taller';
-import { Router } from 'express';
+import { Router } from '@angular/router';
+import { TallerServiceService } from '../../../Core/Services/Taller/TallerService/taller-service.service';
 
 @Component({
   selector: 'app-card-taller',
@@ -11,8 +12,14 @@ import { Router } from 'express';
 export class CardTaller {
   router = inject(Router)
   taller = input<Taller>()
+  tallerService = inject(TallerServiceService)
+  
 
-  modificar(id:number){
-    this.router.navigate([`modificarTaller/${id}`])
+  modificar(id:string){
+    this.router.navigate(["taller/modificar", id])
+  }
+
+  eliminar(){
+    this.tallerService.deleteTaller(this.taller()?.id!)
   }
 }

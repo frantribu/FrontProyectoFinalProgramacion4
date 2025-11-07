@@ -8,7 +8,7 @@ import { Taller } from '../../../Models/Taller';
 })
 export class TallerServiceService {
   http = inject(HttpClient)
-  url = ""
+  url = "http://localhost:3000/Taller"
 
   getTalleres(){
     return this.http.get<Taller[]>(this.url)
@@ -18,11 +18,19 @@ export class TallerServiceService {
     return this.http.get<Taller>(`${this.url}/${id}`)
   }
   
-  putTaller(taller:Partial<Taller>){
-    return this.http.put<Taller>(this.url, taller)
+  patchTaller(taller:Taller){
+    this.http.patch<Taller>(this.url, taller).subscribe({
+      next: () => alert("el taller fue modificado con exito!")
+    })
   }
 
-  postTaller(taller:Taller){
+  postTaller(taller:Partial<Taller>){
     return this.http.post<Taller>(this.url,taller)
+  }
+
+  deleteTaller(id:string){
+    return this.http.delete<Taller>(`${this.url}/${id}`).subscribe({
+      next: () => alert("Taller creado con exito!!")
+    })
   }
 }

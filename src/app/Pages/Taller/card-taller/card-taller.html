@@ -1,7 +1,6 @@
 <div>
-    <h3>Nombre del Taller: {{taller().Nombre}}</h3>
-    <h2>Especialidad: {{taller().Especialidad}}</h2>
-    <h2>Direccion: {{taller().Direccion}}</h2>
-    <h2>Encargado: {{taller().Encargado}}</h2>
-    <button (click)="modificar(taller().id)">Modificar</button>
+    <h2>Nombre del Taller: {{taller()?.NombreTaller}}</h2>
+    <h3>Especialidad: {{taller()?.Especialidad}}</h3>
+    <button (click)="modificar(taller()!.id)">Modificar</button>
+    <button (click)="eliminar()">Eliminar</button>
 </div>

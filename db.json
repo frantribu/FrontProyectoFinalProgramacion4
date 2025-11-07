@@ -11,7 +11,31 @@
     }
   ],
   "Vehiculo": [],
-  "Taller": [],
+  "Taller": [{
+    "id": "1",
+    "Especialidad": "GENERAL",
+    "NombreTaller": "Gonzalito Taller",
+    "Encargado": "",
+    "Vehiculo": [
+      {
+        "id": "V-12345",
+        "patente": "ABC-123",
+        "marca": "Toyota",
+        "modelo": "Corolla",
+        "precio": 15500.75,
+        "color": "Gris Plata",
+        "año": 2021,
+        "kilometraje": 35000,
+        "motor": "1.8L VVT-i",
+        "idCombustion": 1,
+        "descripcion": "Sedán de bajo consumo, excelente estado, service al día.",
+        "fechaIngreso": "2024-10-25",
+        "enReparacion": false,
+        "vendido": false
+      }
+    ],
+    "Direccion": "25 de Mayo"
+  }],
   "Historial": [],
   "HistorialVenta": [],
   "HistorialTaller": [],

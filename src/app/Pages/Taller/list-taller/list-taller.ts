@@ -14,5 +14,5 @@ export class ListTaller {
   serviceTaller = inject(TallerServiceService)
   router = inject(Router)
 
-  talleres = toSignal(this.serviceTaller.getTalleres())
+  talleres = toSignal(this.serviceTaller.getTalleres(), {initialValue: []})
 }

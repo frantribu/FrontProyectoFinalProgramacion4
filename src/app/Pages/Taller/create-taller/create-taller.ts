@@ -17,7 +17,7 @@ export class CreateTaller {
   especialidadService = inject(EspecialidadService)
   
 
-  especialidades = toSignal(this.especialidadService.getEspecialidades())
+  especialidades = toSignal(this.especialidadService.getEspecialidades(), { initialValue: [] })
   
   formulario = this.fb.nonNullable.group({
     name: ["", [Validators.required, Validators.minLength(1)]],
@@ -33,6 +33,8 @@ export class CreateTaller {
       Direccion: this.formulario.value.direccion,
       Especialidad: this.formulario.value.especialidad!
     }
-    this.tallerService.putTaller(taller)
+    this.tallerService.postTaller(taller).subscribe({
+      next: () => alert("Taller creado con exito!!"),
+    })
   }
 }
