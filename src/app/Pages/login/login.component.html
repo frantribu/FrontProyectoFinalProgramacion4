@@ -1,6 +1,6 @@
 <section>
     <h2>Login</h2>
-    <form [formGroup]="formLogin" (ngSubmit)="login()">
+    <form [formGroup]="formLogin" (submit)="login()">
         <div>
             <label for="email">Email</label>
             <input type="text" formControlName="email">
@@ -32,6 +32,4 @@
             <small>{{mensaje}}</small>
         </div>
     </form>
-
-    <button (click)="logout()">Eliminar</button>
 </section>

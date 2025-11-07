@@ -1,49 +1,156 @@
 {
-    "Usuario": [
-        {
-            "id": 1,
-            "nombre": "Admin",
-            "apellido": "User",
-            "rol": "ADMIN",
-            "email": "admin@example.com",
-            "contraseña": "hashedpassword123",
-            "deslogeado": false
-        }
-    ],
-    "Vehiculo": [],
-    "Taller": [],
-    "Historial": [],
-    "HistorialVenta": [],
-    "HistorialTaller": [],
-    "Role": [
-        "ADMIN",
-        "EMPLEADO",
-        "TALLER",
-        "CLIENTE"
-    ],
-    "Combustion": [
-        "NAFTA",
-        "DIESEL",
-        "ELECTRICO"
-    ],
-    "TipoAuto": [
-        "SEDAN",
-        "HATCHBACK",
-        "COUPE",
-        "SUV",
-        "FURGON"
-    ],
-    "TipoMoto": [
-        "URBANA",
-        "DEPORTIVAS",
-        "TURISMO",
-        "OFF-ROAD",
-        "ESPECIALES"
-    ],
-    "Especialidad": [
-        "GENERAL",
-        "MOTORISTA",
-        "CHAPA_Y_PINTURA",
-        "ELECTRICISTA"
-    ]
+  "usuarios": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "lastname": "User",
+      "idRol": 1,
+      "email": "admin@miempresa.com",
+      "password": "Hashedpassword123",
+      "isLogged": false
+    }
+  ],
+  "autos": [
+    {
+      "id": "c2f7",
+      "patente": "AA111RR",
+      "marca": "frerraro",
+      "modelo": "wfim",
+      "precio": 1000000,
+      "color": "rojo",
+      "anio": 2016,
+      "kilometros": 10000,
+      "motor": "v10",
+      "idCombustion": "1",
+      "descripcion": "holaaaaaaaaaaaaaa",
+      "puertas": 3,
+      "potencia": 1000,
+      "idTipoCarroceria": "3",
+      "rutasImagen": [
+        "app/Assets/ImgVehiculos/images.jpg"
+      ],
+      "fechaIngreso": "2025-11-04",
+      "enReparacion": false,
+      "vendido": false
+    }
+  ],
+  "motos": [
+    {
+      "id": "deb0",
+      "patente": "AP123AA",
+      "marca": "Bmw",
+      "modelo": "s1000rr",
+      "precio": 100000,
+      "color": "multicolor",
+      "anio": 2025,
+      "kilometros": 0,
+      "motor": "V12",
+      "idCombustion": "1",
+      "descripcion": "Alta moto",
+      "cilindrada": 1000,
+      "idTipoCarroceriaMoto": "2",
+      "rutasImagen": [],
+      "fechaIngreso": "2025-11-06",
+      "enReparacion": false,
+      "vendido": false
+    }
+  ],
+  "talleres": [],
+  "historiales": [],
+  "historialesVenta": [],
+  "historialesTaller": [],
+  "roles": [
+    {
+      "id": "1",
+      "name": "ADMIN"
+    },
+    {
+      "id": "2",
+      "name": "EMPLEADO"
+    },
+    {
+      "id": "3",
+      "name": "ENCARGADO TALLER"
+    },
+    {
+      "id": "4",
+      "name": "CLIENTE"
+    }
+  ],
+  "combustiones": [
+    {
+      "id": "1",
+      "name": "NAFTA"
+    },
+    {
+      "id": "2",
+      "name": "DIESEL"
+    },
+    {
+      "id": "3",
+      "name": "ELECTRICO"
+    }
+  ],
+  "tiposAuto": [
+    {
+      "id": "1",
+      "name": "SEDAN"
+    },
+    {
+      "id": "2",
+      "name": "HATCHBACK"
+    },
+    {
+      "id": "3",
+      "name": "COUPE"
+    },
+    {
+      "id": "4",
+      "name": "SUV"
+    },
+    {
+      "id": "5",
+      "name": "FURGON"
+    }
+  ],
+  "tiposMoto": [
+    {
+      "id": "1",
+      "name": "URBANA"
+    },
+    {
+      "id": "2",
+      "name": "DEPORTIVAS"
+    },
+    {
+      "id": "3",
+      "name": "TURISMO"
+    },
+    {
+      "id": "4",
+      "name": "OFF-ROAD"
+    },
+    {
+      "id": "5",
+      "name": "ESPECIALES"
+    }
+  ],
+  "especialidades": [
+    {
+      "id": "1",
+      "name": "GENERAL"
+    },
+    {
+      "id": "2",
+      "name": "MOTORISTA"
+    },
+    {
+      "id": "3",
+      "name": "CHAPA_Y_PINTURA"
+    },
+    {
+      "id": "4",
+      "name": "ELECTRICISTA"
+    }
+  ]
 }

@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+    {path:"", redirectTo:"login", pathMatch:"full"},
+    {path:"login", loadComponent:()=>import("./Pages/login/login.component").then(c=>c.LoginComponent)},
     {path:"vehiculos", loadComponent:()=>import("./Pages/Vehicles/list-vehicles/list-vehicles.component").then(c=>c.ListVehiclesComponent)},
     {path:"vehiculos/modificarMoto/:id", loadComponent:()=>import("./Pages/Vehicles/Motorbike/modificar-moto/modificar-moto.component").then(c=>c.ModificarMotoComponent)},
     {path:"vehiculos/modificarAuto/:id", loadComponent:()=>import("./Pages/Vehicles/Car/modificar-auto/modificar-auto.component").then(c=>c.ModificarAutoComponent)},

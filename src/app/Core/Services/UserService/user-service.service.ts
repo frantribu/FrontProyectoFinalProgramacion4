@@ -8,15 +8,15 @@ import { User } from '../../Models/User';
 
 export class UserServiceService {
   http=inject(HttpClient)
-  
+
   getUserByEmail(email:string){
-    return this.http.get<User[]>(`http://localhost:3000/Usuario?email=${email}`)
+    return this.http.get<User[]>(`http://localhost:3000/usuarios?email=${email}`)
   }
 
   updateIsLogged(user:User){
     user.isLogged=!user.isLogged
 
-    this.http.put<User>(`http://localhost:3000/Usuario/${user.id}`, user).subscribe({
+    this.http.put<User>(`http://localhost:3000/usuarios/${user.id}`, user).subscribe({
       next: ()=>console.log("Estado modificado con exito"),
       error: (err)=>console.log("Error al actualizar el estado: ", err)
     })
