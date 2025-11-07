@@ -1,7 +1,7 @@
 import { Component, effect, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MotoService } from '../../../../Core/Services/Vehicle/MotorBike/MotorbikeService/moto.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CombustionService } from '../../../../Core/Services/Vehicle/Combustion/combustion.service';
 import { TypeMotorbikeService } from '../../../../Core/Services/Vehicle/MotorBike/TypeMotorBike/type-motorbike.service';
@@ -25,6 +25,8 @@ export class ModificarMotoComponent {
   moto=toSignal(this.motoService.getMotoById(this.id!))
   combustiones= toSignal(this.servicioCombustion.getCombustion(), {initialValue:[]});
   tipoDeCarroceria=toSignal(this.servicioTipoCarroceria.getTypeCarroceria(), {initialValue:[]})
+
+  router=inject(Router)
 
   constructor(){
     effect(()=>{
@@ -93,7 +95,11 @@ export class ModificarMotoComponent {
       };
   
       this.motoService.updateMoto(motoNueva).subscribe({
-        next: () => console.log("Vehiculo actualizado")
+        next: () => {
+          console.log("Vehiculo actualizado")
+          this.router.navigate(["vehiculos"])
+        },
+        error:(err)=>console.log("Error al modificar la moto ", err)
       });
     }
 }

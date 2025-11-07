@@ -9,6 +9,7 @@ import { ImagenService } from '../../../Core/Services/ImagenService/imagen-servi
 import { TypeMotorbikeService } from '../../../Core/Services/Vehicle/MotorBike/TypeMotorBike/type-motorbike.service';
 import { MotoService } from '../../../Core/Services/Vehicle/MotorBike/MotorbikeService/moto.service';
 import { Auto, Moto } from '../../../Core/Models/Vehiculo';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-vehicle-component',
@@ -21,21 +22,23 @@ export class CreateVehicleComponent implements OnDestroy {
   servicioTipoAuto = inject(TypeCarService);//AUTO
   servicioCombustion = inject(CombustionService);
   servicioAuto = inject(AutoService);
-  servicioTipoCarroceria=inject(TypeMotorbikeService);//MOTO
-  servicioMoto=inject(MotoService)
+  servicioTipoCarroceria = inject(TypeMotorbikeService);//MOTO
+  servicioMoto = inject(MotoService)
   servicioImages = inject(ImagenService);
   tipo = signal<string>("");
 
   archivosSeleccionados: ArchivoVehiculo[] = [];
-  combustiones= toSignal(this.servicioCombustion.getCombustion(), {initialValue:[]});
+  combustiones = toSignal(this.servicioCombustion.getCombustion(), { initialValue: [] });
 
   //AUTO
-  tiposAuto = toSignal(this.servicioTipoAuto.getTypeCar(), {initialValue:[]});
-  
-  //MOTO
-  tipoDeCarroceria=toSignal(this.servicioTipoCarroceria.getTypeCarroceria(), {initialValue:[]})
+  tiposAuto = toSignal(this.servicioTipoAuto.getTypeCar(), { initialValue: [] });
 
-  tipoDeVehiculo(tipo:string){
+  //MOTO
+  tipoDeCarroceria = toSignal(this.servicioTipoCarroceria.getTypeCarroceria(), { initialValue: [] })
+
+  router = inject(Router)
+
+  tipoDeVehiculo(tipo: string) {
     this.tipo.set(tipo)
   }
 
@@ -66,8 +69,8 @@ export class CreateVehicleComponent implements OnDestroy {
     motor: ["", [Validators.required]],
     combustion: [null, [Validators.required]],
     descripcion: ["", [Validators.required]],
-    cilindrada:[0, [Validators.required]],
-    tipoMoto:[null, [Validators.required]]
+    cilindrada: [0, [Validators.required]],
+    tipoMoto: [null, [Validators.required]]
   });
 
   onFileSelected(event: any) {
@@ -103,7 +106,7 @@ export class CreateVehicleComponent implements OnDestroy {
       potencia: this.formularioCrearAuto.value.potencia,
       idTipoCarroceria: this.formularioCrearAuto.value.tipoAuto ?? undefined,
 
-      rutasImagen : rutasImagenParaGuardar,
+      rutasImagen: rutasImagenParaGuardar,
 
 
       fechaIngreso: new Date().toISOString().split('T')[0],
@@ -112,7 +115,11 @@ export class CreateVehicleComponent implements OnDestroy {
     };
 
     this.servicioAuto.postAuto(auto).subscribe({
-      next: () => console.log("Vehiculo cargado")
+      next: () => {
+        console.log("Vehiculo cargado")
+        this.router.navigate(["vehiculos"])
+      },
+      error: (err)=>console.log("Error al cargar el auto ", err)
     });
   }
 
@@ -135,10 +142,10 @@ export class CreateVehicleComponent implements OnDestroy {
       motor: this.formularioCrearMoto.value.motor,
       idCombustion: this.formularioCrearMoto.value.combustion ?? undefined,
       descripcion: this.formularioCrearMoto.value.descripcion,
-      cilindrada:this.formularioCrearMoto.value.cilindrada,
+      cilindrada: this.formularioCrearMoto.value.cilindrada,
       idTipoCarroceria: this.formularioCrearMoto.value.tipoMoto ?? undefined,
 
-      rutasImagen : rutasImagenParaGuardar,
+      rutasImagen: rutasImagenParaGuardar,
 
       fechaIngreso: new Date().toISOString().split('T')[0],
       enReparacion: false,
@@ -146,23 +153,27 @@ export class CreateVehicleComponent implements OnDestroy {
     };
 
     this.servicioMoto.postMoto(moto).subscribe({
-      next: () => console.log("Vehiculo cargado")
+      next: () => {
+        console.log("Vehiculo cargado");
+        this.router.navigate(["vehiculos"])
+      },
+      error: (err) => console.log("Error al cargar la moto ", err)
     });
   }
 
-  enviarVehiculo(){
-    const tipoDeVehiculo=this.tipo();
+  enviarVehiculo() {
+    const tipoDeVehiculo = this.tipo();
 
-    if(tipoDeVehiculo==="Auto"){
+    if (tipoDeVehiculo === "Auto") {
       this.enviarFormularioCrearAuto();
-    }else if(tipoDeVehiculo==="Moto"){
+    } else if (tipoDeVehiculo === "Moto") {
       this.enviarFormularioCrearMoto();
-    }else{
+    } else {
       console.log("Tipode vehiculo no definido")
     }
   }
 
-  tipoDeFormulario(){
-    return this.tipo()==="Auto" ? this.formularioCrearAuto : this.formularioCrearMoto
+  tipoDeFormulario() {
+    return this.tipo() === "Auto" ? this.formularioCrearAuto : this.formularioCrearMoto
   }
 }

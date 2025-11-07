@@ -35,7 +35,7 @@ export class CardVehiculoComponent {
   }
 
   eliminarVehiculo() {
-    const resultado = confirm('¿Estás seguro que querés eliminar esta moto?');
+    const resultado = confirm('¿Estás seguro que querés eliminar este vehiculo?');
 
     if (!resultado) {
       console.log("Cancelado")

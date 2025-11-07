@@ -1,10 +1,15 @@
-<h2 >Lista de Vehiculos</h2>
+<section>
+    <h2>Lista de Vehiculos</h2>
 
-<form [formGroup]="form" (submit)="buscar()">
-    <input type="text" formControlName="nombre" placeholder="Ingrese el nombre del auto">
-    <button type="submit">Buscar</button>
-</form>
+    <form [formGroup]="form" (submit)="buscar()">
+        <input type="text" formControlName="nombre" placeholder="Ingrese el nombre del auto">
+        <button type="submit">Buscar</button>
+    </form>
 
-@for (vehiculoV of vehiculosFiltrados(); track vehiculoV.id) {
-    <app-card-vehiculo [vehiculo]="vehiculoV"></app-card-vehiculo>
-}
+    <div id="grilla">
+        @for (vehiculoV of vehiculosFiltrados(); track vehiculoV.id) {
+        <app-card-vehiculo [vehiculo]="vehiculoV"></app-card-vehiculo>
+        }
+    </div>
+
+</section>

@@ -1,6 +1,6 @@
 import { Component, effect, inject } from '@angular/core';
 import { AutoService } from '../../../../Core/Services/Vehicle/Car/CarService/auto.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CombustionService } from '../../../../Core/Services/Vehicle/Combustion/combustion.service';
@@ -15,18 +15,20 @@ import { Auto } from '../../../../Core/Models/Vehiculo';
 })
 export class ModificarAutoComponent {
   autoService = inject(AutoService)
-  router = inject(ActivatedRoute)
+  activatedRouter = inject(ActivatedRoute)
   combustionService = inject(CombustionService)
   servicioTipoAuto = inject(TypeCarService)
   servicioAuto = inject(AutoService)
   fb = inject(FormBuilder)
 
-  id = this.router.snapshot.paramMap.get("id")
+  id = this.activatedRouter.snapshot.paramMap.get("id")
 
   auto = toSignal(this.autoService.getAutoById(this.id!));
-  combustiones = toSignal(this.combustionService.getCombustion(), {initialValue : []})
-  tiposAuto = toSignal(this.servicioTipoAuto.getTypeCar(), {initialValue:[]});
-
+  combustiones = toSignal(this.combustionService.getCombustion(), { initialValue: [] })
+  tiposAuto = toSignal(this.servicioTipoAuto.getTypeCar(), { initialValue: [] });
+  
+  router=inject(Router)
+  
   constructor() {
     effect(() => {
       const a = this.auto();
@@ -41,10 +43,10 @@ export class ModificarAutoComponent {
           kilometros: a.kilometros,
           motor: a.motor,
           combustion: a.idCombustion,
-          descripcion : a.descripcion,
-          puertas : a.puertas,
-          potencia : a.potencia,
-          tipoAuto : a.idCombustion
+          descripcion: a.descripcion,
+          puertas: a.puertas,
+          potencia: a.potencia,
+          tipoAuto: a.idCombustion
         })
       }
     })
@@ -68,37 +70,40 @@ export class ModificarAutoComponent {
   });
 
 
-  
-  enviar(){
+
+  enviar() {
     if (this.formularioModificarAuto.invalid) {
-          console.error("El formulario es inválido. Revise los campos.");
-          return;
-        }
-  
-    
-        const auto: Auto = {
-          id : this.auto()!.id,
-          patente: this.formularioModificarAuto.value.patente!,
-          marca: this.formularioModificarAuto.value.marca!,
-          modelo: this.formularioModificarAuto.value.modelo!,
-          precio: this.formularioModificarAuto.value.precio!,
-          color: this.formularioModificarAuto.value.color!,
-          anio: Number(this.formularioModificarAuto.value.anio),
-          kilometros: this.formularioModificarAuto.value.kilometros!,
-          motor: this.formularioModificarAuto.value.motor!,
-          idCombustion: this.formularioModificarAuto.value.combustion!,
-          descripcion: this.formularioModificarAuto.value.descripcion!,
-          puertas: this.formularioModificarAuto.value.puertas!,
-          potencia: this.formularioModificarAuto.value.potencia!,
-          idTipoCarroceria: this.formularioModificarAuto.value.tipoAuto!,  
-          fechaIngreso: new Date().toISOString().split('T')[0],
-          enReparacion: false,
-          rutasImagen : this.auto()?.rutasImagen!,
-          vendido: false
-        };
-    
-        this.servicioAuto.putAuto(auto).subscribe({
-          next: () => console.log("Vehiculo cargado")
-        });
+      console.error("El formulario es inválido. Revise los campos.");
+      return;
+    }
+
+
+    const auto: Auto = {
+      id: this.auto()!.id,
+      patente: this.formularioModificarAuto.value.patente!,
+      marca: this.formularioModificarAuto.value.marca!,
+      modelo: this.formularioModificarAuto.value.modelo!,
+      precio: this.formularioModificarAuto.value.precio!,
+      color: this.formularioModificarAuto.value.color!,
+      anio: Number(this.formularioModificarAuto.value.anio),
+      kilometros: this.formularioModificarAuto.value.kilometros!,
+      motor: this.formularioModificarAuto.value.motor!,
+      idCombustion: this.formularioModificarAuto.value.combustion!,
+      descripcion: this.formularioModificarAuto.value.descripcion!,
+      puertas: this.formularioModificarAuto.value.puertas!,
+      potencia: this.formularioModificarAuto.value.potencia!,
+      idTipoCarroceria: this.formularioModificarAuto.value.tipoAuto!,
+      fechaIngreso: new Date().toISOString().split('T')[0],
+      enReparacion: false,
+      rutasImagen: this.auto()?.rutasImagen!,
+      vendido: false
+    };
+
+    this.servicioAuto.putAuto(auto).subscribe({
+      next: () => {
+        console.log("Vehiculo actualizado")
+        this.router.navigate(["vehiculos"])
+      },
+    });
   }
 }

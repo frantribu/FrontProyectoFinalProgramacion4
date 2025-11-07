@@ -29,7 +29,7 @@ export class LoginComponent {
       next:(user)=>{
         if(user.length===0){
           this.mensaje="Usuario no encontrado"
-        }else if(user[0].password===password){
+        }else if(user[0].contrasenia===password){
           this.usuarioService.updateIsLogged(user[0])
           this.usuarioService.guardarUsuarioEnSesion(user[0])
           this.mensaje="Login exitoso"

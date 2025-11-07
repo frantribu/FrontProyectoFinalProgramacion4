@@ -1,2 +1,17 @@
 <nav>
+    <img src="assets/logo.png" alt="logoConcesionaria">
+    <ul>
+        @if (!user) {
+        <li>Login</li>
+        }
+
+        @if (user) {
+            @if (user.idRol==1) {
+            <li><a routerLink="usuarios">Usuarios</a></li>
+            }@else if (user.idRol==2){
+            <li></li>
+            }
+        }
+    </ul>
+
 </nav>
