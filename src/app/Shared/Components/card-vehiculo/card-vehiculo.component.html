@@ -1,8 +1,14 @@
+<div (click)="verDetalleVehiculo()" class="card_vehiculo">
+  <img [src]="vehiculo().rutasImagen[0]" class="card-image">
 
-  <div (click)="verDetalleVehiculo()" class="card_vehiculo">
-    <h3>{{ vehiculo().marca }}</h3>
-    <h3>{{ vehiculo().modelo }}</h3>
-    <h3>{{vehiculo().anio}}</h3>
-    <button (click)="modificar(); $event.stopPropagation()"> Modificar </button>
-    <button (click)="eliminarVehiculo(); $event.stopPropagation()"> Eliminar </button>
+  <div class="div-detalles">
+    <h5>{{ vehiculo().marca }} {{vehiculo().modelo}}</h5>
+    <h3>${{vehiculo().precio}}</h3>
+    <p>{{vehiculo().anio}} - {{vehiculo().kilometros}} Km</p>
   </div>
+
+  <div class="div-botones">
+    <button (click)="modificar(); $event.stopPropagation()" class="buttonModificar"><i class="fa-solid fa-pen-to-square"></i></button>
+    <button (click)="eliminarVehiculo(); $event.stopPropagation()" class="buttonEliminar"><i class="fa-solid fa-trash"></i></button>
+  </div>
+</div>

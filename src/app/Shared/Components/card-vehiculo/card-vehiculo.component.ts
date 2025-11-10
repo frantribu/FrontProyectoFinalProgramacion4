@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { VehiculoPolimorfico } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
 import { MotoService } from '../../../Core/Services/Vehicle/MotorBike/MotorbikeService/moto.service';
 import { AutoService } from '../../../Core/Services/Vehicle/Car/CarService/auto.service';
-import { Vehiculo } from '../../../Core/Models/Vehiculo';
 
 @Component({
   selector: 'app-card-vehiculo',

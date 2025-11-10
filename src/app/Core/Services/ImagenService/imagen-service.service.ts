@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ArchivoVehiculo } from '../../Models/Enum';
+import { ArchivoVehiculo } from '../../Models/ENUM';
 
 @Injectable({
   providedIn: 'root'

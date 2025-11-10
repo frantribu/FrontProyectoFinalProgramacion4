@@ -1,15 +1,41 @@
-<main>
-    @if (auto(); as vehiculo) {
-    <h1>{{auto()?.marca}} {{auto()?.modelo}}</h1>
-    <p>{{auto()?.descripcion}}</p>
-
-    <h4>Motor : {{auto()?.motor}}</h4>
-    <h4>Kilometros : {{auto()?.kilometros}}</h4>
-    <h3>Precio : {{auto()?.precio}}</h3>
+<section>
+  @if (auto(); as vehiculo) {
+  <div class="div-principal">
     @if (vehiculo.rutasImagen.length) {
-    <img [src]="auto()!.rutasImagen[0]" alt="">
+    <div id="carouselExample" class="carousel slide w-50 h-70">
+      <div class="carousel-inner">
+        @for (item of vehiculo?.rutasImagen; track $index) {
+        <div class="carousel-item active">
+          <img [src]="item" class="d-block w-100" alt="...">
+        </div>
+        }
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
     }
-    }@else {
-    <p>Cargando detalles del vehículo...</p>
+    <div class="div-info">
+      <p>{{vehiculo.anio}} - {{vehiculo.kilometros}}Km</p>
+      <h5>{{vehiculo.marca}} {{vehiculo.modelo}}</h5>
+      <h3>${{vehiculo.precio}}</h3>
+    </div>
+  </div>
+  <div>
+    <h3>Caracteristicas</h3>
+    <p>Motor: {{vehiculo.motor}}</p>
+    <p>Color: {{vehiculo.color}}</p>
+    <p>Puertas: {{vehiculo.puertas}}</p>
+    <p>Potencia: {{vehiculo.potencia}}</p>
+  </div>
+
+  }@else {
+  <p>Cargando detalles del vehículo...</p>
   }
-</main>
+
+</section>

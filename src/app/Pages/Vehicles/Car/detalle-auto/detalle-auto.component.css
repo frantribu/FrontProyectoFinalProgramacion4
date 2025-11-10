@@ -1,0 +1,23 @@
+section {
+    margin: 20px;
+}
+
+.div-principal {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 70vh;
+    border-radius: 10px;
+    border: 1px solid rgb(199, 199, 199);
+}
+
+.div-info {
+    width: 30%;
+    border-radius: 10px;
+    border: 1px solid rgb(199, 199, 199);
+    padding: 10px;
+}

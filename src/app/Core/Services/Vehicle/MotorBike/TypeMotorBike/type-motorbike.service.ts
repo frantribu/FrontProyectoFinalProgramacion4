@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { TipoMoto } from '../../../../Models/Enum';
+import { TipoMoto } from '../../../../Models/ENUM';
 import { Observable } from 'rxjs';
 
 @Injectable({

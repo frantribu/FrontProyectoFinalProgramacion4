@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Role } from '../../Models/Enum';
+import { Role } from '../../Models/ENUM';
 
 @Injectable({
   providedIn: 'root'

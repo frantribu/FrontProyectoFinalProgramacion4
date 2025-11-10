@@ -1,6 +1,6 @@
-import { Component, inject, OnDestroy, signal, Signal } from '@angular/core';
+import { Component, inject, OnDestroy, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ArchivoVehiculo, Combustion, TipoAuto } from '../../../Core/Models/Enum';
+import { ArchivoVehiculo } from '../../../Core/Models/ENUM';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TypeCarService } from '../../../Core/Services/Vehicle/Car/TypeCar/type-car.service';
 import { CombustionService } from '../../../Core/Services/Vehicle/Combustion/combustion.service';

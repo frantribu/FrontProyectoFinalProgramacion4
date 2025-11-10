@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Combustion, TipoAuto } from '../../../Models/Enum';
+import { Combustion } from '../../../Models/ENUM';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class CombustionService {
     return this.http.get<Combustion[]>(this.url);
   }
 
-  getCombustionById(id : number) : Observable<Combustion>{
+  getCombustionById(id:number) : Observable<Combustion>{
     return this.http.get<Combustion>(`${this.url}/${id}`);
   }
 }

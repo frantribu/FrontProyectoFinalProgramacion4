@@ -1,4 +1,24 @@
+section{
+    margin: 20px;
+}
+
 #grilla{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    gap: 20px;
+}
+
+input[type="text"]{
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid rgb(185, 185, 185);
+    margin: 0 0 20px 0;
+}
+
+button[type="submit"]{
+    padding: 8px;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background-color: white;
+    border: 1px solid rgb(185, 185, 185);
 }

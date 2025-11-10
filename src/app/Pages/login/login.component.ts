@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserServiceService } from '../../Core/Services/UserService/user-service.service';
-import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
