@@ -1,0 +1,95 @@
+<section>
+    <article class="form_container">
+        <form [formGroup]="formularioCrearMoto" (submit)="enviarFormularioModificarMoto()">
+
+            <div class="brand">
+                <label for="input_brand">Marca</label>
+                <input type="text" formControlName="marca" id="input_brand" />
+            </div>
+
+            <div class="model">
+                <label for="input_model">Modelo</label>
+                <input type="text" formControlName="modelo" id="input_model" />
+            </div>
+
+            <div class="year">
+                <label for="input_year">Año</label>
+                <input type="number" formControlName="anio" min="0" max="9999" id="input_year" />
+            </div>
+
+            <div class="patent">
+                <label for="input_patent">Patente</label>
+                <input type="text" formControlName="patente" id="input_patent" />
+            </div>
+
+            <div class="kilometers">
+                <label for="input_kilometers">Kilometraje</label>
+                <input type="number" formControlName="kilometros" min="0" id="input_kilometers" />
+            </div>
+
+            <div class="description">
+                <label for="input_description">Descripción</label>
+                <input type="text" formControlName="descripcion" id="input_description" />
+            </div>
+
+            <div class="engine">
+                <label for="input_engine">Motor</label>
+                <input type="text" formControlName="motor" id="input_engine" />
+            </div>
+
+            <div class="color">
+                <label for="input_color">Color</label>
+                <input type="text" formControlName="color" id="input_color" />
+            </div>
+
+            <div>
+                <label for="combustion">Combustion</label>
+
+                <select id="combustion" formControlName="combustion">
+                    <option disabled>-- Seleccione una opción --</option>
+
+                    @if (combustiones(); as types) {
+                    @for (combustion of combustiones(); track combustion.id){
+                    <option [value]="combustion.id">
+                        {{ combustion.name }}
+                    </option>
+                    } } @else {
+                    <option disabled>
+                        Cargando Tipos de Combustion...
+                    </option>
+                    }
+                </select>
+            </div>
+
+            <div class="hp">
+                <label for="input_cilindrada">Cilindrada</label>
+                <input type="number" formControlName="cilindrada" min="0" id="input_cilindrada" />
+            </div>
+
+            <div>
+                <label for="typeMotorbike">Tipo de moto</label>
+
+                <select id="motorbikeType" formControlName="tipoMoto">
+                    <option disabled>--- Seleccione una opcion ---</option>
+
+                    @if (tipoDeCarroceria(); as types) {
+                    @for (tipoDeMoto of types; track tipoDeMoto.id) {
+                    <option [value]="tipoDeMoto.id">{{tipoDeMoto.name}}</option>
+                    }
+                    } @else {
+                    <option disabled>Cargando Tipos...</option>
+                    }
+                </select>
+            </div>
+
+            <div class="price">
+                <label for="input_price">Precio</label>
+                <input type="number" formControlName="precio" id="input_price" />
+            </div>
+
+            <div>
+                <input [disabled]="formularioCrearMoto.invalid" type="submit" />
+            </div>
+        </form>
+    </article>
+</section>

@@ -1,0 +1,19 @@
+<section>
+    <button type="button" class="button_volver" (click)="volver()">
+      Atras
+    </button>
+    
+    <h2>Lista de Vehiculos</h2>
+
+    <form [formGroup]="form" (submit)="buscar()">
+        <input type="text" formControlName="nombre" placeholder="Ingrese el nombre del auto">
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+
+    <div id="grilla">
+        @for (vehiculoV of vehiculosFiltrados(); track vehiculoV.id) {
+        <app-card-vehiculo [vehiculo]="vehiculoV" (vehiculoEliminado)="eliminarVehiculoLista($event)"></app-card-vehiculo>
+        }
+    </div>
+
+</section>

@@ -1,0 +1,20 @@
+<main>
+    @if (moto(); as vehiculo) {
+    <h1>{{moto()?.marca}} {{moto()?.modelo}}</h1>
+    <p>{{moto()?.descripcion}}</p>
+
+    <h4>Motor : {{moto()?.motor}}</h4>
+    <h4>Kilometros : {{moto()?.kilometros}}</h4>
+    <h3>Precio : {{moto()?.precio}}</h3>
+    <h4>Color : {{moto()?.color}}</h4>
+    <h4>Cilindrada : {{moto()?.cilindrada}}</h4>
+    
+    @if (vehiculo.rutasImagen.length) {
+    <img [src]="moto()!.rutasImagen[0]" alt="">
+    }
+
+    <button (click)="mostrar()">mostrar</button>
+    }@else {
+    <p>Cargando detalles del vehículo...</p>
+  }
+</main>

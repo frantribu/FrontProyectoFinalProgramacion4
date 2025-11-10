@@ -1,0 +1,103 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    color: #4B4B4B;
+    box-sizing: border-box;
+}
+
+body, :host { 
+    background-color: #F5F5DC; 
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    height: 85vh;
+    width: 100vw;
+}
+
+.login_container {
+    background-color: #4B4B4B; 
+    width: 380px; 
+    padding: 30px; 
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+}
+
+h2 {
+    text-align: center;
+    color: #F5F5DC; 
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.email_container, .password_container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+label {
+    color: #F5F5DC;
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #D8C8B6; 
+    color: #4B4B4B; 
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: 2px solid #CC7F6A; 
+    background-color: #F5F5DC; 
+}
+
+.button_container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+button[type="submit"] {
+    padding: 10px 25px;
+    background-color: #CC7F6A; 
+    color: #F5F5DC; 
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s, ease;
+    
+}
+
+button[type="submit"]:hover {
+    background-color: #d58670; 
+}
+
+button[disabled] {
+    background-color: #d8c8b6; 
+    color: #4B4B4B; 
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+small {
+    color: #FF6347;
+    margin-top: 5px;
+    font-size: 0.8em;
+    text-align: left;
+    width: 100%;
+}
+
