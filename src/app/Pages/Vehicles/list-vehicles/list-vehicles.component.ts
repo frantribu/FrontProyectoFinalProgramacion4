@@ -21,8 +21,6 @@ export class ListVehiclesComponent {
 
   filtro = signal('')
 
-
-
   form = this.fb.nonNullable.group({
     nombre: ['', [Validators.required, Validators.minLength(4)]]
   })
@@ -36,10 +34,6 @@ export class ListVehiclesComponent {
       return nombre.toLowerCase().includes(texto)
     })
   })
-
-  constructor(){
-    effect(() => console.log(this.listaVehiculos()))
-  }
 
   buscar() {
     this.filtro.set(this.form.value.nombre!)

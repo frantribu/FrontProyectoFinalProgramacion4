@@ -28,11 +28,11 @@ export class VehiculoService {
       motos: this.getMotos()
     }).pipe(
       map(resultados => {
-        const autosConTipo: VehiculoPolimorfico[] = resultados.autos.map(auto => ({
+        const autosConTipo: VehiculoPolimorfico[] = resultados.autos.filter(v=>!v.vendido).map(auto => ({
           ...auto,
           tipoVehiculo: 'Auto' as const
         }));
-        const motosConTipo: VehiculoPolimorfico[] = resultados.motos.map(moto => ({
+        const motosConTipo: VehiculoPolimorfico[] = resultados.motos.filter(v=>!v.vendido).map(moto => ({
           ...moto,
           tipoVehiculo: 'Moto' as const
         }));
