@@ -1,7 +1,9 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { User } from '../../../Core/Models/User';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
 import { Router } from '@angular/router';
+import { RolesService } from '../../../Core/Services/RolService/roles.service';
+import { Rol } from '../../../Core/Models/Rol';
 
 @Component({
   selector: 'app-card-user',
@@ -12,6 +14,7 @@ import { Router } from '@angular/router';
 export class CardUserComponent {
   user = input<User>()
   service = inject(UserServiceService)
+  rolService=inject(RolesService)
   route = inject(Router)
 
   delete() {
@@ -32,8 +35,9 @@ export class CardUserComponent {
   }
 
   asignRole() {
-    let role: string
 
+    let role: string
+    
     if (this.user()?.idRol == 1) {
       role = "ADMIN"
     } else if (this.user()?.idRol == 2) {
@@ -47,5 +51,9 @@ export class CardUserComponent {
     }
 
     return role
+  }
+
+  verDetalleUser(){
+    this.route.navigate([`usuarios/detalle/${this.user()?.id}`])
   }
 }

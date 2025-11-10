@@ -50,4 +50,7 @@ export class ListVehiclesComponent {
     this.listaVehiculos =  signal(nuevaLista);
   }
 
+  volver(){
+    this.router.navigate([''])
+  }
 }

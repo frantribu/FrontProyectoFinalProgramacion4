@@ -176,4 +176,8 @@ export class CreateVehicleComponent implements OnDestroy {
   tipoDeFormulario() {
     return this.tipo() === "Auto" ? this.formularioCrearAuto : this.formularioCrearMoto
   }
+
+  volver(){
+    this.router.navigate([''])
+  }
 }
