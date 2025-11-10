@@ -56,6 +56,7 @@ export class UserServiceService {
   }
 
   cerrarSesion() {
-    localStorage.removeItem("usuarioLogueado")
+    localStorage.removeItem("usuarioLogueado");
+    this.route.navigate(['login'])
   }
 }
