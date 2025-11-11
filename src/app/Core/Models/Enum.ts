@@ -3,7 +3,7 @@
  * Ejemplo: Role, Combustion, TipoAuto, etc.
  */
 export interface LookupItem {
-    id: string;
+    id: number;
     name: string;
   }
   
