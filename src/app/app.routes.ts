@@ -4,9 +4,9 @@ export const routes: Routes = [
 
     //HOME
     { path: "", redirectTo: "home", pathMatch: "full" },
-    { path : "home", loadComponent : () => import("./Pages/Home/home-component/home-component.component").then(c => c.HomeComponentComponent)},
+    { path: "home", loadComponent: () => import("./Pages/Home/home-component/home-component.component").then(c => c.HomeComponentComponent) },
 
-    
+
     { path: "login", loadComponent: () => import("./Pages/login/login.component").then(c => c.LoginComponent) },
 
     //VEHICULOS
@@ -19,8 +19,14 @@ export const routes: Routes = [
 
     //USERS
     { path: "usuarios", loadComponent: () => import("./Pages/User/list-users/list-users.component").then(c => c.ListUsersComponent) },
-    {path:"usuarios/detalle/:id", loadComponent:()=>import("./Pages/User/detalle-user/detalle-user.component").then(c=>c.DetalleUserComponent)},
+    { path: "usuarios/detalle/:id", loadComponent: () => import("./Pages/User/detalle-user/detalle-user.component").then(c => c.DetalleUserComponent) },
     { path: "usuarios/modificar/:id", loadComponent: () => import("./Pages/User/modify-user/modify-user.component").then(c => c.ModifyUserComponent) },
     { path: "usuarios/agregar", loadComponent: () => import("./Pages/User/create-user/create-user.component").then(c => c.CreateUserComponent) },
+
+    //HISTORIAL DE VENTAS
+    { path: "historialDeVentas", loadComponent: () => import("./Pages/Ventas/list-historial-de-ventas/list-historial-de-ventas.component").then(c => c.ListHistorialDeVentasComponent)},
+    { path: "historialDeVentas/agregar", loadComponent: () => import("./Pages/Ventas/create-historialDeVentas/ventas.component").then(c => c.CreateVentaComponent)},
+
     { path: "**", redirectTo: "home", pathMatch: "full" }
+
 ];

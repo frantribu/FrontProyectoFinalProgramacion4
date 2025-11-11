@@ -1,0 +1,45 @@
+<section class="form-container">
+    <form [formGroup]="form" (submit)="enviarVenta()">
+        <div class="vehiculo_container">
+            <label for="input_vehiculo">Vehiculo</label>
+            <select name="vehiculo" id="select-vehiculo" formControlName="idVehiculo">
+                <option disabled>--- Seleccione una opción ---</option>
+                @if (vehiculos()) {
+                @for (vehiculo of vehiculos(); track vehiculo.id) {
+                <option [value]="vehiculo.id">{{vehiculo.marca}} {{vehiculo.modelo}} | {{vehiculo.patente}}</option>
+                }
+                }@else {
+                <option disabled>Cargando vehiculos...</option>
+                }
+
+            </select>
+        </div>
+
+        <div>
+            <label for="input_cliente">Cliente</label>
+            <input type="text" placeholder="Buscar cliente" [value]="busqueda()" (input)="busqueda.set($any($event.target).value)">
+             
+            <select name="cliente" id="select-cliente" formControlName="idCliente">
+                <option disabled>--- Selecione una opción ---</option>
+
+                @if (clientesFiltrados()) {
+                @for (cliente of clientesFiltrados(); track cliente.id) {
+                <option [value]="cliente.id">{{cliente.nombre}} {{cliente.apellido}} | {{cliente.dni}}</option>
+                }
+                }@else {
+                <option disabled>Cargando clientes...</option>
+                }
+
+            </select>
+        </div>
+
+        <div>
+            <label for="input_precio">Precio de venta</label>
+            <input type="number" formControlName="precioVenta">
+        </div>
+
+        <div>
+            <button type="submit" [disabled]="form.invalid">Vender</button>
+        </div>
+    </form>
+</section>

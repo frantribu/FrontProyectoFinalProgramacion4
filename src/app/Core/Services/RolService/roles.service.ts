@@ -14,6 +14,7 @@ export class RolesService {
   }
 
   getRoleById(id:number){
-    return this.http.get<Role>(`http://localhost:3000/roles/${id}`)
+    return this.http.get<Role>(`${this.url}/${id}`)
   }
+
 }

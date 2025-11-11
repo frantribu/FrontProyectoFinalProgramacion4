@@ -5,7 +5,7 @@
       "dni": 12345611,
       "nombre": "Admin",
       "apellido": "tribu",
-      "idRol": "1",
+      "idRol": 1,
       "email": "admin@miempresa.com",
       "contrasenia": "Hashedpassword123",
       "isLogged": false
@@ -14,7 +14,16 @@
       "id": "b6a2",
       "nombre": "franco",
       "apellido": "tribu",
-      "idRol": "2",
+      "idRol": 2,
+      "email": "franco@miempresa.com",
+      "dni": 12345678,
+      "isLogged": false
+    },
+    {
+      "id": "b2a6",
+      "nombre": "franco",
+      "apellido": "tribu",
+      "idRol": 4,
       "email": "franco@miempresa.com",
       "dni": 12345678,
       "isLogged": false
@@ -69,100 +78,107 @@
   ],
   "motos": [],
   "talleres": [],
-  "historiales": [],
-  "historialesVenta": [],
+  "historialesVenta": [
+    {
+      "id": "e045",
+      "vehiculo": "9788",
+      "cliente": "b2a6",
+      "precioVenta": 10000,
+      "fechaVenta": "2025-11-11"
+    }
+  ],
   "historialesTaller": [],
   "roles": [
     {
-      "id": "1",
+      "id": 1,
       "name": "ADMIN"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "EMPLEADO"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "ENCARGADO TALLER"
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "CLIENTE"
     }
   ],
   "combustiones": [
     {
-      "id": "1",
+      "id": 1,
       "name": "NAFTA"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "DIESEL"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "ELECTRICO"
     }
   ],
   "tiposAuto": [
     {
-      "id": "1",
+      "id": 1,
       "name": "SEDAN"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "HATCHBACK"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "COUPE"
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "SUV"
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "FURGON"
     }
   ],
   "tiposMoto": [
     {
-      "id": "1",
+      "id": 1,
       "name": "URBANA"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "DEPORTIVAS"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "TURISMO"
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "OFF-ROAD"
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "ESPECIALES"
     }
   ],
   "especialidades": [
     {
-      "id": "1",
+      "id": 1,
       "name": "GENERAL"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "MOTORISTA"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "CHAPA_Y_PINTURA"
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "ELECTRICISTA"
     }
   ]

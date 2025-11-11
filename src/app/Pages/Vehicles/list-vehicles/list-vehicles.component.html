@@ -5,10 +5,7 @@
     
     <h2>Lista de Vehiculos</h2>
 
-    <form [formGroup]="form" (submit)="buscar()">
-        <input type="text" formControlName="nombre" placeholder="Ingrese el nombre del auto">
-        <button type="submit"><i class="fas fa-search"></i></button>
-    </form>
+    <input type="text" [value]="filtro()" (input)="filtro.set($any($event.target).value)" placeholder="Ingrese el nombre del auto" >
 
     <div id="grilla">
         @for (vehiculoV of vehiculosFiltrados(); track vehiculoV.id) {
