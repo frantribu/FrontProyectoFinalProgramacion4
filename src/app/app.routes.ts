@@ -2,6 +2,9 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     {path:"login", loadComponent:()=>import("./Pages/login/login.component").then(c=>c.LoginComponent)},
+
+    //PERFIL
+    {path: "perfil", loadComponent:()=>import("./Pages/Profile/profile/profile.component").then(c => c.ProfileComponent )},
     
     //TALLER
     {path:"taller/agregar", loadComponent:()=>import("./Pages/Taller/create-taller/create-taller").then(c=>c.CreateTaller)},

@@ -4,7 +4,7 @@
             "dni": 12345611,
             "nombre": "Admin",
             "apellido": "tribu",
-            "idRol": "1",
+            "idRol": 1,
             "email": "admin@miempresa.com",
             "contrasenia": "Hashedpassword123",
             "isLogged": false
@@ -13,53 +13,85 @@
             "id": "b6a2",
             "nombre": "franco",
             "apellido": "tribu",
-            "idRol": "2",
+            "idRol": 2,
+            "email": "franco@miempresa.com",
+            "dni": 12345678,
+            "isLogged": false
+        },
+        {
+            "id": "b2a6",
+            "nombre": "franco",
+            "apellido": "tribu",
+            "idRol": 4,
             "email": "franco@miempresa.com",
             "dni": 12345678,
             "isLogged": false
         }
     ],
-    "Vehiculo": [],
-    "Taller": [{
-        "id": "1",
-        "Especialidad": "GENERAL",
-        "NombreTaller": "Gonzalito Taller",
-        "Encargado": "",
-        "Vehiculo": [{
-            "id": "V-12345",
-            "patente": "ABC-123",
-            "marca": "Toyota",
-            "modelo": "Corolla",
-            "precio": 15500.75,
-            "color": "Gris Plata",
-            "año": 2021,
-            "kilometraje": 35000,
-            "motor": "1.8L VVT-i",
-            "idCombustion": 1,
-            "descripcion": "Sedán de bajo consumo, excelente estado, service al día.",
-            "fechaIngreso": "2024-10-25",
+    "autos": [{
+            "id": "9788",
+            "patente": "ABC123",
+            "marca": "Fiat",
+            "modelo": "Palio",
+            "precio": 5000,
+            "color": "rojo",
+            "anio": 2018,
+            "kilometros": 200000,
+            "motor": "1.4",
+            "idCombustion": 2,
+            "descripcion": "Auto medio pelo",
+            "puertas": 3,
+            "potencia": 100,
+            "idTipoCarroceria": "2",
+            "rutasImagen": [
+                "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp",
+                "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
+            ],
+            "fechaIngreso": "2025-11-10",
             "enReparacion": false,
             "vendido": false
-        }],
-        "Direccion": "25 de Mayo"
-    }],
-    "Historial": [],
-    "HistorialVenta": [],
-    "HistorialTaller": [],
-    "Role": [{
-            "id": "1",
+        },
+        {
+            "id": "19a7",
+            "patente": "AH999ZZ",
+            "marca": "Audi",
+            "modelo": "Rs6",
+            "precio": 50000,
+            "color": "Gris oscuro",
+            "anio": 2025,
+            "kilometros": 0,
+            "motor": "3.0",
+            "idCombustion": 1,
+            "descripcion": "Pfff....",
+            "puertas": 3,
+            "potencia": 400,
+            "idTipoCarroceria": "2",
+            "rutasImagen": [
+                "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
+            ],
+            "fechaIngreso": "2025-11-10",
+            "enReparacion": false,
+            "vendido": false
+        }
+    ],
+    "motos": [],
+    "talleres": [],
+    "historialesVenta": [],
+    "historialesTaller": [],
+    "roles": [{
+            "id": 1,
             "name": "ADMIN"
         },
         {
-            "id": "2",
+            "id": 2,
             "name": "EMPLEADO"
         },
         {
-            "id": "3",
+            "id": 3,
             "name": "ENCARGADO TALLER"
         },
         {
-            "id": "4",
+            "id": 4,
             "name": "CLIENTE"
         }
     ],

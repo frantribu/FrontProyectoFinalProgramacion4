@@ -1,11 +1,11 @@
-.div-nav{
+.div-nav {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
-button{
+button {
     background-color: transparent;
     width: 50px;
     border: none;
@@ -13,48 +13,53 @@ button{
     border-radius: 50px;
 }
 
-button img{
+button img {
     width: 100%;
 }
 
 img {
-  width: 6%;
+    width: 6%;
 }
 
-.div-menu{
+.div-menu {
     position: absolute;
     right: 15px;
     background-color: whitesmoke;
-    width:200px;
+    width: 200px;
     padding: 10px 0;
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-ul{
+ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-li{
+li {
     padding: 10px 20px;
     transition: all 0.3s ease;
     color: rgb(43, 43, 43);
     cursor: pointer;
 }
 
-li:hover{
+li:hover {
     background-color: rgb(226, 226, 226);
 }
 
+a {
+    display: block;
+    text-decoration: none;
+    color: rgb(43, 43, 43);
+}
+
 @media (max-width:768px) {
-    img{
+    img {
         width: 25%;
     }
-
-    button img{
+    button img {
         width: 80%;
     }
 }
