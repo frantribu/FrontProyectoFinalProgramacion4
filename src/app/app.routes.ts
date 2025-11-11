@@ -25,7 +25,7 @@ export const routes: Routes = [
 
     //HISTORIAL DE VENTAS
     { path: "historialDeVentas", loadComponent: () => import("./Pages/Ventas/list-historial-de-ventas/list-historial-de-ventas.component").then(c => c.ListHistorialDeVentasComponent)},
-    { path: "historialDeVentas/agregar", loadComponent: () => import("./Pages/Ventas/create-historialDeVentas/ventas.component").then(c => c.CreateVentaComponent)},
+    { path: "vender", loadComponent: () => import("./Pages/Ventas/create-historialDeVentas/ventas.component").then(c => c.CreateVentaComponent)},
 
     { path: "**", redirectTo: "home", pathMatch: "full" }
 

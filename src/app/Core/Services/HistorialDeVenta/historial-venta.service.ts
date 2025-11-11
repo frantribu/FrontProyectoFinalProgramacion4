@@ -5,7 +5,7 @@ import { HistorialDeVentas } from '../../Models/HistorialDeVentas';
 @Injectable({
   providedIn: 'root'
 })
-export class AltaDeVentaService {
+export class HistorialDeVentaService {
   http=inject(HttpClient)
   URL="http://localhost:3000/historialesVenta"
 

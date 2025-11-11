@@ -1,0 +1,11 @@
+<div>
+    <h3>{{historialDeVenta()?.fechaVenta}}</h3>
+    <p>${{historialDeVenta()?.precioVenta}}</p>
+
+    @if (vehiculo()) {
+    <p>{{vehiculo()?.marca}}</p>
+    }@else {
+        <p>Cargando el vehiculo...</p>
+    }
+
+</div>

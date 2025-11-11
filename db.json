@@ -51,7 +51,8 @@
       ],
       "fechaIngreso": "2025-11-10",
       "enReparacion": false,
-      "vendido": false
+      "vendido": true,
+      "tipoVehiculo": "Auto"
     },
     {
       "id": "19a7",
@@ -73,15 +74,23 @@
       ],
       "fechaIngreso": "2025-11-10",
       "enReparacion": false,
-      "vendido": false
+      "vendido": true,
+      "tipoVehiculo": "Auto"
     }
   ],
   "motos": [],
   "talleres": [],
   "historialesVenta": [
     {
-      "id": "e045",
+      "id": "7bb1",
       "vehiculo": "9788",
+      "cliente": "b2a6",
+      "precioVenta": 10000,
+      "fechaVenta": "2025-11-11"
+    },
+    {
+      "id": "ef7e",
+      "vehiculo": "19a7",
       "cliente": "b2a6",
       "precioVenta": 10000,
       "fechaVenta": "2025-11-11"
