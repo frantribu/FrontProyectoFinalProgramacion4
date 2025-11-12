@@ -11,7 +11,7 @@ import { CardVehiculoComponent } from '../../../Shared/Components/card-vehiculo/
   styleUrl: './list-vehicles.component.css'
 })
 
-export class ListVehiclesComponent {
+export class ListVehiclesComponent{
   vehiculoService = inject(VehiculoService);
   router = inject(Router)
 

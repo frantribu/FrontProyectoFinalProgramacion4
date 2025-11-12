@@ -2,10 +2,11 @@ import { Component, computed, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HistorialDeVentas } from '../../../Core/Models/HistorialDeVentas';
 import { Router } from '@angular/router';
-import { VehiculoPolimorfico, VehiculoService } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
+import { VehiculoService } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
 import { HistorialDeVentaService } from '../../../Core/Services/HistorialDeVenta/historial-venta.service';
+import { User } from '../../../Core/Models/User';
 
 @Component({
   selector: 'app-ventas',
@@ -23,10 +24,10 @@ export class CreateVentaComponent {
   rolIdCliente = 4
 
   vehiculos = toSignal(this.vehiculoService.getVehiculos(), { initialValue: [] })
-
   clientes = toSignal(this.userService.getClientes(this.rolIdCliente))
 
   busqueda = signal("")
+  menuAbierto=false
 
   clientesFiltrados = computed(() => {
     const filtro = this.busqueda().toLowerCase();
@@ -53,12 +54,22 @@ export class CreateVentaComponent {
         this.vehiculoService.getVehiculoById(venta.vehiculo!).subscribe({
           next: (vehiculo) => this.vehiculoService.vehiculoVendido(vehiculo).subscribe({
             next: () => this.router.navigate(['historialDeVentas']),
-            error:(err)=>console.log("Error al cambiar el estado de vendido del vehiculo ", err)
+            error: (err) => console.log("Error al cambiar el estado de vendido del vehiculo ", err)
           }),
-          error:(err)=>console.log("Error al obtener el vehiculo ", err)
-      })
-    },
-    error:(err)=>console.log("Error al cargar la venta ", err)
-  })
-}
+          error: (err) => console.log("Error al obtener el vehiculo ", err)
+        })
+      },
+      error: (err) => console.log("Error al cargar la venta ", err)
+    })
+  }
+
+  seleccionarCliente(cliente:User) {
+    this.form.get("idCliente")?.setValue(cliente.id)
+    this.busqueda.set(`${cliente.nombre} ${cliente.apellido} | ${cliente.dni}`)
+  }
+
+  toggleMenu(){
+    this.menuAbierto=!this.menuAbierto
+  }
+
 }

@@ -74,7 +74,7 @@
       ],
       "fechaIngreso": "2025-11-10",
       "enReparacion": false,
-      "vendido": true,
+      "vendido": false,
       "tipoVehiculo": "Auto"
     }
   ],
@@ -82,17 +82,10 @@
   "talleres": [],
   "historialesVenta": [
     {
-      "id": "7bb1",
+      "id": "1757",
       "vehiculo": "9788",
       "cliente": "b2a6",
-      "precioVenta": 10000,
-      "fechaVenta": "2025-11-11"
-    },
-    {
-      "id": "ef7e",
-      "vehiculo": "19a7",
-      "cliente": "b2a6",
-      "precioVenta": 10000,
+      "precioVenta": 0,
       "fechaVenta": "2025-11-11"
     }
   ],

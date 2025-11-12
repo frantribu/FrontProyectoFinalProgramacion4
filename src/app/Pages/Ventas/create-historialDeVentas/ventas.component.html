@@ -1,5 +1,5 @@
-<section class="form-container">
-    <form [formGroup]="form" (submit)="enviarVenta()">
+<section>
+    <form [formGroup]="form" (submit)="enviarVenta()" class="form-container">
         <div class="vehiculo_container">
             <label for="input_vehiculo">Vehiculo</label>
             <select name="vehiculo" id="select-vehiculo" formControlName="idVehiculo">
@@ -16,26 +16,42 @@
         </div>
 
         <div>
-            <label for="input_cliente">Cliente</label>
-            <input type="text" placeholder="Buscar cliente" [value]="busqueda()" (input)="busqueda.set($any($event.target).value)">
-             
-            <select name="cliente" id="select-cliente" formControlName="idCliente">
-                <option disabled>--- Selecione una opción ---</option>
+            <div class="input-con-flecha">
+                <label for="input_cliente">Cliente</label>
+                <div class="div-input-cliente">
+                    <input type="text" placeholder="Buscar cliente" [value]="busqueda()"
+                        (input)="busqueda.set($any($event.target).value)" >
 
+                    <svg (click)="toggleMenu()" class="flecha" [class.abierto]="!menuAbierto" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+
+            </div>
+
+            @if(menuAbierto){
+            <div class="menuAbierto">
                 @if (clientesFiltrados()) {
-                @for (cliente of clientesFiltrados(); track cliente.id) {
-                <option [value]="cliente.id">{{cliente.nombre}} {{cliente.apellido}} | {{cliente.dni}}</option>
-                }
-                }@else {
+                <ul>
+                    @for (cliente of clientesFiltrados(); track cliente.id) {
+                    <li (click)="seleccionarCliente(cliente)">
+                        <span>{{cliente.nombre}} {{cliente.apellido}} | {{cliente.dni}}</span>
+                    </li>
+                    }
+                </ul>
+                }@else{
                 <option disabled>Cargando clientes...</option>
                 }
+            </div>
+            }
 
-            </select>
         </div>
 
         <div>
             <label for="input_precio">Precio de venta</label>
-            <input type="number" formControlName="precioVenta">
+            <input type="number" formControlName="precioVenta" (click)="menuAbierto=false">
         </div>
 
         <div>
