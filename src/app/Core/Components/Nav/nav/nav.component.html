@@ -1,0 +1,19 @@
+<nav>
+    <div class="div-nav">
+        <img src="assets/logo.png" alt="logoConcesionaria">
+
+        @if (userService.obtenerUsuarioEnSesion()) {
+        <button (click)="toggleMenu()"><img src="assets/perfil.png" alt="logoPerfil"></button>
+        }
+    </div>
+
+    @if(menuOpen){
+    <div class="div-menu">
+        <ul>
+            <li><a routerLink=""></a>Mi perfil</li>
+            <li (click)="userService.cerrarSesion(); toggleMenu()">Cerrar sesion</li>
+        </ul>
+    </div>
+    }
+
+</nav>

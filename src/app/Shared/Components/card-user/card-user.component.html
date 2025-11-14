@@ -1,0 +1,11 @@
+<div (click)="verDetalleUser()" class="card_user">
+    <div class="div-detalles">
+        <h2>{{user()?.apellido}} {{user()?.nombre}}</h2>
+        <p>{{asignRole()}}</p>
+    </div>
+
+    <div class="div-botones">
+        <button (click)="modifyUser(); $event.stopPropagation()" class="buttonModificar"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button (click)="delete(); $event.stopPropagation()" class="buttonEliminar"><i class="fa-solid fa-trash"></i></button>
+    </div>
+</div>

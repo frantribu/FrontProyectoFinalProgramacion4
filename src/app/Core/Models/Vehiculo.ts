@@ -1,19 +1,22 @@
 export interface Vehiculo {
-    id : string;
-    patente: string;
-    marca: string;
-    modelo: string;
-    precio: number; 
-    color: string;
-    año: number;
-    kilometraje: number; 
-    motor: string;
-    idCombustion: number;
-    descripcion: string;
-    fechaIngreso: string; 
-    enReparacion: boolean;
-    vendido: boolean;
-  }
+  id : string;
+  patente: string;
+  marca: string;
+  modelo: string;
+  precio: number; // long
+  color: string;
+  anio: number; // long
+  kilometros: number; // long
+  motor: string;
+  rutasImagen: string[];
+  
+  idCombustion: number; // long - Clave foránea al 'Combustion.id'
+  
+  descripcion: string;
+  fechaIngreso: string; // LocalDate -> string (ISO 8601)
+  enReparacion: boolean;
+  vendido: boolean;
+}
   /**
    * 3.2 Interfaz Específica: Auto
    * Extiende Vehiculo y usa idTipoCarroceria

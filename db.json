@@ -1,136 +1,162 @@
 {
-  "Usuario": [
-    {
-      "id": "1",
-      "nombre": "Admin",
-      "apellido": "User",
-      "idRol": 1,
-      "email": "admin@miempresa.com",
-      "password": "Hashedpassword123",
-      "isLogged": false
-    }
-  ],
-  "Vehiculo": [],
-  "Taller": [{
-    "id": "1",
-    "Especialidad": "GENERAL",
-    "NombreTaller": "Gonzalito Taller",
-    "Encargado": "",
-    "Vehiculo": [
-      {
-        "id": "V-12345",
-        "patente": "ABC-123",
-        "marca": "Toyota",
-        "modelo": "Corolla",
-        "precio": 15500.75,
-        "color": "Gris Plata",
-        "año": 2021,
-        "kilometraje": 35000,
-        "motor": "1.8L VVT-i",
-        "idCombustion": 1,
-        "descripcion": "Sedán de bajo consumo, excelente estado, service al día.",
-        "fechaIngreso": "2024-10-25",
-        "enReparacion": false,
-        "vendido": false
-      }
+    "usuarios": [{
+            "id": "1",
+            "dni": 12345611,
+            "nombre": "Admin",
+            "apellido": "tribu",
+            "idRol": "1",
+            "email": "admin@miempresa.com",
+            "contrasenia": "Hashedpassword123",
+            "isLogged": false
+        },
+        {
+            "id": "b6a2",
+            "nombre": "franco",
+            "apellido": "tribu",
+            "idRol": "2",
+            "email": "franco@miempresa.com",
+            "dni": 12345678,
+            "isLogged": false
+        }
     ],
-    "Direccion": "25 de Mayo"
-  }],
-  "Historial": [],
-  "HistorialVenta": [],
-  "HistorialTaller": [],
-  "Role": [
-    {
-      "id": "1",
-      "name": "ADMIN"
-    },
-    {
-      "id": "2",
-      "name": "EMPLEADO"
-    },
-    {
-      "id": "3",
-      "name": "ENCARGADO TALLER"
-    },
-    {
-      "id": "4",
-      "name": "CLIENTE"
-    }
-  ],
-  "Combustion": [
-    {
-      "id": "1",
-      "name": "NAFTA"
-    },
-    {
-      "id": "2",
-      "name": "DIESEL"
-    },
-    {
-      "id": "3",
-      "name": "ELECTRICO"
-    }
-  ],
-  "TipoAuto": [
-    {
-      "id": "1",
-      "name": "SEDAN"
-    },
-    {
-      "id": "2",
-      "name": "HATCHBACK"
-    },
-    {
-      "id": "3",
-      "name": "COUPE"
-    },
-    {
-      "id": "4",
-      "name": "SUV"
-    },
-    {
-      "id": "5",
-      "name": "FURGON"
-    }
-  ],
-  "TipoMoto": [
-    {
-      "id": "1",
-      "name": "URBANA"
-    },
-    {
-      "id": "2",
-      "name": "DEPORTIVAS"
-    },
-    {
-      "id": "3",
-      "name": "TURISMO"
-    },
-    {
-      "id": "4",
-      "name": "OFF-ROAD"
-    },
-    {
-      "id": "5",
-      "name": "ESPECIALES"
-    }
-  ],
-  "Especialidad": [
-    {
-      "id": "1",
-      "name": "GENERAL"
-    },
-    {
-      "id": "2",
-      "name": "MOTORISTA"
-    },
-    {
-      "id": "3",
-      "name": "CHAPA_Y_PINTURA"
-    },
-    {
-      "id": "4",
-      "name": "ELECTRICISTA"
-    }
-  ]
+    "autos": [{
+            "id": "9788",
+            "patente": "ABC123",
+            "marca": "Fiat",
+            "modelo": "Palio",
+            "precio": 5000,
+            "color": "rojo",
+            "anio": 2018,
+            "kilometros": 200000,
+            "motor": "1.4",
+            "idCombustion": 2,
+            "descripcion": "Auto medio pelo",
+            "puertas": 3,
+            "potencia": 100,
+            "idTipoCarroceria": "2",
+            "rutasImagen": [
+                "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp",
+                "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
+            ],
+            "fechaIngreso": "2025-11-10",
+            "enReparacion": false,
+            "vendido": false
+        },
+        {
+            "id": "19a7",
+            "patente": "AH999ZZ",
+            "marca": "Audi",
+            "modelo": "Rs6",
+            "precio": 50000,
+            "color": "Gris oscuro",
+            "anio": 2025,
+            "kilometros": 0,
+            "motor": "3.0",
+            "idCombustion": 1,
+            "descripcion": "Pfff....",
+            "puertas": 3,
+            "potencia": 400,
+            "idTipoCarroceria": "2",
+            "rutasImagen": [
+                "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
+            ],
+            "fechaIngreso": "2025-11-10",
+            "enReparacion": false,
+            "vendido": false
+        }
+    ],
+    "motos": [],
+    "talleres": [],
+    "historiales": [],
+    "historialesVenta": [],
+    "historialesTaller": [],
+    "roles": [{
+            "id": "1",
+            "name": "ADMIN"
+        },
+        {
+            "id": "2",
+            "name": "EMPLEADO"
+        },
+        {
+            "id": "3",
+            "name": "ENCARGADO TALLER"
+        },
+        {
+            "id": "4",
+            "name": "CLIENTE"
+        }
+    ],
+    "combustiones": [{
+            "id": "1",
+            "name": "NAFTA"
+        },
+        {
+            "id": "2",
+            "name": "DIESEL"
+        },
+        {
+            "id": "3",
+            "name": "ELECTRICO"
+        }
+    ],
+    "tiposAuto": [{
+            "id": "1",
+            "name": "SEDAN"
+        },
+        {
+            "id": "2",
+            "name": "HATCHBACK"
+        },
+        {
+            "id": "3",
+            "name": "COUPE"
+        },
+        {
+            "id": "4",
+            "name": "SUV"
+        },
+        {
+            "id": "5",
+            "name": "FURGON"
+        }
+    ],
+    "tiposMoto": [{
+            "id": "1",
+            "name": "URBANA"
+        },
+        {
+            "id": "2",
+            "name": "DEPORTIVAS"
+        },
+        {
+            "id": "3",
+            "name": "TURISMO"
+        },
+        {
+            "id": "4",
+            "name": "OFF-ROAD"
+        },
+        {
+            "id": "5",
+            "name": "ESPECIALES"
+        }
+    ],
+    "especialidades": [{
+            "id": "1",
+            "name": "GENERAL"
+        },
+        {
+            "id": "2",
+            "name": "MOTORISTA"
+        },
+        {
+            "id": "3",
+            "name": "CHAPA_Y_PINTURA"
+        },
+        {
+            "id": "4",
+            "name": "ELECTRICISTA"
+        }
+    ]
 }
