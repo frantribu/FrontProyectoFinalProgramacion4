@@ -1,0 +1,8 @@
+<section>
+
+    @for (client of clientes(); track client.id) {
+    <app-card-client [cliente]="client"></app-card-client>
+    }
+
+
+</section>

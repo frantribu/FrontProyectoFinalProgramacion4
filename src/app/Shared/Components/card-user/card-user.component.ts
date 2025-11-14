@@ -3,7 +3,6 @@ import { User } from '../../../Core/Models/User';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
 import { Router } from '@angular/router';
 import { RolesService } from '../../../Core/Services/RolService/roles.service';
-import { Rol } from '../../../Core/Models/Rol';
 
 @Component({
   selector: 'app-card-user',

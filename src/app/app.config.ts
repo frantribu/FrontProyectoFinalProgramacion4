@@ -4,12 +4,16 @@ import { routes } from './app.routes';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { UserServiceService } from './Core/Services/UserService/user-service.service';
 import { TallerServiceService } from './Core/Services/Taller/TallerService/taller-service.service';
+import { ClientService } from './Core/Services/ClientService/client.service';
+import { RolesService } from './Core/Services/RolService/roles.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes), 
     provideHttpClient(withFetch()),
   { provide: UserServiceService },
-  { provide: TallerServiceService}
+  { provide: TallerServiceService},
+  { provide: ClientService },
+  { provide: RolesService }
   ]
 };

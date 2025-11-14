@@ -25,10 +25,16 @@ export const routes: Routes = [
     { path: "vehiculos/detalleAuto/:id", loadComponent: () => import("./Pages/Vehicles/Car/detalle-auto/detalle-auto.component").then(c => c.DetalleAutoComponent) },
     { path: "vehiculos/agregar", loadComponent: () => import("./Pages/Vehicles/create-vehicle-component/create-car-component.component").then(c => c.CreateVehicleComponent) },
 
+    //CLIENTS (PRUEBA)
+    { path: "clientes", loadComponent: () => import("./Pages/Client/list-clients/client.component").then(c => c.ClientComponent) },
+    
+
     //USERS
     { path: "usuarios", loadComponent: () => import("./Pages/User/list-users/list-users.component").then(c => c.ListUsersComponent) },
     {path:"usuarios/detalle/:id", loadComponent:()=>import("./Pages/User/detalle-user/detalle-user.component").then(c=>c.DetalleUserComponent)},
     { path: "usuarios/modificar/:id", loadComponent: () => import("./Pages/User/modify-user/modify-user.component").then(c => c.ModifyUserComponent) },
     { path: "usuarios/agregar", loadComponent: () => import("./Pages/User/create-user/create-user.component").then(c => c.CreateUserComponent) },
     { path: "**", redirectTo: "home", pathMatch: "full" }
+
+    
 ];
