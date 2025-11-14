@@ -18,7 +18,7 @@
       </div>
       <div class="password_container">
         <label for="password">Contraseña</label>
-        <input type="text" formControlName="password" />
+        <input type="password" formControlName="password" />
 
         @if (formLogin.get("password")?.hasError('required') &&
         formLogin.get("password")?.touched) {

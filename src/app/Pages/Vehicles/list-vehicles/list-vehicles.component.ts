@@ -1,5 +1,4 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { VehiculoService } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
 import { Router } from "@angular/router";
 import { CardVehiculoComponent } from '../../../Shared/Components/card-vehiculo/card-vehiculo.component';
@@ -15,9 +14,13 @@ export class ListVehiclesComponent{
   vehiculoService = inject(VehiculoService);
   router = inject(Router)
 
-  listaVehiculos = toSignal(this.vehiculoService.getVehiculos(), { initialValue: [] })
+  listaVehiculos = signal<any[]>([])
 
   filtro = signal("")
+
+  constructor(){
+    this.cargarVehiculo()
+  }
 
   vehiculosFiltrados = computed(() => {
     const texto = this.filtro().toLowerCase();
@@ -25,9 +28,14 @@ export class ListVehiclesComponent{
     return this.listaVehiculos().filter(v => `${v.marca} ${v.modelo} ${v.anio}`.toLowerCase().includes(texto))
   })
 
-  eliminarVehiculoLista(id: string) {
-    const nuevaLista = this.listaVehiculos().filter(v => v.id != id);
-    this.listaVehiculos = signal(nuevaLista);
+  cargarVehiculo(){
+    this.vehiculoService.getVehiculos().subscribe({
+      next:(ve)=>this.listaVehiculos.set(ve)
+    })
+  } 
+  
+  eliminarVehiculoLista() {
+    this.cargarVehiculo()
   }
 
   volver() {

@@ -6,13 +6,13 @@
   <div class="div-buscador">
     <h2>Lista de Vehiculos</h2>
 
-    <input type="text" (input)="filtro.set($any($event.target).value)" placeholder="Ingrese el nombre del auto">
+    <input type="text" (input)="filtro.set($any($event.target).value)" placeholder="Buscar...">
 
   </div>
 
   <div id="grilla">
     @for (vehiculoV of vehiculosFiltrados(); track vehiculoV.id) {
-    <app-card-vehiculo [vehiculo]="vehiculoV" (vehiculoEliminado)="eliminarVehiculoLista($event)"></app-card-vehiculo>
+    <app-card-vehiculo [vehiculo]="vehiculoV" (vehiculoEliminado)="eliminarVehiculoLista()"></app-card-vehiculo>
     }
   </div>
 

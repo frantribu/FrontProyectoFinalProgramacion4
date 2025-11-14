@@ -43,7 +43,7 @@ export class CardVehiculoComponent {
       if (this.vehiculo().tipoVehiculo === "Moto") {
         this.motoService.deleteMoto(this.vehiculo().id).subscribe({
           next: () => {
-            console.log("Vehiculo eliminado con exito")
+            this.vehiculoEliminado.emit(this.vehiculo().id)
           },
           error: (err) => console.log("Error al eliminar el vehiculo ", err)
         })

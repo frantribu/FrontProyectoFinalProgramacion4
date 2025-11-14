@@ -51,6 +51,7 @@ select {
     padding: 5px 30px 5px 5px;
     background-color: #D8C8B6;
     transition: all 0.3s ease;
+    -moz-appearance: textfield;
 }
 
 option {

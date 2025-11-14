@@ -4,10 +4,11 @@ import { UserServiceService } from '../../Services/UserService/user-service.serv
 import { RolesService } from '../../Services/RolService/roles.service';
 import { map } from 'rxjs';
 
-export const adminGuardGuard: CanActivateFn = (route, state) => {
+export const tallerGuardGuard: CanActivateFn = (route, state) => {
   const router=inject(Router)
   const userService=inject(UserServiceService)
   const rolService=inject(RolesService)
+
   const user=userService.obtenerUsuarioEnSesion()
 
   if(!user){
@@ -15,6 +16,6 @@ export const adminGuardGuard: CanActivateFn = (route, state) => {
   }
 
   return rolService.getRoleById(user.idRol).pipe(
-    map((r)=>r.name==="ADMIN" ? true : router.createUrlTree(['home']))
-  )
+    map((r)=>r.name==="ENCARGADO TALLER"?true:false)
+  );
 };

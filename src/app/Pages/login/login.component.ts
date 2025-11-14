@@ -29,7 +29,6 @@ export class LoginComponent {
         if(user.length===0){
           this.mensaje="Contraseña o email incorrecto"
         }else if(user[0].contrasenia===password){
-          this.usuarioService.updateIsLogged(user[0])
           this.usuarioService.guardarUsuarioEnSesion(user[0])
           this.router.navigate(['home'])
         }else{

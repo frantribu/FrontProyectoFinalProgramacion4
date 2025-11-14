@@ -17,7 +17,4 @@ export class DetalleMotoComponent {
 
   moto = toSignal(this.motoService.getMotoById(this.id!))
 
-  mostrar() {
-    console.log(this.moto()?.rutasImagen);
-  }
 }
