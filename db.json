@@ -30,11 +30,11 @@
     },
     {
       "id": "168a",
-      "nombre": "gonzalo",
+      "nombre": "Gonzalo",
       "apellido": "Diaz",
-      "idRol": "4",
-      "email": "gonzalo.diaz91218@miempresa.com",
-      "dni": 12345678,
+      "idRol": 4,
+      "email": "gonzalito@miempresa.com",
+      "dni": 45612378,
       "isLogged": false
     }
   ],

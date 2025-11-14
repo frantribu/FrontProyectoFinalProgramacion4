@@ -1,4 +1,8 @@
-<section>
-    <p>{{cliente()?.nombre}} {{cliente()?.apellido}}</p>
-
-</section>
+<div class="card_client">
+    <div class="div-detalles">
+        <h2>{{cliente()?.nombre}} {{cliente()?.apellido}}</h2>
+    </div>
+    <div class="div-botones">
+        <button (click)="modificar()" class="buttonModificar"><i class="fa-solid fa-pen-to-square"></i></button>
+    </div>
+</div>

@@ -1,5 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { User } from '../../../../Core/Models/User';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-client',
@@ -9,4 +10,9 @@ import { User } from '../../../../Core/Models/User';
 })
 export class CardClientComponent {
   cliente = input<User>()
+  route = inject(Router)
+
+  modificar(){
+    this.route.navigate([`clientes/modificar/${this.cliente()?.id}`])
+  }
 }

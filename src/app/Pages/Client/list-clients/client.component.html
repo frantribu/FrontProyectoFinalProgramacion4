@@ -1,8 +1,9 @@
 <section>
+    <div id="grilla">
 
-    @for (client of clientes(); track client.id) {
-    <app-card-client [cliente]="client"></app-card-client>
-    }
+        @for (client of clientes(); track client.id) {
+        <app-card-client [cliente]="client"></app-card-client>
+        }
 
-
+    </div>
 </section>

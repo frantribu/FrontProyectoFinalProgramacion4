@@ -25,9 +25,10 @@ export const routes: Routes = [
     { path: "vehiculos/detalleAuto/:id", loadComponent: () => import("./Pages/Vehicles/Car/detalle-auto/detalle-auto.component").then(c => c.DetalleAutoComponent) },
     { path: "vehiculos/agregar", loadComponent: () => import("./Pages/Vehicles/create-vehicle-component/create-car-component.component").then(c => c.CreateVehicleComponent) },
 
-    //CLIENTS (PRUEBA)
+    //CLIENTES
     { path: "clientes", loadComponent: () => import("./Pages/Client/list-clients/client.component").then(c => c.ClientComponent) },
-    
+    { path: "clientes/agregar", loadComponent: () => import("./Pages/Client/create-client/create-client.component").then(c => c.CreateClientComponent) },
+    { path: "clientes/modificar/:id", loadComponent: () => import("./Pages/Client/modify-client/modify-client.component").then(c => c.ModifyClientComponent) },
 
     //USERS
     { path: "usuarios", loadComponent: () => import("./Pages/User/list-users/list-users.component").then(c => c.ListUsersComponent) },

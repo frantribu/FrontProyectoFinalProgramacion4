@@ -20,6 +20,16 @@ export class ClientService {
     }));
   }
 
+  postClient(client: Partial<User>){
+    return this.http.post<User>(this.url, client)
+  }
+
+  patchClient(id: string, cliente: Partial<User>) {
+    return this.http.patch(`${this.url}/${id}`, cliente)
+  }
+
+
+
 
 
 
