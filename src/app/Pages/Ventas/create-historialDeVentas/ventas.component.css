@@ -57,15 +57,19 @@ option {
     background-color: whitesmoke;
 }
 
-.div-input-cliente {
+.div-input {
     background-color: #D8C8B6;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
 
+.input-menu-abierto{
+    border-radius: 5px 5px 0 0;
+}
+
 input:focus,
 select:focus,
-.div-input-cliente:focus {
+.div-input:focus {
     outline: 2px solid #CC7F6A;
     background-color: #F5F5DC;
 }
@@ -82,10 +86,14 @@ select:focus,
 .menuAbierto {
     background-color: whitesmoke;
     border-radius: 0 0 8px 8px;
+    max-height: 11vh;
+    overflow: hidden;
 }
 
 .menuAbierto ul {
     list-style: none;
+    max-height: 11vh;
+    overflow-y: auto;
 }
 
 .menuAbierto ul li {

@@ -1,49 +1,70 @@
 <section>
     <form [formGroup]="form" (submit)="enviarVenta()" class="form-container">
-        <div class="vehiculo_container">
-            <label for="input_vehiculo">Vehiculo</label>
-            <select name="vehiculo" id="select-vehiculo" formControlName="idVehiculo">
-                <option disabled>--- Seleccione una opción ---</option>
-                @if (vehiculos()) {
-                @for (vehiculo of vehiculos(); track vehiculo.id) {
-                <option [value]="vehiculo.id">{{vehiculo.marca}} {{vehiculo.modelo}} | {{vehiculo.patente}}</option>
-                }
-                }@else {
-                <option disabled>Cargando vehiculos...</option>
-                }
-
-            </select>
-        </div>
-
         <div>
             <div class="input-con-flecha">
-                <label for="input_cliente">Cliente</label>
-                <div class="div-input-cliente">
-                    <input type="text" placeholder="Buscar cliente" [value]="busqueda()"
-                        (input)="busqueda.set($any($event.target).value)" >
+                <label for="input_vehiculo">Vehiculo</label>
+                <div class="div-input" [class.input-menu-abierto]="menuAbiertoVehiculo">
+                    <input type="text" placeholder="Buscar vehiculo" [value]="busquedaVehiculo()"
+                        (input)="busquedaVehiculo.set($any($event.target).value)" (click)="toggleMenu('vehiculo')">
 
-                    <svg (click)="toggleMenu()" class="flecha" [class.abierto]="!menuAbierto" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"
-                        stroke-linejoin="round">
+                    <svg (click)="toggleMenu('vehiculo')" class="flecha"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black"
+                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </div>
 
             </div>
 
-            @if(menuAbierto){
+            @if(menuAbiertoVehiculo){
             <div class="menuAbierto">
-                @if (clientesFiltrados()) {
                 <ul>
+                    @if (vehiculosFiltrados().length) {
+                    @for (vehiculo of vehiculosFiltrados(); track vehiculo.id) {
+                    <li (click)="seleccionarVehiculo(vehiculo)" (click)="toggleMenu('vehiculo')">
+                        <span>{{vehiculo.marca}} {{vehiculo.modelo}} | {{vehiculo.patente}}</span>
+                    </li>
+                    }
+                    }@else{
+                    <li><span>No hay vehiculos...</span></li>
+                    }
+                </ul>
+
+            </div>
+            }
+
+        </div>
+        <div>
+            <div class="input-con-flecha">
+                <label for="input_cliente">Cliente</label>
+                <div class="div-input"  [class.input-menu-abierto]="menuAbiertoCliente">
+                    <input type="text" placeholder="Buscar cliente" [value]="busquedaCliente()"
+                        (input)="busquedaCliente.set($any($event.target).value)" (click)="toggleMenu('cliente')">
+
+                    <svg (click)="toggleMenu('cliente')" class="flecha"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black"
+                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+
+            </div>
+
+            @if(menuAbiertoCliente){
+            <div class="menuAbierto">
+                <ul>
+                    <li><span>Agregar cliente +</span></li>
+                    @if (clientesFiltrados()?.length) {
                     @for (cliente of clientesFiltrados(); track cliente.id) {
-                    <li (click)="seleccionarCliente(cliente)">
+                    <li (click)="seleccionarCliente(cliente)" (click)="toggleMenu('cliente')">
                         <span>{{cliente.nombre}} {{cliente.apellido}} | {{cliente.dni}}</span>
                     </li>
                     }
+                    }@else{
+                    <li><span>No hay clientes...</span></li>
+                    }
                 </ul>
-                }@else{
-                <option disabled>Cargando clientes...</option>
-                }
+
             </div>
             }
 
@@ -51,7 +72,7 @@
 
         <div>
             <label for="input_precio">Precio de venta</label>
-            <input type="number" formControlName="precioVenta" (click)="menuAbierto=false">
+            <input type="number" formControlName="precioVenta" (click)="menuAbiertoCliente=false; menuAbiertoVehiculo=false">
         </div>
 
         <div>

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { adminGuardGuard } from './Core/Guards/AdminGuard/admin-guard.guard';
 
 export const routes: Routes = [
 
@@ -18,10 +19,10 @@ export const routes: Routes = [
     { path: "vehiculos/agregar", loadComponent: () => import("./Pages/Vehicles/create-vehicle-component/create-car-component.component").then(c => c.CreateVehicleComponent) },
 
     //USERS
-    { path: "usuarios", loadComponent: () => import("./Pages/User/list-users/list-users.component").then(c => c.ListUsersComponent) },
-    { path: "usuarios/detalle/:id", loadComponent: () => import("./Pages/User/detalle-user/detalle-user.component").then(c => c.DetalleUserComponent) },
-    { path: "usuarios/modificar/:id", loadComponent: () => import("./Pages/User/modify-user/modify-user.component").then(c => c.ModifyUserComponent) },
-    { path: "usuarios/agregar", loadComponent: () => import("./Pages/User/create-user/create-user.component").then(c => c.CreateUserComponent) },
+    { path: "usuarios", canActivate:[adminGuardGuard], loadComponent: () => import("./Pages/User/list-users/list-users.component").then(c => c.ListUsersComponent) },
+    { path: "usuarios/detalle/:id", canActivate:[adminGuardGuard], loadComponent: () => import("./Pages/User/detalle-user/detalle-user.component").then(c => c.DetalleUserComponent) },
+    { path: "usuarios/modificar/:id", canActivate:[adminGuardGuard], loadComponent: () => import("./Pages/User/modify-user/modify-user.component").then(c => c.ModifyUserComponent) },
+    { path: "usuarios/agregar", canActivate:[adminGuardGuard], loadComponent: () => import("./Pages/User/create-user/create-user.component").then(c => c.CreateUserComponent) },
 
     //HISTORIAL DE VENTAS
     { path: "historialDeVentas", loadComponent: () => import("./Pages/Ventas/list-historial-de-ventas/list-historial-de-ventas.component").then(c => c.ListHistorialDeVentasComponent)},

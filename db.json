@@ -8,7 +8,7 @@
       "idRol": 1,
       "email": "admin@miempresa.com",
       "contrasenia": "Hashedpassword123",
-      "isLogged": false
+      "isLogged": true
     },
     {
       "id": "b6a2",
@@ -16,8 +16,9 @@
       "apellido": "tribu",
       "idRol": 2,
       "email": "franco@miempresa.com",
+      "contrasenia": "Hashedpassword123",
       "dni": 12345678,
-      "isLogged": false
+      "isLogged": true
     },
     {
       "id": "b2a6",
@@ -25,6 +26,7 @@
       "apellido": "tribu",
       "idRol": 4,
       "email": "franco@miempresa.com",
+      "contrasenia": "Hashedpassword123",
       "dni": 12345678,
       "isLogged": false
     }
@@ -51,7 +53,7 @@
       ],
       "fechaIngreso": "2025-11-10",
       "enReparacion": false,
-      "vendido": true,
+      "vendido": false,
       "tipoVehiculo": "Auto"
     },
     {
@@ -87,100 +89,114 @@
       "cliente": "b2a6",
       "precioVenta": 0,
       "fechaVenta": "2025-11-11"
+    },
+    {
+      "id": "3835",
+      "vehiculo": "19a7",
+      "cliente": "b2a6",
+      "precioVenta": 10000,
+      "fechaVenta": "2025-11-12"
+    },
+    {
+      "id": "7a43",
+      "vehiculo": "19a7",
+      "cliente": "b2a6",
+      "precioVenta": 1000,
+      "fechaVenta": "2025-11-13"
     }
   ],
   "historialesTaller": [],
   "roles": [
     {
-      "id": 1,
+      "id": "1",
       "name": "ADMIN"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "EMPLEADO"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "ENCARGADO TALLER"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "CLIENTE"
     }
   ],
   "combustiones": [
     {
-      "id": 1,
+      "id": "1",
       "name": "NAFTA"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "DIESEL"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "ELECTRICO"
     }
   ],
   "tiposAuto": [
     {
-      "id": 1,
+      "id": "1",
       "name": "SEDAN"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "HATCHBACK"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "COUPE"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "SUV"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "FURGON"
     }
   ],
   "tiposMoto": [
     {
-      "id": 1,
+      "id": "1",
       "name": "URBANA"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "DEPORTIVAS"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "TURISMO"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "OFF-ROAD"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "ESPECIALES"
     }
   ],
   "especialidades": [
     {
-      "id": 1,
+      "id": "1",
       "name": "GENERAL"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "MOTORISTA"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "CHAPA_Y_PINTURA"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "ELECTRICISTA"
     }
   ]

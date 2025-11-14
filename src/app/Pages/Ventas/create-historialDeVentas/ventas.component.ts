@@ -7,6 +7,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
 import { HistorialDeVentaService } from '../../../Core/Services/HistorialDeVenta/historial-venta.service';
 import { User } from '../../../Core/Models/User';
+import { Vehiculo } from '../../../Core/Models/Vehiculo';
 
 @Component({
   selector: 'app-ventas',
@@ -14,6 +15,7 @@ import { User } from '../../../Core/Models/User';
   templateUrl: './ventas.component.html',
   styleUrl: './ventas.component.css'
 })
+
 export class CreateVentaComponent {
   fb = inject(FormBuilder)
   altaDeVentaService = inject(HistorialDeVentaService)
@@ -26,11 +28,20 @@ export class CreateVentaComponent {
   vehiculos = toSignal(this.vehiculoService.getVehiculos(), { initialValue: [] })
   clientes = toSignal(this.userService.getClientes(this.rolIdCliente))
 
-  busqueda = signal("")
-  menuAbierto=false
+  busquedaVehiculo = signal("")
+  busquedaCliente = signal("")
+
+  menuAbiertoVehiculo = false
+  menuAbiertoCliente = false
+
+  vehiculosFiltrados = computed(() => {
+    const filtro = this.busquedaVehiculo().toLowerCase()
+
+    return this.vehiculos().filter(v => `${v.marca} ${v.modelo} ${v.anio}`.toLowerCase().includes(filtro))
+  })
 
   clientesFiltrados = computed(() => {
-    const filtro = this.busqueda().toLowerCase();
+    const filtro = this.busquedaCliente().toLowerCase();
 
     return this.clientes()?.filter(c => `${c.nombre} ${c.apellido} ${c.dni}`.toLowerCase().includes(filtro))
   })
@@ -63,13 +74,22 @@ export class CreateVentaComponent {
     })
   }
 
-  seleccionarCliente(cliente:User) {
-    this.form.get("idCliente")?.setValue(cliente.id)
-    this.busqueda.set(`${cliente.nombre} ${cliente.apellido} | ${cliente.dni}`)
+  toggleMenu(menu: 'vehiculo' | 'cliente') {
+    if (menu === "vehiculo") {
+      this.menuAbiertoVehiculo = !this.menuAbiertoVehiculo
+    } else{
+      this.menuAbiertoCliente = !this.menuAbiertoCliente
+    }
   }
 
-  toggleMenu(){
-    this.menuAbierto=!this.menuAbierto
+  seleccionarCliente(cliente: User) {
+    this.form.get("idCliente")?.setValue(cliente.id)
+    this.busquedaCliente.set(`${cliente.nombre} ${cliente.apellido} | ${cliente.dni}`)
+  }
+
+  seleccionarVehiculo(vehiculo: Vehiculo) {
+    this.form.get("idVehiculo")?.setValue(vehiculo.id)
+    this.busquedaVehiculo.set(`${vehiculo.marca} ${vehiculo.modelo} | ${vehiculo.patente}`)
   }
 
 }
