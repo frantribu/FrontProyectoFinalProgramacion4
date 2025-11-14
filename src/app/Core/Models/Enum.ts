@@ -13,4 +13,3 @@ export interface LookupItem {
   export interface TipoAuto extends LookupItem {}
   export interface TipoMoto extends LookupItem {}
   export interface Especialidad extends LookupItem {}
-  
