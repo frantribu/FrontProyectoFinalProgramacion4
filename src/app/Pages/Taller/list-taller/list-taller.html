@@ -1,0 +1,4 @@
+<h2>Lista de Talleres</h2>
+@for (item of talleres(); track item.id) {
+    <app-card-taller [taller]="item"></app-card-taller>
+}

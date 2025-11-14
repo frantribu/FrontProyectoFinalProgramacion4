@@ -1,13 +1,20 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
+    {path:"login", loadComponent:()=>import("./Pages/login/login.component").then(c=>c.LoginComponent)},
+
+    //PERFIL
+    {path: "perfil", loadComponent:()=>import("./Pages/Profile/profile/profile.component").then(c => c.ProfileComponent )},
+    
+    //TALLER
+    {path:"taller/agregar", loadComponent:()=>import("./Pages/Taller/create-taller/create-taller").then(c=>c.CreateTaller)},
+    {path:"taller/listar", loadComponent:()=>import("./Pages/Taller/list-taller/list-taller").then(c=>c.ListTaller)},
+    {path:"taller/listar/id", loadComponent:()=>import("./Pages/Taller/list-taller/list-taller").then(c=>c.ListTaller)},
+    {path:"taller/modificar/id", loadComponent:()=>import("./Pages/Taller/modificar-taller/modificar-taller").then(c=>c.ModificarTaller)},
 
     //HOME
     { path: "", redirectTo: "home", pathMatch: "full" },
     { path : "home", loadComponent : () => import("./Pages/Home/home-component/home-component.component").then(c => c.HomeComponentComponent)},
-
-    
-    { path: "login", loadComponent: () => import("./Pages/login/login.component").then(c => c.LoginComponent) },
 
     //VEHICULOS
     { path: "vehiculos", loadComponent: () => import("./Pages/Vehicles/list-vehicles/list-vehicles.component").then(c => c.ListVehiclesComponent) },

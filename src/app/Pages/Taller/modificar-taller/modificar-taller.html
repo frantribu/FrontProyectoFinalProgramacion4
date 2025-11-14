@@ -1,0 +1,24 @@
+<form [formGroup]="formulario" (ngSubmit)="modificar()">
+    <div>
+        <label for="input_nombre">Insgrese el nombre del taller</label>
+        <input formControlName="name" type="text" id="input_nombre">
+    </div>
+
+    <div>
+        <label for="input_nombre">Ingrese el nombre del encargado (ES UN EJEMPLO Y ESTA INCOMPLETO)</label>
+        <input formControlName="encargado" type="text" id="input_nombre">
+    </div>
+
+    <div>
+        <label for="input_nombre">Ingrese la direccion del taller</label>
+        <input formControlName="direccion" type="text" id="input_nombre">
+    </div>
+
+    <select name="" id="" formControlName="especialidad">
+        @for(especialidad of especialidades(); track especialidad.id){
+        <option [value]="especialidad.id">
+            {{especialidad.name}}
+        </option>
+        }
+    </select>
+</form>
