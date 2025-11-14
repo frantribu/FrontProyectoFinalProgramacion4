@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Especialidad } from '../../../Models/ENUM';
+import { Especialidad } from '../../../Models/Enum';
 
-import
+
 
 @Injectable({
   providedIn: 'root',
