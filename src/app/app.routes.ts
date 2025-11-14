@@ -4,6 +4,7 @@ import { loginGuardGuard } from './Core/Guards/LoginGuard/login-guard.guard';
 import { adminEmpleadoGuardGuard } from './Core/Guards/AdminEmpleadoGuard/admin-empleado-guard.guard';
 
 export const routes: Routes = [
+    {path:"", redirectTo:"home", pathMatch:"full"},
     { path: "login", loadComponent: () => import("./Pages/login/login.component").then(c => c.LoginComponent) },
 
     //HOME

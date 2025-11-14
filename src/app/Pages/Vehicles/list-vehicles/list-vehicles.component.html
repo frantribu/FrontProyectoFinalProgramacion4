@@ -15,13 +15,4 @@
     <app-card-vehiculo [vehiculo]="vehiculoV" (vehiculoEliminado)="eliminarVehiculoLista()"></app-card-vehiculo>
     }
   </div>
-
-  <div id="grilla">
-    @for (vehiculoV of vehiculosFiltrados(); track vehiculoV.id) {
-    <app-card-vehiculo
-      [vehiculo]="vehiculoV"
-      (vehiculoEliminado)="eliminarVehiculoLista()"
-    ></app-card-vehiculo>
-    }
-  </div>
 </section>

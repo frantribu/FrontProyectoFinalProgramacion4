@@ -4,8 +4,8 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EspecialidadService } from '../../../Core/Services/Taller/EspecialidadService/especialidad-service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Taller } from '../../../Core/Models/Taller';
-import { TallerServiceService } from '../../../Core/Services/TallerService/taller-service.service';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
+import { TallerServiceService } from '../../../Core/Services/Taller/TallerService/taller-service.service';
 @Component({
   selector: 'app-create-taller',
   imports: [ReactiveFormsModule],

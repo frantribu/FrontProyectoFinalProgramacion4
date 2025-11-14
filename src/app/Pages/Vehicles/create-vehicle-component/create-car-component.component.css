@@ -71,8 +71,7 @@ form {
 }
 
 .tipo_container button[type="button"]:hover {
-    transform: scale(1.01);
-    background-color: rgb(0, 129, 204);
+    transform: scale(1.02);
 }
 
 .input_container {
@@ -109,8 +108,8 @@ select {
     transition: all 0.3s ease;
 }
 
-input[type="number"]{
-    -moz-appearance: textfield;
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 select {
@@ -181,6 +180,9 @@ button[disabled] {
     color: #4B4B4B;
     cursor: not-allowed;
     opacity: 0.7;
+}
+.activado{
+    color: red;
 }
 
 @media (max-width:768px) {

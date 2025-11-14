@@ -16,7 +16,7 @@ export class LoginComponent {
   router=inject(Router)
 
   formLogin=this.fb.nonNullable.group({
-    email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@autonova\\.com$")]],
+    email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
     password:['', [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/)]]
   })
 

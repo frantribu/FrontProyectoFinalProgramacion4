@@ -48,7 +48,7 @@ export class ModifyUserComponent {
     name: [this.user()?.nombre, Validators.required],
     lastName: [this.user()?.apellido, Validators.required],
     rol: [this.user()?.idRol, Validators.required],
-    email: [this.user()?.email, [Validators.required, Validators.email]],
+    email: [this.user()?.email, [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
     dni: [this.user()?.dni, [Validators.required, Validators.min(10000000), Validators.max(99999999)]],
     contrasenia: [this.user()?.contrasenia, Validators.required]
   })

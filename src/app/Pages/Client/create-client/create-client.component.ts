@@ -18,7 +18,7 @@ export class CreateClientComponent {
   formularioClient = this.fb.nonNullable.group({
     nombre: ["", Validators.required],
     apellido: ["", Validators.required],
-    email: ["", [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@miempresa\.com$")]],
+    email: ["", [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
     dni: [0, [Validators.required, Validators.min(10000000), Validators.max(99999999)]]
   })
 

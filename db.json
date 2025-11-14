@@ -6,7 +6,7 @@
       "nombre": "Admin",
       "apellido": "tribu",
       "idRol": 1,
-      "email": "admin@miempresa.com",
+      "email": "admin@gmail.com",
       "contrasenia": "Hashedpassword123"
     },
     {
@@ -14,40 +14,35 @@
       "nombre": "franco",
       "apellido": "tribu",
       "idRol": 2,
-      "email": "franco@miempresa.com",
-      "contrasenia": "Hashedpassword123",
-      "dni": 12345678
-    },
-    {
-      "id": "b2a6",
-      "nombre": "franco",
-      "apellido": "tribu",
-      "idRol": 4,
-      "email": "franco@miempresa.com",
+      "email": "franco@gmail.com",
       "contrasenia": "Hashedpassword123",
       "dni": 12345678
     }
   ],
-  "autos": [{
-    "id": "auto-002",
-    "patente": "BBB222",
-    "marca": "Ford",
-    "modelo": "Focus",
-    "precio": 22000,
-    "color": "Azul",
-    "anio": 2020,
-    "kilometros": 30000,
-    "motor": "2.0L",
-    "rutasImagen": [],
-    "idCombustion": 1,
-    "descripcion": "Compacto versátil con buen rendimiento.",
-    "fechaIngreso": "2025-11-14",
-    "enReparacion": false,
-    "vendido": false,
-    "puertas": 4,
-    "potencia": 160,
-    "idTipoCarroceria": 1
-  }],
+  "autos": [
+    {
+      "id": "327e",
+      "patente": "ABC111",
+      "marca": "Fiat ",
+      "modelo": "palio",
+      "precio": 1999,
+      "color": "Gris oscuro",
+      "anio": 2011,
+      "kilometros": 999900,
+      "motor": "v10",
+      "idCombustion": "1",
+      "descripcion": "Cumple, las dos gomas de atras matadas, falta vtv",
+      "puertas": 3,
+      "potencia": 90,
+      "idTipoCarroceria": "1",
+      "fechaIngreso": "2025-11-14",
+      "enReparacion": false,
+      "rutasImagen": [
+        "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp"
+      ],
+      "vendido": false
+    }
+  ],
   "motos": [],
   "talleres": [],
   "historialesVenta": [],

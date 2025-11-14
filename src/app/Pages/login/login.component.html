@@ -11,7 +11,7 @@
         <small>El email es obligatorio</small>
         } @if (formLogin.get("email")?.hasError('pattern') &&
         formLogin.get("email")?.touched) {
-        <small>El correo debe ser de la empresa y terminar en autonova.com</small>
+        <small>El correo debe ser valido</small>
         }
       </div>
       <div class="password_container">

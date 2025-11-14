@@ -23,7 +23,7 @@ section {
   
   .div-info {
     flex: 1;
-    background: #fafafa;
+    background: rgb(255, 255, 255);
     border-radius: 12px;
     border: 1px solid #e0e0e0;
     padding: 20px;
@@ -70,6 +70,19 @@ section {
   .div-data{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background: rgb(255, 255, 255);
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    gap: 10px;
+  }
+
+  .div-data div{
+    border: 1px solid gainsboro;
+    border-radius: 12px;
+    padding-left: 30px;
+    padding-bottom: 10px;
   }
 
   @media (max-width: 768px) {

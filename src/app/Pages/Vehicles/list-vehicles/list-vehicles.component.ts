@@ -17,7 +17,7 @@ export class ListVehiclesComponent {
   listaVehiculos = signal<any[]>([]);
 
   constructor() {
-    this.cargarVehiculo()
+    this.cargarVehiculos()
   }
 
   cargarVehiculos(): void {
@@ -34,24 +34,15 @@ export class ListVehiclesComponent {
 
   filtro = signal("")
 
-
-
   vehiculosFiltrados = computed(() => {
     const texto = this.filtro().toLowerCase();
 
     return this.listaVehiculos().filter(v => `${v.marca} ${v.modelo} ${v.anio}`.toLowerCase().includes(texto))
   })
 
-  cargarVehiculo() {
-    this.vehiculoService.getVehiculos().subscribe({
-      next: (ve) => this.listaVehiculos.set(ve)
-    })
-  }
-
   eliminarVehiculoLista() {
-    this.cargarVehiculo()
+    this.cargarVehiculos()
   }
-
 
   volver() {
     this.router.navigate([''])
