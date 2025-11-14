@@ -4,7 +4,7 @@
             "dni": 12345611,
             "nombre": "Admin",
             "apellido": "tribu",
-            "idRol": 1,
+            "idRol": "1",
             "email": "admin@miempresa.com",
             "contrasenia": "Hashedpassword123",
             "isLogged": false
@@ -13,18 +13,27 @@
             "id": "b6a2",
             "nombre": "franco",
             "apellido": "tribu",
-            "idRol": 2,
+            "idRol": "2",
             "email": "franco@miempresa.com",
             "dni": 12345678,
             "isLogged": false
         },
         {
-            "id": "b2a6",
-            "nombre": "franco",
-            "apellido": "tribu",
+            "id": "097c",
+            "nombre": "gonzalo",
+            "apellido": "ezequiel",
+            "idRol": "4",
+            "email": "gonzalo.diaz91218@miempresa.com",
+            "dni": 46632709,
+            "isLogged": false
+        },
+        {
+            "id": "168a",
+            "nombre": "Gonzalo",
+            "apellido": "Diaz",
             "idRol": 4,
-            "email": "franco@miempresa.com",
-            "dni": 12345678,
+            "email": "gonzalito@miempresa.com",
+            "dni": 45612378,
             "isLogged": false
         }
     ],
@@ -76,22 +85,23 @@
     ],
     "motos": [],
     "talleres": [],
+    "historiales": [],
     "historialesVenta": [],
     "historialesTaller": [],
     "roles": [{
-            "id": 1,
+            "id": "1",
             "name": "ADMIN"
         },
         {
-            "id": 2,
+            "id": "2",
             "name": "EMPLEADO"
         },
         {
-            "id": 3,
+            "id": "3",
             "name": "ENCARGADO TALLER"
         },
         {
-            "id": 4,
+            "id": "4",
             "name": "CLIENTE"
         }
     ],
