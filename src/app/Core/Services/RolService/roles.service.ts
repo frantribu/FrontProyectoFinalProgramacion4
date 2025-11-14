@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Role } from '../../Models/ENUM';
+import { Role } from '../../Models/Enum';
 import { catchError, map, of } from 'rxjs';
 
 @Injectable({
