@@ -1,0 +1,34 @@
+<section>
+    <h2>Modificar Usuario</h2>
+    <form [formGroup]="formModifyUser" (submit)="modify()">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input formControlName="name" id="name" type="text">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Apellido</label>
+            <input formControlName="lastName" id="lastName" type="text">
+        </div>
+        <div class="form-group">
+            <label for="desplegable">Rol</label>
+            <select formControlName="rol" id="desplegable" name="desplegable">
+                <option disabled>--- Seleccione una opcion ---</option>
+                @for (rol of roles(); track rol.id) {
+                    <option [value]="rol.id">{{rol.name}}</option>
+                }
+                <option disabled>Cargando roles...</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input formControlName="email" id="email" type="email">
+        </div>
+        <div class="form-group">
+            <label for="dni">DNI</label>
+            <input formControlName="dni" id="dni" type="number" minlength="8" maxlength="8">
+        </div>
+        <div class="form-actions">
+            <button [disabled]="formModifyUser.invalid" type="submit">Modificar Usuario</button>
+        </div>
+    </form>
+</section>

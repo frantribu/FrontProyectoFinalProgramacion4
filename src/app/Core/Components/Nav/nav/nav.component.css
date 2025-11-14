@@ -1,0 +1,60 @@
+.div-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button{
+    background-color: transparent;
+    width: 50px;
+    border: none;
+    margin-right: 15px;
+    border-radius: 50px;
+}
+
+button img{
+    width: 100%;
+}
+
+img {
+  width: 6%;
+}
+
+.div-menu{
+    position: absolute;
+    right: 15px;
+    background-color: whitesmoke;
+    width:200px;
+    padding: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    color: rgb(43, 43, 43);
+    cursor: pointer;
+}
+
+li:hover{
+    background-color: rgb(226, 226, 226);
+}
+
+@media (max-width:768px) {
+    img{
+        width: 25%;
+    }
+
+    button img{
+        width: 80%;
+    }
+}

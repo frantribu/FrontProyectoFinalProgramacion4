@@ -1,0 +1,12 @@
+<section>
+    <button type="button" class="button_volver" (click)="volver()">
+        Atras
+    </button>
+
+    <div id="grilla">
+        @for (item of users(); track item.id) {
+        <app-card-user [user]="item"></app-card-user>
+        }
+    </div>
+
+</section>
