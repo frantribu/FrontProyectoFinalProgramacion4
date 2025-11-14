@@ -7,7 +7,7 @@ import { Especialidad } from '../../../Models/ENUM';
 })
 export class EspecialidadService {
   http = inject(HttpClient)
-  url = "http://localhost:3000/Especilidad"
+  url = "http://localhost:3000/especialidades"
 
   getEspecialidades(){
     return this.http.get<Especialidad[]>(this.url);

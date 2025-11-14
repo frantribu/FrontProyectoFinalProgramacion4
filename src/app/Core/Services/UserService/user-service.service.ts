@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { User } from '../../Models/User';
 import { Router } from '@angular/router';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,14 @@ export class UserServiceService {
 
   getUserById(id: string) {
     return this.http.get<User>(`${this.url}/${id}`)
+  }
+  
+  getUserByRole(idRole : number){
+    return this.getUsers().pipe(
+      map((users : User[]) => {
+        return users.filter(user => user.idRol == idRole)
+      })
+    )
   }
 
   updateIsLogged(user: User) {

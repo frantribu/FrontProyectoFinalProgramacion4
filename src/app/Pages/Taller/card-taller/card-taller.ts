@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Taller } from '../../../Core/Models/Taller';
 
 @Component({
   selector: 'app-card-taller',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './card-taller.css',
 })
 export class CardTaller {
-
+  taller = input.required<Taller>()
+  
 }
