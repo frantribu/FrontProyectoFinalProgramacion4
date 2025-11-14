@@ -24,7 +24,8 @@ export class CreateUserComponent {
     lastName: ["", Validators.required],
     rol: [null, Validators.required],
     email: ["", [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@miempresa\.com$")]],
-    dni: [0, [Validators.required, Validators.min(10000000), Validators.max(99999999)]]
+    dni: [0, [Validators.required, Validators.min(10000000), Validators.max(99999999)]],
+    contrasenia: ["", [Validators.required, Validators.minLength(6)]]
   })
 
   enviar() {
@@ -34,7 +35,8 @@ export class CreateUserComponent {
       idRol: this.formUser.value.rol!,
       email: this.formUser.value.email,
       dni: this.formUser.value.dni,
-      isLogged: false
+      isLogged: false,
+      contrasenia: this.formUser.value.contrasenia
     })
 
     this.service.postUser(user).subscribe({

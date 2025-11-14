@@ -37,6 +37,7 @@ export class ModifyUserComponent {
           rol: u.idRol,
           email: u.email,
           dni: u.dni,
+          contrasenia: u.contrasenia
         });
       }
     });
@@ -48,7 +49,8 @@ export class ModifyUserComponent {
     lastName: [this.user()?.apellido, Validators.required],
     rol: [this.user()?.idRol, Validators.required],
     email: [this.user()?.email, [Validators.required, Validators.email]],
-    dni: [this.user()?.dni, [Validators.required, Validators.min(10000000), Validators.max(99999999)]]
+    dni: [this.user()?.dni, [Validators.required, Validators.min(10000000), Validators.max(99999999)]],
+    contrasenia: [this.user()?.contrasenia, Validators.required]
   })
 
   modify() {
@@ -61,7 +63,7 @@ export class ModifyUserComponent {
         email: this.formModifyUser.value.email!,
         dni: this.formModifyUser.value.dni!,
         isLogged: user.isLogged,
-        contrasenia: user.contrasenia
+        contrasenia: this.formModifyUser.value.contrasenia!
       })
 
       this.service.patchUser(this.userId, userr).subscribe({

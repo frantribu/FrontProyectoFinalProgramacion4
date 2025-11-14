@@ -1,180 +1,197 @@
 {
-    "usuarios": [{
-            "id": "1",
-            "dni": 12345611,
-            "nombre": "Admin",
-            "apellido": "tribu",
-            "idRol": "1",
-            "email": "admin@miempresa.com",
-            "contrasenia": "Hashedpassword123",
-            "isLogged": false
-        },
-        {
-            "id": "b6a2",
-            "nombre": "franco",
-            "apellido": "tribu",
-            "idRol": "2",
-            "email": "franco@miempresa.com",
-            "dni": 12345678,
-            "isLogged": false
-        },
-        {
-            "id": "097c",
-            "nombre": "gonzalo",
-            "apellido": "ezequiel",
-            "idRol": "4",
-            "email": "gonzalo.diaz91218@miempresa.com",
-            "dni": 46632709,
-            "isLogged": false
-        },
-        {
-            "id": "168a",
-            "nombre": "Gonzalo",
-            "apellido": "Diaz",
-            "idRol": 4,
-            "email": "gonzalito@miempresa.com",
-            "dni": 45612378,
-            "isLogged": false
-        }
-    ],
-    "autos": [{
-            "id": "9788",
-            "patente": "ABC123",
-            "marca": "Fiat",
-            "modelo": "Palio",
-            "precio": 5000,
-            "color": "rojo",
-            "anio": 2018,
-            "kilometros": 200000,
-            "motor": "1.4",
-            "idCombustion": 2,
-            "descripcion": "Auto medio pelo",
-            "puertas": 3,
-            "potencia": 100,
-            "idTipoCarroceria": "2",
-            "rutasImagen": [
-                "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp",
-                "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
-            ],
-            "fechaIngreso": "2025-11-10",
-            "enReparacion": false,
-            "vendido": false
-        },
-        {
-            "id": "19a7",
-            "patente": "AH999ZZ",
-            "marca": "Audi",
-            "modelo": "Rs6",
-            "precio": 50000,
-            "color": "Gris oscuro",
-            "anio": 2025,
-            "kilometros": 0,
-            "motor": "3.0",
-            "idCombustion": 1,
-            "descripcion": "Pfff....",
-            "puertas": 3,
-            "potencia": 400,
-            "idTipoCarroceria": "2",
-            "rutasImagen": [
-                "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
-            ],
-            "fechaIngreso": "2025-11-10",
-            "enReparacion": false,
-            "vendido": false
-        }
-    ],
-    "motos": [],
-    "talleres": [],
-    "historiales": [],
-    "historialesVenta": [],
-    "historialesTaller": [],
-    "roles": [{
-            "id": "1",
-            "name": "ADMIN"
-        },
-        {
-            "id": "2",
-            "name": "EMPLEADO"
-        },
-        {
-            "id": "3",
-            "name": "ENCARGADO TALLER"
-        },
-        {
-            "id": "4",
-            "name": "CLIENTE"
-        }
-    ],
-    "combustiones": [{
-            "id": "1",
-            "name": "NAFTA"
-        },
-        {
-            "id": "2",
-            "name": "DIESEL"
-        },
-        {
-            "id": "3",
-            "name": "ELECTRICO"
-        }
-    ],
-    "tiposAuto": [{
-            "id": "1",
-            "name": "SEDAN"
-        },
-        {
-            "id": "2",
-            "name": "HATCHBACK"
-        },
-        {
-            "id": "3",
-            "name": "COUPE"
-        },
-        {
-            "id": "4",
-            "name": "SUV"
-        },
-        {
-            "id": "5",
-            "name": "FURGON"
-        }
-    ],
-    "tiposMoto": [{
-            "id": "1",
-            "name": "URBANA"
-        },
-        {
-            "id": "2",
-            "name": "DEPORTIVAS"
-        },
-        {
-            "id": "3",
-            "name": "TURISMO"
-        },
-        {
-            "id": "4",
-            "name": "OFF-ROAD"
-        },
-        {
-            "id": "5",
-            "name": "ESPECIALES"
-        }
-    ],
-    "especialidades": [{
-            "id": "1",
-            "name": "GENERAL"
-        },
-        {
-            "id": "2",
-            "name": "MOTORISTA"
-        },
-        {
-            "id": "3",
-            "name": "CHAPA_Y_PINTURA"
-        },
-        {
-            "id": "4",
-            "name": "ELECTRICISTA"
-        }
-    ]
+  "usuarios": [
+    {
+      "id": "1",
+      "dni": 12345611,
+      "nombre": "Admin",
+      "apellido": "tribu",
+      "idRol": "1",
+      "email": "admin@miempresa.com",
+      "contrasenia": "Hashedpassword123",
+      "isLogged": true
+    },
+    {
+      "id": "b6a2",
+      "nombre": "franco",
+      "apellido": "tribu",
+      "idRol": "2",
+      "email": "franco@miempresa.com",
+      "dni": 12345678,
+      "isLogged": false
+    },
+    {
+      "id": "097c",
+      "nombre": "gonzalo",
+      "apellido": "ezequiel",
+      "idRol": "4",
+      "email": "gonzalo.diaz91218@miempresa.com",
+      "dni": 46632709,
+      "isLogged": false
+    },
+    {
+      "id": "168a",
+      "nombre": "Gonzalo",
+      "apellido": "Diaz",
+      "idRol": 4,
+      "email": "gonzalito@miempresa.com",
+      "dni": 45612378,
+      "isLogged": false
+    },
+    {
+      "id": "5d4f",
+      "nombre": "leandro",
+      "apellido": "armagno",
+      "idRol": "3",
+      "email": "gonzalo.diaz91218@miempresa.com",
+      "dni": 78912345,
+      "isLogged": false,
+      "contrasenia": "Elcañon1"
+    }
+  ],
+  "autos": [
+    {
+      "id": "9788",
+      "patente": "ABC123",
+      "marca": "Fiat",
+      "modelo": "Palio",
+      "precio": 5000,
+      "color": "rojo",
+      "anio": 2018,
+      "kilometros": 200000,
+      "motor": "1.4",
+      "idCombustion": 2,
+      "descripcion": "Auto medio pelo",
+      "puertas": 3,
+      "potencia": 100,
+      "idTipoCarroceria": "2",
+      "rutasImagen": [
+        "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp",
+        "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
+      ],
+      "fechaIngreso": "2025-11-10",
+      "enReparacion": false,
+      "vendido": false
+    },
+    {
+      "id": "19a7",
+      "patente": "AH999ZZ",
+      "marca": "Audi",
+      "modelo": "Rs6",
+      "precio": 50000,
+      "color": "Gris oscuro",
+      "anio": 2025,
+      "kilometros": 0,
+      "motor": "3.0",
+      "idCombustion": 1,
+      "descripcion": "Pfff....",
+      "puertas": 3,
+      "potencia": 400,
+      "idTipoCarroceria": "2",
+      "rutasImagen": [
+        "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
+      ],
+      "fechaIngreso": "2025-11-10",
+      "enReparacion": false,
+      "vendido": false
+    }
+  ],
+  "motos": [],
+  "talleres": [],
+  "historiales": [],
+  "historialesVenta": [],
+  "historialesTaller": [],
+  "roles": [
+    {
+      "id": "1",
+      "name": "ADMIN"
+    },
+    {
+      "id": "2",
+      "name": "EMPLEADO"
+    },
+    {
+      "id": "3",
+      "name": "ENCARGADO TALLER"
+    },
+    {
+      "id": "4",
+      "name": "CLIENTE"
+    }
+  ],
+  "combustiones": [
+    {
+      "id": "1",
+      "name": "NAFTA"
+    },
+    {
+      "id": "2",
+      "name": "DIESEL"
+    },
+    {
+      "id": "3",
+      "name": "ELECTRICO"
+    }
+  ],
+  "tiposAuto": [
+    {
+      "id": "1",
+      "name": "SEDAN"
+    },
+    {
+      "id": "2",
+      "name": "HATCHBACK"
+    },
+    {
+      "id": "3",
+      "name": "COUPE"
+    },
+    {
+      "id": "4",
+      "name": "SUV"
+    },
+    {
+      "id": "5",
+      "name": "FURGON"
+    }
+  ],
+  "tiposMoto": [
+    {
+      "id": "1",
+      "name": "URBANA"
+    },
+    {
+      "id": "2",
+      "name": "DEPORTIVAS"
+    },
+    {
+      "id": "3",
+      "name": "TURISMO"
+    },
+    {
+      "id": "4",
+      "name": "OFF-ROAD"
+    },
+    {
+      "id": "5",
+      "name": "ESPECIALES"
+    }
+  ],
+  "especialidades": [
+    {
+      "id": "1",
+      "name": "GENERAL"
+    },
+    {
+      "id": "2",
+      "name": "MOTORISTA"
+    },
+    {
+      "id": "3",
+      "name": "CHAPA_Y_PINTURA"
+    },
+    {
+      "id": "4",
+      "name": "ELECTRICISTA"
+    }
+  ]
 }
