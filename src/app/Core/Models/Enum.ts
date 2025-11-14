@@ -3,11 +3,11 @@
  * Ejemplo: Role, Combustion, TipoAuto, etc.
  */
 export interface LookupItem {
-    id: string;
-    name: string;
-  }
-  
-  // Interfaces específicas (opcionales pero útiles para tipado)
+  id: string;
+  name: string;
+}
+
+// Interfaces específicas (opcionales pero útiles para tipado)
 export interface Role extends LookupItem { }
 export interface Combustion extends LookupItem { }
 export interface TipoAuto extends LookupItem { }
