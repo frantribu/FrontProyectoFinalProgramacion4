@@ -1,59 +1,53 @@
-# ProyectoFinalProgramacion4Angular
+AutoNova
+Sistema de gestión integral para concesionarias
+Descripción
+AutoNova es un sistema desarrollado para gestionar todas las operaciones de una concesionaria: vehículos, ventas, reparaciones, talleres, clientes y usuarios. 
+Brinda herramientas de administración completas, con pantallas claras, filtrados, historiales y operaciones de ABM.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+Tecnologías utilizadas
+Angular
+Node.js
+JSON Server (API Fake)
+Bootstrap
 
-## Development server
+Instalación y ejecución
+Instalar dependencias: npm install
+Iniciar el frontend: ng serve
+Instalar JSON Server: npm install json-server
+Ejecutar el servidor JSON: json-server --watch db.json --port 3000
 
-To start a local development server, run:
+Funcionalidades principales:
 
-```bash
-ng serve
-```
+Autenticación: 
+Iniciar sesión
+Cerrar sesión
+Visualizar perfil
+Vehículos:
+ABM de Vehículos
+Visualizar lista de vehículos
+Buscar vehículos
+Filtrar vehículos
+Actualizar estado del vehículo
+Alta de venta
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Taller y Reparaciones:
+ABM de Taller
+Visualizar historial de reparaciones
+Filtrar reparaciones por taller
+Visualizar historial propio
+Alta de reparación
+Ajustes en historial de reparaciones
+Usuarios y Clientes:
+ABM de Usuarios
+Visualizar usuarios
+ABM de Clientes
+Visualizar clientes
+Ventas:
+Visualizar historial de ventas de vehículos
+Integrantes:
+Triboulard Franco
+Armagno Fabricio
+Díaz Gonzalo
+Ciriaco Leandro
+Versión 1.0
