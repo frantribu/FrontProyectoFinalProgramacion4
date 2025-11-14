@@ -23,16 +23,24 @@
     <div class="div-info">
       <p>{{vehiculo.anio}} - {{vehiculo.kilometros}}Km</p>
       <h5>{{vehiculo.marca}} {{vehiculo.modelo}}</h5>
-      <h3>${{vehiculo.precio}}</h3>
+      <h3 class="price">${{vehiculo.precio}}</h3>
     </div>
   </div>
-  <div>
-    <h3>Caracteristicas</h3>
-    <p>Motor: {{vehiculo.motor}}</p>
-    <p>Color: {{vehiculo.color}}</p>
-    <p>Puertas: {{vehiculo.puertas}}</p>
-    <p>Potencia: {{vehiculo.potencia}}</p>
+  <div class="div-data">
+    <div>
+      <h3>Caracteristicas</h3>
+      <p>Motor: {{vehiculo.motor}}</p>
+      <p>Color: {{vehiculo.color}}</p>
+      <p>Puertas: {{vehiculo.puertas}}</p>
+      <p>Potencia: {{vehiculo.potencia}}</p>
+    </div>
+
+    <div>
+      <h3>Descripcion</h3>
+      <p>{{vehiculo.descripcion}}</p>
+    </div>
   </div>
+
 
   }@else {
   <p>Cargando detalles del vehículo...</p>

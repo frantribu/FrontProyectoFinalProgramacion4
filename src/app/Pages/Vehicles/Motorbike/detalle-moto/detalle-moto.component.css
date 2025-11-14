@@ -1,0 +1,103 @@
+section {
+    margin: 40px auto;
+    max-width: 1200px;
+    color: #333;
+  }
+  
+  .div-principal {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: none;
+  }
+  
+  .div-info {
+    flex: 1;
+    background: rgb(255, 255, 255);
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  
+  .div-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  
+  .div-info h5 {
+    font-size: 22px;
+    margin: 10px 0;
+    color: #222;
+  }
+  
+  .price {
+    font-size: 28px;
+    color: #007bff;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  .price{
+    border: none;
+  }
+
+  h3 {
+    margin-top: 25px;
+    font-size: 22px;
+    color: #444;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  p {
+    margin: 6px 0;
+    font-size: 15px;
+  }
+  
+  .div-data{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: rgb(255, 255, 255);
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    gap: 10px;
+  }
+
+  .div-data div{
+    border: 1px solid gainsboro;
+    border-radius: 12px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .div-principal {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .carousel-item img {
+      height: 40vh;
+    }
+  
+    .div-info {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+  

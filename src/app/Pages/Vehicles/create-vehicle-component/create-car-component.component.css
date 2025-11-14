@@ -109,6 +109,10 @@ select {
     transition: all 0.3s ease;
 }
 
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+
 select {
     padding: 13px;
 }

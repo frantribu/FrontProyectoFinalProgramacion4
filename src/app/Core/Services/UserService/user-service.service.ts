@@ -68,4 +68,9 @@ export class UserServiceService {
     localStorage.removeItem("usuarioLogueado");
     this.route.navigate(['login'])
   }
+
+  getClientes(idRol:number){
+    return this.http.get<User[]>(`${this.url}?idRol=${idRol}`)
+  }
+
 }

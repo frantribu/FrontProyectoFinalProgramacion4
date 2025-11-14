@@ -1,0 +1,5 @@
+<section>
+    @for (venta of ventas(); track venta.id) {
+        <app-card-venta [historialDeVenta]="venta"></app-card-venta>
+    }
+</section>

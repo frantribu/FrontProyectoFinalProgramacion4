@@ -11,7 +11,7 @@ export const loginGuardGuard: CanActivateFn = () => {
 
   if(!user){
     return router.createUrlTree(['login'])
-  }else{
-    return user.isLogged() ? true : router.createUrlTree(['login'])
   }
+  
+  return true
 }
