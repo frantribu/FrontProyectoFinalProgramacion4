@@ -20,8 +20,6 @@ export const routes: Routes = [
     { path: "taller/listar/id", loadComponent: () => import("./Pages/Taller/list-taller/list-taller").then(c => c.ListTaller) },
     { path: "taller/modificar/id", loadComponent: () => import("./Pages/Taller/modificar-taller/modificar-taller").then(c => c.ModificarTaller) },
 
-
-
     //VEHICULOS
     { path: "vehiculos", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Vehicles/list-vehicles/list-vehicles.component").then(c => c.ListVehiclesComponent) },
     { path: "vehiculos/modificarMoto/:id", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Vehicles/Motorbike/modificar-moto/modificar-moto.component").then(c => c.ModificarMotoComponent) },
