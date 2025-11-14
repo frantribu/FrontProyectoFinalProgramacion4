@@ -1,7 +1,5 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Taller } from '../../../Core/Models/Taller';
-import { Router } from '@angular/router';
-import { TallerServiceService } from '../../../Core/Services/Taller/TallerService/taller-service.service';
 
 @Component({
   selector: 'app-card-taller',
@@ -10,16 +8,6 @@ import { TallerServiceService } from '../../../Core/Services/Taller/TallerServic
   styleUrl: './card-taller.css',
 })
 export class CardTaller {
-  router = inject(Router)
-  taller = input<Taller>()
-  tallerService = inject(TallerServiceService)
+  taller = input.required<Taller>()
   
-
-  modificar(id:string){
-    this.router.navigate(["taller/modificar", id])
-  }
-
-  eliminar(){
-    this.tallerService.deleteTaller(this.taller()?.id!)
-  }
 }

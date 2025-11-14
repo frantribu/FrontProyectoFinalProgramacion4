@@ -7,9 +7,14 @@ import { Taller } from '../../Models/Taller';
 })
 export class TallerServiceService {
   http = inject(HttpClient)
+  url = "http://localhost:3000/talleres"
+
+  getTalleres(){
+    return this.http.get<Taller[]>(this.url)
+  }
   
   postTaller(taller:Partial<Taller>){
-    return this.http.post<Taller>("", taller)
+    return this.http.post<Taller>(this.url, taller)
   }
   
 }

@@ -17,7 +17,23 @@ export class ListVehiclesComponent {
   router = inject(Router)
   fb = inject(FormBuilder)
 
-  listaVehiculos = toSignal(this.vehiculoService.getVehiculos(), { initialValue: [] })
+  listaVehiculos = signal<any[]>([]);
+
+  constructor() {
+    this.cargarVehiculos();
+  }
+
+  cargarVehiculos(): void {
+    this.vehiculoService.getVehiculos().subscribe({
+      next: (data) => {
+        // Actualiza la Signal con el método .set()
+        this.listaVehiculos.set(data);
+      }, 
+      error: (err) => {
+        console.error("Error al cargar vehículos:", err);
+      }
+    });
+  }
 
   filtro = signal('')
 
@@ -39,12 +55,11 @@ export class ListVehiclesComponent {
     this.filtro.set(this.form.value.nombre!)
   }
 
-  eliminarVehiculoLista(id : string){
-    const nuevaLista = this.listaVehiculos().filter(v => v.id != id);
-    this.listaVehiculos =  signal(nuevaLista);
+  eliminarVehiculoLista() {
+    this.cargarVehiculos()
   }
 
-  volver(){
+  volver() {
     this.router.navigate([''])
   }
 }

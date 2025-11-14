@@ -2,12 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Especialidad } from '../../../Models/ENUM';
 
+import
+
 @Injectable({
   providedIn: 'root',
 })
 export class EspecialidadService {
   http = inject(HttpClient)
-  url = "http://localhost:3000/Especialidad"
+  url = "http://localhost:3000/especialidades"
 
   getEspecialidades(){
     return this.http.get<Especialidad[]>(this.url);
