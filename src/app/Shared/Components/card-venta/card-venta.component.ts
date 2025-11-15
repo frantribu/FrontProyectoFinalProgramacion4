@@ -28,6 +28,10 @@ export class CardVentaComponent {
     }
   })
   }
+
+  calcularGanancia(precioCompra:number, precioVenta:number){
+    return precioVenta-precioCompra;
+  }
   
 
 }

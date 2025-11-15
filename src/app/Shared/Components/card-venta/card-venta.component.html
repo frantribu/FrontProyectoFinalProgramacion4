@@ -1,10 +1,20 @@
-<div>
-    <h3>{{historialDeVenta()?.fechaVenta}}</h3>
-    <p>${{historialDeVenta()?.precioVenta}}</p>
-
+<div class="div-container">
     @if (vehiculo()) {
-    <p>{{vehiculo()?.marca}}</p>
+    <h2>{{vehiculo().marca}} {{vehiculo().modelo}}</h2>
     }@else {
-        <p>Cargando el vehiculo...</p>
+    <p>Cargando el vehiculo...</p>
+    }
+
+
+    <h3>{{historialDeVenta()?.fechaVenta}}</h3>
+    <p class="precioCompra">Precio de compra: ${{historialDeVenta()?.precioCompra}}</p>
+    <p class="precioVenta">Precio de venta: ${{historialDeVenta()?.precioVenta}}</p>
+
+    @if(historialDeVenta()){
+    <div class="ganancia">
+        <span>Ganancia:</span>
+        <strong> ${{calcularGanancia(historialDeVenta()?.precioCompra!,
+            historialDeVenta()?.precioVenta!)}}</strong>
+    </div>
     }
 </div>

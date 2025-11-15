@@ -1,13 +1,12 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HistorialDeVentas } from '../../../Core/Models/HistorialDeVentas';
-import { Router, } from '@angular/router';
+import { ActivatedRoute, Router, } from '@angular/router';
 import { VehiculoService } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
 import { HistorialDeVentaService } from '../../../Core/Services/HistorialDeVenta/historial-venta.service';
 import { User } from '../../../Core/Models/User';
-import { Vehiculo } from '../../../Core/Models/Vehiculo';
 import { ModalClienteComponent } from '../../../Shared/Components/modal-cliente/modal-cliente.component';
 
 @Component({
@@ -23,11 +22,14 @@ export class CreateVentaComponent {
   router = inject(Router)
   vehiculoService = inject(VehiculoService)
   userService = inject(UserServiceService)
+  activatedRouter=inject(ActivatedRoute)
 
   rolIdCliente = 4
 
-  vehiculos = toSignal(this.vehiculoService.getVehiculos(), { initialValue: [] })
   clientes = signal<User[]>([])
+
+  idVehiculo=this.activatedRouter.snapshot.paramMap.get("id")
+  vehiculo=toSignal(this.vehiculoService.getVehiculoById(this.idVehiculo!))
 
   constructor() {
     this.cargarClientes()
@@ -39,18 +41,12 @@ export class CreateVentaComponent {
     })
   }
 
-  busquedaVehiculo = signal("")
   busquedaCliente = signal("")
 
   menuAbiertoVehiculo = false
   menuAbiertoCliente = false
   mostrarMenuModal = signal(false)
 
-  vehiculosFiltrados = computed(() => {
-    const filtro = this.busquedaVehiculo().toLowerCase()
-
-    return this.vehiculos().filter(v => `${v.marca} ${v.modelo} ${v.anio}`.toLowerCase().includes(filtro))
-  })
 
   clientesFiltrados = computed(() => {
     const filtro = this.busquedaCliente().toLowerCase();
@@ -59,15 +55,16 @@ export class CreateVentaComponent {
   })
 
   form = this.fb.nonNullable.group({
-    idVehiculo: ['', [Validators.required]],
+    idVehiculo: [''],
     idCliente: ['', [Validators.required]],
     precioVenta: [0, [Validators.required]]
   })
 
   enviarVenta() {
     const venta: Partial<HistorialDeVentas> = {
-      vehiculo: this.form.value.idVehiculo,
+      vehiculo:this.idVehiculo!,
       cliente: this.form.value.idCliente,
+      precioCompra:this.vehiculo()?.precio,
       precioVenta: this.form.value.precioVenta,
       fechaVenta: new Date().toISOString().split('T')[0]
     }
@@ -97,11 +94,6 @@ export class CreateVentaComponent {
   seleccionarCliente(cliente: User) {
     this.form.get("idCliente")?.setValue(cliente.id)
     this.busquedaCliente.set(`${cliente.nombre} ${cliente.apellido} | ${cliente.dni}`)
-  }
-
-  seleccionarVehiculo(vehiculo: Vehiculo) {
-    this.form.get("idVehiculo")?.setValue(vehiculo.id)
-    this.busquedaVehiculo.set(`${vehiculo.marca} ${vehiculo.modelo} | ${vehiculo.patente}`)
   }
 
   abrirModalCliente() {

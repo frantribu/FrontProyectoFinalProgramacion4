@@ -1,37 +1,7 @@
 <section class="sectionVentas">
     <form [formGroup]="form" (submit)="enviarVenta()" class="form-container">
         <div>
-            <div class="input-con-flecha">
-                <label for="input_vehiculo">Vehiculo</label>
-                <div class="div-input" [class.input-menu-abierto]="menuAbiertoVehiculo">
-                    <input type="text" placeholder="Buscar vehiculo" [value]="busquedaVehiculo()"
-                        (input)="busquedaVehiculo.set($any($event.target).value)" (click)="toggleMenu('vehiculo')">
-
-                    <svg (click)="toggleMenu('vehiculo')" class="flecha" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </div>
-
-            </div>
-
-            @if(menuAbiertoVehiculo){
-            <div class="menuAbierto">
-                <ul>
-                    @if (vehiculosFiltrados().length) {
-                    @for (vehiculo of vehiculosFiltrados(); track vehiculo.id) {
-                    <li (click)="seleccionarVehiculo(vehiculo)" (click)="toggleMenu('vehiculo')">
-                        <span>{{vehiculo.marca}} {{vehiculo.modelo}} | {{vehiculo.patente}}</span>
-                    </li>
-                    }
-                    }@else{
-                    <li><span>No hay vehiculos...</span></li>
-                    }
-                </ul>
-
-            </div>
-            }
+        <input type="text" [value]="`${vehiculo()?.marca}${vehiculo()?.modelo} | ${vehiculo()?.patente}`" disabled>
 
         </div>
         <div>
@@ -63,10 +33,7 @@
                     }
                 </ul>
             </div>
-
-
             }
-
         </div>
 
         <div>
@@ -79,7 +46,7 @@
             <button type="submit" [disabled]="form.invalid">Vender</button>
         </div>
     </form>
-    
+
     @if(mostrarMenuModal()){
     <app-modal-cliente (clienteCreado)="agregarClienteALista($event)"
         (cerrarModal)="cerrarModalCliente()"></app-modal-cliente>

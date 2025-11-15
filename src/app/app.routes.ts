@@ -42,7 +42,6 @@ export const routes: Routes = [
 
     //HISTORIAL DE VENTAS
     { path: "historialDeVentas", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Ventas/list-historial-de-ventas/list-historial-de-ventas.component").then(c => c.ListHistorialDeVentasComponent) },
-    { path: "vender", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Ventas/create-historialDeVentas/ventas.component").then(c => c.CreateVentaComponent) },
     { path: "vender/:id", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Ventas/create-historialDeVentas/ventas.component").then(c => c.CreateVentaComponent) },
 
     { path: "**", redirectTo: "home", pathMatch: "full" }

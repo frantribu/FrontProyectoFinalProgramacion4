@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { HistorialDeVentaService } from '../../../Core/Services/HistorialDeVenta/historial-venta.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CardVentaComponent } from "../../../Shared/Components/card-venta/card-venta.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-historial-de-ventas',
@@ -11,6 +12,11 @@ import { CardVentaComponent } from "../../../Shared/Components/card-venta/card-v
 })
 export class ListHistorialDeVentasComponent {
   ventasService=inject(HistorialDeVentaService)
+  router=inject(Router)
 
   ventas=toSignal(this.ventasService.getHistorialDeVentas(), {initialValue:[]})
+
+  volver(){
+    this.router.navigate([''])
+  }
 }

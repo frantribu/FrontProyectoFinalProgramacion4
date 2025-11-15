@@ -1,5 +1,5 @@
 import { Component, effect, inject, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AutoService } from '../../../../Core/Services/Vehicle/Car/CarService/auto.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CombustionService } from '../../../../Core/Services/Vehicle/Combustion/combustion.service';
@@ -14,6 +14,7 @@ export class DetalleAutoComponent {
   activatedRouter = inject(ActivatedRoute);
   autoService = inject(AutoService)
   combustionService = inject(CombustionService)
+  router=inject(Router)
 
   id = this.activatedRouter.snapshot.paramMap.get('id')
 
@@ -21,5 +22,9 @@ export class DetalleAutoComponent {
 
   mostrar() {
     console.log(this.auto()?.rutasImagen);
+  }
+
+  vender(){
+    this.router.navigate([`vender/${this.id}`])
   }
 }

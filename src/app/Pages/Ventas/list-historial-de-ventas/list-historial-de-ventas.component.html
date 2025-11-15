@@ -1,5 +1,9 @@
 <section>
+    <button type="button" class="button_volver" (click)="volver()">Atras</button>
+
     @for (venta of ventas(); track venta.id) {
-        <app-card-venta [historialDeVenta]="venta"></app-card-venta>
+    <div class="grilla">
+        <app-card-venta [historialDeVenta]="venta" class="cardVenta"></app-card-venta>
+    </div>
     }
 </section>

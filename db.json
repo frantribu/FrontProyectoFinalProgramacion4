@@ -33,8 +33,7 @@
       "apellido": "tribu",
       "email": "franco21@gmail.com",
       "dni": 12345908,
-      "idRol": 4,
-      "isLogged": false
+      "idRol": 4
     }
   ],
   "autos": [
@@ -66,10 +65,11 @@
   "talleres": [],
   "historialesVenta": [
     {
-      "id": "4f02",
+      "id": "4d55",
       "vehiculo": "327e",
       "cliente": "f516",
-      "precioVenta": 1000,
+      "precioCompra": 1999,
+      "precioVenta": 11000,
       "fechaVenta": "2025-11-15"
     }
   ],

@@ -1,4 +1,33 @@
-section{
+section {
+    margin: 20px;
+}
+
+.button_volver {
+    align-self: flex-start;
+    background-color: transparent;
+    font-weight: 600;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.button_volver:hover {
+    background-color: white;
+    padding: 10px;
+}
+
+.grilla {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.cardVenta {
+    transition: all 0.3s ease;
+}
+
+.cardVenta:hover {
+    transform: scale(1.01);
 }
