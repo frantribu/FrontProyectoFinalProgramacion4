@@ -16,6 +16,6 @@ export class ListUsersComponent {
   users = toSignal(this.service.getUsers(), { initialValue: [] })
 
   volver(){
-   this.router.navigate([''])
+   this.router.navigate(["home"])
   }
 }

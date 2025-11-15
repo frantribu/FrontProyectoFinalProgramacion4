@@ -62,4 +62,8 @@ export class ModifyClientComponent {
 
     })
   }
+
+  volver(){
+    this.router.navigate(["clientes"])
+  }
 }

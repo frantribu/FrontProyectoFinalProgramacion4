@@ -8,7 +8,7 @@
       "idRol": "1",
       "email": "admin@miempresa.com",
       "contrasenia": "Hashedpassword123",
-      "isLogged": true
+      "isLogged": false
     },
     {
       "id": "b6a2",
@@ -36,16 +36,6 @@
       "email": "gonzalito@miempresa.com",
       "dni": 45612378,
       "isLogged": false
-    },
-    {
-      "id": "5d4f",
-      "nombre": "leandro",
-      "apellido": "armagno",
-      "idRol": "3",
-      "email": "gonzalo.diaz91218@miempresa.com",
-      "dni": 78912345,
-      "isLogged": false,
-      "contrasenia": "Elcañon1"
     }
   ],
   "autos": [

@@ -25,7 +25,7 @@ export class CreateUserComponent {
     rol: [null, Validators.required],
     email: ["", [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@miempresa\.com$")]],
     dni: [0, [Validators.required, Validators.min(10000000), Validators.max(99999999)]],
-    contrasenia: ["", [Validators.required, Validators.minLength(6)]]
+    contrasenia: ["", [Validators.required, Validators.minLength(7)]]
   })
 
   enviar() {
@@ -41,12 +41,16 @@ export class CreateUserComponent {
 
     this.service.postUser(user).subscribe({
       next: () => { 
-        console.log("Creado con exito") 
+        alert("Creado con exito") 
         this.router.navigate(["usuarios"])
       },
       error: (err) => console.log("Error al crear el usuario", err)
 
     })
+  }
+
+  volver(){
+    this.router.navigate(["home"])
   }
 
 }
