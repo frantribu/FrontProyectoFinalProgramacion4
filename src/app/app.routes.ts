@@ -30,9 +30,9 @@ export const routes: Routes = [
     { path: "vehiculos/agregar", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Vehicles/create-vehicle-component/create-car-component.component").then(c => c.CreateVehicleComponent) },
 
     //CLIENTES
-    { path: "clientes", loadComponent: () => import("./Pages/Client/list-clients/client.component").then(c => c.ClientComponent) },
-    { path: "clientes/agregar", loadComponent: () => import("./Pages/Client/create-client/create-client.component").then(c => c.CreateClientComponent) },
-    { path: "clientes/modificar/:id", loadComponent: () => import("./Pages/Client/modify-client/modify-client.component").then(c => c.ModifyClientComponent) },
+    { path: "clientes", canActivate:[loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Client/list-clients/client.component").then(c => c.ClientComponent) },
+    { path: "clientes/agregar", canActivate:[loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Client/create-client/create-client.component").then(c => c.CreateClientComponent) },
+    { path: "clientes/modificar/:id", canActivate:[loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Client/modify-client/modify-client.component").then(c => c.ModifyClientComponent) },
 
     //USERS
     { path: "usuarios", canActivate: [loginGuardGuard, adminGuardGuard], loadComponent: () => import("./Pages/User/list-users/list-users.component").then(c => c.ListUsersComponent) },

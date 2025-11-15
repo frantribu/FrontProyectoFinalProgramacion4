@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { User } from '../../Models/User';
 import { Router } from '@angular/router';
-import { map } from 'rxjs';
+import { map, switchMap } from 'rxjs';
+import { RolesService } from '../RolService/roles.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class UserServiceService {
   http = inject(HttpClient)
   private url = "http://localhost:3000/usuarios"
   route = inject(Router)
+  serviceRol = inject(RolesService)
 
   getUsers() {
     return this.http.get<User[]>(this.url)
@@ -69,8 +71,10 @@ export class UserServiceService {
     this.route.navigate(['login'])
   }
 
-  getClientes(idRol:number){
-    return this.http.get<User[]>(`${this.url}?idRol=${idRol}`)
-  }
-
+   getClientes() {
+      return this.serviceRol.getIdByRol("CLIENTE").pipe(
+        switchMap(objetoRol => { 
+        return this.http.get<User[]>(`${this.url}?idRol=${objetoRol!.id}`);
+      }));
+    }
 }

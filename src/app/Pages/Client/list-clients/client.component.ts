@@ -12,6 +12,4 @@ import { CardClientComponent } from '../../../Shared/Components/card-client/card
 export class ClientComponent {
   service = inject(ClientService)
   clientes = toSignal(this.service.getClientes(), {initialValue:[]})
-
-
 }

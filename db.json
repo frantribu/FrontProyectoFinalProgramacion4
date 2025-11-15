@@ -17,6 +17,24 @@
       "email": "franco@gmail.com",
       "contrasenia": "Hashedpassword123",
       "dni": 12345678
+    },
+    {
+      "id": "b2a2",
+      "nombre": "franco",
+      "apellido": "tribu",
+      "idRol": 4,
+      "email": "franco@gmail.com",
+      "contrasenia": "Hashedpassword123",
+      "dni": 12345678
+    },
+    {
+      "id": "f516",
+      "nombre": "franco",
+      "apellido": "tribu",
+      "email": "franco21@gmail.com",
+      "dni": 12345908,
+      "idRol": 4,
+      "isLogged": false
     }
   ],
   "autos": [
@@ -40,12 +58,21 @@
       "rutasImagen": [
         "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp"
       ],
-      "vendido": false
+      "vendido": true,
+      "tipoVehiculo": "Auto"
     }
   ],
   "motos": [],
   "talleres": [],
-  "historialesVenta": [],
+  "historialesVenta": [
+    {
+      "id": "4f02",
+      "vehiculo": "327e",
+      "cliente": "f516",
+      "precioVenta": 1000,
+      "fechaVenta": "2025-11-15"
+    }
+  ],
   "historialesTaller": [],
   "roles": [
     {

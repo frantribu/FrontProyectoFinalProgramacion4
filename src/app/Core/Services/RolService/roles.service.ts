@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Role } from '../../Models/Enum';
-import { catchError, map, of } from 'rxjs';
+import { map} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +21,5 @@ export class RolesService {
   getIdByRol(rol:string){
     return this.http.get<Role[]>(`${this.url}?name=${rol}`).pipe(
       map(rol => rol[0]))
-
   }
 }

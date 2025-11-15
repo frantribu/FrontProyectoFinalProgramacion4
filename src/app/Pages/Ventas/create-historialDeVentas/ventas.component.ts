@@ -1,17 +1,18 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HistorialDeVentas } from '../../../Core/Models/HistorialDeVentas';
-import { Router } from '@angular/router';
+import { Router, } from '@angular/router';
 import { VehiculoService } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
 import { HistorialDeVentaService } from '../../../Core/Services/HistorialDeVenta/historial-venta.service';
 import { User } from '../../../Core/Models/User';
 import { Vehiculo } from '../../../Core/Models/Vehiculo';
+import { ModalClienteComponent } from '../../../Shared/Components/modal-cliente/modal-cliente.component';
 
 @Component({
   selector: 'app-ventas',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ModalClienteComponent],
   templateUrl: './ventas.component.html',
   styleUrl: './ventas.component.css'
 })
@@ -26,13 +27,24 @@ export class CreateVentaComponent {
   rolIdCliente = 4
 
   vehiculos = toSignal(this.vehiculoService.getVehiculos(), { initialValue: [] })
-  clientes = toSignal(this.userService.getClientes(this.rolIdCliente))
+  clientes = signal<User[]>([])
+
+  constructor() {
+    this.cargarClientes()
+  }
+
+  cargarClientes() {
+    this.userService.getClientes().subscribe({
+      next: (cliente) => this.clientes.set(cliente)
+    })
+  }
 
   busquedaVehiculo = signal("")
   busquedaCliente = signal("")
 
   menuAbiertoVehiculo = false
   menuAbiertoCliente = false
+  mostrarMenuModal = signal(false)
 
   vehiculosFiltrados = computed(() => {
     const filtro = this.busquedaVehiculo().toLowerCase()
@@ -76,9 +88,9 @@ export class CreateVentaComponent {
 
   toggleMenu(menu: 'vehiculo' | 'cliente') {
     if (menu === "vehiculo") {
-      this.menuAbiertoVehiculo = !this.menuAbiertoVehiculo
-    } else{
-      this.menuAbiertoCliente = !this.menuAbiertoCliente
+      this.menuAbiertoVehiculo=!this.menuAbiertoVehiculo
+    } else {
+      this.menuAbiertoCliente=!this.menuAbiertoCliente
     }
   }
 
@@ -92,4 +104,18 @@ export class CreateVentaComponent {
     this.busquedaVehiculo.set(`${vehiculo.marca} ${vehiculo.modelo} | ${vehiculo.patente}`)
   }
 
+  abrirModalCliente() {
+    this.mostrarMenuModal.set(true)
+  }
+
+  cerrarModalCliente() {
+    this.mostrarMenuModal.set(false)
+  }
+
+  agregarClienteALista(cliente: User) {
+    const clientesActuales = this.clientes()
+
+    this.clientes.set([...clientesActuales, cliente])
+    this.seleccionarCliente(cliente)
+  }
 }
