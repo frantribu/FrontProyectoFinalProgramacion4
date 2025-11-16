@@ -1,5 +1,5 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
-import { VehiculoService } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
+import { VehiculoPolimorfico, VehiculoService } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
 import { Router } from "@angular/router";
 import { CardVehiculoComponent } from '../../../Shared/Components/card-vehiculo/card-vehiculo.component';
 
@@ -14,7 +14,7 @@ export class ListVehiclesComponent {
   vehiculoService = inject(VehiculoService);
   router = inject(Router)
 
-  listaVehiculos = signal<any[]>([]);
+  listaVehiculos = signal<VehiculoPolimorfico[]>([]);
 
   constructor() {
     this.cargarVehiculos()
@@ -23,7 +23,6 @@ export class ListVehiclesComponent {
   cargarVehiculos(): void {
     this.vehiculoService.getVehiculos().subscribe({
       next: (data) => {
-        // Actualiza la Signal con el método .set()
         this.listaVehiculos.set(data);
       },
       error: (err) => {

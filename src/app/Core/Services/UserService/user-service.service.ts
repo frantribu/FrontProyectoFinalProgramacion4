@@ -36,8 +36,6 @@ export class UserServiceService {
   }
 
   updateIsLogged(user: User) {
-    user.isLogged = !user.isLogged
-
     this.http.put<User>(`${this.url}/${user.id}`, user).subscribe({
       next: () => console.log("Estado modificado con exito"),
       error: (err) => console.log("Error al actualizar el estado: ", err)

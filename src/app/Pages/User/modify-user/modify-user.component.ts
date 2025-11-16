@@ -62,7 +62,6 @@ export class ModifyUserComponent {
         idRol: this.formModifyUser.value.rol!,
         email: this.formModifyUser.value.email!,
         dni: this.formModifyUser.value.dni!,
-        isLogged: user.isLogged,
         contrasenia: this.formModifyUser.value.contrasenia!
       })
 

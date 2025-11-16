@@ -35,7 +35,6 @@ export class CreateUserComponent {
       idRol: this.formUser.value.rol!,
       email: this.formUser.value.email,
       dni: this.formUser.value.dni!,
-      isLogged: false,
       contrasenia: this.formUser.value.contrasenia
     })
 

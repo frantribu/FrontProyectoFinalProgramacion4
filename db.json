@@ -1,179 +1,54 @@
 {
-  "usuarios": [],
-  "autos": [
+  "usuarios": [
     {
-      "id": "327e",
-      "patente": "ABC111",
-      "marca": "Fiat ",
-      "modelo": "palio",
-      "precio": 1999,
-      "color": "Gris oscuro",
-      "anio": 2011,
-      "kilometros": 999900,
-      "motor": "v10",
-      "idCombustion": "1",
-      "descripcion": "Cumple, las dos gomas de atras matadas, falta vtv",
-      "puertas": 3,
-      "potencia": 90,
-      "idTipoCarroceria": "1",
-      "fechaIngreso": "2025-11-14",
-      "enReparacion": false,
-      "rutasImagen": [
-        "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp"
-      ],
-      "vendido": true,
-      "tipoVehiculo": "Auto"
+      "id": "12345",
+      "dni": 40200300,
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "idRol": 1,
+      "email": "juanperez@gmail.com",
+      "contrasenia": "MiPass123"
     },
     {
-      "id": "7cdd",
-      "patente": "ABC123",
-      "marca": "Fiat",
-      "modelo": "Palio",
-      "precio": 2000000,
-      "color": "Rojo",
-      "anio": 2006,
-      "kilometros": 200000,
-      "motor": "1.3 Fire",
-      "idCombustion": "1",
-      "descripcion": "El Fiat Palio se destaca como el vehículo urbano por excelencia, reconocido por su legendaria robustez y su rendimiento económico. Esta unidad, equipada con el confiable motor 1.3 Fire, es la opción ideal para quienes buscan minimizar costos de mantenimiento y maximizar la eficiencia en el consumo de combustible, tanto en el tráfico de la ciudad como en trayectos interurbanos.",
-      "puertas": "5",
-      "potencia": 100,
-      "idTipoCarroceria": "2",
-      "rutasImagen": [
-        "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp"
-      ],
-      "fechaIngreso": "2025-11-16",
-      "enReparacion": false,
-      "vendido": false
-    },
-    {
-      "id": "a12f",
-      "patente": "KTL982",
-      "marca": "Volkswagen",
-      "modelo": "Gol Trend",
-      "precio": 3900000,
-      "color": "Gris Oscuro",
-      "anio": 2015,
-      "kilometros": 145000,
-      "motor": "1.6 MSI",
-      "idCombustion": "1",
-      "descripcion": "El Volkswagen Gol Trend es uno de los compactos más confiables del mercado. Con su motor 1.6 MSI, ofrece un equilibrio notable entre rendimiento y consumo, ideal para uso urbano o viajes. Este ejemplar se encuentra en excelente estado general y mantiene un andar firme característico de la marca.",
-      "puertas": "5",
-      "potencia": 110,
-      "idTipoCarroceria": "1",
-      "fechaIngreso": "2025-11-16",
-      "enReparacion": false,
-      "rutasImagen": [
-        "app/assets/imgvehiculos/gol.jpg"
-      ],
-      "vendido": false
-    },
-    {
-      "id": "b77e",
-      "patente": "ACJ451",
-      "marca": "Ford",
-      "modelo": "Focus SE",
-      "precio": 6700000,
-      "color": "Azul Francia",
-      "anio": 2018,
-      "kilometros": 89000,
-      "motor": "2.0 Duratec",
-      "idCombustion": "1",
-      "descripcion": "El Ford Focus SE sobresale por su excelente comportamiento dinámico y su motor 2.0 Duratec, que entrega una aceleración suave y potente. Su espacio interior, seguridad y confort lo convierten en una opción ideal para quienes buscan un auto moderno y con gran equipamiento.",
-      "puertas": "5",
-      "potencia": 170,
-      "idTipoCarroceria": "2",
-      "rutasImagen": [
-        "app/assets/imgvehiculos/focus.webp"
-      ],
-      "fechaIngreso": "2025-11-17",
-      "enReparacion": false,
-      "vendido": false
-    },
-    {
-      "id": "cc92",
-      "patente": "MHS290",
-      "marca": "Toyota",
-      "modelo": "Corolla XEi",
-      "precio": 5300000,
-      "color": "Blanco",
-      "anio": 2014,
-      "kilometros": 158000,
-      "motor": "1.8 VVT-i",
-      "idCombustion": "1",
-      "descripcion": "El Toyota Corolla XEi es sinónimo de durabilidad, confort y bajo costo de mantenimiento. Equipado con el reconocido motor 1.8 VVT-i, ofrece un andar silencioso y extremadamente confiable. Perfecto para quienes buscan un sedán para muchos años de uso sin preocupaciones.",
-      "puertas": "4",
-      "potencia": 140,
-      "idTipoCarroceria": "1",
-      "rutasImagen": [
-        "app/assets/imgvehiculos/corolla.webp"
-      ],
-      "fechaIngreso": "2025-11-19",
-      "enReparacion": false,
-      "vendido": false
-    },
-    {
-      "id": "f441",
-      "patente": "AFR705",
-      "marca": "Chevrolet",
-      "modelo": "Onix LTZ",
-      "precio": 6900000,
-      "color": "Negro",
-      "anio": 2020,
-      "kilometros": 60000,
-      "motor": "1.2 Turbo",
-      "idCombustion": "1",
-      "descripcion": "Este Chevrolet Onix LTZ de nueva generación incorpora un eficiente motor 1.2 Turbo que combina excelente respuesta con consumo reducido. Su tecnología, conectividad y seguridad lo posicionan como uno de los hatchbacks más completos de su segmento.",
-      "puertas": "5",
-      "potencia": 130,
-      "idTipoCarroceria": "2",
-      "rutasImagen": [
-        "app/assets/imgvehiculos/onix.avif"
-      ],
-      "fechaIngreso": "2025-11-18",
-      "enReparacion": false,
-      "vendido": false
+      "id": "835c",
+      "nombre": "Leandro",
+      "apellido": "Ciriaco",
+      "email": "ciriaco@gmail.com",
+      "dni": 12345679,
+      "idRol": 4
     }
   ],
+  "autos": [],
   "motos": [
     {
-      "id": "f827",
-      "patente": "AH999ZZ",
+      "id": "9892",
+      "patente": "AH123RR",
       "marca": "Bmw",
       "modelo": "s1000rr",
-      "precio": 20000,
-      "color": "blanca, rojo, azul",
+      "precioDeCompra": 19000,
+      "precioDeVenta": 22000,
+      "color": "blanca",
       "anio": 2025,
       "kilometros": 0,
       "motor": "v10",
       "idCombustion": "1",
-      "descripcion": "Hermosa",
+      "descripcion": "0KM",
       "cilindrada": 1000,
       "idTipoCarroceria": "2",
-      "rutasImagen": [
-        "app/assets/imgvehiculos/10-bmw-s-1000-rr-2025-estudio-blanco-04.jpg",
-        "app/assets/imgvehiculos/S1000RR.jpg"
-      ],
+      "rutasImagen": [],
       "fechaIngreso": "2025-11-16",
       "enReparacion": false,
-      "vendido": false,
+      "vendido": true,
       "tipoVehiculo": "Moto"
     }
   ],
   "talleres": [],
   "historialesVenta": [
     {
-      "id": "4d55",
-      "vehiculo": "327e",
-      "cliente": "f516",
-      "precioCompra": 1999,
-      "fechaVenta": "2025-11-15"
-    },
-    {
-      "id": "d733",
-      "vehiculo": "f827",
-      "cliente": "f516",
-      "precio": 20000,
+      "id": "2192",
+      "vehiculo": "9892",
+      "cliente": "835c",
+      "precio": 22000,
       "fechaVenta": "2025-11-16"
     }
   ],

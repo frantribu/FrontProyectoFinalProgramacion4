@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HistorialDeVentas } from '../../../Core/Models/HistorialDeVentas';
 import { ActivatedRoute, Router, } from '@angular/router';
@@ -33,6 +33,14 @@ export class CreateVentaComponent {
 
   constructor() {
     this.cargarClientes()
+
+    effect(()=>{
+      const v=this.vehiculo()
+
+      if(v){
+        this.form.get("precio")?.setValue(v.precioDeVenta)
+      }
+    })
   }
 
   cargarClientes() {
@@ -43,10 +51,8 @@ export class CreateVentaComponent {
 
   busquedaCliente = signal("")
 
-  menuAbiertoVehiculo = false
   menuAbiertoCliente = false
   mostrarMenuModal = signal(false)
-
 
   clientesFiltrados = computed(() => {
     const filtro = this.busquedaCliente().toLowerCase();
@@ -55,7 +61,7 @@ export class CreateVentaComponent {
   })
 
   form = this.fb.nonNullable.group({
-    idVehiculo: [''],
+    precio:[0,[Validators.required]],
     idCliente: ['', [Validators.required]],
   })
 
@@ -63,7 +69,7 @@ export class CreateVentaComponent {
     const venta: Partial<HistorialDeVentas> = {
       vehiculo:this.idVehiculo!,
       cliente: this.form.value.idCliente,
-      precio: this.vehiculo()?.precioDeVenta,
+      precio: this.form.value.precio,
       fechaVenta: new Date().toISOString().split('T')[0]
     }
 
@@ -81,12 +87,8 @@ export class CreateVentaComponent {
     })
   }
 
-  toggleMenu(menu: 'vehiculo' | 'cliente') {
-    if (menu === "vehiculo") {
-      this.menuAbiertoVehiculo=!this.menuAbiertoVehiculo
-    } else {
-      this.menuAbiertoCliente=!this.menuAbiertoCliente
-    }
+  toggleMenu() {
+    this.menuAbiertoCliente=!this.menuAbiertoCliente 
   }
 
   seleccionarCliente(cliente: User) {

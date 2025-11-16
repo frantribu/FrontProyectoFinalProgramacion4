@@ -29,7 +29,6 @@ export class CreateClientComponent {
       email: this.formularioClient.value.email,
       dni: this.formularioClient.value.dni,
       idRol: 4,
-      isLogged: false
     }
     
     this.service.postClient(cliente).subscribe({

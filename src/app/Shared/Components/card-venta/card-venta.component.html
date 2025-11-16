@@ -6,12 +6,12 @@
     <p>Cliente: {{cliente().nombre}} {{cliente().apellido}}</p>
 
     <p class="precioDeCompra">Precio comprado: ${{vehiculo().precioDeCompra}}</p>
-    <p class="precioDeVenta">Precio vendido: ${{vehiculo().precioDeVenta}}</p>
+    <p class="precioDeVenta">Precio vendido: ${{historialDeVenta()!.precio}}</p>
 
-    <div class="ganancia" [class]="calcularGanancia(vehiculo().precioDeCompra, vehiculo().precioDeVenta)>0 ? 'gananciaPositiva' : 'gananciaNegativa'">
+    <div class="ganancia" [class]="calcularGanancia(vehiculo().precioDeCompra, historialDeVenta()!.precio)>0 ? 'gananciaPositiva' : 'gananciaNegativa'">
 
-        <span>{{getResultado(vehiculo().precioDeCompra, vehiculo().precioDeVenta)}}</span>
-        <strong> ${{calcularGanancia(vehiculo().precioDeCompra, vehiculo().precioDeVenta)}}</strong>
+        <span>{{getResultado(vehiculo().precioDeCompra, historialDeVenta()!.precio)}}</span>
+        <strong> ${{calcularGanancia(vehiculo().precioDeCompra, historialDeVenta()!.precio)}}</strong>
     </div>
     }@else {
     <p>Cargando el vehiculo...</p>

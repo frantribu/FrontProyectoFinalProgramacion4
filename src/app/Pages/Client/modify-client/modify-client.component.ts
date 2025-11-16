@@ -50,7 +50,6 @@ export class ModifyClientComponent {
       email: this.formularioClient.value.email,
       dni: this.formularioClient.value.dni,
       idRol: 4,
-      isLogged: false
     }
     
     this.service.patchClient(this.clientId, cliente).subscribe({
