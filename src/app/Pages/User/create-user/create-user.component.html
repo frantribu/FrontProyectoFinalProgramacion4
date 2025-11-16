@@ -1,5 +1,8 @@
 <section class="form-container">
     <h2>Cargar Usuario</h2>
+    <button type="button" class="button_volver" (click)="volver()">
+        Atras
+    </button>
     <form [formGroup]="formUser" (submit)="enviar()">
         <div class="form-group">
             <label for="name">Nombre</label>

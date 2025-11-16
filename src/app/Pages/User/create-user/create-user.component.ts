@@ -24,7 +24,7 @@ export class CreateUserComponent {
     lastName: ["", Validators.required],
     rol: [null, Validators.required],
     email: ["", [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
-    dni: [0, [Validators.required, Validators.min(10000000), Validators.max(99999999)]],
+    dni: [null, [Validators.required, Validators.min(10000000), Validators.max(99999999)]],
     contrasenia: ["", [Validators.required, Validators.minLength(6)]]
   })
 
@@ -34,7 +34,7 @@ export class CreateUserComponent {
       apellido: this.formUser.value.lastName,
       idRol: this.formUser.value.rol!,
       email: this.formUser.value.email,
-      dni: this.formUser.value.dni,
+      dni: this.formUser.value.dni!,
       isLogged: false,
       contrasenia: this.formUser.value.contrasenia
     })
@@ -47,6 +47,10 @@ export class CreateUserComponent {
       error: (err) => console.log("Error al crear el usuario", err)
 
     })
+  }
+
+  volver(){
+    this.router.navigate([''])
   }
 
 }
