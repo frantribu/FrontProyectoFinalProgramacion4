@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-
 import { EspecialidadService } from '../../../Core/Services/Taller/EspecialidadService/especialidad-service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Taller } from '../../../Core/Models/Taller';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
 import { TallerServiceService } from '../../../Core/Services/Taller/TallerService/taller-service.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-create-taller',
   imports: [ReactiveFormsModule],
@@ -18,6 +19,7 @@ export class CreateTaller {
   tallerService = inject(TallerServiceService)
   especialidadService = inject(EspecialidadService)
   userService = inject(UserServiceService)
+  router = inject(Router)
   
 
   especialidades = toSignal(this.especialidadService.getEspecialidades(),{initialValue : []})
@@ -41,7 +43,7 @@ export class CreateTaller {
 
     this.tallerService.postTaller(taller).subscribe(
       {
-        next : () => console.log("Taller Cargado")
+        next : () => this.router.navigate([`taller/listar`])
       }
     )
   }

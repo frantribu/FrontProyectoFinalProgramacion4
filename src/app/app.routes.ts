@@ -19,7 +19,8 @@ export const routes: Routes = [
     { path: "taller/agregar", loadComponent: () => import("./Pages/Taller/create-taller/create-taller").then(c => c.CreateTaller) },
     { path: "taller/listar", loadComponent: () => import("./Pages/Taller/list-taller/list-taller").then(c => c.ListTaller) },
     { path: "taller/listar/id", loadComponent: () => import("./Pages/Taller/list-taller/list-taller").then(c => c.ListTaller) },
-    { path: "taller/modificar/id", loadComponent: () => import("./Pages/Taller/modificar-taller/modificar-taller").then(c => c.ModificarTaller) },
+    { path: "taller/modificar/:id", loadComponent: () => import("./Pages/Taller/modificar-taller/modificar-taller").then(c => c.ModificarTaller) },
+    { path: "taller/detalle/:id", loadComponent: () => import("./Pages/Taller/detalle-taller/detalle-taller.component").then(c => c.DetalleTallerComponent) },
 
     //VEHICULOS
     { path: "vehiculos", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Vehicles/list-vehicles/list-vehicles.component").then(c => c.ListVehiclesComponent) },

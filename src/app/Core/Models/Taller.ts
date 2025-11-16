@@ -1,12 +1,10 @@
-import { LookupItem } from "./Enum";
-import { User } from "./User";
 import { Vehiculo } from "./Vehiculo";
 
 export interface Taller{
     id: string,
-    Especialidad: LookupItem,
+    Especialidad: string,
     NombreTaller: string,
-    Encargado: User,
+    Encargado: string,
     Vehiculos: Vehiculo[],
     Direccion: string
 }

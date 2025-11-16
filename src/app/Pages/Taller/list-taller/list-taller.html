@@ -1,5 +1,6 @@
-
-
-@for (taller of talleres(); track taller.id) {
-    <app-card-taller [taller]="taller"></app-card-taller>
-}
+<section class="talleres">
+    <h1 class="titulo">Talleres</h1>
+    @for (taller of talleres(); track taller.id) {
+    <app-card-taller [taller]="taller" (click)="detalle(taller.id)"></app-card-taller>
+    }
+</section>

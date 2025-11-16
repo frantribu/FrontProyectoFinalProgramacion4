@@ -1,5 +1,5 @@
-<section>
-  <form [formGroup]="formulario" (ngSubmit)="enviar()">
+<section class="">
+  <form [formGroup]="formulario" (submit)="enviar()">
     <div>
       <label for="input_nombre">Nombre del Taller</label>
       <input formControlName="name" type="text" id="input_nombre" />
@@ -10,9 +10,7 @@
 
       <select id="encargado" formControlName="encargado">
         <option disabled>-- Seleccione una opción --</option>
-
-        @if (encargados(); as types) { @for (encargado of encargados(); track
-        encargado.id){
+        @if (encargados(); as types) { @for (encargado of encargados(); track encargado.id){
         <option [value]="encargado.id">
           {{encargado.nombre}} {{encargado.apellido}}
         </option>
@@ -36,7 +34,7 @@
       </select>
     </div>
     <div>
-      <button [disabled]="formulario.invalid">Enviar</button>
+      <button [disabled]="formulario.invalid" type="submit">Enviar</button>
     </div>
   </form>
 </section>

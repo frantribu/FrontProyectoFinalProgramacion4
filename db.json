@@ -34,6 +34,16 @@
       "email": "franco21@gmail.com",
       "dni": 12345908,
       "idRol": 4
+    },
+    {
+      "id": "e72a",
+      "nombre": "martina",
+      "apellido": "perez",
+      "idRol": "3",
+      "email": "marperez@gmail.com",
+      "dni": 46556677,
+      "isLogged": false,
+      "contrasenia": "123martina"
     }
   ],
   "autos": [
@@ -86,7 +96,22 @@
       "tipoVehiculo": "Moto"
     }
   ],
-  "talleres": [],
+  "talleres": [
+    {
+      "id": "76cb",
+      "NombreTaller": "taller taller",
+      "Encargado": "e72a",
+      "Direccion": "25 de mayo y 180",
+      "Especialidad": "4"
+    },
+    {
+      "id": "a321",
+      "NombreTaller": "taller el mejor",
+      "Encargado": "e72a",
+      "Direccion": "25 de mayo y 180",
+      "Especialidad": "2"
+    }
+  ],
   "historialesVenta": [
     {
       "id": "4d55",

@@ -1,0 +1,11 @@
+.talleres{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+}
