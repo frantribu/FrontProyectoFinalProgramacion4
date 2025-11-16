@@ -50,7 +50,7 @@ export class ModifyUserComponent {
     rol: [this.user()?.idRol, Validators.required],
     email: [this.user()?.email, [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
     dni: [this.user()?.dni, [Validators.required, Validators.min(10000000), Validators.max(99999999)]],
-    contrasenia: [this.user()?.contrasenia, Validators.required]
+    contrasenia: [this.user()?.contrasenia, [Validators.required,Validators.minLength(7)]]
   })
 
   modify() {
@@ -68,13 +68,15 @@ export class ModifyUserComponent {
 
       this.service.patchUser(this.userId, userr).subscribe({
         next: () => {
-          console.log("Modificado con exito")
+          alert("Modificado con exito")
           this.router.navigate(["usuarios"])
         },
         error: (err) => console.log("Error al modificar el usuario", err)
       })
     })
+  }
 
-
+  volver(){
+     this.router.navigate(["usuarios"]) 
   }
 }

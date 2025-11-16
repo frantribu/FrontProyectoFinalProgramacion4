@@ -14,7 +14,7 @@
 
             <div class="year">
                 <label for="input_year">Año</label>
-                <input class = "number"  type="number" formControlName="anio" min="0" max="9999" id="input_year" />
+                <input class="number" type="number" formControlName="anio" min="0" max="9999" id="input_year" />
             </div>
 
             <div class="patent">
@@ -24,7 +24,7 @@
 
             <div class="kilometers">
                 <label for="input_kilometers">Kilometraje</label>
-                <input class = "number"  type="number" formControlName="kilometros" min="0" id="input_kilometers" />
+                <input class="number" type="number" formControlName="kilometros" min="0" id="input_kilometers" />
             </div>
 
             <div class="description">
@@ -63,7 +63,7 @@
 
             <div class="hp">
                 <label for="input_cilindrada">Cilindrada</label>
-                <input class = "number"  type="number" formControlName="cilindrada" min="0" id="input_cilindrada" />
+                <input class="number" type="number" formControlName="cilindrada" min="0" id="input_cilindrada" />
             </div>
 
             <div>
@@ -83,12 +83,17 @@
             </div>
 
             <div class="price">
-                <label for="input_price">Precio</label>
-                <input class = "number" type="number" formControlName="precio" id="input_price" />
+                <label for="input_price">Precio de compra</label>
+                <input class="number" type="number" formControlName="precioDeCompra" id="input_price" />
+            </div>
+
+            <div class="price">
+                <label for="input_price">Precio de venta</label>
+                <input class="number" type="number" formControlName="precioDeVenta" id="input_price" />
             </div>
 
             <div>
-                <input [disabled]="formularioCrearMoto.invalid" type="submit" />
+                <button [disabled]="formularioCrearMoto.invalid" type="submit">Modificar</button>
             </div>
         </form>
     </article>

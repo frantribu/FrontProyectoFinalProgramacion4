@@ -41,7 +41,7 @@ export class CreateUserComponent {
 
     this.service.postUser(user).subscribe({
       next: () => { 
-        console.log("Creado con exito") 
+        alert("Creado con exito") 
         this.router.navigate(["usuarios"])
       },
       error: (err) => console.log("Error al crear el usuario", err)
