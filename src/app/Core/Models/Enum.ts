@@ -3,7 +3,7 @@
  * Ejemplo: Role, Combustion, TipoAuto, etc.
  */
 export interface LookupItem {
-    id: number;
+    id: string;
     name: string;
   }
   
@@ -13,8 +13,3 @@ export interface LookupItem {
   export interface TipoAuto extends LookupItem {}
   export interface TipoMoto extends LookupItem {}
   export interface Especialidad extends LookupItem {}
-
-  export interface ArchivoVehiculo extends File{
-  urlLocal ?: string
-  rutaSimulada ?: string
-}
