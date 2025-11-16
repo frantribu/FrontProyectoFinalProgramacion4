@@ -27,15 +27,7 @@
   margin: 6px 0;
 }
 
-.precioCompra {
-  color: #a0522d; 
-}
-
-.precioVenta {
-  color: #228b22; 
-}
-
-.ganancia{
+.precio{
     font-weight: bold;
     color: rgb(0, 88, 0);
     border-left: 4px solid rgb(0, 88, 0);

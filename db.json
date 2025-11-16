@@ -61,7 +61,31 @@
       "tipoVehiculo": "Auto"
     }
   ],
-  "motos": [],
+  "motos": [
+    {
+      "id": "f827",
+      "patente": "AH999ZZ",
+      "marca": "Bmw",
+      "modelo": "s1000rr",
+      "precio": 20000,
+      "color": "blanca, rojo, azul",
+      "anio": 2025,
+      "kilometros": 0,
+      "motor": "v10",
+      "idCombustion": "1",
+      "descripcion": "Hermosa",
+      "cilindrada": 1000,
+      "idTipoCarroceria": "2",
+      "rutasImagen": [
+        "app/assets/imgvehiculos/10-bmw-s-1000-rr-2025-estudio-blanco-04.jpg",
+        "app/assets/imgvehiculos/S1000RR.jpg"
+      ],
+      "fechaIngreso": "2025-11-16",
+      "enReparacion": false,
+      "vendido": true,
+      "tipoVehiculo": "Moto"
+    }
+  ],
   "talleres": [],
   "historialesVenta": [
     {
@@ -69,8 +93,14 @@
       "vehiculo": "327e",
       "cliente": "f516",
       "precioCompra": 1999,
-      "precioVenta": 11000,
       "fechaVenta": "2025-11-15"
+    },
+    {
+      "id": "d733",
+      "vehiculo": "f827",
+      "cliente": "f516",
+      "precio": 20000,
+      "fechaVenta": "2025-11-16"
     }
   ],
   "historialesTaller": [],

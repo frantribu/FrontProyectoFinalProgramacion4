@@ -3,6 +3,5 @@ export interface HistorialDeVentas{
     vehiculo:string,
     fechaVenta: string,
     cliente: string,
-    precioCompra:number,
-    precioVenta: number
+    precio:number,
 }

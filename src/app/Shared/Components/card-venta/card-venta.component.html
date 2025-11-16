@@ -7,14 +7,8 @@
 
 
     <h3>{{historialDeVenta()?.fechaVenta}}</h3>
-    <p class="precioCompra">Precio de compra: ${{historialDeVenta()?.precioCompra}}</p>
-    <p class="precioVenta">Precio de venta: ${{historialDeVenta()?.precioVenta}}</p>
-
-    @if(historialDeVenta()){
-    <div class="ganancia">
-        <span>Ganancia:</span>
-        <strong> ${{calcularGanancia(historialDeVenta()?.precioCompra!,
-            historialDeVenta()?.precioVenta!)}}</strong>
+    <div class="precio">
+        <span>Precio vendido:</span>
+        <strong> ${{vehiculo()?.precio}}</strong>
     </div>
-    }
 </div>

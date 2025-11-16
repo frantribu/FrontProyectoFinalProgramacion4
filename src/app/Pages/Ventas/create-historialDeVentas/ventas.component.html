@@ -1,8 +1,8 @@
 <section class="sectionVentas">
     <form [formGroup]="form" (submit)="enviarVenta()" class="form-container">
         <div>
-        <input type="text" [value]="`${vehiculo()?.marca}${vehiculo()?.modelo} | ${vehiculo()?.patente}`" disabled>
-
+            <label for="input_cliente">Vehiculo</label>
+            <input type="text" [value]="`${vehiculo()?.marca} ${vehiculo()?.modelo} | ${vehiculo()?.patente}`" disabled>
         </div>
         <div>
             <div class="input-con-flecha">
@@ -38,8 +38,7 @@
 
         <div>
             <label for="input_precio">Precio de venta</label>
-            <input type="number" formControlName="precioVenta"
-                (click)="menuAbiertoCliente=false; menuAbiertoVehiculo=false">
+            <input type="number" [value]="vehiculo()?.precio" disabled>
         </div>
 
         <div>

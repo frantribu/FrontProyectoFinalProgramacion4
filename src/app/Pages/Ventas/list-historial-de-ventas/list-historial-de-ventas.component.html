@@ -1,9 +1,9 @@
 <section>
     <button type="button" class="button_volver" (click)="volver()">Atras</button>
 
-    @for (venta of ventas(); track venta.id) {
     <div class="grilla">
+        @for (venta of ventas(); track venta.id) {
         <app-card-venta [historialDeVenta]="venta" class="cardVenta"></app-card-venta>
+        }
     </div>
-    }
 </section>

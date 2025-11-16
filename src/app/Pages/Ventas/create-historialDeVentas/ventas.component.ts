@@ -57,15 +57,13 @@ export class CreateVentaComponent {
   form = this.fb.nonNullable.group({
     idVehiculo: [''],
     idCliente: ['', [Validators.required]],
-    precioVenta: [0, [Validators.required]]
   })
 
   enviarVenta() {
     const venta: Partial<HistorialDeVentas> = {
       vehiculo:this.idVehiculo!,
       cliente: this.form.value.idCliente,
-      precioCompra:this.vehiculo()?.precio,
-      precioVenta: this.form.value.precioVenta,
+      precio: this.vehiculo()?.precio,
       fechaVenta: new Date().toISOString().split('T')[0]
     }
 
