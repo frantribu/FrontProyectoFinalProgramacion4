@@ -1,19 +1,19 @@
 .div-container {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border: 1px solid gainsboro;
-    padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid gainsboro;
+  padding: 20px;
 }
 
 .div-container h2 {
-    background-color: #F5F5DC;
-    color: #333333;
-    padding: 10px;
-    border-radius: 6px;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    text-align: center;
+  background-color: #F5F5DC;
+  color: #333333;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .div-container h3 {
@@ -27,11 +27,28 @@
   margin: 6px 0;
 }
 
-.precio{
-    font-weight: bold;
-    color: rgb(0, 88, 0);
-    border-left: 4px solid rgb(0, 88, 0);
-    background-color:rgb(228, 255, 224);
-    padding: 6px 10px;
-    border-radius: 5px;
+.precioDeCompra {
+  color: rgb(151, 77, 42);
+}
+
+.precioDeVenta {
+  color: rgb(28, 129, 28);
+}
+
+.ganancia {
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.gananciaPositiva {
+  background-color: rgb(228, 255, 224);
+  border-left: 4px solid rgb(0, 88, 0);
+  color: rgb(0, 88, 0);
+}
+
+.gananciaNegativa {
+  background-color: rgb(255, 230, 224);
+  border-left: 4px solid rgb(88, 0, 0);
+  color: rgb(88, 0, 0);
 }

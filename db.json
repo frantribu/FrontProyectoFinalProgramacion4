@@ -34,46 +34,32 @@
       "email": "franco21@gmail.com",
       "dni": 12345908,
       "idRol": 4
-    }
-  ],
-  "autos": [
+    },
     {
-      "id": "327e",
-      "patente": "ABC111",
-      "marca": "Fiat ",
-      "modelo": "palio",
-      "precio": 1999,
-      "color": "Gris oscuro",
-      "anio": 2011,
-      "kilometros": 999900,
-      "motor": "v10",
-      "idCombustion": "1",
-      "descripcion": "Cumple, las dos gomas de atras matadas, falta vtv",
-      "puertas": 3,
-      "potencia": 90,
-      "idTipoCarroceria": "1",
-      "fechaIngreso": "2025-11-14",
-      "enReparacion": false,
-      "rutasImagen": [
-        "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp"
-      ],
-      "vendido": true,
-      "tipoVehiculo": "Auto"
+      "id": "b852",
+      "nombre": "Leandro",
+      "apellido": "Ciriaco",
+      "email": "leandroC@gmail.com",
+      "dni": 46112929,
+      "idRol": 4,
+      "isLogged": false
     }
   ],
+  "autos": [],
   "motos": [
     {
-      "id": "f827",
+      "id": "b034",
       "patente": "AH999ZZ",
       "marca": "Bmw",
       "modelo": "s1000rr",
-      "precio": 20000,
+      "precioDeCompra": 20000,
+      "precioDeVenta": 22000,
       "color": "blanca, rojo, azul",
       "anio": 2025,
       "kilometros": 0,
-      "motor": "v10",
+      "motor": "V12",
       "idCombustion": "1",
-      "descripcion": "Hermosa",
+      "descripcion": "0KM",
       "cilindrada": 1000,
       "idTipoCarroceria": "2",
       "rutasImagen": [
@@ -89,17 +75,10 @@
   "talleres": [],
   "historialesVenta": [
     {
-      "id": "4d55",
-      "vehiculo": "327e",
+      "id": "f77d",
+      "vehiculo": "b034",
       "cliente": "f516",
-      "precioCompra": 1999,
-      "fechaVenta": "2025-11-15"
-    },
-    {
-      "id": "d733",
-      "vehiculo": "f827",
-      "cliente": "f516",
-      "precio": 20000,
+      "precio": 22000,
       "fechaVenta": "2025-11-16"
     }
   ],

@@ -12,8 +12,8 @@
             Auto
           </button>
 
-          <button type="button" (click)="tipoDeVehiculo('Moto')" 
-           [style.backgroundColor]="tipo() === 'Moto' ? 'rgb(0, 129, 204)' : 'rgb(0, 162, 255)'">
+          <button type="button" (click)="tipoDeVehiculo('Moto')"
+            [style.backgroundColor]="tipo() === 'Moto' ? 'rgb(0, 129, 204)' : 'rgb(0, 162, 255)'">
             Moto
           </button>
         </div>
@@ -51,12 +51,10 @@
               <input type="text" formControlName="descripcion" id="input_description" />
             </div>
 
-            @if(tipo()==="Auto"){
             <div class="price_container">
-              <label for="input_price">Precio</label>
-              <input type="number" formControlName="precio" id="input_price" />
+              <label for="input_priceCompra">Precio de compra</label>
+              <input type="number" formControlName="precioDeCompra" id="input_price" />
             </div>
-            }
           </div>
 
           <div class="div2_container">
@@ -141,13 +139,12 @@
                 }
               </select>
             </div>
+            }
 
             <div class="price_container">
-              <label for="input_price">Precio</label>
-              <input type="number" formControlName="precio" id="input_price" />
+              <label for="input_priceVenta">Precio de venta</label>
+              <input type="number" formControlName="precioDeVenta" id="input_price" />
             </div>
-
-            }
           </div>
         </div>
 

@@ -23,7 +23,8 @@
     <div class="div-info">
       <p>{{vehiculo.anio}} - {{vehiculo.kilometros}}Km</p>
       <h5>{{vehiculo.marca}} {{vehiculo.modelo}}</h5>
-      <h3 class="price">${{vehiculo.precio}}</h3>
+      <h3 class="price">Precio: ${{vehiculo.precioDeVenta}}</h3>
+
       <button (click)="vender()" class="buttonVender">Vender</button>
     </div>
   </div>

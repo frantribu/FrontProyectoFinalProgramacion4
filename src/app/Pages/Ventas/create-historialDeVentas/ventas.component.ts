@@ -63,7 +63,7 @@ export class CreateVentaComponent {
     const venta: Partial<HistorialDeVentas> = {
       vehiculo:this.idVehiculo!,
       cliente: this.form.value.idCliente,
-      precio: this.vehiculo()?.precio,
+      precio: this.vehiculo()?.precioDeVenta,
       fechaVenta: new Date().toISOString().split('T')[0]
     }
 
