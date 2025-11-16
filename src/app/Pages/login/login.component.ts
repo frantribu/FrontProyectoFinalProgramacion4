@@ -16,7 +16,7 @@ export class LoginComponent {
   router=inject(Router)
 
   formLogin=this.fb.nonNullable.group({
-    email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@miempresa\\.com$")]],
+    email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
     password:['', [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/)]]
   })
 
@@ -29,7 +29,6 @@ export class LoginComponent {
         if(user.length===0){
           this.mensaje="Contraseña o email incorrecto"
         }else if(user[0].contrasenia===password){
-          this.usuarioService.updateIsLogged(user[0])
           this.usuarioService.guardarUsuarioEnSesion(user[0])
           this.router.navigate(['home'])
         }else{

@@ -1,6 +1,6 @@
 import { Component, inject, OnDestroy, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ArchivoVehiculo } from '../../../Core/Models/ENUM';
+import { ArchivoVehiculo } from '../../../Core/Models/Enum';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TypeCarService } from '../../../Core/Services/Vehicle/Car/TypeCar/type-car.service';
 import { CombustionService } from '../../../Core/Services/Vehicle/Combustion/combustion.service';
@@ -46,7 +46,8 @@ export class CreateVehicleComponent implements OnDestroy {
     patente: ["", [Validators.required, Validators.pattern("^(?:[A-Z]{2}[-\s]?[0-9]{3}[-\s]?[A-Z]{2}|[A-Z]{3}[-\s]?[0-9]{3})$")]],
     marca: ["", [Validators.required]],
     modelo: ["", [Validators.required]],
-    precio: [null, [Validators.required, Validators.min(0)]],
+    precioDeCompra: [null, [Validators.required, Validators.min(0)]],
+    precioDeVenta: [null, [Validators.required, Validators.min(0)]],
     color: ["", [Validators.required]],
     anio: ["", [Validators.required, Validators.pattern(/^\d{4}$/)]],
     kilometros: [0, [Validators.required, Validators.min(0)]],
@@ -62,7 +63,8 @@ export class CreateVehicleComponent implements OnDestroy {
     patente: ["", [Validators.required, Validators.pattern("^(?:[A-Z]{2}[-\s]?[0-9]{3}[-\s]?[A-Z]{2}|[A-Z]{3}[-\s]?[0-9]{3})$")]],
     marca: ["", [Validators.required]],
     modelo: ["", [Validators.required]],
-    precio: [null, [Validators.required, Validators.min(0)]],
+    precioDeCompra: [null, [Validators.required, Validators.min(0)]],
+    precioDeVenta: [null, [Validators.required, Validators.min(0)]],
     color: ["", [Validators.required]],
     anio: ["", [Validators.required, Validators.pattern(/^\d{4}$/)]],
     kilometros: [0, [Validators.required, Validators.min(0)]],
@@ -95,7 +97,8 @@ export class CreateVehicleComponent implements OnDestroy {
       patente: this.formularioCrearAuto.value.patente,
       marca: this.formularioCrearAuto.value.marca,
       modelo: this.formularioCrearAuto.value.modelo,
-      precio: this.formularioCrearAuto.value.precio ?? undefined,
+      precioDeCompra: this.formularioCrearAuto.value.precioDeCompra ?? undefined,
+      precioDeVenta: this.formularioCrearAuto.value.precioDeVenta ?? undefined,
       color: this.formularioCrearAuto.value.color,
       anio: Number(this.formularioCrearAuto.value.anio),
       kilometros: this.formularioCrearAuto.value.kilometros,
@@ -119,7 +122,7 @@ export class CreateVehicleComponent implements OnDestroy {
         console.log("Vehiculo cargado")
         this.router.navigate(["vehiculos"])
       },
-      error: (err)=>console.log("Error al cargar el auto ", err)
+      error: (err) => console.log("Error al cargar el auto ", err)
     });
   }
 
@@ -135,7 +138,8 @@ export class CreateVehicleComponent implements OnDestroy {
       patente: this.formularioCrearMoto.value.patente,
       marca: this.formularioCrearMoto.value.marca,
       modelo: this.formularioCrearMoto.value.modelo,
-      precio: this.formularioCrearMoto.value.precio ?? undefined,
+      precioDeCompra: this.formularioCrearMoto.value.precioDeCompra ?? undefined,
+      precioDeVenta: this.formularioCrearMoto.value.precioDeVenta ?? undefined,
       color: this.formularioCrearMoto.value.color,
       anio: Number(this.formularioCrearMoto.value.anio),
       kilometros: this.formularioCrearMoto.value.kilometros,
@@ -177,7 +181,7 @@ export class CreateVehicleComponent implements OnDestroy {
     return this.tipo() === "Auto" ? this.formularioCrearAuto : this.formularioCrearMoto
   }
 
-  volver(){
+  volver() {
     this.router.navigate([''])
   }
 }

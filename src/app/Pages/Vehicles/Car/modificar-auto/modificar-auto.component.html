@@ -86,14 +86,19 @@
           }
         </select>
       </div>
-      
+
       <div class="price">
-        <label for="input_price">Precio</label>
-        <input type="number" formControlName="precio" id="input_price" />
+        <label for="input_price">Precio de compra</label>
+        <input class="number" type="number" formControlName="precioDeCompra" id="input_price" />
+      </div>
+
+      <div class="price">
+        <label for="input_price">Precio de venta</label>
+        <input class="number" type="number" formControlName="precioDeVenta" id="input_price" />
       </div>
 
       <div>
-        <input [disabled]="formularioModificarAuto.invalid" type="submit" />
+        <button [disabled]="formularioModificarAuto.invalid" type="submit">Modificar</button>
       </div>
     </form>
   </article>

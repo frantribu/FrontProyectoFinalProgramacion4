@@ -13,9 +13,4 @@ import { Router } from '@angular/router';
 export class ClientComponent {
   service = inject(ClientService)
   clientes = toSignal(this.service.getClientes(), {initialValue:[]})
-  router = inject(Router )
-
-  volver(){
-    this.router.navigate(["home"])
-  }
 }

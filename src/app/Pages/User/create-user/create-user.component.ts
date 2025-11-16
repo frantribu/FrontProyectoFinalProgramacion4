@@ -23,7 +23,7 @@ export class CreateUserComponent {
     name: ["", Validators.required],
     lastName: ["", Validators.required],
     rol: [null, Validators.required],
-    email: ["", [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@miempresa\.com$")]],
+    email: ["", [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
     dni: [0, [Validators.required, Validators.min(10000000), Validators.max(99999999)]],
     contrasenia: ["", [Validators.required, Validators.minLength(7)]]
   })

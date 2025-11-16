@@ -1,187 +1,171 @@
 {
-  "usuarios": [
-    {
-      "id": "1",
-      "dni": 12345611,
-      "nombre": "Admin",
-      "apellido": "tribu",
-      "idRol": "1",
-      "email": "admin@miempresa.com",
-      "contrasenia": "Hashedpassword123",
-      "isLogged": false
-    },
-    {
-      "id": "b6a2",
-      "nombre": "franco",
-      "apellido": "tribu",
-      "idRol": "2",
-      "email": "franco@miempresa.com",
-      "dni": 12345678,
-      "isLogged": false
-    },
-    {
-      "id": "097c",
-      "nombre": "gonzalo",
-      "apellido": "ezequiel",
-      "idRol": "4",
-      "email": "gonzalo.diaz91218@miempresa.com",
-      "dni": 46632709,
-      "isLogged": false
-    },
-    {
-      "id": "168a",
-      "nombre": "Gonzalo",
-      "apellido": "Diaz",
-      "idRol": 4,
-      "email": "gonzalito@miempresa.com",
-      "dni": 45612378,
-      "isLogged": false
-    }
-  ],
-  "autos": [
-    {
-      "id": "9788",
-      "patente": "ABC123",
-      "marca": "Fiat",
-      "modelo": "Palio",
-      "precio": 5000,
-      "color": "rojo",
-      "anio": 2018,
-      "kilometros": 200000,
-      "motor": "1.4",
-      "idCombustion": 2,
-      "descripcion": "Auto medio pelo",
-      "puertas": 3,
-      "potencia": 100,
-      "idTipoCarroceria": "2",
-      "rutasImagen": [
-        "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp",
-        "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
-      ],
-      "fechaIngreso": "2025-11-10",
-      "enReparacion": false,
-      "vendido": false
-    },
-    {
-      "id": "19a7",
-      "patente": "AH999ZZ",
-      "marca": "Audi",
-      "modelo": "Rs6",
-      "precio": 50000,
-      "color": "Gris oscuro",
-      "anio": 2025,
-      "kilometros": 0,
-      "motor": "3.0",
-      "idCombustion": 1,
-      "descripcion": "Pfff....",
-      "puertas": 3,
-      "potencia": 400,
-      "idTipoCarroceria": "2",
-      "rutasImagen": [
-        "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
-      ],
-      "fechaIngreso": "2025-11-10",
-      "enReparacion": false,
-      "vendido": false
-    }
-  ],
-  "motos": [],
-  "talleres": [],
-  "historiales": [],
-  "historialesVenta": [],
-  "historialesTaller": [],
-  "roles": [
-    {
-      "id": "1",
-      "name": "ADMIN"
-    },
-    {
-      "id": "2",
-      "name": "EMPLEADO"
-    },
-    {
-      "id": "3",
-      "name": "ENCARGADO TALLER"
-    },
-    {
-      "id": "4",
-      "name": "CLIENTE"
-    }
-  ],
-  "combustiones": [
-    {
-      "id": "1",
-      "name": "NAFTA"
-    },
-    {
-      "id": "2",
-      "name": "DIESEL"
-    },
-    {
-      "id": "3",
-      "name": "ELECTRICO"
-    }
-  ],
-  "tiposAuto": [
-    {
-      "id": "1",
-      "name": "SEDAN"
-    },
-    {
-      "id": "2",
-      "name": "HATCHBACK"
-    },
-    {
-      "id": "3",
-      "name": "COUPE"
-    },
-    {
-      "id": "4",
-      "name": "SUV"
-    },
-    {
-      "id": "5",
-      "name": "FURGON"
-    }
-  ],
-  "tiposMoto": [
-    {
-      "id": "1",
-      "name": "URBANA"
-    },
-    {
-      "id": "2",
-      "name": "DEPORTIVAS"
-    },
-    {
-      "id": "3",
-      "name": "TURISMO"
-    },
-    {
-      "id": "4",
-      "name": "OFF-ROAD"
-    },
-    {
-      "id": "5",
-      "name": "ESPECIALES"
-    }
-  ],
-  "especialidades": [
-    {
-      "id": "1",
-      "name": "GENERAL"
-    },
-    {
-      "id": "2",
-      "name": "MOTORISTA"
-    },
-    {
-      "id": "3",
-      "name": "CHAPA_Y_PINTURA"
-    },
-    {
-      "id": "4",
-      "name": "ELECTRICISTA"
-    }
-  ]
+    "usuarios": [{
+            "id": "1",
+            "dni": 12345611,
+            "nombre": "Admin",
+            "apellido": "tribu",
+            "idRol": "1",
+            "email": "admin@miempresa.com",
+            "contrasenia": "Hashedpassword123",
+            "isLogged": false
+        },
+        {
+            "id": "b6a2",
+            "nombre": "franco",
+            "apellido": "tribu",
+            "idRol": 2,
+            "email": "franco@gmail.com",
+            "contrasenia": "Hashedpassword123",
+            "dni": 12345678
+        },
+        {
+            "id": "b2a2",
+            "nombre": "franco",
+            "apellido": "tribu",
+            "idRol": 4,
+            "email": "gonzalito@miempresa.com",
+            "dni": 45612378,
+            "contrasenia": "Hashedpassword123"
+        },
+        {
+            "id": "f516",
+            "nombre": "franco",
+            "apellido": "tribu",
+            "email": "franco21@gmail.com",
+            "dni": 12345908,
+            "idRol": 4
+        },
+        {
+            "id": "b852",
+            "nombre": "Leandro",
+            "apellido": "Ciriaco",
+            "email": "leandroC@gmail.com",
+            "dni": 46112929,
+            "idRol": 4,
+            "isLogged": false
+        }
+    ],
+    "autos": [],
+    "motos": [{
+        "id": "b034",
+        "patente": "AH999ZZ",
+        "marca": "Bmw",
+        "modelo": "s1000rr",
+        "precioDeCompra": 20000,
+        "precioDeVenta": 22000,
+        "color": "blanca, rojo, azul",
+        "anio": 2025,
+        "kilometros": 0,
+        "motor": "V12",
+        "idCombustion": "1",
+        "descripcion": "0KM",
+        "cilindrada": 1000,
+        "idTipoCarroceria": "2",
+        "rutasImagen": [
+            "app/assets/imgvehiculos/10-bmw-s-1000-rr-2025-estudio-blanco-04.jpg",
+            "app/assets/imgvehiculos/S1000RR.jpg"
+        ],
+        "fechaIngreso": "2025-11-16",
+        "enReparacion": false,
+        "vendido": true,
+        "tipoVehiculo": "Moto"
+    }],
+    "talleres": [],
+    "historialesVenta": [{
+        "id": "f77d",
+        "vehiculo": "b034",
+        "cliente": "f516",
+        "precio": 22000,
+        "fechaVenta": "2025-11-16"
+    }],
+    "historialesTaller": [],
+    "roles": [{
+            "id": "1",
+            "name": "ADMIN"
+        },
+        {
+            "id": "2",
+            "name": "EMPLEADO"
+        },
+        {
+            "id": "3",
+            "name": "ENCARGADO TALLER"
+        },
+        {
+            "id": "4",
+            "name": "CLIENTE"
+        }
+    ],
+    "combustiones": [{
+            "id": "1",
+            "name": "NAFTA"
+        },
+        {
+            "id": "2",
+            "name": "DIESEL"
+        },
+        {
+            "id": "3",
+            "name": "ELECTRICO"
+        }
+    ],
+    "tiposAuto": [{
+            "id": "1",
+            "name": "SEDAN"
+        },
+        {
+            "id": "2",
+            "name": "HATCHBACK"
+        },
+        {
+            "id": "3",
+            "name": "COUPE"
+        },
+        {
+            "id": "4",
+            "name": "SUV"
+        },
+        {
+            "id": "5",
+            "name": "FURGON"
+        }
+    ],
+    "tiposMoto": [{
+            "id": "1",
+            "name": "URBANA"
+        },
+        {
+            "id": "2",
+            "name": "DEPORTIVAS"
+        },
+        {
+            "id": "3",
+            "name": "TURISMO"
+        },
+        {
+            "id": "4",
+            "name": "OFF-ROAD"
+        },
+        {
+            "id": "5",
+            "name": "ESPECIALES"
+        }
+    ],
+    "especialidades": [{
+            "id": "1",
+            "name": "GENERAL"
+        },
+        {
+            "id": "2",
+            "name": "MOTORISTA"
+        },
+        {
+            "id": "3",
+            "name": "CHAPA_Y_PINTURA"
+        },
+        {
+            "id": "4",
+            "name": "ELECTRICISTA"
+        }
+    ]
 }

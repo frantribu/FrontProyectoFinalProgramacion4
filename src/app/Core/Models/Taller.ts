@@ -1,4 +1,4 @@
-import { LookupItem } from "./ENUM";
+import { LookupItem } from "./Enum";
 import { User } from "./User";
 import { Vehiculo } from "./Vehiculo";
 

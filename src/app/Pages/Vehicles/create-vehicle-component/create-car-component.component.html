@@ -12,6 +12,15 @@
           </button>
 
                     <button type="button" (click)="tipoDeVehiculo('Moto')">
+    <article class="form_container">
+      <form [formGroup]="tipoDeFormulario()" (submit)="enviarVehiculo()">
+        <div class="tipo_container">
+          <button type="button" (click)="tipoDeVehiculo('Auto')"
+            [style.backgroundColor]="tipo() === 'Auto' ? 'rgb(0, 129, 204)' : 'rgb(0, 162, 255)'">
+            Auto
+          </button>
+
+                    <button type="button" (click)="tipoDeVehiculo('Moto')" [style.backgroundColor]="tipo() === 'Moto' ? 'rgb(0, 129, 204)' : 'rgb(0, 162, 255)'">
             Moto
           </button>
                 </div>
@@ -49,29 +58,35 @@
                             <input type="text" formControlName="descripcion" id="input_description" />
                         </div>
 
-                        @if(tipo()==="Auto"){
-                        <div class="price_container">
+                        <<<<<<< HEAD @if(tipo()==="Auto" ){ <div class="price_container">
                             <label for="input_price">Precio</label>
                             <input type="number" formControlName="precio" id="input_price" />
-                        </div>
-                        }
                     </div>
+                    }
+                </div>
+                =======
+                <div class="price_container">
+                    <label for="input_priceCompra">Precio de compra</label>
+                    <input type="number" formControlName="precioDeCompra" id="input_price" />
+                </div>
+    </div>
+    >>>>>>> 6bc4270bd0575248d1559c1ca3cd5c074e804dba
 
-                    <div class="div2_container">
-                        <div class="engine_container">
-                            <label for="input_engine">Motor</label>
-                            <input type="text" formControlName="motor" id="input_engine" />
-                        </div>
+    <div class="div2_container">
+        <div class="engine_container">
+            <label for="input_engine">Motor</label>
+            <input type="text" formControlName="motor" id="input_engine" />
+        </div>
 
-                        <div class="color_container">
-                            <label for="input_color">Color</label>
-                            <input type="text" formControlName="color" id="input_color" />
-                        </div>
+        <div class="color_container">
+            <label for="input_color">Color</label>
+            <input type="text" formControlName="color" id="input_color" />
+        </div>
 
-                        <div class="combustion_container">
-                            <label for="combustion">Combustion</label>
+        <div class="combustion_container">
+            <label for="combustion">Combustion</label>
 
-                            <select id="combustion" formControlName="combustion">
+            <select id="combustion" formControlName="combustion">
                 <option disabled>-- Seleccione una opción --</option>
 
                 @if (combustiones(); as types) {
@@ -85,24 +100,24 @@
                 </option>
                 }
               </select>
-                        </div>
+        </div>
 
-                        @if(tipo()==="Auto"){
+        @if(tipo()==="Auto"){
 
-                        <div class="doors_container">
-                            <label for="input_doors">Puertas</label>
-                            <input type="text" formControlName="puertas" id="input_doors" />
-                        </div>
+        <div class="doors_container">
+            <label for="input_doors">Puertas</label>
+            <input type="text" formControlName="puertas" id="input_doors" />
+        </div>
 
-                        <div class="hp_container">
-                            <label for="input_hp">Potencia</label>
-                            <input type="number" formControlName="potencia" min="0" id="input_hp" />
-                        </div>
+        <div class="hp_container">
+            <label for="input_hp">Potencia</label>
+            <input type="number" formControlName="potencia" min="0" id="input_hp" />
+        </div>
 
-                        <div class="carType_container">
-                            <label for="carType">Tipo de Auto</label>
+        <div class="carType_container">
+            <label for="carType">Tipo de Auto</label>
 
-                            <select id="carType" formControlName="tipoAuto">
+            <select id="carType" formControlName="tipoAuto">
                 <option disabled>-- Seleccione una opción --</option>
 
                 @if (tiposAuto(); as types)
@@ -114,18 +129,18 @@
                 <option disabled>Cargando Tipos...</option>
                 }
               </select>
-                        </div>
-                        } @if(tipo()==="Moto"){
+        </div>
+        } @if(tipo()==="Moto"){
 
-                        <div class="hp_container">
-                            <label for="input_cilindrada">Cilindrada</label>
-                            <input type="number" formControlName="cilindrada" min="0" id="input_cilindrada" />
-                        </div>
+        <div class="hp_container">
+            <label for="input_cilindrada">Cilindrada</label>
+            <input type="number" formControlName="cilindrada" min="0" id="input_cilindrada" />
+        </div>
 
-                        <div class="typeMotorbike_container">
-                            <label for="typeMotorbike">Tipo de moto</label>
+        <div class="typeMotorbike_container">
+            <label for="typeMotorbike">Tipo de moto</label>
 
-                            <select id="motorbikeType" formControlName="tipoMoto">
+            <select id="motorbikeType" formControlName="tipoMoto">
                 <option disabled>--- Seleccione una opcion ---</option>
 
                 @if (tipoDeCarroceria(); as types) {
@@ -136,42 +151,53 @@
                 <option disabled>Cargando Tipos...</option>
                 }
               </select>
-                        </div>
+            <<<<<<< HEAD </div>
 
-                        <div class="price_container">
-                            <label for="input_price">Precio</label>
-                            <input type="number" formControlName="precio" id="input_price" />
-                        </div>
-
-                        }
-                    </div>
+                <div class="price_container">
+                    <label for="input_price">Precio</label>
+                    <input type="number" formControlName="precio" id="input_price" />
                 </div>
 
-                <div class="imagenes_container">
-                    <label for="input_imagenes">-- Subir Imágenes del Vehículo --</label>
-                    <input type="file" id="input_imagenes" multiple (change)="onFileSelected($event)" accept="image/png, image/jpeg, image/webp" />
-                </div>
-
-                @if (archivosSeleccionados.length > 0) {
-                <div class="preview-container">
-                    <h4>Vista Previa ({{ archivosSeleccionados.length }} archivos):</h4>
-                    <div class="miniaturas-grid">
-                        @for (archivo of archivosSeleccionados; track $index) {
-                        <div class="file-preview">
-                            <img [src]="archivo.urlLocal" [alt]="archivo.name" class="miniatura" />
-                            <span>{{ archivo.name }}</span>
-                        </div>
-                        }
-                    </div>
-                </div>
-                } }@else {
-                <p style="color: white; text-align: center; font-size: larger;">Selecciona un tipo de vehiculo para empezar</p>
                 }
+        </div>
+    </div>
+    =======
+    </div>
+    }
 
-                <div class="button_container">
-                    <button [disabled]="tipoDeFormulario().invalid" type="submit">Cargar</button>
-                </div>
-            </form>
-        </article>
+    <div class="price_container">
+        <label for="input_priceVenta">Precio de venta</label>
+        <input type="number" formControlName="precioDeVenta" id="input_price" />
+    </div>
+    </div>
+    </div>
+    >>>>>>> 6bc4270bd0575248d1559c1ca3cd5c074e804dba
+
+    <div class="imagenes_container">
+        <label for="input_imagenes">-- Subir Imágenes del Vehículo --</label>
+        <input type="file" id="input_imagenes" multiple (change)="onFileSelected($event)" accept="image/png, image/jpeg, image/webp" />
+    </div>
+
+    @if (archivosSeleccionados.length > 0) {
+    <div class="preview-container">
+        <h4>Vista Previa ({{ archivosSeleccionados.length }} archivos):</h4>
+        <div class="miniaturas-grid">
+            @for (archivo of archivosSeleccionados; track $index) {
+            <div class="file-preview">
+                <img [src]="archivo.urlLocal" [alt]="archivo.name" class="miniatura" />
+                <span>{{ archivo.name }}</span>
+            </div>
+            }
+        </div>
+    </div>
+    } }@else {
+    <p style="color: white; text-align: center; font-size: larger;">Selecciona un tipo de vehiculo para empezar</p>
+    }
+
+    <div class="button_container">
+        <button [disabled]="tipoDeFormulario().invalid" type="submit">Cargar</button>
+    </div>
+    </form>
+    </article>
     </div>
 </section>

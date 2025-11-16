@@ -11,23 +11,19 @@
         <small>El email es obligatorio</small>
         } @if (formLogin.get("email")?.hasError('pattern') &&
         formLogin.get("email")?.touched) {
-        <small
-          >El correo debe ser de la empresa y terminar en miempresa.com</small
-        >
+        <small>El correo debe ser valido</small>
         }
       </div>
       <div class="password_container">
         <label for="password">Contraseña</label>
-        <input type="text" formControlName="password" />
+        <input type="password" formControlName="password" />
 
         @if (formLogin.get("password")?.hasError('required') &&
         formLogin.get("password")?.touched) {
         <small>La contraseña es obligatorio</small>
         } @if (formLogin.get("password")?.hasError('pattern') &&
         formLogin.get("password")?.touched) {
-        <small
-          >La contraseña debe tener al menos una Mayuscula y un numero</small
-        >
+        <small>La contraseña debe tener al menos una Mayuscula y un numero</small>
         }
       </div>
 

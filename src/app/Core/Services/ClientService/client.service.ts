@@ -27,12 +27,4 @@ export class ClientService {
   patchClient(id: string, cliente: Partial<User>) {
     return this.http.patch(`${this.url}/${id}`, cliente)
   }
-
-
-
-
-
-
-
-
 }

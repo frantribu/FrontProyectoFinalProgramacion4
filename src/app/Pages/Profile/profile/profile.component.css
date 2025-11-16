@@ -73,9 +73,3 @@ body {
     text-align: center;
     color: #CC7F6A;
 }
-
-#descripcion:hover {
-    transform: translateY(-4px);
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 16px rgba(75, 75, 75, 0.2);
-}
