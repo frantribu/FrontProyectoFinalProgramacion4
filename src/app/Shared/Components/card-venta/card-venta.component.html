@@ -1,0 +1,14 @@
+<div class="div-container">
+    @if (vehiculo()) {
+    <h2>{{vehiculo().marca}} {{vehiculo().modelo}}</h2>
+    }@else {
+    <p>Cargando el vehiculo...</p>
+    }
+
+
+    <h3>{{historialDeVenta()?.fechaVenta}}</h3>
+    <div class="precio">
+        <span>Precio vendido:</span>
+        <strong> ${{vehiculo()?.precio}}</strong>
+    </div>
+</div>

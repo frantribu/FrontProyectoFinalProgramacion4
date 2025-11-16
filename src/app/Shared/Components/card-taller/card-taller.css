@@ -1,0 +1,20 @@
+.card_taller{
+    width: 100%;
+    height: 18vh;
+    padding: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid gainsboro;
+    transition: transform 0.3s ease, box-shadow 0.3 ease;
+}
+
+.card_taller:hover{
+    background-color: #dadada;
+}
+

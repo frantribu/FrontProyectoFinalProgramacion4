@@ -1,0 +1,25 @@
+<section class="form-container">
+    <h2>Modificar Cliente</h2>
+    <form [formGroup]="formularioClient" (submit)="modificar()">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input formControlName="nombre" id="nombre" type="text">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Apellido</label>
+            <input formControlName="apellido" id="apellido" type="text">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input formControlName="email" id="email" type="email">
+        </div>
+        <div class="form-group">
+            <label for="dni">DNI</label>
+            <input formControlName="dni" id="dni" type="number">
+        </div>
+        <small>Los campos son opcionales</small>
+        <div class="form-actions">
+            <button [disabled]="formularioClient.invalid" type="submit">Modificar Cliente</button>
+        </div>
+    </form>
+</section>

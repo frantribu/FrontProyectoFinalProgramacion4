@@ -1,0 +1,21 @@
+<body>
+
+    <button type="button" class="button_volver" (click)="volver()"> Atras </button>
+
+    <section id="foto">
+        <img src="assets/perfil.png">
+    </section>
+    <h3><strong>Información Personal</strong></h3>
+    <section id="descripcion">
+
+        <p id="rol"> <strong>{{asignRole()}}</strong></p>
+        <h5><strong>Nombre</strong></h5>
+        <p id="name"> {{user.nombre}} {{user.apellido}}</p>
+        <h5> <strong>Direccion de Correo</strong> </h5>
+        <p id="email"> {{user.email}}</p>
+        <h5><strong>DNI</strong></h5>
+        <p id="dni"> {{user.dni}}</p>
+    </section>
+
+
+</body>

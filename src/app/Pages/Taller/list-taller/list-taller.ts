@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { TallerServiceService } from '../../../Core/Services/Taller/TallerService/taller-service.service';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { Router, RouterLink } from "@angular/router";
-import { CardTaller } from '../card-taller/card-taller';
 
+import { toSignal } from '@angular/core/rxjs-interop';
+import { Router } from "@angular/router";
+import { CardTaller } from '../../../Shared/Components/card-taller/card-taller';
+import { TallerServiceService } from '../../../Core/Services/Taller/TallerService/taller-service.service';
 @Component({
   selector: 'app-list-taller',
   imports: [CardTaller],
@@ -15,4 +15,8 @@ export class ListTaller {
   router = inject(Router)
 
   talleres = toSignal(this.serviceTaller.getTalleres(), {initialValue: []})
+
+  detalle(id:string){
+    this.router.navigate([`taller/detalle/${id}`])
+  }
 }

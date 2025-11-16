@@ -1,0 +1,53 @@
+.modal-backdrop {
+    background: rgba(0,0,0,0.6);
+}
+
+.modal-container {
+    position: fixed;
+    transform: translate(-50%, -130%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 9999
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input{
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+}
+
+button{
+    margin-top: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-inline: 5px;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    transform: scale(1.01);
+}
+
+button[type="button"]{
+    background-color: red;
+}
+
+button[type="submit"]{
+    background-color: rgb(95, 255, 47);
+}
+
+button[disabled]{
+    background-color: rgba(114, 250, 73, 0.521);
+    cursor: not-allowed;
+}
+
+small{
+    color: red;
+}

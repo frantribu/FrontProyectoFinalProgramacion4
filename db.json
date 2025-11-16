@@ -1,45 +1,135 @@
 {
-  "Usuario": [
+  "usuarios": [
     {
       "id": "1",
+      "dni": 12345611,
       "nombre": "Admin",
-      "apellido": "User",
+      "apellido": "tribu",
       "idRol": 1,
-      "email": "admin@miempresa.com",
-      "password": "Hashedpassword123",
-      "isLogged": false
+      "email": "admin@gmail.com",
+      "contrasenia": "Hashedpassword123"
+    },
+    {
+      "id": "b6a2",
+      "nombre": "franco",
+      "apellido": "tribu",
+      "idRol": 2,
+      "email": "franco@gmail.com",
+      "contrasenia": "Hashedpassword123",
+      "dni": 12345678
+    },
+    {
+      "id": "b2a2",
+      "nombre": "franco",
+      "apellido": "tribu",
+      "idRol": 4,
+      "email": "franco@gmail.com",
+      "contrasenia": "Hashedpassword123",
+      "dni": 12345678
+    },
+    {
+      "id": "f516",
+      "nombre": "franco",
+      "apellido": "tribu",
+      "email": "franco21@gmail.com",
+      "dni": 12345908,
+      "idRol": 4
+    },
+    {
+      "id": "e72a",
+      "nombre": "martina",
+      "apellido": "perez",
+      "idRol": "3",
+      "email": "marperez@gmail.com",
+      "dni": 46556677,
+      "isLogged": false,
+      "contrasenia": "123martina"
     }
   ],
-  "Vehiculo": [],
-  "Taller": [{
-    "id": "1",
-    "Especialidad": "GENERAL",
-    "NombreTaller": "Gonzalito Taller",
-    "Encargado": "",
-    "Vehiculo": [
-      {
-        "id": "V-12345",
-        "patente": "ABC-123",
-        "marca": "Toyota",
-        "modelo": "Corolla",
-        "precio": 15500.75,
-        "color": "Gris Plata",
-        "año": 2021,
-        "kilometraje": 35000,
-        "motor": "1.8L VVT-i",
-        "idCombustion": 1,
-        "descripcion": "Sedán de bajo consumo, excelente estado, service al día.",
-        "fechaIngreso": "2024-10-25",
-        "enReparacion": false,
-        "vendido": false
-      }
-    ],
-    "Direccion": "25 de Mayo"
-  }],
-  "Historial": [],
-  "HistorialVenta": [],
-  "HistorialTaller": [],
-  "Role": [
+  "autos": [
+    {
+      "id": "327e",
+      "patente": "ABC111",
+      "marca": "Fiat ",
+      "modelo": "palio",
+      "precio": 1999,
+      "color": "Gris oscuro",
+      "anio": 2011,
+      "kilometros": 999900,
+      "motor": "v10",
+      "idCombustion": "1",
+      "descripcion": "Cumple, las dos gomas de atras matadas, falta vtv",
+      "puertas": 3,
+      "potencia": 90,
+      "idTipoCarroceria": "1",
+      "fechaIngreso": "2025-11-14",
+      "enReparacion": false,
+      "rutasImagen": [
+        "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp"
+      ],
+      "vendido": true,
+      "tipoVehiculo": "Auto"
+    }
+  ],
+  "motos": [
+    {
+      "id": "f827",
+      "patente": "AH999ZZ",
+      "marca": "Bmw",
+      "modelo": "s1000rr",
+      "precio": 20000,
+      "color": "blanca, rojo, azul",
+      "anio": 2025,
+      "kilometros": 0,
+      "motor": "v10",
+      "idCombustion": "1",
+      "descripcion": "Hermosa",
+      "cilindrada": 1000,
+      "idTipoCarroceria": "2",
+      "rutasImagen": [
+        "app/assets/imgvehiculos/10-bmw-s-1000-rr-2025-estudio-blanco-04.jpg",
+        "app/assets/imgvehiculos/S1000RR.jpg"
+      ],
+      "fechaIngreso": "2025-11-16",
+      "enReparacion": false,
+      "vendido": true,
+      "tipoVehiculo": "Moto"
+    }
+  ],
+  "talleres": [
+    {
+      "id": "76cb",
+      "NombreTaller": "taller taller",
+      "Encargado": "e72a",
+      "Direccion": "25 de mayo y 180",
+      "Especialidad": "4"
+    },
+    {
+      "id": "a321",
+      "NombreTaller": "taller el mejor",
+      "Encargado": "e72a",
+      "Direccion": "25 de mayo y 180",
+      "Especialidad": "2"
+    }
+  ],
+  "historialesVenta": [
+    {
+      "id": "4d55",
+      "vehiculo": "327e",
+      "cliente": "f516",
+      "precioCompra": 1999,
+      "fechaVenta": "2025-11-15"
+    },
+    {
+      "id": "d733",
+      "vehiculo": "f827",
+      "cliente": "f516",
+      "precio": 20000,
+      "fechaVenta": "2025-11-16"
+    }
+  ],
+  "historialesTaller": [],
+  "roles": [
     {
       "id": "1",
       "name": "ADMIN"
@@ -57,7 +147,7 @@
       "name": "CLIENTE"
     }
   ],
-  "Combustion": [
+  "combustiones": [
     {
       "id": "1",
       "name": "NAFTA"
@@ -71,7 +161,7 @@
       "name": "ELECTRICO"
     }
   ],
-  "TipoAuto": [
+  "tiposAuto": [
     {
       "id": "1",
       "name": "SEDAN"
@@ -93,7 +183,7 @@
       "name": "FURGON"
     }
   ],
-  "TipoMoto": [
+  "tiposMoto": [
     {
       "id": "1",
       "name": "URBANA"
@@ -115,7 +205,7 @@
       "name": "ESPECIALES"
     }
   ],
-  "Especialidad": [
+  "especialidades": [
     {
       "id": "1",
       "name": "GENERAL"

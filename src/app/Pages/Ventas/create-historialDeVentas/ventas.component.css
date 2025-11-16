@@ -1,0 +1,140 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.sectionVentas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 92vh;
+    width: 100vw;
+}
+
+.sectionVentas .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #4B4B4B;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-container>div {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.input-con-flecha {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: white;
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+input,
+select {
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 5px 30px 5px 5px;
+    background-color: #D8C8B6;
+    transition: all 0.3s ease;
+    -moz-appearance: textfield;
+}
+
+option {
+    background-color: whitesmoke;
+}
+
+.div-input {
+    background-color: #D8C8B6;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.input-menu-abierto{
+    border-radius: 5px 5px 0 0;
+}
+
+input:focus,
+select:focus,
+.div-input:focus {
+    outline: 2px solid #CC7F6A;
+    background-color: #F5F5DC;
+}
+
+.flecha {
+    position: absolute;
+    right: 0.2rem;
+    bottom: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.menuAbierto {
+    background-color: whitesmoke;
+    border-radius: 0 0 8px 8px;
+    max-height: 11vh;
+    overflow: hidden;
+}
+
+.menuAbierto ul {
+    list-style: none;
+    max-height: 11vh;
+    overflow-y: auto;
+}
+
+.menuAbierto ul li {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px;
+}
+
+.menuAbierto ul li:hover {
+    background-color: rgb(209, 209, 209);
+}
+
+span {
+    color: black;
+}
+
+button[type="submit"] {
+    padding: 10px 25px;
+    background-color: #CC7F6A;
+    color: #F5F5DC;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #d58670;
+}
+
+button[disabled] {
+    background-color: #d8c8b6;
+    color: #4B4B4B;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

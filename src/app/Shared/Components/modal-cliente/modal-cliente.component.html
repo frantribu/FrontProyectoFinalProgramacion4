@@ -1,0 +1,30 @@
+<div class="modal-backdrop" (click)="cerrar()"></div>
+
+<section class="modal-container">
+    <h2>Nuevo Cliente</h2>
+    <form [formGroup]="formularioClient" (submit)="enviar()">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input formControlName="nombre" id="nombre" type="text">
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input formControlName="apellido" id="apellido" type="text">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input formControlName="email" id="email" type="email">
+        </div>
+        <div class="form-group">
+            <label for="dni">DNI</label>
+            <input formControlName="dni" id="dni" type="number">
+        </div>
+        @if (formularioClient.invalid) {
+        <small>Todos los campos son obligatorios</small>
+        }
+        <div class="form-actions">
+            <button [disabled]="formularioClient.invalid" type="submit">Crear Cliente</button>
+            <button type="button" class="btn-cancel" (click)="cerrar()">Cancelar</button>
+        </div>
+    </form>
+</section>

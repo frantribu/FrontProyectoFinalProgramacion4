@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserServiceService } from '../../Core/Services/UserService/user-service.service';
-import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +16,7 @@ export class LoginComponent {
   router=inject(Router)
 
   formLogin=this.fb.nonNullable.group({
-    email: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@miempresa\\.com$")]],
+    email: ['', [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
     password:['', [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/)]]
   })
 
@@ -28,11 +27,10 @@ export class LoginComponent {
     this.usuarioService.getUserByEmail(email!).subscribe({
       next:(user)=>{
         if(user.length===0){
-          this.mensaje="Usuario no encontrado"
-        }else if(user[0].password===password){
-          this.usuarioService.updateIsLogged(user[0])
+          this.mensaje="Contraseña o email incorrecto"
+        }else if(user[0].contrasenia===password){
           this.usuarioService.guardarUsuarioEnSesion(user[0])
-          this.mensaje="Login exitoso"
+          this.router.navigate(['home'])
         }else{
           this.mensaje="Contraseña o email incorrecto"
         }
