@@ -12,11 +12,11 @@ section {
     font-size: 0.95em;
     margin-bottom: 10px;
     transition: all 0.3s ease;
+    padding: 10px;
 }
 
 .button_volver:hover {
     background-color: white;
-    padding: 10px;
 }
 
 #grilla {
@@ -35,17 +35,17 @@ input[type="text"] {
 
 
 @media (max-width:768px) {
-    #grilla{
+    #grilla {
         justify-items: center;
     }
 
-    .div-buscador{
+    .div-buscador {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    input[type="text"]{
+    input[type="text"] {
         width: 100%;
     }
 }

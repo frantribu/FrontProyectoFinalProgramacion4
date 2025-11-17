@@ -1,4 +1,11 @@
 <section class="talleres">
+<<<<<<< HEAD
+=======
+    <button type="button" class="button_volver" (click)="volver()">
+        Atras
+    </button>
+    
+>>>>>>> 96e9a2fa32997a27e247674e8ea64fd75782b2b8
     <h1 class="titulo">Talleres</h1>
     @for (taller of talleres(); track taller.id) {
     <app-card-taller [taller]="taller" (click)="detalle(taller.id)"></app-card-taller>

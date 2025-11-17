@@ -19,4 +19,11 @@ export class ListTaller {
   detalle(id:string){
     this.router.navigate([`taller/detalle/${id}`])
   }
+<<<<<<< HEAD
+=======
+
+  volver(){
+    this.router.navigate([''])
+  }
+>>>>>>> 96e9a2fa32997a27e247674e8ea64fd75782b2b8
 }

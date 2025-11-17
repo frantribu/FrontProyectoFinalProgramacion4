@@ -4,16 +4,21 @@
   </div>
 
   <div class="card_container">
+    @if (user.idRol===1) {
     <app-card-home [titulo]="'Usuarios'" [imagen]="'assets/logoUsuario.png'" [button1]="'Ver Usuarios'"
       [button2]="'Cargar Usuario'" [rutaButton1]="'/usuarios'" [rutaButton2]="'/usuarios/agregar'"></app-card-home>
+    }
 
-      <app-card-home [titulo]="'Vehiculos'" [imagen]="'assets/logoVehiculo.png'" [button1]="'Ver Vehiculos'"
+    @if (user.idRol===1 || user.idRol===2) {
+    <app-card-home [titulo]="'Vehiculos'" [imagen]="'assets/logoVehiculo.png'" [button1]="'Ver Vehiculos'"
       [button2]="'Cargar Vehiculo'" [rutaButton1]="'/vehiculos'" [rutaButton2]="'/vehiculos/agregar'"></app-card-home>
 
     <app-card-home [titulo]="'Talleres'" [imagen]="'assets/Logo_taller.png'" [button1]="'Ver Talleres'"
-      [button2]="'Cargar Talleres'" [rutaButton1]="'/taller/listar'" [rutaButton2]="'/taller/agregar'"></app-card-home>
+      [button2]="'Cargar Talleres'" [rutaButton1]="'/taller'" [rutaButton2]="'/taller/agregar'"></app-card-home>
 
     <app-card-home [titulo]="'Ventas'" [imagen]="'assets/logo_ventas.png'" [button1]="'Ver Ventas'" [button2]="''"
       [rutaButton1]="'/historialDeVentas'" [rutaButton2]="''"></app-card-home>
+    }
+
   </div>
 </section>

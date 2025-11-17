@@ -14,11 +14,18 @@ export const routes: Routes = [
     { path: "perfil", loadComponent: () => import("./Pages/Profile/profile/profile.component").then(c => c.ProfileComponent) },
 
     //TALLER
+<<<<<<< HEAD
     { path: "taller/agregar", loadComponent: () => import("./Pages/Taller/create-taller/create-taller").then(c => c.CreateTaller) },
     { path: "taller/listar", loadComponent: () => import("./Pages/Taller/list-taller/list-taller").then(c => c.ListTaller) },
     { path: "taller/listar/id", loadComponent: () => import("./Pages/Taller/list-taller/list-taller").then(c => c.ListTaller) },
     { path: "taller/modificar/:id", loadComponent: () => import("./Pages/Taller/modificar-taller/modificar-taller").then(c => c.ModificarTaller) },
     { path: "taller/detalle/:id", loadComponent: () => import("./Pages/Taller/detalle-taller/detalle-taller.component").then(c => c.DetalleTallerComponent) },
+=======
+    { path: "taller/agregar", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Taller/create-taller/create-taller").then(c => c.CreateTaller) },
+    { path: "taller", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Taller/list-taller/list-taller").then(c => c.ListTaller) },
+    {path: "taller/detalle/:id", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Taller/detalle-taller/detalle-taller.component").then(c => c.DetalleTallerComponent)},
+    { path: "taller/modificar/id", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Taller/modificar-taller/modificar-taller").then(c => c.ModificarTaller) },
+>>>>>>> 96e9a2fa32997a27e247674e8ea64fd75782b2b8
 
     //VEHICULOS
     { path: "vehiculos", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Vehicles/list-vehicles/list-vehicles.component").then(c => c.ListVehiclesComponent) },
@@ -28,11 +35,6 @@ export const routes: Routes = [
     { path: "vehiculos/detalleMoto/:id", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Vehicles/Motorbike/detalle-moto/detalle-moto.component").then(c => c.DetalleMotoComponent) },
     { path: "vehiculos/agregar", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Vehicles/create-vehicle-component/create-car-component.component").then(c => c.CreateVehicleComponent) },
 
-    //CLIENTES
-    /*{ path: "clientes", canActivate:[loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Client/list-clients/client.component").then(c => c.ClientComponent) },
-    { path: "clientes/agregar", canActivate:[loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Client/create-client/create-client.component").then(c => c.CreateClientComponent) },
-    { path: "clientes/modificar/:id", canActivate:[loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Client/modify-client/modify-client.component").then(c => c.ModifyClientComponent) },
-*/
     //USERS
     { path: "usuarios", canActivate: [loginGuardGuard, adminGuardGuard], loadComponent: () => import("./Pages/User/list-users/list-users.component").then(c => c.ListUsersComponent) },
     { path: "usuarios/detalle/:id", canActivate: [loginGuardGuard, adminGuardGuard], loadComponent: () => import("./Pages/User/detalle-user/detalle-user.component").then(c => c.DetalleUserComponent) },

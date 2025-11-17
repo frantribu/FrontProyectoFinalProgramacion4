@@ -10,6 +10,15 @@
       "contrasenia": "MiPass123"
     },
     {
+      "id": "15345",
+      "dni": 40200300,
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "idRol": 2,
+      "email": "juanPerez@gmail.com",
+      "contrasenia": "MiPass123"
+    },
+    {
       "id": "835c",
       "nombre": "Leandro",
       "apellido": "Ciriaco",
@@ -26,6 +35,7 @@
       "idRol": 4
     },
     {
+<<<<<<< HEAD
       "id": "e72a",
       "nombre": "martina",
       "apellido": "perez",
@@ -34,6 +44,23 @@
       "dni": 46556677,
       "isLogged": false,
       "contrasenia": "123martina"
+=======
+      "id": "29ea",
+      "nombre": "Gonzaol",
+      "apellido": "Diaz",
+      "email": "gonza@gmail.com",
+      "dni": 12345432,
+      "idRol": 4
+    },
+    {
+      "id": "85ec",
+      "nombre": "Leandro",
+      "apellido": "Ciriaco",
+      "email": "lean@gmail.com",
+      "dni": 87654321,
+      "contrasenia": "Lean1234",
+      "idRol": 3
+>>>>>>> 96e9a2fa32997a27e247674e8ea64fd75782b2b8
     }
   ],
   "autos": [
@@ -60,17 +87,40 @@
       "enReparacion": false,
       "vendido": true,
       "tipoVehiculo": "Auto"
+    },
+    {
+      "id": "b07a",
+      "patente": "AH999HH",
+      "marca": "Audi",
+      "modelo": "RS6",
+      "precioDeCompra": 20000,
+      "precioDeVenta": 24000,
+      "color": "Gris oscuro",
+      "anio": 2025,
+      "kilometros": 0,
+      "motor": "V10",
+      "idCombustion": "1",
+      "descripcion": "0KM",
+      "puertas": "5",
+      "potencia": 600,
+      "idTipoCarroceria": "2",
+      "rutasImagen": [
+        "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
+      ],
+      "fechaIngreso": "2025-11-17",
+      "enReparacion": false,
+      "vendido": false
     }
   ],
   "motos": [
     {
-      "id": "9892",
-      "patente": "AH123RR",
+      "id": "2526",
+      "patente": "AH123XX",
       "marca": "Bmw",
       "modelo": "s1000rr",
-      "precioDeCompra": 19000,
-      "precioDeVenta": 22000,
-      "color": "blanca",
+      "precioDeCompra": 23000,
+      "precioDeVenta": 25000,
+      "color": "blanca, rojo, azul",
       "anio": 2025,
       "kilometros": 0,
       "motor": "v10",
@@ -78,14 +128,17 @@
       "descripcion": "0KM",
       "cilindrada": 1000,
       "idTipoCarroceria": "2",
-      "rutasImagen": [],
-      "fechaIngreso": "2025-11-16",
+      "rutasImagen": [
+        "app/assets/imgvehiculos/S1000RR.jpg"
+      ],
+      "fechaIngreso": "2025-11-17",
       "enReparacion": false,
-      "vendido": false,
+      "vendido": true,
       "tipoVehiculo": "Moto"
     }
   ],
   "talleres": [
+<<<<<<< HEAD
     {
       "id": "76cb",
       "NombreTaller": "taller taller",
@@ -102,18 +155,29 @@
     }
   ],
   "historialesVenta": [
+=======
+>>>>>>> 96e9a2fa32997a27e247674e8ea64fd75782b2b8
     {
-      "id": "2192",
-      "vehiculo": "9892",
-      "cliente": "835c",
-      "precio": 20000,
-      "fechaVenta": "2025-11-16"
-    },
+      "id": "1d0d",
+      "NombreTaller": "TribuMech",
+      "Encargado": "85ec",
+      "Direccion": "Avellaneda 76",
+      "Especialidad": "2"
+    }
+  ],
+  "historialesVenta": [
     {
       "id": "9730",
       "vehiculo": "4c0c",
       "cliente": "29ea",
       "precio": 55000,
+      "fechaVenta": "2025-11-17"
+    },
+    {
+      "id": "c495",
+      "vehiculo": "2526",
+      "cliente": "29ea",
+      "precio": 21000,
       "fechaVenta": "2025-11-17"
     }
   ],
@@ -179,7 +243,7 @@
     },
     {
       "id": "2",
-      "name": "DEPORTIVAS"
+      "name": "DEPORTIVA"
     },
     {
       "id": "3",
@@ -191,7 +255,7 @@
     },
     {
       "id": "5",
-      "name": "ESPECIALES"
+      "name": "ESPECIAL"
     }
   ],
   "especialidades": [
@@ -201,11 +265,11 @@
     },
     {
       "id": "2",
-      "name": "MOTORISTA"
+      "name": "MECANICO DE MOTORES"
     },
     {
       "id": "3",
-      "name": "CHAPA_Y_PINTURA"
+      "name": "CHAPA Y PINTURA"
     },
     {
       "id": "4",

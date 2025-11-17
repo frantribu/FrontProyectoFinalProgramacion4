@@ -29,8 +29,6 @@ export class TallerServiceService {
   }
 
   deleteTaller(id:string){
-    return this.http.delete<Taller>(`${this.url}/${id}`).subscribe({
-      next: () => alert("Taller creado con exito!!")
-    })
-  }
+    return this.http.delete<Taller>(`${this.url}/${id}`)
+    }
 }

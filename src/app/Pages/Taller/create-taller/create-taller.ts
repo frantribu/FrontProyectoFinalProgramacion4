@@ -65,7 +65,11 @@ export class CreateTaller {
 
     this.tallerService.postTaller(taller).subscribe(
       {
+<<<<<<< HEAD
         next : () => this.router.navigate([`taller/listar`])
+=======
+        next : () => this.router.navigate(['taller'])
+>>>>>>> 96e9a2fa32997a27e247674e8ea64fd75782b2b8
       }
     )
   }

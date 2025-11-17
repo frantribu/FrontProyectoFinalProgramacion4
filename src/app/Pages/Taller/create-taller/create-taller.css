@@ -54,6 +54,10 @@ select {
     -moz-appearance: textfield;
 }
 
+select{
+    padding: 9px;
+}
+
 option {
     background-color: whitesmoke;
 }
