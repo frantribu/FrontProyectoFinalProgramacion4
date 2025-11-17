@@ -8,24 +8,4 @@
 .titulo{
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
-=======
-}
-
-.button_volver {
-    align-self: flex-start;
-    background-color: transparent;
-    font-weight: 600;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    font-size: 0.95em;
-    margin-bottom: 10px;
-    transition: all 0.3s ease;
-    padding: 10px;
-}
-
-.button_volver:hover {
-    background-color: white;
->>>>>>> 96e9a2fa32997a27e247674e8ea64fd75782b2b8
 }
