@@ -6,22 +6,47 @@
         <div class="form-group">
             <label for="nombre">Nombre</label>
             <input formControlName="nombre" id="nombre" type="text">
+            
+            <div class="errorContainer">
+                @if (getError('nombre')) {
+                    <small>{{getError('nombre')}}</small>
+                }
+            </div>
         </div>
+
         <div class="form-group">
             <label for="apellido">Apellido</label>
             <input formControlName="apellido" id="apellido" type="text">
+
+              <div class="errorContainer">
+                @if (getError('apellido')) {
+                    <small>{{getError('apellido')}}</small>
+                }
+            </div>
         </div>
+
         <div class="form-group">
             <label for="email">Email</label>
             <input formControlName="email" id="email" type="email">
+
+              <div class="errorContainer">
+                @if (getError('email')) {
+                    <small>{{getError('email')}}</small>
+                }
+            </div>
         </div>
+
         <div class="form-group">
             <label for="dni">DNI</label>
             <input formControlName="dni" id="dni" type="number">
+
+              <div class="errorContainer">
+                @if (getError('dni')) {
+                    <small>{{getError('dni')}}</small>
+                }
+            </div>
         </div>
-        @if (formularioClient.invalid) {
-        <small>Todos los campos son obligatorios</small>
-        }
+       
         <div class="form-actions">
             <button [disabled]="formularioClient.invalid" type="submit">Crear Cliente</button>
             <button type="button" class="btn-cancel" (click)="cerrar()">Cancelar</button>

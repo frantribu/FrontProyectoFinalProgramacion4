@@ -27,4 +27,8 @@ export class DetalleAutoComponent {
   vender(){
     this.router.navigate([`vender/${this.id}`])
   }
+
+  volver(){
+    this.router.navigate(['vehiculos'])
+  }
 }

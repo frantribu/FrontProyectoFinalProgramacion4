@@ -6,5 +6,4 @@ export interface User {
     idRol: number,
     email: string,
     contrasenia: string,
-    isLogged: boolean
 }

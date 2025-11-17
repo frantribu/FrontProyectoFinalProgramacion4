@@ -5,7 +5,7 @@
 
     <div id="grilla">
         @for (item of users(); track item.id) {
-        <app-card-user [user]="item"></app-card-user>
+        <app-card-user [user]="item" (usuarioEliminado)="eliminarUsuarioLista()"></app-card-user>
         }
     </div>
 

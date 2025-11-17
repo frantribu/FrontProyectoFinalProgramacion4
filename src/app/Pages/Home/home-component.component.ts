@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { CardHomeComponent } from '../../../Shared/Components/card-home/card-home/card-home.component';
-import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
+import { CardHomeComponent } from '../../Shared/Components/card-home/card-home/card-home.component';
+import { UserServiceService } from '../../Core/Services/UserService/user-service.service';
 
 @Component({
   selector: 'app-home-component',

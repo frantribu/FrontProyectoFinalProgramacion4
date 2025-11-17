@@ -1,8 +1,12 @@
-<div class="card" >
-  <img src= {{imagen()}} class="card-img-top" alt="...">
+<div class="card">
+  <img src={{imagen()}} class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{titulo()}}</h5>
     <a [routerLink]="rutaButton1()" class="btn btn-primary">{{button1()}}</a>
+    @if (button2().length > 2) {
     <a [routerLink]="rutaButton2()" class="btn btn-primary">{{button2()}}</a>
+
+    }
+
   </div>
 </div>

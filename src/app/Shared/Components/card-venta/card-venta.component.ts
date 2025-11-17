@@ -1,8 +1,8 @@
 import { Component, computed, effect, inject, input, signal } from '@angular/core';
 import { HistorialDeVentas } from '../../../Core/Models/HistorialDeVentas';
-import { VehiculoService } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
-import { toSignal } from '@angular/core/rxjs-interop';
-
+import { VehiculoPolimorfico, VehiculoService } from '../../../Core/Services/Vehicle/VehiculoService/vehiculo.service';
+import { User } from '../../../Core/Models/User';
+import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
 
 @Component({
   selector: 'app-card-venta',
@@ -13,19 +13,42 @@ import { toSignal } from '@angular/core/rxjs-interop';
 export class CardVentaComponent {
   historialDeVenta = input<HistorialDeVentas>()
   vehiculoService = inject(VehiculoService)
+  userService=inject(UserServiceService)
 
-  vehiculo=signal<any>(null)
+  vehiculo = signal<VehiculoPolimorfico>(null!)
+  cliente=signal<User>(null!)
+  
+  constructor() {
+    effect(() => {
+      const id = this.historialDeVenta()?.vehiculo
 
-  constructor(){
+      if (id) {
+        this.vehiculoService.getVehiculoById(id).subscribe({
+          next: (v) => this.vehiculo.set(v),
+          error: (err) => console.log("Error al obtener el vehiculo ", err)
+        })
+      }
+    })
+
     effect(()=>{
-    const id=this.historialDeVenta()?.vehiculo
+      const id=this.historialDeVenta()?.cliente
 
-    if(id){
-      this.vehiculoService.getVehiculoById(id).subscribe({
-        next:(v)=>this.vehiculo.set(v),
-        error:(err)=>console.log("Error al obtener el vehiculo ", err)
-      })
-    }
-  })
+      if(id){
+        this.userService.getUserById(id).subscribe({
+          next:(c)=>this.cliente.set(c),
+          error:(err)=>console.log("Error al obtener el cliente", err)
+        })
+      }
+    })
+  }
+
+  getResultado(precioDeCompra: number, precioDeVenta: number){
+    return precioDeCompra>precioDeVenta ? "Perdida: " : "Ganancia: "
+  }
+
+  calcularGanancia(precioDeCompra: number, precioDeVenta: number) {
+    return precioDeVenta-precioDeCompra;
   }
 }
+
+

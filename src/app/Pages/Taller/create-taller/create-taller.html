@@ -5,36 +5,45 @@
       <input formControlName="name" type="text" id="input_nombre" />
     </div>
 
-    <div class="encargado_container">
-      <label for="encargado">Encargado</label>
-
-      <select id="encargado" formControlName="encargado">
-        <option disabled>-- Seleccione una opción --</option>
-        @if (encargados(); as types) { @for (encargado of encargados(); track encargado.id){
-        <option [value]="encargado.id">
-          {{encargado.nombre}} {{encargado.apellido}}
-        </option>
-        } } @else {
-        <option disabled>Cargando Encargados...</option>
-        }
-      </select>
-    </div>
-
     <div>
-      <label for="input_direccion">Direccion del Taller</label>
-      <input type="text" formControlName = "direccion" id="input_direccion" />
-    </div>
+      <div class="input-con-flecha">
+        <label for="input_cliente">Encargado</label>
+        <div class="div-input" [class.input-menu-abierto]="menuAbiertoEncargado">
+          <input type="text" placeholder="Buscar encargado" [value]="busquedaEncargado()"
+            (input)="busquedaEncargado.set($any($event.target).value)" (click)="toggleMenu()">
 
-    <div>
-      <label for="input_especialidad">Especialidad</label>
-      <select id="input_especialidad" formControlName="especialidad">
-        @for(especialidad of especialidades(); track especialidad.id){
-        <option [value]="especialidad.id">{{especialidad.name}}</option>
-        }
-      </select>
-    </div>
-    <div>
-      <button [disabled]="formulario.invalid" type="submit">Enviar</button>
-    </div>
+          <select id="encargado" formControlName="encargado">
+            <option disabled>-- Seleccione una opción --</option>
+            @if (encargados(); as types) { @for (encargado of encargados(); track encargado.id){
+            <option [value]="encargado.id">
+              {{encargado.nombre}} {{encargado.apellido}}
+            </option>
+            } } @else {
+            <option disabled>Cargando Encargados...</option>
+            }
+          </select>
+        </div>
+
+        <div>
+          <label for="input_direccion">Direccion del Taller</label>
+          <input type="text" formControlName="direccion" id="input_direccion" />
+        </div>
+
+        <div>
+          <label for="input_especialidad">Especialidad</label>
+          <select id="input_especialidad" formControlName="especialidad">
+            @for(especialidad of especialidades(); track especialidad.id){
+            <option [value]="especialidad.id">{{especialidad.name}}</option>
+            }
+          </select>
+        </div>
+        <div>
+          <button [disabled]="formulario.invalid" type="submit">Enviar</button>
+        </div>
   </form>
+
+  @if (mostrarMenuModal()) {
+  <app-modal-encargado (cerrarModal)="cerrarModalEncargado()"
+    (encargadoCreado)="agregarEncargadoALista($event)"></app-modal-encargado>
+  }
 </section>

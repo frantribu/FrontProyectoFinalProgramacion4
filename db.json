@@ -1,41 +1,32 @@
 {
   "usuarios": [
     {
-      "id": "1",
-      "dni": 12345611,
-      "nombre": "Admin",
-      "apellido": "tribu",
+      "id": "12345",
+      "dni": 40200300,
+      "nombre": "Juan",
+      "apellido": "Pérez",
       "idRol": 1,
-      "email": "admin@gmail.com",
-      "contrasenia": "Hashedpassword123"
+      "email": "juanperez@gmail.com",
+      "contrasenia": "MiPass123"
     },
     {
-      "id": "b6a2",
-      "nombre": "franco",
-      "apellido": "tribu",
-      "idRol": 2,
-      "email": "franco@gmail.com",
-      "contrasenia": "Hashedpassword123",
-      "dni": 12345678
-    },
-    {
-      "id": "b2a2",
-      "nombre": "franco",
-      "apellido": "tribu",
-      "idRol": 4,
-      "email": "franco@gmail.com",
-      "contrasenia": "Hashedpassword123",
-      "dni": 12345678
-    },
-    {
-      "id": "f516",
-      "nombre": "franco",
-      "apellido": "tribu",
-      "email": "franco21@gmail.com",
-      "dni": 12345908,
+      "id": "835c",
+      "nombre": "Leandro",
+      "apellido": "Ciriaco",
+      "email": "ciriaco@gmail.com",
+      "dni": 12345679,
       "idRol": 4
     },
     {
+      "id": "b493",
+      "nombre": "franco",
+      "apellido": "tribu",
+      "email": "franco21@gmail.com",
+      "dni": 12344321,
+      "idRol": 4
+    },
+    {
+<<<<<<< HEAD
       "id": "e72a",
       "nombre": "martina",
       "apellido": "perez",
@@ -44,55 +35,71 @@
       "dni": 46556677,
       "isLogged": false,
       "contrasenia": "123martina"
+=======
+      "id": "29ea",
+      "nombre": "Gonzaol",
+      "apellido": "Diaz",
+      "email": "gonza@gmail.com",
+      "dni": 12345432,
+      "idRol": 4
+    },
+    {
+      "id": "374f",
+      "nombre": "Fabricio",
+      "apellido": "Armagno",
+      "email": "fabri@gmail.com",
+      "dni": 12345654,
+      "contrasenia": "Fabri102",
+      "idRol": 3
+>>>>>>> fd4bf21473aa69f00df06a35cac62076a42e4612
     }
   ],
   "autos": [
     {
-      "id": "327e",
-      "patente": "ABC111",
-      "marca": "Fiat ",
-      "modelo": "palio",
-      "precio": 1999,
+      "id": "4c0c",
+      "patente": "AH999ZZ",
+      "marca": "Audi",
+      "modelo": "RS6",
+      "precioDeCompra": 50000,
+      "precioDeVenta": 55000,
       "color": "Gris oscuro",
-      "anio": 2011,
-      "kilometros": 999900,
-      "motor": "v10",
+      "anio": 2025,
+      "kilometros": 0,
+      "motor": "v6",
       "idCombustion": "1",
-      "descripcion": "Cumple, las dos gomas de atras matadas, falta vtv",
+      "descripcion": "Auto 0KM",
       "puertas": 3,
-      "potencia": 90,
-      "idTipoCarroceria": "1",
-      "fechaIngreso": "2025-11-14",
-      "enReparacion": false,
+      "potencia": 600,
+      "idTipoCarroceria": "2",
       "rutasImagen": [
-        "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp"
+        "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
       ],
+      "fechaIngreso": "2025-11-17",
+      "enReparacion": false,
       "vendido": true,
       "tipoVehiculo": "Auto"
     }
   ],
   "motos": [
     {
-      "id": "f827",
-      "patente": "AH999ZZ",
+      "id": "9892",
+      "patente": "AH123RR",
       "marca": "Bmw",
       "modelo": "s1000rr",
-      "precio": 20000,
-      "color": "blanca, rojo, azul",
+      "precioDeCompra": 19000,
+      "precioDeVenta": 22000,
+      "color": "blanca",
       "anio": 2025,
       "kilometros": 0,
       "motor": "v10",
       "idCombustion": "1",
-      "descripcion": "Hermosa",
+      "descripcion": "0KM",
       "cilindrada": 1000,
       "idTipoCarroceria": "2",
-      "rutasImagen": [
-        "app/assets/imgvehiculos/10-bmw-s-1000-rr-2025-estudio-blanco-04.jpg",
-        "app/assets/imgvehiculos/S1000RR.jpg"
-      ],
+      "rutasImagen": [],
       "fechaIngreso": "2025-11-16",
       "enReparacion": false,
-      "vendido": true,
+      "vendido": false,
       "tipoVehiculo": "Moto"
     }
   ],
@@ -114,18 +121,18 @@
   ],
   "historialesVenta": [
     {
-      "id": "4d55",
-      "vehiculo": "327e",
-      "cliente": "f516",
-      "precioCompra": 1999,
-      "fechaVenta": "2025-11-15"
-    },
-    {
-      "id": "d733",
-      "vehiculo": "f827",
-      "cliente": "f516",
+      "id": "2192",
+      "vehiculo": "9892",
+      "cliente": "835c",
       "precio": 20000,
       "fechaVenta": "2025-11-16"
+    },
+    {
+      "id": "9730",
+      "vehiculo": "4c0c",
+      "cliente": "29ea",
+      "precio": 55000,
+      "fechaVenta": "2025-11-17"
     }
   ],
   "historialesTaller": [],

@@ -4,7 +4,6 @@ import { routes } from './app.routes';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { UserServiceService } from './Core/Services/UserService/user-service.service';
 import { TallerServiceService } from './Core/Services/Taller/TallerService/taller-service.service';
-import { ClientService } from './Core/Services/ClientService/client.service';
 import { RolesService } from './Core/Services/RolService/roles.service';
 
 export const appConfig: ApplicationConfig = {
@@ -13,7 +12,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
   { provide: UserServiceService },
   { provide: TallerServiceService},
-  { provide: ClientService },
   { provide: RolesService }
   ]
 };

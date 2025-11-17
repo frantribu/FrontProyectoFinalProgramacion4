@@ -1,4 +1,8 @@
 <section class="sectionVentas">
+    <div class="volverContainer">
+        <button type="button" class="button_volver" (click)="volver()">Atras</button>
+    </div>
+
     <form [formGroup]="form" (submit)="enviarVenta()" class="form-container">
         <div>
             <label for="input_cliente">Vehiculo</label>
@@ -9,15 +13,14 @@
                 <label for="input_cliente">Cliente</label>
                 <div class="div-input" [class.input-menu-abierto]="menuAbiertoCliente">
                     <input type="text" placeholder="Buscar cliente" [value]="busquedaCliente()"
-                        (input)="busquedaCliente.set($any($event.target).value)" (click)="toggleMenu('cliente')">
+                        (input)="busquedaCliente.set($any($event.target).value)" (click)="toggleMenu()">
 
-                    <svg (click)="toggleMenu('cliente')" class="flecha" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"
-                        stroke-linejoin="round">
+                    <svg (click)="toggleMenu()" class="flecha" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                        fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </div>
-
+                
             </div>
 
             @if(menuAbiertoCliente){
@@ -26,7 +29,7 @@
                     <li (click)="abrirModalCliente()">Agregar cliente +</li>
                     @if (clientesFiltrados().length) {
                     @for (cliente of clientesFiltrados(); track cliente.id) {
-                    <li (click)="seleccionarCliente(cliente)" (click)="toggleMenu('cliente')">
+                    <li (click)="seleccionarCliente(cliente)" (click)="toggleMenu()">
                         <span>{{cliente.nombre}} {{cliente.apellido}} | {{cliente.dni}}</span>
                     </li>
                     }
@@ -38,7 +41,7 @@
 
         <div>
             <label for="input_precio">Precio de venta</label>
-            <input type="number" [value]="vehiculo()?.precio" disabled>
+            <input type="number" [value]="vehiculo()?.precioDeVenta" formControlName="precio">
         </div>
 
         <div>

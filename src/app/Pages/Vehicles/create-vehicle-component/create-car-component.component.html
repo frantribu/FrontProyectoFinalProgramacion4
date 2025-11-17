@@ -1,183 +1,289 @@
 <section>
-  <div class="form-wrapper">
-    <button type="button" class="button_volver" (click)="volver()">
-      Atras
-    </button>
+    <div class="form-wrapper">
 
-    <article class="form_container">
-      <form [formGroup]="tipoDeFormulario()" (submit)="enviarVehiculo()">
-        <div class="tipo_container">
-          <button type="button" (click)="tipoDeVehiculo('Auto')"
-            [style.backgroundColor]="tipo() === 'Auto' ? 'rgb(0, 129, 204)' : 'rgb(0, 162, 255)'">
-            Auto
-          </button>
+        <button type="button" class="button_volver" (click)="volver()">
+            Atras
+        </button>
 
-          <button type="button" (click)="tipoDeVehiculo('Moto')" 
-           [style.backgroundColor]="tipo() === 'Moto' ? 'rgb(0, 129, 204)' : 'rgb(0, 162, 255)'">
-            Moto
-          </button>
-        </div>
+        <article class="form_container">
+            <form [formGroup]="tipoDeFormulario()" (submit)="enviarVehiculo()">
 
-        @if(tipo()==="Moto" || tipo()==="Auto"){
-        <div class="input_container">
-          <div class="div1_container">
-            <div class="brand_container">
-              <label for="input_brand">Marca</label>
-              <input type="text" formControlName="marca" id="input_brand" />
-            </div>
+                <div class="tipo_container">
+                    <button type="button" (click)="tipoDeVehiculo('Auto')"
+                        [style.backgroundColor]="tipo() === 'Auto' ? 'rgb(0,129,204)' : 'rgb(0,162,255)'">
+                        Auto
+                    </button>
 
-            <div class="model_container">
-              <label for="input_model">Modelo</label>
-              <input type="text" formControlName="modelo" id="input_model" />
-            </div>
+                    <button type="button" (click)="tipoDeVehiculo('Moto')"
+                        [style.backgroundColor]="tipo() === 'Moto' ? 'rgb(0,129,204)' : 'rgb(0,162,255)'">
+                        Moto
+                    </button>
+                </div>
 
-            <div class="year_container">
-              <label for="input_year">Año</label>
-              <input type="number" formControlName="anio" min="0" max="9999" id="input_year" />
-            </div>
+                @if (tipo() === "Moto" || tipo() === "Auto") {
 
-            <div class="patent_container">
-              <label for="input_patent">Patente</label>
-              <input type="text" formControlName="patente" id="input_patent" />
-            </div>
+                <div class="input_container">
 
-            <div class="kilometers_container">
-              <label for="input_kilometers">Kilometraje</label>
-              <input type="number" formControlName="kilometros" min="0" id="input_kilometers" />
-            </div>
+                    <div class="div1_container">
+                        <div class="brand_container">
+                            <label for="input_brand">Marca</label>
+                            <input type="text" formControlName="marca" id="input_brand" />
 
-            <div class="description_container">
-              <label for="input_description">Descripción</label>
-              <input type="text" formControlName="descripcion" id="input_description" />
-            </div>
+                            <div class="errorContainer">
+                                @if (getError('marca')) {
+                                <small>{{getError('marca')}}</small>
+                                }
+                            </div>
 
-            @if(tipo()==="Auto"){
-            <div class="price_container">
-              <label for="input_price">Precio</label>
-              <input type="number" formControlName="precio" id="input_price" />
-            </div>
-            }
-          </div>
+                        </div>
 
-          <div class="div2_container">
-            <div class="engine_container">
-              <label for="input_engine">Motor</label>
-              <input type="text" formControlName="motor" id="input_engine" />
-            </div>
+                        <div class="model_container">
+                            <label for="input_model">Modelo</label>
+                            <input type="text" formControlName="modelo" id="input_model" />
 
-            <div class="color_container">
-              <label for="input_color">Color</label>
-              <input type="text" formControlName="color" id="input_color" />
-            </div>
+                            <div class="errorContainer">
+                                @if (getError('modelo')) {
+                                <small>{{getError('modelo')}}</small>
+                                }
+                            </div>
 
-            <div class="combustion_container">
-              <label for="combustion">Combustion</label>
+                        </div>
 
-              <select id="combustion" formControlName="combustion">
-                <option disabled>-- Seleccione una opción --</option>
+                        <div class="year_container">
+                            <label for="input_year">Año</label>
+                            <input type="number" formControlName="anio" min="0" max="9999" id="input_year" />
 
-                @if (combustiones(); as types) {
-                @for (combustion of combustiones(); track combustion.id){
-                <option [value]="combustion.id">
-                  {{ combustion.name }}
-                </option>
-                } } @else {
-                <option disabled>
-                  Cargando Tipos de Combustion...
-                </option>
+                            <div class="errorContainer">
+                                @if (getError('anio')) {
+                                <small>{{getError('anio')}}</small>
+                                }
+                            </div>
+
+                        </div>
+
+                        <div class="patent_container">
+                            <label for="input_patent">Patente</label>
+                            <input type="text" formControlName="patente" id="input_patent" />
+
+                            <div class="errorContainer">
+                                @if (getError('patente')) {
+                                <small>{{getError('patente')}}</small>
+                                }
+                            </div>
+
+                        </div>
+
+                        <div class="kilometers_container">
+                            <label for="input_kilometers">Kilometraje</label>
+                            <input type="number" formControlName="kilometros" min="0" id="input_kilometers" />
+
+                            <div class="errorContainer">
+                                @if (getError('kilometros')) {
+                                <small>{{getError('kilometros')}}</small>
+                                }
+                            </div>
+
+                        </div>
+
+                        <div class="description_container">
+                            <label for="input_description">Descripción</label>
+                            <input type="text" formControlName="descripcion" id="input_description" />
+
+                            <div class="errorContainer">
+                                @if (getError('descripcion')) {
+                                <small>{{getError('descripcion')}}</small>
+                                }
+                            </div>
+
+                        </div>
+
+                        <div class="price_container">
+                            <label for="input_priceCompra">Precio de compra</label>
+                            <input type="number" formControlName="precioDeCompra" id="input_priceCompra" />
+
+                            <div class="errorContainer">
+                                @if (getError('precioDeCompra')) {
+                                <small>{{getError('precioDeCompra')}}</small>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="div2_container">
+
+                        <div class="engine_container">
+                            <label for="input_engine">Motor</label>
+                            <input type="text" formControlName="motor" id="input_engine" />
+
+                            <div class="errorContainer">
+                                @if (getError('motor')) {
+                                <small>{{getError('motor')}}</small>
+                                }
+                            </div>
+
+                        </div>
+
+                        <div class="color_container">
+                            <label for="input_color">Color</label>
+                            <input type="text" formControlName="color" id="input_color" />
+
+                            <div class="errorContainer">
+                                @if (getError('color')) {
+                                <small>{{getError('color')}}</small>
+                                }
+                            </div>
+
+                        </div>
+
+                        <div class="combustion_container">
+                            <label for="combustion">Combustion</label>
+                            <select id="combustion" formControlName="combustion">
+                                <option disabled>-- Seleccione una opción --</option>
+
+                                @if (combustiones(); as types) {
+                                @for (combustion of types; track combustion.id) {
+                                <option [value]="combustion.id">{{ combustion.name }}</option>
+                                }
+                                } @else {
+                                <option disabled>Cargando Tipos de Combustion...</option>
+                                }
+                            </select>
+
+                            <div class="errorContainer">
+                                @if (getError('combustion')) {
+                                <small>{{getError('combustion')}}</small>
+                                }
+                            </div>
+
+                        </div>
+
+                        @if (tipo()==="Auto") {
+                        <div class="doors_container">
+                            <label for="input_doors">Puertas</label>
+                            <input type="text" formControlName="puertas" id="input_doors" />
+
+                            <div class="errorContainer">
+                                @if (getError('puertas')) {
+                                <small>{{getError('puertas')}}</small>
+                                }
+                            </div>
+
+                        </div>
+
+                        <div class="hp_container">
+                            <label for="input_hp">Potencia</label>
+                            <input type="number" formControlName="potencia" min="0" id="input_hp" />
+
+                            <div class="errorContainer">
+                                @if (getError('potencia')) {
+                                <small>{{getError('potencia')}}</small>
+                                }
+                            </div>
+
+                        </div>
+
+                        <div class="carType_container">
+                            <label for="carType">Tipo de Auto</label>
+                            <select id="carType" formControlName="tipoAuto">
+                                <option disabled>-- Seleccione una opción --</option>
+
+                                @if (tiposAuto(); as types) {
+                                @for (tipoAuto of types; track tipoAuto.id) {
+                                <option [value]="tipoAuto.id">{{ tipoAuto.name }}</option>
+                                }
+                                } @else {
+                                <option disabled>Cargando Tipos...</option>
+                                }
+                            </select>
+
+                            <div class="errorContainer">
+                                @if (getError('tipoAuto')) {
+                                <small>{{getError('tipoAuto')}}</small>
+                                }
+                            </div>
+                        </div>
+                        }
+
+                        @if (tipo()==="Moto") {
+                        <div class="hp_container">
+                            <label for="input_cilindrada">Cilindrada</label>
+                            <input type="number" formControlName="cilindrada" min="0" id="input_cilindrada" />
+
+                            <div class="errorContainer">
+                                @if (getError('cilindrada')) {
+                                <small>{{getError('cilindrada')}}</small>
+                                }
+                            </div>
+
+                        </div>
+
+                        <div class="typeMotorbike_container">
+                            <label for="motorbikeType">Tipo de moto</label>
+                            <select id="motorbikeType" formControlName="tipoMoto">
+                                <option disabled>--- Seleccione una opcion ---</option>
+
+                                @if (tipoDeCarroceria(); as types) {
+                                @for (tipoDeMoto of types; track tipoDeMoto.id) {
+                                <option [value]="tipoDeMoto.id">{{ tipoDeMoto.name }}</option>
+                                }
+                                } @else {
+                                <option disabled>Cargando Tipos...</option>
+                                }
+                            </select>
+
+                            <div class="errorContainer">
+                                @if (getError('tipoMoto')) {
+                                <small>{{getError('tipoMoto')}}</small>
+                                }
+                            </div>
+                        </div>
+                        }
+
+                        <div class="price_container">
+                            <label for="input_priceVenta">Precio de venta</label>
+                            <input type="number" formControlName="precioDeVenta" id="input_priceVenta" />
+
+                            <div class="errorContainer">
+                                @if (getError('precioDeVenta')) {
+                                <small>{{getError('precioDeVenta')}}</small>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="imagenes_container">
+                    <label for="input_imagenes">-- Subir Imágenes del Vehículo --</label>
+                    <input type="file" id="input_imagenes" multiple (change)="onFileSelected($event)"
+                        accept="image/png, image/jpeg, image/webp" />
+                </div>
+
+                @if (archivosSeleccionados.length > 0) {
+                <div class="preview-container">
+                    <h4>Vista Previa ({{ archivosSeleccionados.length }} archivos):</h4>
+                    <div class="miniaturas-grid">
+                        @for (archivo of archivosSeleccionados; track $index) {
+                        <div class="file-preview">
+                            <img [src]="archivo.urlLocal" [alt]="archivo.name" class="miniatura" />
+                            <span>{{ archivo.name }}</span>
+                        </div>
+                        }
+                    </div>
+                </div>
                 }
-              </select>
-            </div>
 
-            @if(tipo()==="Auto"){
-
-            <div class="doors_container">
-              <label for="input_doors">Puertas</label>
-              <input type="text" formControlName="puertas" id="input_doors" />
-            </div>
-
-            <div class="hp_container">
-              <label for="input_hp">Potencia</label>
-              <input type="number" formControlName="potencia" min="0" id="input_hp" />
-            </div>
-
-            <div class="carType_container">
-              <label for="carType">Tipo de Auto</label>
-
-              <select id="carType" formControlName="tipoAuto">
-                <option disabled>-- Seleccione una opción --</option>
-
-                @if (tiposAuto(); as types)
-                { @for (tipoAuto of types; track tipoAuto.id){
-                <option [value]="tipoAuto.id">
-                  {{ tipoAuto.name }}
-                </option>
-                } } @else {
-                <option disabled>Cargando Tipos...</option>
+                }@else {
+                <p style="color: white; text-align: center; font-size: larger;">
+                    Selecciona un tipo de vehiculo para empezar
+                </p>
                 }
-              </select>
-            </div>
-            }
+                <div class="button_container">
+                    <button [disabled]="tipoDeFormulario().invalid" type="submit">Cargar</button>
+                </div>
 
-            @if(tipo()==="Moto"){
-
-            <div class="hp_container">
-              <label for="input_cilindrada">Cilindrada</label>
-              <input type="number" formControlName="cilindrada" min="0" id="input_cilindrada" />
-            </div>
-
-            <div class="typeMotorbike_container">
-              <label for="typeMotorbike">Tipo de moto</label>
-
-              <select id="motorbikeType" formControlName="tipoMoto">
-                <option disabled>--- Seleccione una opcion ---</option>
-
-                @if (tipoDeCarroceria(); as types) {
-                @for (tipoDeMoto of types; track tipoDeMoto.id) {
-                <option [value]="tipoDeMoto.id">{{tipoDeMoto.name}}</option>
-                }
-                } @else {
-                <option disabled>Cargando Tipos...</option>
-                }
-              </select>
-            </div>
-
-            <div class="price_container">
-              <label for="input_price">Precio</label>
-              <input type="number" formControlName="precio" id="input_price" />
-            </div>
-
-            }
-          </div>
-        </div>
-
-        <div class="imagenes_container">
-          <label for="input_imagenes">-- Subir Imágenes del Vehículo --</label>
-          <input type="file" id="input_imagenes" multiple (change)="onFileSelected($event)"
-            accept="image/png, image/jpeg, image/webp" />
-        </div>
-
-        @if (archivosSeleccionados.length > 0) {
-        <div class="preview-container">
-          <h4>Vista Previa ({{ archivosSeleccionados.length }} archivos):</h4>
-          <div class="miniaturas-grid">
-            @for (archivo of archivosSeleccionados; track $index) {
-            <div class="file-preview">
-              <img [src]="archivo.urlLocal" [alt]="archivo.name" class="miniatura" />
-              <span>{{ archivo.name }}</span>
-            </div>
-            }
-          </div>
-        </div>
-        }
-        }@else {
-        <p style="color: white; text-align: center; font-size: larger;">Selecciona un tipo de vehiculo para empezar</p>
-        }
-
-        <div class="button_container">
-          <button [disabled]="tipoDeFormulario().invalid" type="submit">Cargar</button>
-        </div>
-      </form>
-    </article>
-  </div>
+            </form>
+        </article>
+    </div>
 </section>
