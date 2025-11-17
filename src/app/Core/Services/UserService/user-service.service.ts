@@ -26,10 +26,10 @@ export class UserServiceService {
   getUserById(id: string) {
     return this.http.get<User>(`${this.url}/${id}`)
   }
-  
-  getUserByRole(idRole : number){
+
+  getUserByRole(idRole: number) {
     return this.getUsers().pipe(
-      map((users : User[]) => {
+      map((users: User[]) => {
         return users.filter(user => user.idRol == idRole)
       })
     )
@@ -43,7 +43,7 @@ export class UserServiceService {
   }
 
   postUser(user: Partial<User>) {
-    return this.http.post(this.url, user)
+    return this.http.post<User>(this.url, user)
   }
 
   patchUser(id: string, user: Partial<User>) {
@@ -69,10 +69,17 @@ export class UserServiceService {
     this.route.navigate(['login'])
   }
 
-   getClientes() {
-      return this.serviceRol.getIdByRol("CLIENTE").pipe(
-        switchMap(objetoRol => { 
+  getClientes() {
+    return this.serviceRol.getIdByRol("CLIENTE").pipe(
+      switchMap(objetoRol => {
         return this.http.get<User[]>(`${this.url}?idRol=${objetoRol!.id}`);
       }));
-    }
+  }
+
+  getEncargados() {
+    return this.serviceRol.getIdByRol("ENCARGADO TALLER").pipe(
+      switchMap(objetoRol => {
+        return this.http.get<User[]>(`${this.url}?idRol=${objetoRol!.id}`);
+      }));
+  }
 }

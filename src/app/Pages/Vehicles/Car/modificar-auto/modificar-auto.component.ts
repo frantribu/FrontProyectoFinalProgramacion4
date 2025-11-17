@@ -38,7 +38,7 @@ export class ModificarAutoComponent {
           marca: a.marca,
           modelo: a.modelo,
           precioDeCompra: a.precioDeCompra,
-          precioDeVenta:a.precioDeVenta,
+          precioDeVenta: a.precioDeVenta,
           color: a.color,
           anio: String(a.anio),
           kilometros: a.kilometros,
@@ -79,7 +79,6 @@ export class ModificarAutoComponent {
       return;
     }
 
-
     const auto: Auto = {
       id: this.auto()!.id,
       patente: this.formularioModificarAuto.value.patente!,
@@ -108,5 +107,25 @@ export class ModificarAutoComponent {
         this.router.navigate(["vehiculos"])
       },
     });
+  }
+
+  getError(campo: string) {
+    const control =this.formularioModificarAuto.get(campo)
+
+    if (!control || !control.touched || !control.errors) return null
+
+    if (control.errors['required']) return "El campo es obligatorio";
+    if (campo === 'patente' && control.errors['pattern']) return "La patente no es válida. Formato aceptado: ABC123 o AB123CD"
+    if ((campo === "precioDeCompra" || campo === "precioDeVenta") && control.errors['min']) return 'El precio no puede ser negativo'
+    if (campo === "anio" && control.errors["pattern"]) return "El año debe tener 4 digitos"
+    if (campo === "kilometros" && control.errors['min']) return "Los kilometros no pueden ser negativos"
+    if (campo === "puertas" && control.errors['min']) return "El auto debe tener al menos 3 puertas"
+    if (control.errors["min"]) return `El valor minimo es ${control.errors['min'].min}`
+
+    return null
+  }
+
+  volver(){
+    this.router.navigate(['vehiculos'])
   }
 }

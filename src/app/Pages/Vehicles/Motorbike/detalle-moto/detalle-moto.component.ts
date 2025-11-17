@@ -12,7 +12,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 export class DetalleMotoComponent {
   activatedRouter = inject(ActivatedRoute)
   motoService = inject(MotoService)
-  router=inject(Router)
+  router = inject(Router)
 
   id = this.activatedRouter.snapshot.paramMap.get("id")
 
@@ -20,5 +20,9 @@ export class DetalleMotoComponent {
 
   vender() {
     this.router.navigate([`vender/${this.id}`])
+  }
+
+  volver() {
+    this.router.navigate(['vehiculos'])
   }
 }

@@ -6,7 +6,7 @@ export interface Taller{
     id: string,
     Especialidad: LookupItem,
     NombreTaller: string,
-    Encargado: User,
+    Encargado: string,
     Vehiculos: Vehiculo[],
     Direccion: string
 }

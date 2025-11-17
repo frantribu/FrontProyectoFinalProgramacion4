@@ -184,6 +184,17 @@ button[disabled] {
     color: red;
 }
 
+.errorContainer{
+    height: 10px;
+}
+
+small {
+    color: #FF6347;
+    margin-top: 5px;
+    font-size: 0.8em;
+    width: 100%;
+}
+
 @media (max-width:768px) {
     .input_container {
         flex-direction: column;

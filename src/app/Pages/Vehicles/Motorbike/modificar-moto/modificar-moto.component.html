@@ -1,100 +1,194 @@
 <section>
-    <article class="form_container">
-        <form [formGroup]="formularioCrearMoto" (submit)="enviarFormularioModificarMoto()">
+    <div class="form-wrapper">
 
-            <div class="brand">
-                <label for="input_brand">Marca</label>
-                <input type="text" formControlName="marca" id="input_brand" />
-            </div>
+        <button type="button" class="button_volver" (click)="volver()">
+            Atras
+        </button>
 
-            <div class="model">
-                <label for="input_model">Modelo</label>
-                <input type="text" formControlName="modelo" id="input_model" />
-            </div>
+        <article class="form_container">
+            <form [formGroup]="formularioCrearMoto" (submit)="enviarFormularioModificarMoto()">
+                <div class="input_container">
 
-            <div class="year">
-                <label for="input_year">Año</label>
-                <input class="number" type="number" formControlName="anio" min="0" max="9999" id="input_year" />
-            </div>
+                    <div class="div1_container">
+                        <div class="brand">
+                            <label for="input_brand">Marca</label>
+                            <input type="text" formControlName="marca" id="input_brand" />
 
-            <div class="patent">
-                <label for="input_patent">Patente</label>
-                <input type="text" formControlName="patente" id="input_patent" />
-            </div>
+                            <div class="errorContainer">
+                                @if (getError('marca')) {
+                                <small>{{getError('marca')}}</small>
+                                }
+                            </div>
+                        </div>
 
-            <div class="kilometers">
-                <label for="input_kilometers">Kilometraje</label>
-                <input class="number" type="number" formControlName="kilometros" min="0" id="input_kilometers" />
-            </div>
+                        <div class="model">
+                            <label for="input_model">Modelo</label>
+                            <input type="text" formControlName="modelo" id="input_model" />
 
-            <div class="description">
-                <label for="input_description">Descripción</label>
-                <input type="text" formControlName="descripcion" id="input_description" />
-            </div>
+                            <div class="errorContainer">
+                                @if (getError('modelo')) {
+                                <small>{{getError('modelo')}}</small>
+                                }
+                            </div>
+                        </div>
 
-            <div class="engine">
-                <label for="input_engine">Motor</label>
-                <input type="text" formControlName="motor" id="input_engine" />
-            </div>
+                        <div class="year">
+                            <label for="input_year">Año</label>
+                            <input class="number" type="number" formControlName="anio" min="0" max="9999"
+                                id="input_year" />
 
-            <div class="color">
-                <label for="input_color">Color</label>
-                <input type="text" formControlName="color" id="input_color" />
-            </div>
+                            <div class="errorContainer">
+                                @if (getError('anio')) {
+                                <small>{{getError('anio')}}</small>
+                                }
+                            </div>
+                        </div>
 
-            <div>
-                <label for="combustion">Combustion</label>
+                        <div class="patent">
+                            <label for="input_patent">Patente</label>
+                            <input type="text" formControlName="patente" id="input_patent" />
 
-                <select id="combustion" formControlName="combustion">
-                    <option disabled>-- Seleccione una opción --</option>
+                            <div class="errorContainer">
+                                @if (getError('patente')) {
+                                <small>{{getError('patente')}}</small>
+                                }
+                            </div>
+                        </div>
 
-                    @if (combustiones(); as types) {
-                    @for (combustion of combustiones(); track combustion.id){
-                    <option [value]="combustion.id">
-                        {{ combustion.name }}
-                    </option>
-                    } } @else {
-                    <option disabled>
-                        Cargando Tipos de Combustion...
-                    </option>
-                    }
-                </select>
-            </div>
+                        <div class="kilometers">
+                            <label for="input_kilometers">Kilometraje</label>
+                            <input class="number" type="number" formControlName="kilometros" min="0"
+                                id="input_kilometers" />
 
-            <div class="hp">
-                <label for="input_cilindrada">Cilindrada</label>
-                <input class="number" type="number" formControlName="cilindrada" min="0" id="input_cilindrada" />
-            </div>
+                            <div class="errorContainer">
+                                @if (getError('kilometros')) {
+                                <small>{{getError('kilometros')}}</small>
+                                }
+                            </div>
+                        </div>
 
-            <div>
-                <label for="typeMotorbike">Tipo de moto</label>
+                        <div class="description">
+                            <label for="input_description">Descripción</label>
+                            <input type="text" formControlName="descripcion" id="input_description" />
 
-                <select id="motorbikeType" formControlName="tipoMoto">
-                    <option disabled>--- Seleccione una opcion ---</option>
+                            <div class="errorContainer">
+                                @if (getError('descripcion')) {
+                                <small>{{getError('descripcion')}}</small>
+                                }
+                            </div>
+                        </div>
 
-                    @if (tipoDeCarroceria(); as types) {
-                    @for (tipoDeMoto of types; track tipoDeMoto.id) {
-                    <option [value]="tipoDeMoto.id">{{tipoDeMoto.name}}</option>
-                    }
-                    } @else {
-                    <option disabled>Cargando Tipos...</option>
-                    }
-                </select>
-            </div>
+                        <div class="engine">
+                            <label for="input_engine">Motor</label>
+                            <input type="text" formControlName="motor" id="input_engine" />
 
-            <div class="price">
-                <label for="input_price">Precio de compra</label>
-                <input class="number" type="number" formControlName="precioDeCompra" id="input_price" />
-            </div>
+                            <div class="errorContainer">
+                                @if (getError('motor')) {
+                                <small>{{getError('motor')}}</small>
+                                }
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="price">
-                <label for="input_price">Precio de venta</label>
-                <input class="number" type="number" formControlName="precioDeVenta" id="input_price" />
-            </div>
+                    <div class="div2_container">
+                        <div class="color">
+                            <label for="input_color">Color</label>
+                            <input type="text" formControlName="color" id="input_color" />
 
-            <div>
-                <button [disabled]="formularioCrearMoto.invalid" type="submit">Modificar</button>
-            </div>
-        </form>
-    </article>
+                            <div class="errorContainer">
+                                @if (getError('color')) {
+                                <small>{{getError('color')}}</small>
+                                }
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="combustion">Combustion</label>
+
+                            <select id="combustion" formControlName="combustion">
+                                <option disabled>-- Seleccione una opción --</option>
+
+                                @if (combustiones(); as types) {
+                                @for (combustion of combustiones(); track combustion.id){
+                                <option [value]="combustion.id">
+                                    {{ combustion.name }}
+                                </option>
+                                } } @else {
+                                <option disabled>
+                                    Cargando Tipos de Combustion...
+                                </option>
+                                }
+                            </select>
+
+                            <div class="errorContainer">
+                                @if (getError('combustion')) {
+                                <small>{{getError('combustion')}}</small>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="hp">
+                            <label for="input_cilindrada">Cilindrada</label>
+                            <input class="number" type="number" formControlName="cilindrada" min="0"
+                                id="input_cilindrada" />
+
+                            <div class="errorContainer">
+                                @if (getError('cilindrada')) {
+                                <small>{{getError('cilindrada')}}</small>
+                                }
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="typeMotorbike">Tipo de moto</label>
+
+                            <select id="motorbikeType" formControlName="tipoMoto">
+                                <option disabled>--- Seleccione una opcion ---</option>
+
+                                @if (tipoDeCarroceria(); as types) {
+                                @for (tipoDeMoto of types; track tipoDeMoto.id) {
+                                <option [value]="tipoDeMoto.id">{{tipoDeMoto.name}}</option>
+                                }
+                                } @else {
+                                <option disabled>Cargando Tipos...</option>
+                                }
+                            </select>
+
+                            <div class="errorContainer">
+                                @if (getError('tipoMoto')) {
+                                <small>{{getError('tipoMoto')}}</small>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="price">
+                            <label for="input_price">Precio de compra</label>
+                            <input class="number" type="number" formControlName="precioDeCompra" id="input_price" />
+
+                            <div class="errorContainer">
+                                @if (getError('precioDeCompra')) {
+                                <small>{{getError('precioDeCompra')}}</small>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="price">
+                            <label for="input_price">Precio de venta</label>
+                            <input class="number" type="number" formControlName="precioDeVenta" id="input_price" />
+
+                            <div class="errorContainer">
+                                @if (getError('precioDeVenta')) {
+                                <small>{{getError('precioDeVenta')}}</small>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button_container">
+                    <button [disabled]="formularioCrearMoto.invalid" type="submit">Modificar</button>
+                </div>
+            </form>
+        </article>
+    </div>
 </section>

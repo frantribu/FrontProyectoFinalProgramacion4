@@ -28,36 +28,85 @@
                         <div class="brand_container">
                             <label for="input_brand">Marca</label>
                             <input type="text" formControlName="marca" id="input_brand" />
+
+                            <div class="errorContainer">
+                                @if (getError('marca')) {
+                                <small>{{getError('marca')}}</small>
+                                }
+                            </div>
+
                         </div>
 
                         <div class="model_container">
                             <label for="input_model">Modelo</label>
                             <input type="text" formControlName="modelo" id="input_model" />
+
+                            <div class="errorContainer">
+                                @if (getError('modelo')) {
+                                <small>{{getError('modelo')}}</small>
+                                }
+                            </div>
+
                         </div>
 
                         <div class="year_container">
                             <label for="input_year">Año</label>
                             <input type="number" formControlName="anio" min="0" max="9999" id="input_year" />
+
+                            <div class="errorContainer">
+                                @if (getError('anio')) {
+                                <small>{{getError('anio')}}</small>
+                                }
+                            </div>
+
                         </div>
 
                         <div class="patent_container">
                             <label for="input_patent">Patente</label>
                             <input type="text" formControlName="patente" id="input_patent" />
+
+                            <div class="errorContainer">
+                                @if (getError('patente')) {
+                                <small>{{getError('patente')}}</small>
+                                }
+                            </div>
+
                         </div>
 
                         <div class="kilometers_container">
                             <label for="input_kilometers">Kilometraje</label>
                             <input type="number" formControlName="kilometros" min="0" id="input_kilometers" />
+
+                            <div class="errorContainer">
+                                @if (getError('kilometros')) {
+                                <small>{{getError('kilometros')}}</small>
+                                }
+                            </div>
+
                         </div>
 
                         <div class="description_container">
                             <label for="input_description">Descripción</label>
                             <input type="text" formControlName="descripcion" id="input_description" />
+
+                            <div class="errorContainer">
+                                @if (getError('descripcion')) {
+                                <small>{{getError('descripcion')}}</small>
+                                }
+                            </div>
+
                         </div>
 
                         <div class="price_container">
                             <label for="input_priceCompra">Precio de compra</label>
                             <input type="number" formControlName="precioDeCompra" id="input_priceCompra" />
+
+                            <div class="errorContainer">
+                                @if (getError('precioDeCompra')) {
+                                <small>{{getError('precioDeCompra')}}</small>
+                                }
+                            </div>
+
                         </div>
                     </div>
 
@@ -66,11 +115,25 @@
                         <div class="engine_container">
                             <label for="input_engine">Motor</label>
                             <input type="text" formControlName="motor" id="input_engine" />
+
+                            <div class="errorContainer">
+                                @if (getError('motor')) {
+                                <small>{{getError('motor')}}</small>
+                                }
+                            </div>
+
                         </div>
 
                         <div class="color_container">
                             <label for="input_color">Color</label>
                             <input type="text" formControlName="color" id="input_color" />
+
+                            <div class="errorContainer">
+                                @if (getError('color')) {
+                                <small>{{getError('color')}}</small>
+                                }
+                            </div>
+
                         </div>
 
                         <div class="combustion_container">
@@ -86,17 +149,38 @@
                                 <option disabled>Cargando Tipos de Combustion...</option>
                                 }
                             </select>
+
+                            <div class="errorContainer">
+                                @if (getError('combustion')) {
+                                <small>{{getError('combustion')}}</small>
+                                }
+                            </div>
+
                         </div>
 
                         @if (tipo()==="Auto") {
                         <div class="doors_container">
                             <label for="input_doors">Puertas</label>
                             <input type="text" formControlName="puertas" id="input_doors" />
+
+                            <div class="errorContainer">
+                                @if (getError('puertas')) {
+                                <small>{{getError('puertas')}}</small>
+                                }
+                            </div>
+
                         </div>
 
                         <div class="hp_container">
                             <label for="input_hp">Potencia</label>
                             <input type="number" formControlName="potencia" min="0" id="input_hp" />
+
+                            <div class="errorContainer">
+                                @if (getError('potencia')) {
+                                <small>{{getError('potencia')}}</small>
+                                }
+                            </div>
+
                         </div>
 
                         <div class="carType_container">
@@ -112,6 +196,12 @@
                                 <option disabled>Cargando Tipos...</option>
                                 }
                             </select>
+
+                            <div class="errorContainer">
+                                @if (getError('tipoAuto')) {
+                                <small>{{getError('tipoAuto')}}</small>
+                                }
+                            </div>
                         </div>
                         }
 
@@ -119,6 +209,13 @@
                         <div class="hp_container">
                             <label for="input_cilindrada">Cilindrada</label>
                             <input type="number" formControlName="cilindrada" min="0" id="input_cilindrada" />
+
+                            <div class="errorContainer">
+                                @if (getError('cilindrada')) {
+                                <small>{{getError('cilindrada')}}</small>
+                                }
+                            </div>
+
                         </div>
 
                         <div class="typeMotorbike_container">
@@ -134,13 +231,25 @@
                                 <option disabled>Cargando Tipos...</option>
                                 }
                             </select>
+
+                            <div class="errorContainer">
+                                @if (getError('tipoMoto')) {
+                                <small>{{getError('tipoMoto')}}</small>
+                                }
+                            </div>
                         </div>
                         }
-
 
                         <div class="price_container">
                             <label for="input_priceVenta">Precio de venta</label>
                             <input type="number" formControlName="precioDeVenta" id="input_priceVenta" />
+
+                            <div class="errorContainer">
+                                @if (getError('precioDeVenta')) {
+                                <small>{{getError('precioDeVenta')}}</small>
+                                }
+                            </div>
+
                         </div>
                     </div>
                 </div>

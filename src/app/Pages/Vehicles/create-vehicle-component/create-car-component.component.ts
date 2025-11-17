@@ -1,5 +1,5 @@
 import { Component, inject, OnDestroy, signal } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ArchivoVehiculo } from '../../../Core/Models/Enum';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TypeCarService } from '../../../Core/Services/Vehicle/Car/TypeCar/type-car.service';
@@ -184,4 +184,31 @@ export class CreateVehicleComponent implements OnDestroy {
   volver() {
     this.router.navigate([''])
   }
+
+  getError(campo: string) {
+    const form = (this.tipo() === "Auto" ? this.formularioCrearAuto : this.formularioCrearMoto) as FormGroup;
+
+    const control = form.get(campo);
+
+    if (!control || !control.touched || !control.errors) return null
+
+    if (control.errors['required']) return "El campo es obligatorio";
+    if (campo === 'patente' && control.errors['pattern']) return "La patente no es válida. Formato aceptado: ABC123 o AB123CD"
+    if ((campo === "precioDeCompra" || campo === "precioDeVenta") && control.errors['min']) return 'El precio no puede ser negativo'
+    if (campo === "anio" && control.errors["pattern"]) return "El año debe tener 4 digitos"
+    if (campo === "kilometros" && control.errors['min']) return "Los kilometros no pueden ser negativos"
+
+    if (this.tipo() === "Auto") {
+      if (campo === "puertas" && control.errors['min']) return "El auto debe tener al menos 3 puertas"
+    }
+
+    if (this.tipo() === "Moto") {
+      if (campo === 'cilindrada' && control.errors['min']) return 'La cilindrada debe ser mayor a 0';
+    }
+
+    if (control.errors["min"]) return `El valor minimo es ${control.errors['min'].min}`
+
+    return null
+  }
+
 }

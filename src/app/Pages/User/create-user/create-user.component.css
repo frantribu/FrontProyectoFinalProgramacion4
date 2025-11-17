@@ -4,26 +4,24 @@
     box-sizing: border-box;
 }
 
-/* Fondo global */
-body, :host {
+body,
+:host {
     background-color: #F5F5DC;
     margin: 0;
     padding: 0;
 }
 
-/* Contenedor principal del formulario */
-section.form-container {
+.form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%; /* CORREGIDO: antes 100vw causaba scroll */
+    width: 100%;
     padding: 20px;
 }
 
-/* Caja del formulario */
-.form_container, 
-section.form-container > form {
+.form_container,
+.form-container>form {
     background-color: #4B4B4B;
     width: 100%;
     max-width: 600px;
@@ -32,7 +30,6 @@ section.form-container > form {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Botón volver */
 .button_volver {
     align-self: flex-start;
     background-color: transparent;
@@ -44,6 +41,7 @@ section.form-container > form {
     font-size: 0.95em;
     transition: all 0.3s ease;
 }
+
 .button_volver:hover {
     background-color: white;
 }
@@ -54,7 +52,6 @@ form {
     gap: 20px;
 }
 
-/* Inputs */
 label {
     color: white;
     font-weight: 400;
@@ -86,11 +83,14 @@ input:focus {
     background-color: #F5F5DC;
 }
 
+select{
+    padding: 14px 0;
+}
+
 option {
     background-color: whitesmoke;
 }
 
-/* Botón crear */
 button[type="submit"] {
     padding: 10px 25px;
     background-color: #CC7F6A;
@@ -102,9 +102,11 @@ button[type="submit"] {
     width: 100%;
     transition: background-color 0.3s ease;
 }
+
 button[type="submit"]:hover {
     background-color: #d58670;
 }
+
 button[disabled] {
     background-color: #d8c8b6;
     color: #4B4B4B;
@@ -116,13 +118,20 @@ button[disabled] {
     color: red;
 }
 
-/* Responsive */
+small {
+    color: #FF6347;
+    margin-top: 5px;
+    font-size: 0.8em;
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     .input_container {
         flex-direction: column;
     }
+
     .form_container,
-    section.form-container > form {
+    section.form-container>form {
         width: 90%;
         padding: 20px;
     }

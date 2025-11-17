@@ -50,7 +50,7 @@ export class ModifyUserComponent {
     rol: [this.user()?.idRol, Validators.required],
     email: [this.user()?.email, [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
     dni: [this.user()?.dni, [Validators.required, Validators.min(10000000), Validators.max(99999999)]],
-    contrasenia: [this.user()?.contrasenia, [Validators.required,Validators.minLength(7)]]
+    contrasenia: [this.user()?.contrasenia, [Validators.required,Validators.pattern(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/)]]
   })
 
   modify() {
@@ -78,4 +78,19 @@ export class ModifyUserComponent {
   volver(){
      this.router.navigate(["usuarios"]) 
   }
+
+  getError(campo:string){
+    const control=this.formModifyUser.get(campo);
+
+    if(!control?.touched || !control || !control.errors) return null
+
+    if(control?.errors['required']) return "Este campo es obligatorio"
+    if(campo==="email" && control.errors['pattern']) return "El email debe ser válido y terminar en .com"
+    if(control.errors["min"]) return "El DNI debe ser mayor a 10.000.000"
+    if(control.errors['max']) return "El DNI debe ser menor a 99.999.999"
+    if(campo==="contrasenia" && control.errors['pattern']) return "La contraseña debe tener al menos una Mayuscula, un numero y 8 caracteres"
+
+    return null;
+  }
+
 }

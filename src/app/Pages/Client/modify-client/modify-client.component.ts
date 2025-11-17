@@ -1,4 +1,4 @@
-import { Component, effect, inject } from '@angular/core';
+/*import { Component, effect, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ClientService } from '../../../Core/Services/ClientService/client.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -65,4 +65,4 @@ export class ModifyClientComponent {
   volver(){
     this.router.navigate(["clientes"])
   }
-}
+}*/

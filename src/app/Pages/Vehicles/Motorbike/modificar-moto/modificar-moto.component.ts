@@ -19,7 +19,7 @@ export class ModificarMotoComponent {
   activatedRouter = inject(ActivatedRoute)
   servicioCombustion = inject(CombustionService)
   servicioTipoCarroceria = inject(TypeMotorbikeService)
-
+  
   id = this.activatedRouter.snapshot.paramMap.get("id")
 
   moto = toSignal(this.motoService.getMotoById(this.id!))
@@ -104,5 +104,26 @@ export class ModificarMotoComponent {
       },
       error: (err) => console.log("Error al modificar la moto ", err)
     });
+  }
+
+    getError(campo: string) {
+    const control = this.formularioCrearMoto.get(campo)
+
+    if (!control || !control.touched || !control.errors) return null
+
+    if (control.errors['required']) return "El campo es obligatorio";
+    if (campo === 'patente' && control.errors['pattern']) return "La patente no es válida. Formato aceptado: ABC123 o AB123CD"
+    if ((campo === "precioDeCompra" || campo === "precioDeVenta") && control.errors['min']) return 'El precio no puede ser negativo'
+    if (campo === "anio" && control.errors["pattern"]) return "El año debe tener 4 digitos"
+    if (campo === "kilometros" && control.errors['min']) return "Los kilometros no pueden ser negativos"
+    if (campo === 'cilindrada' && control.errors['min']) return 'La cilindrada debe ser mayor a 0';
+    
+    if (control.errors["min"]) return `El valor minimo es ${control.errors['min'].min}`
+
+    return null
+  }
+
+  volver(){
+    this.router.navigate(['vehiculos'])
   }
 }

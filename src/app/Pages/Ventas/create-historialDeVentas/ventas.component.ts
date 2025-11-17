@@ -61,7 +61,7 @@ export class CreateVentaComponent {
   })
 
   form = this.fb.nonNullable.group({
-    precio:[0,[Validators.required]],
+    precio:[0,[Validators.required, Validators.min(0)]],
     idCliente: ['', [Validators.required]],
   })
 
@@ -109,5 +109,9 @@ export class CreateVentaComponent {
 
     this.clientes.set([...clientesActuales, cliente])
     this.seleccionarCliente(cliente)
+  }
+
+   volver(){
+    this.router.navigate([`vehiculos/detalle${this.vehiculo()?.tipoVehiculo}/${this.idVehiculo}`])
   }
 }
