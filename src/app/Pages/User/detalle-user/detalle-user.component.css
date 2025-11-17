@@ -38,9 +38,9 @@ p {
     font-size: 0.95em;
     cursor: pointer;
     transition: all 0.3s ease;
+    padding: 10px;
 }
 
 .button_volver:hover {
     background-color: white;
-    padding: 10px;
 }

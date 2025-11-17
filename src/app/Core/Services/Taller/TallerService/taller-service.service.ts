@@ -8,7 +8,7 @@ import { Taller } from '../../../Models/Taller';
 })
 export class TallerServiceService {
   http = inject(HttpClient)
-  url = "http://localhost:3000/Taller"
+  url = "http://localhost:3000/talleres"
 
   getTalleres(){
     return this.http.get<Taller[]>(this.url)
@@ -29,8 +29,6 @@ export class TallerServiceService {
   }
 
   deleteTaller(id:string){
-    return this.http.delete<Taller>(`${this.url}/${id}`).subscribe({
-      next: () => alert("Taller creado con exito!!")
-    })
-  }
+    return this.http.delete<Taller>(`${this.url}/${id}`)
+    }
 }
