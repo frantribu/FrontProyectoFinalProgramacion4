@@ -1,9 +1,10 @@
 import { Component, effect, inject, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { TallerServiceService } from '../../../Core/Services/Taller/TallerService/taller-service.service';
 import { EspecialidadService } from '../../../Core/Services/Taller/EspecialidadService/especialidad-service';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
+import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
+
 
 @Component({
   selector: 'app-detalle-taller',
