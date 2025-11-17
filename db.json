@@ -26,7 +26,6 @@
       "idRol": 4
     },
     {
-<<<<<<< HEAD
       "id": "e72a",
       "nombre": "martina",
       "apellido": "perez",
@@ -35,23 +34,6 @@
       "dni": 46556677,
       "isLogged": false,
       "contrasenia": "123martina"
-=======
-      "id": "29ea",
-      "nombre": "Gonzaol",
-      "apellido": "Diaz",
-      "email": "gonza@gmail.com",
-      "dni": 12345432,
-      "idRol": 4
-    },
-    {
-      "id": "374f",
-      "nombre": "Fabricio",
-      "apellido": "Armagno",
-      "email": "fabri@gmail.com",
-      "dni": 12345654,
-      "contrasenia": "Fabri102",
-      "idRol": 3
->>>>>>> fd4bf21473aa69f00df06a35cac62076a42e4612
     }
   ],
   "autos": [
