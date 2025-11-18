@@ -1,21 +1,55 @@
-.detalle_taller {
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-    margin: 50px;
-    background-color: #f9f9f9;
-    border: solid 3px color black;
-    border-radius: 10px;
-    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+    justify-content: flex-start;
+    min-height: 92vh;
+    width: 100vw;
+    padding: 40px 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.eliminar {
-    padding: 2px;
+.detalle_taller {
+    background-color: #4B4B4B;
+    padding: 40px 35px;
+    border-radius: 14px;
+    width: 95%;
+    max-width: 550px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.35s ease-out;
 }
 
-.eliminar:hover {
-    background-color: #bebebe;
+.nombre {
+    font-size: 2em;
+    font-weight: 600;
+    color: #F5F5DC;
+    letter-spacing: 0.5px;
+}
+
+.direccion,
+.especialidad,
+.encargado {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #F5F5DC;
+    opacity: 0.9;
+}
+
+.detalle_taller button {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #F5F5DC;
+    font-size: 1em;
 }
 
 .button_volver {
@@ -26,7 +60,6 @@
     border: none;
     border-radius: 5px;
     font-size: 0.95em;
-    margin-bottom: 10px;
     transition: all 0.3s ease;
     padding: 10px;
     margin: 10px;
@@ -34,6 +67,16 @@
 
 .button_volver:hover {
     background-color: white;
+}
+
+.modificar {
+    background-color: #CC7F6A;
+}
+
+.modificar:hover {
+    background-color: #d58670;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .eliminar {
@@ -46,5 +89,7 @@
 }
 
 .eliminar:hover {
-    background-color: rgba(255, 57, 57, 0.774);
+    background-color: #cc5a58;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }

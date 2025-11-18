@@ -45,4 +45,8 @@ export class DetalleTallerComponent {
    volver(){
     this.router.navigate(['taller'])
   }
+
+  modificar(id:string){
+    this.router.navigate([`taller/modificar/${this.id}`])
+  }
 }

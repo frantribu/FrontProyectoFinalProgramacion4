@@ -4,11 +4,11 @@ import { loginGuardGuard } from './Core/Guards/LoginGuard/login-guard.guard';
 import { adminEmpleadoGuardGuard } from './Core/Guards/AdminEmpleadoGuard/admin-empleado-guard.guard';
 
 export const routes: Routes = [
-    {path:"", redirectTo:"home", pathMatch:"full"},
+    { path: "", redirectTo: "home", pathMatch: "full" },
     { path: "login", loadComponent: () => import("./Pages/login/login.component").then(c => c.LoginComponent) },
 
     //HOME
-    { path: "home", canActivate: [loginGuardGuard], loadComponent: () => import("./Pages/Home/home-component.component").then(c=>c.HomeComponentComponent)},
+    { path: "home", canActivate: [loginGuardGuard], loadComponent: () => import("./Pages/Home/home-component.component").then(c => c.HomeComponentComponent) },
 
     //PERFIL
     { path: "perfil", loadComponent: () => import("./Pages/Profile/profile/profile.component").then(c => c.ProfileComponent) },
@@ -16,8 +16,8 @@ export const routes: Routes = [
     //TALLER
     { path: "taller/agregar", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Taller/create-taller/create-taller").then(c => c.CreateTaller) },
     { path: "taller", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Taller/list-taller/list-taller").then(c => c.ListTaller) },
-    {path: "taller/detalle/:id", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Taller/detalle-taller/detalle-taller.component").then(c => c.DetalleTallerComponent)},
-    { path: "taller/modificar/id", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Taller/modificar-taller/modificar-taller").then(c => c.ModificarTaller) },
+    { path: "taller/detalle/:id", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Taller/detalle-taller/detalle-taller.component").then(c => c.DetalleTallerComponent) },
+    { path: "taller/modificar/:id", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Taller/modificar-taller/modificar-taller").then(c => c.ModificarTaller) },
 
     //VEHICULOS
     { path: "vehiculos", canActivate: [loginGuardGuard, adminEmpleadoGuardGuard], loadComponent: () => import("./Pages/Vehicles/list-vehicles/list-vehicles.component").then(c => c.ListVehiclesComponent) },

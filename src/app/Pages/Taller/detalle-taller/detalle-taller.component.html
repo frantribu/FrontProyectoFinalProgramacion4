@@ -1,12 +1,14 @@
+<button type="button" class="button_volver" (click)="volver()">
+    Atras
+</button>
 <section>
-    <button type="button" class="button_volver" (click)="volver()">
-        Atras
-    </button>
+
     <div class="detalle_taller">
         <h1 class="nombre">{{taller()?.NombreTaller}}</h1>
         <h2 class="direccion">{{taller()?.Direccion}}</h2>
         <h2 class="especialidad">{{especialidad()?.name}}</h2>
         <h2 class="encargado">Encargado: {{encargado()?.nombre}} {{encargado()?.apellido}}</h2>
-        <button class="eliminar" (click)="Eliminar(taller()?.id!)">Eliminar Taller</button>
+        <button class="eliminar" (click)="Eliminar(taller()?.id!)">Eliminar</button>
+        <button class="modificar" (click)="modificar(taller()?.id!)">Modificar</button>
     </div>
 </section>
