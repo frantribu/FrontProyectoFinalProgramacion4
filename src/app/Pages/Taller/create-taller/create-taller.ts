@@ -64,7 +64,7 @@ export class CreateTaller {
 
     this.tallerService.postTaller(taller).subscribe(
       {
-        next : () => console.log("Taller Cargado")
+        next : () => this.router.navigate(['taller'])
       }
     )
   }

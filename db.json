@@ -1,234 +1,258 @@
 {
-  "usuarios": [
-    {
-      "id": "12345",
-      "dni": 40200300,
-      "nombre": "Juan",
-      "apellido": "Pérez",
-      "idRol": 1,
-      "email": "juanperez@gmail.com",
-      "contrasenia": "MiPass123"
-    },
-    {
-      "id": "835c",
-      "nombre": "Leandro",
-      "apellido": "Ciriaco",
-      "email": "ciriaco@gmail.com",
-      "dni": 12345679,
-      "idRol": 4
-    },
-    {
-      "id": "b493",
-      "nombre": "franco",
-      "apellido": "tribu",
-      "email": "franco21@gmail.com",
-      "dni": 12344321,
-      "idRol": 4
-    },
-    {
-      "id": "29ea",
-      "nombre": "Gonzaol",
-      "apellido": "Diaz",
-      "email": "gonza@gmail.com",
-      "dni": 12345432,
-      "idRol": 4
-    },
-    {
-      "id": "374f",
-      "nombre": "Fabricio",
-      "apellido": "Armagno",
-      "email": "fabri@gmail.com",
-      "dni": 12345654,
-      "contrasenia": "Fabri102",
-      "idRol": 3
-    }
-  ],
-  "autos": [
-    {
-      "id": "4c0c",
-      "patente": "AH999ZZ",
-      "marca": "Audi",
-      "modelo": "RS6",
-      "precioDeCompra": 50000,
-      "precioDeVenta": 55000,
-      "color": "Gris oscuro",
-      "anio": 2025,
-      "kilometros": 0,
-      "motor": "v6",
-      "idCombustion": "1",
-      "descripcion": "Auto 0KM",
-      "puertas": 3,
-      "potencia": 600,
-      "idTipoCarroceria": "2",
-      "rutasImagen": [
-        "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
-      ],
-      "fechaIngreso": "2025-11-17",
-      "enReparacion": false,
-      "vendido": true,
-      "tipoVehiculo": "Auto"
-    }
-  ],
-  "motos": [
-    {
-      "id": "9892",
-      "patente": "AH123RR",
-      "marca": "Bmw",
-      "modelo": "s1000rr",
-      "precioDeCompra": 19000,
-      "precioDeVenta": 22000,
-      "color": "blanca",
-      "anio": 2025,
-      "kilometros": 0,
-      "motor": "v10",
-      "idCombustion": "1",
-      "descripcion": "0KM",
-      "cilindrada": 1000,
-      "idTipoCarroceria": "2",
-      "rutasImagen": [],
-      "fechaIngreso": "2025-11-16",
-      "enReparacion": false,
-      "vendido": true,
-      "tipoVehiculo": "Moto"
-    },
-    {
-      "id": "ae0f",
-      "patente": "AGH523",
-      "marca": "yammaha",
-      "modelo": "tornado",
-      "precioDeCompra": 50000,
-      "precioDeVenta": 30000,
-      "color": "rojo",
-      "anio": 2015,
-      "kilometros": 10000,
-      "motor": "1.5",
-      "idCombustion": "1",
-      "descripcion": "La mejor moto pata tirar cortes y ser re negro",
-      "cilindrada": 200,
-      "idTipoCarroceria": "2",
-      "rutasImagen": [],
-      "fechaIngreso": "2025-11-17",
-      "enReparacion": false,
-      "vendido": false
-    }
-  ],
-  "talleres": [],
-  "historialesVenta": [
-    {
-      "id": "2192",
-      "vehiculo": "9892",
-      "cliente": "835c",
-      "precio": 20000,
-      "fechaVenta": "2025-11-16"
-    },
-    {
-      "id": "9730",
-      "vehiculo": "4c0c",
-      "cliente": "29ea",
-      "precio": 55000,
-      "fechaVenta": "2025-11-17"
-    },
-    {
-      "id": "d028",
-      "vehiculo": "9892",
-      "cliente": "835c",
-      "precio": 22000,
-      "fechaVenta": "2025-11-17"
-    }
-  ],
-  "historialesTaller": [],
-  "roles": [
-    {
-      "id": "1",
-      "name": "ADMIN"
-    },
-    {
-      "id": "2",
-      "name": "EMPLEADO"
-    },
-    {
-      "id": "3",
-      "name": "ENCARGADO TALLER"
-    },
-    {
-      "id": "4",
-      "name": "CLIENTE"
-    }
-  ],
-  "combustiones": [
-    {
-      "id": "1",
-      "name": "NAFTA"
-    },
-    {
-      "id": "2",
-      "name": "DIESEL"
-    },
-    {
-      "id": "3",
-      "name": "ELECTRICO"
-    }
-  ],
-  "tiposAuto": [
-    {
-      "id": "1",
-      "name": "SEDAN"
-    },
-    {
-      "id": "2",
-      "name": "HATCHBACK"
-    },
-    {
-      "id": "3",
-      "name": "COUPE"
-    },
-    {
-      "id": "4",
-      "name": "SUV"
-    },
-    {
-      "id": "5",
-      "name": "FURGON"
-    }
-  ],
-  "tiposMoto": [
-    {
-      "id": "1",
-      "name": "URBANA"
-    },
-    {
-      "id": "2",
-      "name": "DEPORTIVAS"
-    },
-    {
-      "id": "3",
-      "name": "TURISMO"
-    },
-    {
-      "id": "4",
-      "name": "OFF-ROAD"
-    },
-    {
-      "id": "5",
-      "name": "ESPECIALES"
-    }
-  ],
-  "especialidades": [
-    {
-      "id": "1",
-      "name": "GENERAL"
-    },
-    {
-      "id": "2",
-      "name": "MOTORISTA"
-    },
-    {
-      "id": "3",
-      "name": "CHAPA_Y_PINTURA"
-    },
-    {
-      "id": "4",
-      "name": "ELECTRICISTA"
-    }
-  ]
+    "usuarios": [{
+            "id": "12345",
+            "dni": 40200300,
+            "nombre": "Juan",
+            "apellido": "Pérez",
+            "idRol": 1,
+            "email": "juanperez@gmail.com",
+            "contrasenia": "MiPass123"
+        },
+        {
+            "id": "15345",
+            "dni": 40200300,
+            "nombre": "Juan",
+            "apellido": "Pérez",
+            "idRol": 2,
+            "email": "juanPerez@gmail.com",
+            "contrasenia": "MiPass123"
+        },
+        {
+            "id": "835c",
+            "nombre": "Leandro",
+            "apellido": "Ciriaco",
+            "email": "ciriaco@gmail.com",
+            "dni": 12345679,
+            "idRol": 4
+        },
+        {
+            "id": "b493",
+            "nombre": "franco",
+            "apellido": "tribu",
+            "email": "franco21@gmail.com",
+            "dni": 12344321,
+            "idRol": 4
+        },
+        {
+            "id": "29ea",
+            "nombre": "Gonzaol",
+            "apellido": "Diaz",
+            "email": "gonza@gmail.com",
+            "dni": 12345432,
+            "idRol": 4
+        },
+        {
+            "id": "85ec",
+            "nombre": "Leandro",
+            "apellido": "Ciriaco",
+            "email": "lean@gmail.com",
+            "dni": 87654321,
+            "contrasenia": "Lean1234",
+            "idRol": 3
+        }
+    ],
+    "autos": [{
+            "id": "4c0c",
+            "patente": "AH999ZZ",
+            "marca": "Audi",
+            "modelo": "RS6",
+            "precioDeCompra": 50000,
+            "precioDeVenta": 55000,
+            "color": "Gris oscuro",
+            "anio": 2025,
+            "kilometros": 0,
+            "motor": "v6",
+            "idCombustion": "1",
+            "descripcion": "Auto 0KM",
+            "puertas": 3,
+            "potencia": 600,
+            "idTipoCarroceria": "2",
+            "rutasImagen": [
+                "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
+            ],
+            "fechaIngreso": "2025-11-17",
+            "enReparacion": false,
+            "vendido": true,
+            "tipoVehiculo": "Auto"
+        },
+        {
+            "id": "b07a",
+            "patente": "AH999HH",
+            "marca": "Audi",
+            "modelo": "RS6",
+            "precioDeCompra": 20000,
+            "precioDeVenta": 24000,
+            "color": "Gris oscuro",
+            "anio": 2025,
+            "kilometros": 0,
+            "motor": "V10",
+            "idCombustion": "1",
+            "descripcion": "0KM",
+            "puertas": "5",
+            "potencia": 600,
+            "idTipoCarroceria": "2",
+            "rutasImagen": [
+                "app/assets/imgvehiculos/audi-rs6-performance-frontal-lateral.363841.jpg"
+            ],
+            "fechaIngreso": "2025-11-17",
+            "enReparacion": false,
+            "vendido": false
+        }
+    ],
+    "motos": [{
+            "id": "2526",
+            "patente": "AH123XX",
+            "marca": "Bmw",
+            "modelo": "s1000rr",
+            "precioDeCompra": 23000,
+            "precioDeVenta": 25000,
+            "color": "blanca, rojo, azul",
+            "anio": 2025,
+            "kilometros": 0,
+            "motor": "v10",
+            "idCombustion": "1",
+            "descripcion": "0KM",
+            "cilindrada": 1000,
+            "idTipoCarroceria": "2",
+            "rutasImagen": [
+                "app/assets/imgvehiculos/S1000RR.jpg"
+            ],
+            "fechaIngreso": "2025-11-17",
+            "enReparacion": false,
+            "vendido": true,
+            "tipoVehiculo": "Moto"
+        },
+        {
+            "id": "ae0f",
+            "patente": "AGH523",
+            "marca": "yammaha",
+            "modelo": "tornado",
+            "precioDeCompra": 50000,
+            "precioDeVenta": 30000,
+            "color": "rojo",
+            "anio": 2015,
+            "kilometros": 10000,
+            "motor": "1.5",
+            "idCombustion": "1",
+            "descripcion": "La mejor moto pata tirar cortes y ser re negro",
+            "cilindrada": 200,
+            "idTipoCarroceria": "2",
+            "rutasImagen": [],
+            "fechaIngreso": "2025-11-17",
+            "enReparacion": false,
+            "vendido": false
+        }
+    ],
+    "talleres": [{
+        "id": "1d0d",
+        "NombreTaller": "TribuMec",
+        "Encargado": "85ec",
+        "Direccion": "Avellaneda 76",
+        "Especialidad": "2"
+    }],
+    "historialesVenta": [{
+            "id": "9730",
+            "vehiculo": "4c0c",
+            "cliente": "29ea",
+            "precio": 55000,
+            "fechaVenta": "2025-11-17"
+        },
+        {
+            "id": "d028",
+            "vehiculo": "9892",
+            "cliente": "835c",
+            "precio": 22000,
+            "fechaVenta": "2025-11-17"
+        }
+    ],
+    "historialesTaller": [],
+    "roles": [{
+            "id": "1",
+            "name": "ADMIN"
+        },
+        {
+            "id": "2",
+            "name": "EMPLEADO"
+        },
+        {
+            "id": "3",
+            "name": "ENCARGADO TALLER"
+        },
+        {
+            "id": "4",
+            "name": "CLIENTE"
+        }
+    ],
+    "combustiones": [{
+            "id": "1",
+            "name": "NAFTA"
+        },
+        {
+            "id": "2",
+            "name": "DIESEL"
+        },
+        {
+            "id": "3",
+            "name": "ELECTRICO"
+        }
+    ],
+    "tiposAuto": [{
+            "id": "1",
+            "name": "SEDAN"
+        },
+        {
+            "id": "2",
+            "name": "HATCHBACK"
+        },
+        {
+            "id": "3",
+            "name": "COUPE"
+        },
+        {
+            "id": "4",
+            "name": "SUV"
+        },
+        {
+            "id": "5",
+            "name": "FURGON"
+        }
+    ],
+    "tiposMoto": [{
+            "id": "1",
+            "name": "URBANA"
+        },
+        {
+            "id": "2",
+            "name": "DEPORTIVA"
+        },
+        {
+            "id": "3",
+            "name": "TURISMO"
+        },
+        {
+            "id": "4",
+            "name": "OFF-ROAD"
+        },
+        {
+            "id": "5",
+            "name": "ESPECIAL"
+        }
+    ],
+    "especialidades": [{
+            "id": "1",
+            "name": "GENERAL"
+        },
+        {
+            "id": "2",
+            "name": "MECANICO DE MOTORES"
+        },
+        {
+            "id": "3",
+            "name": "CHAPA Y PINTURA"
+        },
+        {
+            "id": "4",
+            "name": "ELECTRICISTA"
+        }
+    ]
 }

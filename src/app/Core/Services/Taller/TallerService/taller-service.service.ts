@@ -19,9 +19,7 @@ export class TallerServiceService {
   }
   
   patchTaller(taller:Taller){
-    this.http.patch<Taller>(this.url, taller).subscribe({
-      next: () => alert("el taller fue modificado con exito!")
-    })
+    return this.http.patch<Taller>(`${this.url}/${taller.id}`, taller)
   }
 
   postTaller(taller:Partial<Taller>){
@@ -29,8 +27,6 @@ export class TallerServiceService {
   }
 
   deleteTaller(id:string){
-    return this.http.delete<Taller>(`${this.url}/${id}`).subscribe({
-      next: () => alert("Taller creado con exito!!")
-    })
-  }
+    return this.http.delete<Taller>(`${this.url}/${id}`)
+    }
 }

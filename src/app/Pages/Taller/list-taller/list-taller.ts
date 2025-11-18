@@ -15,4 +15,12 @@ export class ListTaller {
   router = inject(Router)
 
   talleres = toSignal(this.serviceTaller.getTalleres(), {initialValue: []})
+
+  detalle(id:string){
+    this.router.navigate([`taller/detalle/${id}`])
+  }
+
+  volver(){
+    this.router.navigate([''])
+  }
 }

@@ -21,6 +21,7 @@
     background-color: #4B4B4B;
     padding: 30px;
     border-radius: 10px;
+    width: 25%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -48,10 +49,19 @@ select {
     border-radius: 5px;
     border: none;
     outline: none;
-    padding: 5px 30px 5px 5px;
+    padding: 10px 30px 10px 5px;
     background-color: #D8C8B6;
     transition: all 0.3s ease;
     -moz-appearance: textfield;
+    width: 100%;
+}
+
+select {
+    padding: 15px 30px 15px 5px;
+}
+
+select {
+    padding: 9px;
 }
 
 option {
@@ -78,7 +88,7 @@ select:focus,
 .flecha {
     position: absolute;
     right: 0.2rem;
-    bottom: 0.5rem;
+    bottom: 0.7rem;
     width: 1rem;
     height: 1rem;
     cursor: pointer;
@@ -140,7 +150,7 @@ a {
 }
 
 .volverContainer {
-    width: 15%
+    width: 25%;
 }
 
 .button_volver {
