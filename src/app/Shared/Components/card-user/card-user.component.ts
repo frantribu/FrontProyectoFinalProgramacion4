@@ -41,13 +41,13 @@ export class CardUserComponent {
 
     let role: string
 
-    if (this.user()?.idRol == 1) {
+    if (this.user()?.idRol == "1") {
       role = "ADMIN"
-    } else if (this.user()?.idRol == 2) {
+    } else if (this.user()?.idRol == "2") {
       role = "EMPLEADO"
-    } else if (this.user()?.idRol == 3) {
+    } else if (this.user()?.idRol == "3") {
       role = "ENCARGADO TALLER"
-    } else if (this.user()?.idRol == 4) {
+    } else if (this.user()?.idRol == "4") {
       role = "CLIENTE"
     } else {
       role = "error"

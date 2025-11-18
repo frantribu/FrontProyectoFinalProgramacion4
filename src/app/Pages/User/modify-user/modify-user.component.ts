@@ -59,7 +59,7 @@ export class ModifyUserComponent {
             asyncValidators: [dniExistsValidator(this.service, this.userId)],
             updateOn: 'blur'
           }],
-    contrasenia: [this.user()?.contrasenia, [Validators.required,Validators.pattern(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/)]]
+    contrasenia: [this.user()?.contrasenia, [ Validators.pattern(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/)]]
   })
 
   modify() {

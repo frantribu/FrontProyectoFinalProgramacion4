@@ -40,7 +40,7 @@ export class ModalEncargadoComponent {
       email: this.formularioEncargado.value.email,
       dni: this.formularioEncargado.value.dni,
       contrasenia:this.formularioEncargado.value.contrasenia,
-      idRol: 3,
+      idRol: "3",
     }
 
     this.service.postUser(encargado).subscribe({

@@ -27,7 +27,7 @@ export class UserServiceService {
     return this.http.get<User>(`${this.url}/${id}`)
   }
 
-  getUserByRole(idRole: number) {
+  getUserByRole(idRole: string) {
     return this.getUsers().pipe(
       map((users: User[]) => {
         return users.filter(user => user.idRol == idRole)

@@ -39,7 +39,7 @@ export class ModalClienteComponent {
       apellido: this.formularioClient.value.apellido,
       email: this.formularioClient.value.email,
       dni: this.formularioClient.value.dni,
-      idRol: 4,
+      idRol: "4",
     }
     
     this.service.postUser(cliente).subscribe({
