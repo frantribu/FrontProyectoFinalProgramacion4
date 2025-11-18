@@ -1,6 +1,6 @@
 .card_user {
     width: 250px;
-    height: 17vh;
+    height: auto;
     cursor: pointer;
     display: flex;
     flex-direction: column;

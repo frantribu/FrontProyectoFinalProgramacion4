@@ -1,6 +1,6 @@
 .card_vehiculo {
     width: 300px;
-    height: 40vh;
+    height: 50vh;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -9,7 +9,6 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border: 1px solid gainsboro;
     transition: transform 0.3s ease, box-shadow 0.3 ease;
-
 }
 
 .card_vehiculo:hover {
@@ -60,7 +59,7 @@ button {
     background-color: red;
 }
 
-.buttonEliminar:hover{
+.buttonEliminar:hover {
     background-color: rgb(207, 2, 2);
 }
 
@@ -68,14 +67,11 @@ button {
     .card_vehiculo {
         width: 100%;
         height: auto;
-        
     }
-
     .card-image {
         width: 45vw;
         height: 20vh;
     }
-
     button {
         width: 100%;
         font-size: 0.85rem;
@@ -88,7 +84,6 @@ button {
         height: 100%;
         padding-bottom: 10;
     }
-
     .card-image {
         width: 90vw;
         height: 24vh;

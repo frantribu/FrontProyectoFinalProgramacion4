@@ -31,6 +31,10 @@ section {
     padding: 20px;
 }
 
+.errorContainer {
+    height: 10px;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -84,6 +88,7 @@ option {
 }
 
 button[type="submit"] {
+    margin-top: 25px;
     padding: 10px 25px;
     background-color: #CC7F6A;
     color: #F5F5DC;
@@ -100,6 +105,7 @@ button[type="submit"]:hover {
 }
 
 button[disabled] {
+    margin-top: 25px;
     background-color: #d8c8b6;
     color: #4B4B4B;
     cursor: not-allowed;

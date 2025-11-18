@@ -14,11 +14,9 @@
             <div class="input-con-flecha">
                 <label for="input_cliente">Encargado</label>
                 <div class="div-input" [class.input-menu-abierto]="menuAbiertoEncargado">
-                    <input type="text" placeholder="Buscar encargado" [value]="busquedaEncargado()"
-                        (input)="busquedaEncargado.set($any($event.target).value)" (click)="toggleMenu()">
+                    <input type="text" placeholder="Buscar encargado" [value]="busquedaEncargado()" (input)="busquedaEncargado.set($any($event.target).value)" (click)="toggleMenu()">
 
-                    <svg (click)="toggleMenu()" class="flecha" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                        fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <svg (click)="toggleMenu()" class="flecha" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </div>
@@ -28,13 +26,12 @@
             @if(menuAbiertoEncargado){
             <div class="menuAbierto">
                 <ul>
-                    @if (encargadosFiltrados().length) {
-                    @for (encargado of encargadosFiltrados(); track encargado.id) {
+                    <li (click)="abrirModalEncargado()">Agregar encargado +</li>
+                    @if (encargadosFiltrados().length) { @for (encargado of encargadosFiltrados(); track encargado.id) {
                     <li (click)="seleccionarEncargado(encargado)" (click)="toggleMenu()">
                         <span>{{encargado.nombre}} {{encargado.apellido}} | {{encargado.dni}}</span>
                     </li>
-                    }
-                    }
+                    } }
                 </ul>
             </div>
             }
@@ -61,4 +58,8 @@
         </div>
 
     </form>
+
+    @if (mostrarMenuModal()) {
+    <app-modal-encargado (cerrarModal)="cerrarModalEncargado()" (encargadoCreado)="agregarEncargadoALista($event)"></app-modal-encargado>
+    }
 </section>

@@ -7,10 +7,11 @@ import { EspecialidadService } from '../../../Core/Services/Taller/EspecialidadS
 import { toSignal } from '@angular/core/rxjs-interop';
 import { User } from '../../../Core/Models/User';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
+import { ModalEncargadoComponent } from '../../../Shared/Components/modal-encargado/modal-encargado.component';
 
 @Component({
   selector: 'app-modificar-taller',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ModalEncargadoComponent],
   templateUrl: './modificar-taller.html',
   styleUrl: './modificar-taller.css',
 })
@@ -20,22 +21,24 @@ export class ModificarTaller {
   tallerService = inject(TallerServiceService)
   especialidadService = inject(EspecialidadService)
   router = inject(Router)
-  userService=inject(UserServiceService)
+  userService = inject(UserServiceService)
 
   idtaller = String(this.activated.snapshot.paramMap.get("id"))
 
   especialidades = toSignal(this.especialidadService.getEspecialidades())
   taller = toSignal(this.tallerService.getTallerByID(this.idtaller))
 
-  menuAbiertoEncargado=false
-  busquedaEncargado=signal("")
+  menuAbiertoEncargado = false
+  busquedaEncargado = signal("")
 
-  encargados=toSignal(this.userService.getEncargados(), {initialValue:[]})
+  mostrarMenuModal = signal(false)
 
-  encargadosFiltrados=computed(()=>{
-    const filtro=this.busquedaEncargado().toLowerCase()
+  encargados = signal<User[]>([])
 
-    return this.encargados().filter(c=>`${c.nombre} ${c.apellido} ${c.dni}`.toLowerCase().includes(filtro))
+  encargadosFiltrados = computed(() => {
+    const filtro = this.busquedaEncargado().toLowerCase()
+
+    return this.encargados().filter(c => `${c.nombre} ${c.apellido} ${c.dni}`.toLowerCase().includes(filtro))
   })
 
   formulario = this.fb.nonNullable.group({
@@ -46,14 +49,16 @@ export class ModificarTaller {
   })
 
   constructor() {
+    this.cargarEncargados()
+
     effect(() => {
       const u = this.taller();
       if (u) {
         this.formulario.patchValue({
-         name: u.NombreTaller,
-         Encargado: u.Encargado,
-         direccion: u.Direccion,
-         especialidad: u.Especialidad
+          name: u.NombreTaller,
+          Encargado: u.Encargado,
+          direccion: u.Direccion,
+          especialidad: u.Especialidad
         });
       }
 
@@ -61,44 +66,67 @@ export class ModificarTaller {
     });
   }
 
-  obtenerNombreEncargado(id:string){
-    const encargado=this.encargados().find(e=>e.id===id)
-    
-    if(encargado){
+  cargarEncargados() {
+    this.userService.getEncargados().subscribe({
+      next: (encarg) => this.encargados.set(encarg)
+    })
+  }
+
+
+  obtenerNombreEncargado(id: string) {
+    const encargado = this.encargados().find(e => e.id === id)
+
+    if (encargado) {
       return `${encargado.nombre} ${encargado.apellido} | ${encargado.dni}`
     }
 
     return null
-  
+
   }
 
-  modificar(){
+  modificar() {
     this.tallerService.getTallerByID(this.idtaller).subscribe(
       taller => {
-        const tallerr:Taller=({
-          id:this.idtaller,
-          Especialidad:this.formulario.value.especialidad!,
-          NombreTaller:this.formulario.value.name!,
-          Encargado:this.formulario.value.Encargado!,
-          Vehiculos:taller.Vehiculos,
-          Direccion:this.formulario.value.direccion!
-        })    
+        const tallerr: Taller = ({
+          id: this.idtaller,
+          Especialidad: this.formulario.value.especialidad!,
+          NombreTaller: this.formulario.value.name!,
+          Encargado: this.formulario.value.Encargado!,
+          Vehiculos: taller.Vehiculos,
+          Direccion: this.formulario.value.direccion!
+        })
         this.tallerService.patchTaller(tallerr).subscribe({
-          next:()=>this.router.navigate(['taller'])
+          next: () => this.router.navigate(['taller'])
         })
       })
   }
 
- volver(){
-     this.router.navigate([`taller/detalle/${this.idtaller}`]) 
+  volver() {
+    this.router.navigate([`taller/detalle/${this.idtaller}`])
   }
 
-  toggleMenu(){
-    this.menuAbiertoEncargado=!this.menuAbiertoEncargado
+  toggleMenu() {
+    this.menuAbiertoEncargado = !this.menuAbiertoEncargado
   }
 
-  seleccionarEncargado(encargado:User){
+  seleccionarEncargado(encargado: User) {
     this.formulario.get("Encargado")?.setValue(encargado.id)
     this.busquedaEncargado.set(`${encargado.nombre} ${encargado.apellido} | ${encargado.dni}`)
+  }
+
+
+  abrirModalEncargado() {
+    this.mostrarMenuModal.set(true)
+  }
+
+  cerrarModalEncargado() {
+    this.mostrarMenuModal.set(false)
+  }
+
+  agregarEncargadoALista(encargado: User) {
+    const encargadosActuales = this.encargados()
+
+    this.encargados.set([...encargadosActuales, encargado])
+    this.seleccionarEncargado(encargado)
   }
 }

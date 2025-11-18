@@ -5,14 +5,23 @@
             <form [formGroup]="formModifyUser" (submit)="modify()">
                 <div class="form-group">
                     <label for="name">Nombre</label>
-                    <input formControlName="name" id="name" type="text"> @if(getError('name')){
-                    <small>{{getError('name')}}</small> }
+                    <input formControlName="name" id="name" type="text">
+
+                    <div class="errorContainer">
+                        @if(getError('name')){
+                        <small>{{getError('name')}}</small> }
+                    </div>
+
                 </div>
 
                 <div class="form-group">
                     <label for="lastName">Apellido</label>
-                    <input formControlName="lastName" id="lastName" type="text"> @if(getError('lastName')){
-                    <small>{{getError('lastName')}}</small> }
+                    <input formControlName="lastName" id="lastName" type="text">
+
+                    <div class="errorContainer">
+                        @if(getError('lastName')){
+                        <small>{{getError('lastName')}}</small> }
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -22,28 +31,48 @@
                             @for (rol of roles(); track rol.id) {
                         <option [value]="rol.id">{{rol.name}}</option>
                             }
-                    </select> @if(getError('rol')){
-                    <small>{{getError('rol')}}</small> }
+                    </select>
+
+                    <div class="errorContainer">
+                        @if(getError('rol')){
+                        <small>{{getError('rol')}}</small> }
+                    </div>
+
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input formControlName="email" id="email" type="email"> @if (formModifyUser.get('email')?.hasError('emailExists') && formModifyUser.get('email')?.touched) {
-                    <small>Este email ya está registrado</small> } @if(getError('email')){
-                    <small>{{getError('email')}}</small> }
+                    <input formControlName="email" id="email" type="email">
+
+                    <div class="errorContainer">
+                        @if (formModifyUser.get('email')?.hasError('emailExists') && formModifyUser.get('email')?.touched) {
+                        <small>Este email ya está registrado</small> } @if(getError('email')){
+                        <small>{{getError('email')}}</small> }
+                    </div>
+
                 </div>
 
                 <div class="form-group">
                     <label for="dni">DNI</label>
-                    <input formControlName="dni" id="dni" type="number" minlength="8" maxlength="8"> @if (formModifyUser.get('dni')?.hasError('dniExists') && formModifyUser.get('dni')?.touched) {
-                    <small>Este DNI ya está registrado</small> } @if(getError('dni')){
-                    <small>{{getError('dni')}}</small> }
+                    <input formControlName="dni" id="dni" type="number" minlength="8" maxlength="8">
+
+                    <div class="errorContainer">
+                        @if (formModifyUser.get('dni')?.hasError('dniExists') && formModifyUser.get('dni')?.touched) {
+                        <small>Este DNI ya está registrado</small> } @if(getError('dni')){
+                        <small>{{getError('dni')}}</small> }
+                    </div>
+
                 </div>
 
                 <div class="form-group">
                     <label for="contrasenia">Contraseña</label>
-                    <input formControlName="contrasenia" type="password"> @if(getError('contrasenia')){
-                    <small>{{getError('contrasenia')}}</small> }
+                    <input formControlName="contrasenia" type="password">
+
+                    <div class="errorContainer">
+                        @if(getError('contrasenia')){
+                        <small>{{getError('contrasenia')}}</small> }
+                    </div>
+
                 </div>
 
                 <div class="form-actions">
