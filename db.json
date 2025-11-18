@@ -1,278 +1,248 @@
 {
-  "usuarios": [
-    {
-      "id": "12345",
-      "dni": 40200300,
-      "nombre": "Juan",
-      "apellido": "Pérez",
-      "idRol": "1",
-      "email": "juanperez@gmail.com",
-      "contrasenia": "MiPass123"
-    },
-    {
-      "id": "c47b",
-      "nombre": "Leandro",
-      "apellido": "Ciriaco",
-      "idRol": "2",
-      "email": "leandro@gmail.com",
-      "dni": 12345678,
-      "contrasenia": "Leandro1"
-    },
-    {
-      "id": "7fac",
-      "nombre": "fabricio",
-      "apellido": "Armagno",
-      "email": "fabricio@gmail.com",
-      "dni": 12345689,
-      "idRol": "4"
-    },
-    {
-      "id": "d834",
-      "nombre": "Franco",
-      "apellido": "Triboulard",
-      "email": "franco@gmail.com",
-      "dni": 78945623,
-      "idRol": "4"
-    },
-    {
-      "id": "7aee",
-      "nombre": "Gonzalo",
-      "apellido": "Diaz",
-      "email": "gonza@gmail.com",
-      "dni": 12345677,
-      "contrasenia": "Gonzalo1",
-      "idRol": "3"
-    },
-    {
-<<<<<<< HEAD
-      "id": "f516",
-      "nombre": "franco",
-      "apellido": "tribu",
-      "email": "franco21@gmail.com",
-      "dni": 12345908,
-      "idRol": 4
-    },
-    {
-      "id": "e72a",
-      "nombre": "martina",
-      "apellido": "perez",
-      "idRol": "3",
-      "email": "marperez@gmail.com",
-      "dni": 46556677,
-      "isLogged": false,
-      "contrasenia": "123martina"
-=======
-      "id": "bb40",
-      "nombre": "leandro",
-      "apellido": "ciriaco",
-      "email": "lean@gmail.com",
-      "dni": 78945622,
-      "contrasenia": "Leandro1",
-      "idRol": "3"
->>>>>>> Test
-    }
-  ],
-  "autos": [
-    {
-      "id": "8e81",
-      "patente": "ABC123",
-      "marca": "toyota",
-      "modelo": "Corolla",
-      "precioDeCompra": 10000,
-      "precioDeVenta": 15000,
-      "color": "rojo",
-      "anio": 2015,
-      "kilometros": 20000,
-      "motor": "1.8",
-      "idCombustion": "1",
-      "descripcion": "toyota corolla nuevo",
-      "puertas": "4",
-      "potencia": 150,
-      "idTipoCarroceria": "1",
-      "rutasImagen": [
-        "app/assets/imgvehiculos/corolla.webp",
-        "app/assets/imgvehiculos/focus.webp"
-      ],
-      "fechaIngreso": "2025-11-18",
-      "enReparacion": false,
-      "vendido": false
-    },
-    {
-      "id": "263b",
-      "patente": "JKL456",
-      "marca": "ford",
-      "modelo": "focus",
-      "precioDeCompra": 8000,
-      "precioDeVenta": 11000,
-      "color": "rojo",
-      "anio": 2016,
-      "kilometros": 6000,
-      "motor": "1.8",
-      "idCombustion": "1",
-      "descripcion": "le mejor ford",
-      "puertas": "5",
-      "potencia": 200,
-      "idTipoCarroceria": "1",
-      "fechaIngreso": "2025-11-18",
-      "enReparacion": false,
-      "rutasImagen": [
-        "app/assets/imgvehiculos/focus.webp"
-      ],
-      "vendido": true,
-      "tipoVehiculo": "Auto"
-    }
-  ],
-  "motos": [
-    {
-      "id": "94e6",
-      "patente": "AGH678",
-      "marca": "bmw",
-      "modelo": "s1000",
-      "precioDeCompra": 6000,
-      "precioDeVenta": 8000,
-      "color": "azul",
-      "anio": 2018,
-      "kilometros": 5000,
-      "motor": "2.0",
-      "idCombustion": "1",
-      "descripcion": "la mejor moto",
-      "cilindrada": 300,
-      "idTipoCarroceria": "3",
-      "rutasImagen": [
-        "app/assets/imgvehiculos/10-bmw-s-1000-rr-2025-estudio-blanco-04.jpg",
-        "app/assets/imgvehiculos/S1000RR.jpg"
-      ],
-      "fechaIngreso": "2025-11-18",
-      "enReparacion": false,
-      "vendido": true,
-      "tipoVehiculo": "Moto"
-    }
-  ],
-  "talleres": [
-    {
-      "id": "76cb",
-      "NombreTaller": "taller taller",
-      "Encargado": "e72a",
-      "Direccion": "25 de mayo y 180",
-      "Especialidad": "4"
-    },
-    {
-      "id": "a321",
-      "NombreTaller": "taller el mejor",
-      "Encargado": "e72a",
-      "Direccion": "25 de mayo y 180",
-      "Especialidad": "2"
-    }
-  ],
-  "historialesVenta": [
-    {
-      "id": "e536",
-      "vehiculo": "94e6",
-      "cliente": "7fac",
-      "precio": 8010,
-      "fechaVenta": "2025-11-18"
-    },
-    {
-      "id": "49ce",
-      "vehiculo": "263b",
-      "cliente": "d834",
-      "precio": 7000,
-      "fechaVenta": "2025-11-18"
-    }
-  ],
-  "historialesTaller": [],
-  "roles": [
-    {
-      "id": "1",
-      "name": "ADMIN"
-    },
-    {
-      "id": "2",
-      "name": "EMPLEADO"
-    },
-    {
-      "id": "3",
-      "name": "ENCARGADO TALLER"
-    },
-    {
-      "id": "4",
-      "name": "CLIENTE"
-    }
-  ],
-  "combustiones": [
-    {
-      "id": "1",
-      "name": "NAFTA"
-    },
-    {
-      "id": "2",
-      "name": "DIESEL"
-    },
-    {
-      "id": "3",
-      "name": "ELECTRICO"
-    }
-  ],
-  "tiposAuto": [
-    {
-      "id": "1",
-      "name": "SEDAN"
-    },
-    {
-      "id": "2",
-      "name": "HATCHBACK"
-    },
-    {
-      "id": "3",
-      "name": "COUPE"
-    },
-    {
-      "id": "4",
-      "name": "SUV"
-    },
-    {
-      "id": "5",
-      "name": "FURGON"
-    }
-  ],
-  "tiposMoto": [
-    {
-      "id": "1",
-      "name": "URBANA"
-    },
-    {
-      "id": "2",
-      "name": "DEPORTIVA"
-    },
-    {
-      "id": "3",
-      "name": "TURISMO"
-    },
-    {
-      "id": "4",
-      "name": "OFF-ROAD"
-    },
-    {
-      "id": "5",
-      "name": "ESPECIAL"
-    }
-  ],
-  "especialidades": [
-    {
-      "id": "1",
-      "name": "GENERAL"
-    },
-    {
-      "id": "2",
-      "name": "MECANICO DE MOTORES"
-    },
-    {
-      "id": "3",
-      "name": "CHAPA Y PINTURA"
-    },
-    {
-      "id": "4",
-      "name": "ELECTRICISTA"
-    }
-  ]
+    "usuarios": [{
+            "id": "12345",
+            "dni": 40200300,
+            "nombre": "Juan",
+            "apellido": "Pérez",
+            "idRol": "1",
+            "email": "juanperez@gmail.com",
+            "contrasenia": "MiPass123"
+        },
+        {
+            "id": "c47b",
+            "nombre": "Leandro",
+            "apellido": "Ciriaco",
+            "idRol": "2",
+            "email": "leandro@gmail.com",
+            "dni": 12345678,
+            "contrasenia": "Leandro1"
+        },
+        {
+            "id": "7fac",
+            "nombre": "fabricio",
+            "apellido": "Armagno",
+            "email": "fabricio@gmail.com",
+            "dni": 12345689,
+            "idRol": "4"
+        },
+        {
+            "id": "d834",
+            "nombre": "Franco",
+            "apellido": "Triboulard",
+            "email": "franco@gmail.com",
+            "dni": 78945623,
+            "idRol": "4"
+        },
+        {
+            "id": "7aee",
+            "nombre": "Gonzalo",
+            "apellido": "Diaz",
+            "email": "gonza@gmail.com",
+            "dni": 12345677,
+            "contrasenia": "Gonzalo1",
+            "idRol": "3"
+        },
+        {
+            "id": "bb40",
+            "nombre": "leandro",
+            "apellido": "ciriaco",
+            "email": "lean@gmail.com",
+            "dni": 78945622,
+            "contrasenia": "Leandro1",
+            "idRol": "3"
+        }
+    ],
+    "autos": [{
+            "id": "8e81",
+            "patente": "ABC123",
+            "marca": "toyota",
+            "modelo": "Corolla",
+            "precioDeCompra": 10000,
+            "precioDeVenta": 15000,
+            "color": "rojo",
+            "anio": 2015,
+            "kilometros": 20000,
+            "motor": "1.8",
+            "idCombustion": "1",
+            "descripcion": "toyota corolla nuevo",
+            "puertas": "4",
+            "potencia": 150,
+            "idTipoCarroceria": "1",
+            "rutasImagen": [
+                "app/assets/imgvehiculos/corolla.webp",
+                "app/assets/imgvehiculos/focus.webp"
+            ],
+            "fechaIngreso": "2025-11-18",
+            "enReparacion": false,
+            "vendido": false
+        },
+        {
+            "id": "263b",
+            "patente": "JKL456",
+            "marca": "ford",
+            "modelo": "focus",
+            "precioDeCompra": 8000,
+            "precioDeVenta": 11000,
+            "color": "rojo",
+            "anio": 2016,
+            "kilometros": 6000,
+            "motor": "1.8",
+            "idCombustion": "1",
+            "descripcion": "le mejor ford",
+            "puertas": "5",
+            "potencia": 200,
+            "idTipoCarroceria": "1",
+            "fechaIngreso": "2025-11-18",
+            "enReparacion": false,
+            "rutasImagen": [
+                "app/assets/imgvehiculos/focus.webp"
+            ],
+            "vendido": true,
+            "tipoVehiculo": "Auto"
+        }
+    ],
+    "motos": [{
+        "id": "94e6",
+        "patente": "AGH678",
+        "marca": "bmw",
+        "modelo": "s1000",
+        "precioDeCompra": 6000,
+        "precioDeVenta": 8000,
+        "color": "azul",
+        "anio": 2018,
+        "kilometros": 5000,
+        "motor": "2.0",
+        "idCombustion": "1",
+        "descripcion": "la mejor moto",
+        "cilindrada": 300,
+        "idTipoCarroceria": "3",
+        "rutasImagen": [
+            "app/assets/imgvehiculos/10-bmw-s-1000-rr-2025-estudio-blanco-04.jpg",
+            "app/assets/imgvehiculos/S1000RR.jpg"
+        ],
+        "fechaIngreso": "2025-11-18",
+        "enReparacion": false,
+        "vendido": true,
+        "tipoVehiculo": "Moto"
+    }],
+    "talleres": [{
+            "id": "76cb",
+            "NombreTaller": "taller taller",
+            "Encargado": "e72a",
+            "Direccion": "25 de mayo y 180",
+            "Especialidad": "4"
+        },
+        {
+            "id": "a321",
+            "NombreTaller": "taller el mejor",
+            "Encargado": "e72a",
+            "Direccion": "25 de mayo y 180",
+            "Especialidad": "2"
+        }
+    ],
+    "historialesVenta": [{
+            "id": "e536",
+            "vehiculo": "94e6",
+            "cliente": "7fac",
+            "precio": 8010,
+            "fechaVenta": "2025-11-18"
+        },
+        {
+            "id": "49ce",
+            "vehiculo": "263b",
+            "cliente": "d834",
+            "precio": 7000,
+            "fechaVenta": "2025-11-18"
+        }
+    ],
+    "historialesTaller": [],
+    "roles": [{
+            "id": "1",
+            "name": "ADMIN"
+        },
+        {
+            "id": "2",
+            "name": "EMPLEADO"
+        },
+        {
+            "id": "3",
+            "name": "ENCARGADO TALLER"
+        },
+        {
+            "id": "4",
+            "name": "CLIENTE"
+        }
+    ],
+    "combustiones": [{
+            "id": "1",
+            "name": "NAFTA"
+        },
+        {
+            "id": "2",
+            "name": "DIESEL"
+        },
+        {
+            "id": "3",
+            "name": "ELECTRICO"
+        }
+    ],
+    "tiposAuto": [{
+            "id": "1",
+            "name": "SEDAN"
+        },
+        {
+            "id": "2",
+            "name": "HATCHBACK"
+        },
+        {
+            "id": "3",
+            "name": "COUPE"
+        },
+        {
+            "id": "4",
+            "name": "SUV"
+        },
+        {
+            "id": "5",
+            "name": "FURGON"
+        }
+    ],
+    "tiposMoto": [{
+            "id": "1",
+            "name": "URBANA"
+        },
+        {
+            "id": "2",
+            "name": "DEPORTIVA"
+        },
+        {
+            "id": "3",
+            "name": "TURISMO"
+        },
+        {
+            "id": "4",
+            "name": "OFF-ROAD"
+        },
+        {
+            "id": "5",
+            "name": "ESPECIAL"
+        }
+    ],
+    "especialidades": [{
+            "id": "1",
+            "name": "GENERAL"
+        },
+        {
+            "id": "2",
+            "name": "MECANICO DE MOTORES"
+        },
+        {
+            "id": "3",
+            "name": "CHAPA Y PINTURA"
+        },
+        {
+            "id": "4",
+            "name": "ELECTRICISTA"
+        }
+    ]
 }
