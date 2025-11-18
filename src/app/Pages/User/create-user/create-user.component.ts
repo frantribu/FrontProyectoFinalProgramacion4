@@ -5,6 +5,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { User } from '../../../Core/Models/User';
 import { Router } from '@angular/router';
+import { dniExistsValidator, emailExistsValidator } from '../../../Core/Validators/UserValidator';
 
 @Component({
   selector: 'app-create-user',
@@ -23,8 +24,16 @@ export class CreateUserComponent {
     name: ["", Validators.required],
     lastName: ["", Validators.required],
     rol: [null, Validators.required],
-    email: ["", [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
-    dni: [null, [Validators.required, Validators.min(10000000), Validators.max(99999999)]],
+    email: ["", {
+    validators: [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)],
+    asyncValidators: [emailExistsValidator(this.service)],
+    updateOn: 'blur'
+  }],
+    dni: [null, {
+    validators: [Validators.required, Validators.min(10000000), Validators.max(99999999)],
+    asyncValidators: [dniExistsValidator(this.service)],
+    updateOn: 'blur'
+  }],
     contrasenia: ["", [Validators.required, Validators.pattern(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/)]]
   })
 

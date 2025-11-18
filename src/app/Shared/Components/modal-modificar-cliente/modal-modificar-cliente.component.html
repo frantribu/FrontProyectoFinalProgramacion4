@@ -1,8 +1,8 @@
 <div class="modal-backdrop" (click)="cerrar()"></div>
 
 <section class="modal-container">
-    <h2>Nuevo Encargado</h2>
-    <form [formGroup]="formularioEncargado" (submit)="enviar()">
+    <h2>Modificar Cliente</h2>
+    <form [formGroup]="formClient" (submit)="modificar()">
         <div class="form-group">
             <label for="nombre">Nombre</label>
             <input formControlName="nombre" id="nombre" type="text">
@@ -28,8 +28,7 @@
             <input formControlName="email" id="email" type="email">
 
             <div class="errorContainer">
-                @if (formularioEncargado.get('email')?.hasError('emailExists') && formularioEncargado.get('email')?.touched) {
-                <small>Este email ya está registrado</small> } @if (getError('email')) {
+                @if (getError('email')) {
                 <small>{{getError('email')}}</small> }
             </div>
         </div>
@@ -39,24 +38,13 @@
             <input formControlName="dni" id="dni" type="number">
 
             <div class="errorContainer">
-                @if (formularioEncargado.get('dni')?.hasError('dniExists') && formularioEncargado.get('dni')?.touched) {
-                <small>Este DNI ya está registrado</small> } @if (getError('dni')) {
+                @if (getError('dni')) {
                 <small>{{getError('dni')}}</small> }
             </div>
         </div>
 
-        <div class="form-group">
-            <label for="contrasenia">Contraseña</label>
-            <input formControlName="contrasenia" id="contrasenia" type="password">
-
-            <div class="errorContainer">
-                @if (getError('contrasenia')) {
-                <small>{{getError('contrasenia')}}</small> }
-            </div>
-        </div>
-
         <div class="form-actions">
-            <button [disabled]="formularioEncargado.invalid" type="submit">Crear encargado</button>
+            <button [disabled]="formClient.invalid" type="submit">Modificar Cliente</button>
             <button type="button" class="btn-cancel" (click)="cerrar()">Cancelar</button>
         </div>
     </form>

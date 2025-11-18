@@ -96,4 +96,6 @@ export class CreateTaller {
   volver(){
     this.router.navigate([''])
   }
+
+  
 }

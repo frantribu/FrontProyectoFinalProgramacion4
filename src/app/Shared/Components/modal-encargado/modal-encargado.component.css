@@ -1,29 +1,33 @@
 .modal-backdrop {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .modal-container {
     position: fixed;
-    transform: translate(-50%, -130%);
+    transform: translate(-50%, -110%);
     background: white;
-    width: 16%;
+    width: 20%;
     padding: 20px;
     border-radius: 8px;
     z-index: 9999
 }
 
-.form-group{
+.errorContainer {
+    height: 18px;
+}
+
+.form-group {
     display: flex;
     flex-direction: column;
 }
 
-.form-group input{
+.form-group input {
     border-radius: 5px;
     outline: none;
     padding: 5px;
 }
 
-button{
+button {
     margin-top: 10px;
     padding: 5px;
     border: none;
@@ -32,19 +36,22 @@ button{
     transition: all 0.3s ease;
 }
 
-button:hover{
+button:hover {
     transform: scale(1.01);
 }
 
-button[type="button"]{
+button[type="button"] {
+    margin-top: 35px;
     background-color: red;
 }
 
-button[type="submit"]{
+button[type="submit"] {
+    margin-top: 35px;
     background-color: rgb(95, 255, 47);
 }
 
-button[disabled]{
+button[disabled] {
+    margin-top: 35px;
     background-color: rgba(114, 250, 73, 0.521);
     cursor: not-allowed;
 }

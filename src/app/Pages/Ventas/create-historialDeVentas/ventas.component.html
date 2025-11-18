@@ -12,28 +12,24 @@
             <div class="input-con-flecha">
                 <label for="input_cliente">Cliente</label>
                 <div class="div-input" [class.input-menu-abierto]="menuAbiertoCliente">
-                    <input type="text" placeholder="Buscar cliente" [value]="busquedaCliente()"
-                        (input)="busquedaCliente.set($any($event.target).value)" (click)="toggleMenu()">
+                    <input type="text" placeholder="Buscar cliente" [value]="busquedaCliente()" (input)="busquedaCliente.set($any($event.target).value)" (click)="toggleMenu()">
 
-                    <svg (click)="toggleMenu()" class="flecha" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                        fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <svg (click)="toggleMenu()" class="flecha" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </div>
-                
+
             </div>
 
             @if(menuAbiertoCliente){
             <div class="menuAbierto">
                 <ul>
                     <li (click)="abrirModalCliente()">Agregar cliente +</li>
-                    @if (clientesFiltrados().length) {
-                    @for (cliente of clientesFiltrados(); track cliente.id) {
+                    @if (clientesFiltrados().length) { @for (cliente of clientesFiltrados(); track cliente.id) {
                     <li (click)="seleccionarCliente(cliente)" (click)="toggleMenu()">
-                        <span>{{cliente.nombre}} {{cliente.apellido}} | {{cliente.dni}}</span>
+                        <span>{{cliente.nombre}} {{cliente.apellido}} | {{cliente.dni}} <!--<button type="button" (click)="abrirModalModificar()">M</button>--></span>
                     </li>
-                    }
-                    }
+                    } }
                 </ul>
             </div>
             }
@@ -50,8 +46,11 @@
     </form>
 
     @if(mostrarMenuModal()){
-    <app-modal-cliente (clienteCreado)="agregarClienteALista($event)"
-        (cerrarModal)="cerrarModalCliente()"></app-modal-cliente>
+    <app-modal-cliente (clienteCreado)="agregarClienteALista($event)" (cerrarModal)="cerrarModalCliente()"></app-modal-cliente>
     }
-
+    <!-- 
+    @if(mostrarMenuModificar()){
+    <app-modal-modificar-cliente (clienteModificado)="actualizarCliente($event)" (cerrarMenu)="cerrarModalModificar()"></app-modal-modificar-cliente>
+    }
+    -->
 </section>

@@ -5,6 +5,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { User } from '../../../Core/Models/User';
 import { RolesService } from '../../../Core/Services/RolService/roles.service';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
+import { dniExistsValidator, emailExistsValidator } from '../../../Core/Validators/UserValidator';
 
 @Component({
   selector: 'app-modify-user',
@@ -48,8 +49,16 @@ export class ModifyUserComponent {
     name: [this.user()?.nombre, Validators.required],
     lastName: [this.user()?.apellido, Validators.required],
     rol: [this.user()?.idRol, Validators.required],
-    email: [this.user()?.email, [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
-    dni: [this.user()?.dni, [Validators.required, Validators.min(10000000), Validators.max(99999999)]],
+    email: [this.user()?.email, {
+            validators: [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)],
+            asyncValidators: [emailExistsValidator(this.service, this.userId)],
+            updateOn: 'blur'
+          }],
+    dni: [this.user()?.dni, {
+            validators: [Validators.required, Validators.min(10000000), Validators.max(99999999)],
+            asyncValidators: [dniExistsValidator(this.service, this.userId)],
+            updateOn: 'blur'
+          }],
     contrasenia: [this.user()?.contrasenia, [Validators.required,Validators.pattern(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/)]]
   })
 

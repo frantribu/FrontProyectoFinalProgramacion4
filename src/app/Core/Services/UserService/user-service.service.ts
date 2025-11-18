@@ -47,7 +47,7 @@ export class UserServiceService {
   }
 
   patchUser(id: string, user: Partial<User>) {
-    return this.http.patch(`${this.url}/${id}`, user)
+    return this.http.patch<User>(`${this.url}/${id}`, user)
   }
 
   deleteUser(id: string) {

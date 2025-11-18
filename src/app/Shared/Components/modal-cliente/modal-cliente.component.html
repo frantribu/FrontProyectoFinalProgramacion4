@@ -6,11 +6,10 @@
         <div class="form-group">
             <label for="nombre">Nombre</label>
             <input formControlName="nombre" id="nombre" type="text">
-            
+
             <div class="errorContainer">
                 @if (getError('nombre')) {
-                    <small>{{getError('nombre')}}</small>
-                }
+                <small>{{getError('nombre')}}</small> }
             </div>
         </div>
 
@@ -18,10 +17,9 @@
             <label for="apellido">Apellido</label>
             <input formControlName="apellido" id="apellido" type="text">
 
-              <div class="errorContainer">
+            <div class="errorContainer">
                 @if (getError('apellido')) {
-                    <small>{{getError('apellido')}}</small>
-                }
+                <small>{{getError('apellido')}}</small> }
             </div>
         </div>
 
@@ -29,10 +27,10 @@
             <label for="email">Email</label>
             <input formControlName="email" id="email" type="email">
 
-              <div class="errorContainer">
-                @if (getError('email')) {
-                    <small>{{getError('email')}}</small>
-                }
+            <div class="errorContainer">
+                @if (formularioClient.get('email')?.hasError('emailExists') && formularioClient.get('email')?.touched) {
+                <small>Este email ya está registrado</small> } @if (getError('email')) {
+                <small>{{getError('email')}}</small> }
             </div>
         </div>
 
@@ -40,13 +38,13 @@
             <label for="dni">DNI</label>
             <input formControlName="dni" id="dni" type="number">
 
-              <div class="errorContainer">
-                @if (getError('dni')) {
-                    <small>{{getError('dni')}}</small>
-                }
+            <div class="errorContainer">
+                @if (formularioClient.get('dni')?.hasError('dniExists') && formularioClient.get('dni')?.touched) {
+                <small>Este DNI ya está registrado</small> } @if (getError('dni')) {
+                <small>{{getError('dni')}}</small> }
             </div>
         </div>
-       
+
         <div class="form-actions">
             <button [disabled]="formularioClient.invalid" type="submit">Crear Cliente</button>
             <button type="button" class="btn-cancel" (click)="cerrar()">Cancelar</button>

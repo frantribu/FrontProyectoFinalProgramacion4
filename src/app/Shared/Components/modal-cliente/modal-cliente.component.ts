@@ -2,6 +2,7 @@ import { Component, inject, output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from '../../../Core/Models/User';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
+import { dniExistsValidator, emailExistsValidator } from '../../../Core/Validators/UserValidator';
 
 @Component({
   selector: 'app-modal-cliente',
@@ -20,8 +21,16 @@ export class ModalClienteComponent {
   formularioClient = this.fb.nonNullable.group({
     nombre: ["", Validators.required],
     apellido: ["", Validators.required],
-    email: ["", [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
-    dni: [0, [Validators.required, Validators.min(10000000), Validators.max(99999999)]]
+    email: ["", {
+        validators: [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)],
+        asyncValidators: [emailExistsValidator(this.service)],
+        updateOn: 'blur'
+      }],
+    dni: [0, {
+        validators: [Validators.required, Validators.min(10000000), Validators.max(99999999)],
+        asyncValidators: [dniExistsValidator(this.service)],
+        updateOn: 'blur'
+      }]
   })
 
   enviar() {

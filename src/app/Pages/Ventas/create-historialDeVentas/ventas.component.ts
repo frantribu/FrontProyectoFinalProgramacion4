@@ -8,10 +8,11 @@ import { UserServiceService } from '../../../Core/Services/UserService/user-serv
 import { HistorialDeVentaService } from '../../../Core/Services/HistorialDeVenta/historial-venta.service';
 import { User } from '../../../Core/Models/User';
 import { ModalClienteComponent } from '../../../Shared/Components/modal-cliente/modal-cliente.component';
+import { ModalModificarClienteComponent } from '../../../Shared/Components/modal-modificar-cliente/modal-modificar-cliente.component';
 
 @Component({
   selector: 'app-ventas',
-  imports: [ReactiveFormsModule, ModalClienteComponent],
+  imports: [ReactiveFormsModule, ModalClienteComponent, /*ModalModificarClienteComponent*/],
   templateUrl: './ventas.component.html',
   styleUrl: './ventas.component.css'
 })
@@ -53,6 +54,8 @@ export class CreateVentaComponent {
 
   menuAbiertoCliente = false
   mostrarMenuModal = signal(false)
+
+  // mostrarMenuModificar = signal(false)
 
   clientesFiltrados = computed(() => {
     const filtro = this.busquedaCliente().toLowerCase();
@@ -114,4 +117,17 @@ export class CreateVentaComponent {
    volver(){
     this.router.navigate([`vehiculos/detalle${this.vehiculo()?.tipoVehiculo}/${this.idVehiculo}`])
   }
+  //Modificar Cliente
+/* 
+  abrirModalModificar(){
+    this.mostrarMenuModificar.set(true)
+  }
+
+  cerrarModalModificar(){
+    this.mostrarMenuModificar.set(false)
+  }
+
+ actualizarCliente(cliente:User){
+    const listaClientes = this.clientes()
+  }*/
 }

@@ -88,8 +88,28 @@
       "rutasImagen": [],
       "fechaIngreso": "2025-11-16",
       "enReparacion": false,
-      "vendido": false,
+      "vendido": true,
       "tipoVehiculo": "Moto"
+    },
+    {
+      "id": "ae0f",
+      "patente": "AGH523",
+      "marca": "yammaha",
+      "modelo": "tornado",
+      "precioDeCompra": 50000,
+      "precioDeVenta": 30000,
+      "color": "rojo",
+      "anio": 2015,
+      "kilometros": 10000,
+      "motor": "1.5",
+      "idCombustion": "1",
+      "descripcion": "La mejor moto pata tirar cortes y ser re negro",
+      "cilindrada": 200,
+      "idTipoCarroceria": "2",
+      "rutasImagen": [],
+      "fechaIngreso": "2025-11-17",
+      "enReparacion": false,
+      "vendido": false
     }
   ],
   "talleres": [],
@@ -106,6 +126,13 @@
       "vehiculo": "4c0c",
       "cliente": "29ea",
       "precio": 55000,
+      "fechaVenta": "2025-11-17"
+    },
+    {
+      "id": "d028",
+      "vehiculo": "9892",
+      "cliente": "835c",
+      "precio": 22000,
       "fechaVenta": "2025-11-17"
     }
   ],
