@@ -26,18 +26,16 @@ export class UserServiceService {
   getUserById(id: string) {
     return this.http.get<User>(`${this.url}/${id}`)
   }
-  
-  getUserByRole(idRole : number){
+
+  getUserByRole(idRole: string) {
     return this.getUsers().pipe(
-      map((users : User[]) => {
+      map((users: User[]) => {
         return users.filter(user => user.idRol == idRole)
       })
     )
   }
 
   updateIsLogged(user: User) {
-    user.isLogged = !user.isLogged
-
     this.http.put<User>(`${this.url}/${user.id}`, user).subscribe({
       next: () => console.log("Estado modificado con exito"),
       error: (err) => console.log("Error al actualizar el estado: ", err)
@@ -45,11 +43,11 @@ export class UserServiceService {
   }
 
   postUser(user: Partial<User>) {
-    return this.http.post(this.url, user)
+    return this.http.post<User>(this.url, user)
   }
 
   patchUser(id: string, user: Partial<User>) {
-    return this.http.patch(`${this.url}/${id}`, user)
+    return this.http.patch<User>(`${this.url}/${id}`, user)
   }
 
   deleteUser(id: string) {
@@ -71,10 +69,17 @@ export class UserServiceService {
     this.route.navigate(['login'])
   }
 
-   getClientes() {
-      return this.serviceRol.getIdByRol("CLIENTE").pipe(
-        switchMap(objetoRol => { 
+  getClientes() {
+    return this.serviceRol.getIdByRol("CLIENTE").pipe(
+      switchMap(objetoRol => {
         return this.http.get<User[]>(`${this.url}?idRol=${objetoRol!.id}`);
       }));
-    }
+  }
+
+  getEncargados() {
+    return this.serviceRol.getIdByRol("ENCARGADO TALLER").pipe(
+      switchMap(objetoRol => {
+        return this.http.get<User[]>(`${this.url}?idRol=${objetoRol!.id}`);
+      }));
+  }
 }

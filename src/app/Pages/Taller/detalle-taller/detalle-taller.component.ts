@@ -1,9 +1,9 @@
-import { Component, effect, inject, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { TallerServiceService } from '../../../Core/Services/Taller/TallerService/taller-service.service';
-import { EspecialidadService } from '../../../Core/Services/Taller/EspecialidadService/especialidad-service';
-import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { Component, effect, inject, signal } from "@angular/core"
+import { ActivatedRoute, Router } from "@angular/router"
+import { TallerServiceService } from "../../../Core/Services/Taller/TallerService/taller-service.service"
+import { EspecialidadService } from "../../../Core/Services/Taller/EspecialidadService/especialidad-service"
+import { UserServiceService } from "../../../Core/Services/UserService/user-service.service"
+import { toSignal } from "@angular/core/rxjs-interop"
 
 @Component({
   selector: 'app-detalle-taller',
@@ -12,18 +12,16 @@ import { toSignal } from '@angular/core/rxjs-interop';
   styleUrl: './detalle-taller.component.css'
 })
 export class DetalleTallerComponent {
-  
   activated = inject(ActivatedRoute)
   tallerservice = inject(TallerServiceService)
   especialidadservice = inject(EspecialidadService)
   userService = inject(UserServiceService)
+  router = inject(Router)
 
   id = String(this.activated.snapshot.paramMap.get("id"))
 
-  // Señal base
   taller = toSignal(this.tallerservice.getTallerByID(this.id))
 
-  // Señales vacías para completar luego
   encargado = signal<any>(null)
   especialidad = signal<any>(null)
 
@@ -32,12 +30,23 @@ export class DetalleTallerComponent {
       const t = this.taller();
       if (!t) return;
 
-      // Cargar encargado
       this.userService.getUserById(t.Encargado).subscribe(u => this.encargado.set(u));
 
-      // Cargar especialidad
-      this.especialidadservice.getEspecialidadByID(t.Especialidad)
-        .subscribe(e => this.especialidad.set(e));
+      this.especialidadservice.getEspecialidadByID(t.Especialidad).subscribe(e => this.especialidad.set(e));
     });
+  }
+
+  Eliminar(id: string) {
+    this.tallerservice.deleteTaller(id).subscribe({
+      next: () => this.router.navigate(["taller/listar"])
+    })
+  }
+
+   volver(){
+    this.router.navigate(['taller'])
+  }
+
+  modificar(id:string){
+    this.router.navigate([`taller/modificar/${this.id}`])
   }
 }

@@ -1,4 +1,8 @@
 <section>
+  <button type="button" class="button_volver" (click)="volver()">
+    Atras
+  </button> 
+  
   @if (auto(); as vehiculo) {
   <div class="div-principal">
     @if (vehiculo.rutasImagen.length) {
@@ -23,7 +27,7 @@
     <div class="div-info">
       <p>{{vehiculo.anio}} - {{vehiculo.kilometros}}Km</p>
       <h5>{{vehiculo.marca}} {{vehiculo.modelo}}</h5>
-      <h3 class="price">${{vehiculo.precio}}</h3>
+      <h3 class="price">Precio: ${{vehiculo.precioDeVenta}}</h3>
       <button (click)="vender()" class="buttonVender">Vender</button>
     </div>
   </div>
@@ -34,6 +38,7 @@
       <p>Color: {{vehiculo.color}}</p>
       <p>Puertas: {{vehiculo.puertas}}</p>
       <p>Potencia: {{vehiculo.potencia}}</p>
+      <p>Tipo de carroceria: {{tipoDeAuto()}}</p>
     </div>
 
     <div>

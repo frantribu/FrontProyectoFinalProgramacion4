@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HistorialDeVentas } from '../../../Core/Models/HistorialDeVentas';
 import { ActivatedRoute, Router, } from '@angular/router';
@@ -8,10 +8,11 @@ import { UserServiceService } from '../../../Core/Services/UserService/user-serv
 import { HistorialDeVentaService } from '../../../Core/Services/HistorialDeVenta/historial-venta.service';
 import { User } from '../../../Core/Models/User';
 import { ModalClienteComponent } from '../../../Shared/Components/modal-cliente/modal-cliente.component';
+import { ModalModificarClienteComponent } from '../../../Shared/Components/modal-modificar-cliente/modal-modificar-cliente.component';
 
 @Component({
   selector: 'app-ventas',
-  imports: [ReactiveFormsModule, ModalClienteComponent],
+  imports: [ReactiveFormsModule, ModalClienteComponent, /*ModalModificarClienteComponent*/],
   templateUrl: './ventas.component.html',
   styleUrl: './ventas.component.css'
 })
@@ -33,6 +34,14 @@ export class CreateVentaComponent {
 
   constructor() {
     this.cargarClientes()
+
+    effect(()=>{
+      const v=this.vehiculo()
+
+      if(v){
+        this.form.get("precio")?.setValue(v.precioDeVenta)
+      }
+    })
   }
 
   cargarClientes() {
@@ -43,10 +52,10 @@ export class CreateVentaComponent {
 
   busquedaCliente = signal("")
 
-  menuAbiertoVehiculo = false
   menuAbiertoCliente = false
   mostrarMenuModal = signal(false)
 
+  // mostrarMenuModificar = signal(false)
 
   clientesFiltrados = computed(() => {
     const filtro = this.busquedaCliente().toLowerCase();
@@ -55,7 +64,7 @@ export class CreateVentaComponent {
   })
 
   form = this.fb.nonNullable.group({
-    idVehiculo: [''],
+    precio:[0,[Validators.required, Validators.min(0)]],
     idCliente: ['', [Validators.required]],
   })
 
@@ -63,7 +72,7 @@ export class CreateVentaComponent {
     const venta: Partial<HistorialDeVentas> = {
       vehiculo:this.idVehiculo!,
       cliente: this.form.value.idCliente,
-      precio: this.vehiculo()?.precio,
+      precio: this.form.value.precio,
       fechaVenta: new Date().toISOString().split('T')[0]
     }
 
@@ -81,12 +90,8 @@ export class CreateVentaComponent {
     })
   }
 
-  toggleMenu(menu: 'vehiculo' | 'cliente') {
-    if (menu === "vehiculo") {
-      this.menuAbiertoVehiculo=!this.menuAbiertoVehiculo
-    } else {
-      this.menuAbiertoCliente=!this.menuAbiertoCliente
-    }
+  toggleMenu() {
+    this.menuAbiertoCliente=!this.menuAbiertoCliente 
   }
 
   seleccionarCliente(cliente: User) {
@@ -108,4 +113,21 @@ export class CreateVentaComponent {
     this.clientes.set([...clientesActuales, cliente])
     this.seleccionarCliente(cliente)
   }
+
+   volver(){
+    this.router.navigate([`vehiculos/detalle${this.vehiculo()?.tipoVehiculo}/${this.idVehiculo}`])
+  }
+  //Modificar Cliente
+/* 
+  abrirModalModificar(){
+    this.mostrarMenuModificar.set(true)
+  }
+
+  cerrarModalModificar(){
+    this.mostrarMenuModificar.set(false)
+  }
+
+ actualizarCliente(cliente:User){
+    const listaClientes = this.clientes()
+  }*/
 }

@@ -1,33 +1,50 @@
 {
   "usuarios": [
     {
-      "id": "1",
-      "dni": 12345611,
-      "nombre": "Admin",
-      "apellido": "tribu",
-      "idRol": 1,
-      "email": "admin@gmail.com",
-      "contrasenia": "Hashedpassword123"
+      "id": "12345",
+      "dni": 40200300,
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "idRol": "1",
+      "email": "juanperez@gmail.com",
+      "contrasenia": "MiPass123"
     },
     {
-      "id": "b6a2",
-      "nombre": "franco",
-      "apellido": "tribu",
-      "idRol": 2,
+      "id": "c47b",
+      "nombre": "Leandro",
+      "apellido": "Ciriaco",
+      "idRol": "2",
+      "email": "leandro@gmail.com",
+      "dni": 12345678,
+      "contrasenia": "Leandro1"
+    },
+    {
+      "id": "7fac",
+      "nombre": "fabricio",
+      "apellido": "Armagno",
+      "email": "fabricio@gmail.com",
+      "dni": 12345689,
+      "idRol": "4"
+    },
+    {
+      "id": "d834",
+      "nombre": "Franco",
+      "apellido": "Triboulard",
       "email": "franco@gmail.com",
-      "contrasenia": "Hashedpassword123",
-      "dni": 12345678
+      "dni": 78945623,
+      "idRol": "4"
     },
     {
-      "id": "b2a2",
-      "nombre": "franco",
-      "apellido": "tribu",
-      "idRol": 4,
-      "email": "franco@gmail.com",
-      "contrasenia": "Hashedpassword123",
-      "dni": 12345678
+      "id": "7aee",
+      "nombre": "Gonzalo",
+      "apellido": "Diaz",
+      "email": "gonza@gmail.com",
+      "dni": 12345677,
+      "contrasenia": "Gonzalo1",
+      "idRol": "3"
     },
     {
+<<<<<<< HEAD
       "id": "f516",
       "nombre": "franco",
       "apellido": "tribu",
@@ -44,28 +61,62 @@
       "dni": 46556677,
       "isLogged": false,
       "contrasenia": "123martina"
+=======
+      "id": "bb40",
+      "nombre": "leandro",
+      "apellido": "ciriaco",
+      "email": "lean@gmail.com",
+      "dni": 78945622,
+      "contrasenia": "Leandro1",
+      "idRol": "3"
+>>>>>>> Test
     }
   ],
   "autos": [
     {
-      "id": "327e",
-      "patente": "ABC111",
-      "marca": "Fiat ",
-      "modelo": "palio",
-      "precio": 1999,
-      "color": "Gris oscuro",
-      "anio": 2011,
-      "kilometros": 999900,
-      "motor": "v10",
+      "id": "8e81",
+      "patente": "ABC123",
+      "marca": "toyota",
+      "modelo": "Corolla",
+      "precioDeCompra": 10000,
+      "precioDeVenta": 15000,
+      "color": "rojo",
+      "anio": 2015,
+      "kilometros": 20000,
+      "motor": "1.8",
       "idCombustion": "1",
-      "descripcion": "Cumple, las dos gomas de atras matadas, falta vtv",
-      "puertas": 3,
-      "potencia": 90,
+      "descripcion": "toyota corolla nuevo",
+      "puertas": "4",
+      "potencia": 150,
       "idTipoCarroceria": "1",
-      "fechaIngreso": "2025-11-14",
+      "rutasImagen": [
+        "app/assets/imgvehiculos/corolla.webp",
+        "app/assets/imgvehiculos/focus.webp"
+      ],
+      "fechaIngreso": "2025-11-18",
+      "enReparacion": false,
+      "vendido": false
+    },
+    {
+      "id": "263b",
+      "patente": "JKL456",
+      "marca": "ford",
+      "modelo": "focus",
+      "precioDeCompra": 8000,
+      "precioDeVenta": 11000,
+      "color": "rojo",
+      "anio": 2016,
+      "kilometros": 6000,
+      "motor": "1.8",
+      "idCombustion": "1",
+      "descripcion": "le mejor ford",
+      "puertas": "5",
+      "potencia": 200,
+      "idTipoCarroceria": "1",
+      "fechaIngreso": "2025-11-18",
       "enReparacion": false,
       "rutasImagen": [
-        "app/assets/imgvehiculos/aviso-auto-fiat-palio-13838436.webp"
+        "app/assets/imgvehiculos/focus.webp"
       ],
       "vendido": true,
       "tipoVehiculo": "Auto"
@@ -73,24 +124,25 @@
   ],
   "motos": [
     {
-      "id": "f827",
-      "patente": "AH999ZZ",
-      "marca": "Bmw",
-      "modelo": "s1000rr",
-      "precio": 20000,
-      "color": "blanca, rojo, azul",
-      "anio": 2025,
-      "kilometros": 0,
-      "motor": "v10",
+      "id": "94e6",
+      "patente": "AGH678",
+      "marca": "bmw",
+      "modelo": "s1000",
+      "precioDeCompra": 6000,
+      "precioDeVenta": 8000,
+      "color": "azul",
+      "anio": 2018,
+      "kilometros": 5000,
+      "motor": "2.0",
       "idCombustion": "1",
-      "descripcion": "Hermosa",
-      "cilindrada": 1000,
-      "idTipoCarroceria": "2",
+      "descripcion": "la mejor moto",
+      "cilindrada": 300,
+      "idTipoCarroceria": "3",
       "rutasImagen": [
         "app/assets/imgvehiculos/10-bmw-s-1000-rr-2025-estudio-blanco-04.jpg",
         "app/assets/imgvehiculos/S1000RR.jpg"
       ],
-      "fechaIngreso": "2025-11-16",
+      "fechaIngreso": "2025-11-18",
       "enReparacion": false,
       "vendido": true,
       "tipoVehiculo": "Moto"
@@ -114,18 +166,18 @@
   ],
   "historialesVenta": [
     {
-      "id": "4d55",
-      "vehiculo": "327e",
-      "cliente": "f516",
-      "precioCompra": 1999,
-      "fechaVenta": "2025-11-15"
+      "id": "e536",
+      "vehiculo": "94e6",
+      "cliente": "7fac",
+      "precio": 8010,
+      "fechaVenta": "2025-11-18"
     },
     {
-      "id": "d733",
-      "vehiculo": "f827",
-      "cliente": "f516",
-      "precio": 20000,
-      "fechaVenta": "2025-11-16"
+      "id": "49ce",
+      "vehiculo": "263b",
+      "cliente": "d834",
+      "precio": 7000,
+      "fechaVenta": "2025-11-18"
     }
   ],
   "historialesTaller": [],
@@ -190,7 +242,7 @@
     },
     {
       "id": "2",
-      "name": "DEPORTIVAS"
+      "name": "DEPORTIVA"
     },
     {
       "id": "3",
@@ -202,7 +254,7 @@
     },
     {
       "id": "5",
-      "name": "ESPECIALES"
+      "name": "ESPECIAL"
     }
   ],
   "especialidades": [
@@ -212,11 +264,11 @@
     },
     {
       "id": "2",
-      "name": "MOTORISTA"
+      "name": "MECANICO DE MOTORES"
     },
     {
       "id": "3",
-      "name": "CHAPA_Y_PINTURA"
+      "name": "CHAPA Y PINTURA"
     },
     {
       "id": "4",

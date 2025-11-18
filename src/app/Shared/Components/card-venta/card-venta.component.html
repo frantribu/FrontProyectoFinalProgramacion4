@@ -1,14 +1,23 @@
 <div class="div-container">
     @if (vehiculo()) {
     <h2>{{vehiculo().marca}} {{vehiculo().modelo}}</h2>
+    <h3>{{historialDeVenta()?.fechaVenta}}</h3>
+
+    @if(cliente()){
+    <p>Cliente: {{cliente().nombre}} {{cliente().apellido}}</p>
+    }
+
+    <p class="precioDeCompra">Precio comprado: ${{vehiculo().precioDeCompra}}</p>
+    <p class="precioDeVenta">Precio vendido: ${{historialDeVenta()!.precio}}</p>
+
+    <div class="ganancia"
+        [class]="calcularGanancia(vehiculo().precioDeCompra, historialDeVenta()!.precio)>0 ? 'gananciaPositiva' : 'gananciaNegativa'">
+
+        <span>{{getResultado(vehiculo().precioDeCompra, historialDeVenta()!.precio)}}</span>
+        <strong> ${{calcularGanancia(vehiculo().precioDeCompra, historialDeVenta()!.precio)}}</strong>
+    </div>
     }@else {
     <p>Cargando el vehiculo...</p>
     }
 
-
-    <h3>{{historialDeVenta()?.fechaVenta}}</h3>
-    <div class="precio">
-        <span>Precio vendido:</span>
-        <strong> ${{vehiculo()?.precio}}</strong>
-    </div>
 </div>

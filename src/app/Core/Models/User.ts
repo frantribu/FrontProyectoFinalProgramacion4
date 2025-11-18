@@ -3,8 +3,7 @@ export interface User {
     dni: number,
     nombre: string,
     apellido: string,
-    idRol: number,
+    idRol: string,
     email: string,
     contrasenia: string,
-    isLogged: boolean
 }

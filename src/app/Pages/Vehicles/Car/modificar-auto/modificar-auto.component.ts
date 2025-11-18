@@ -26,9 +26,9 @@ export class ModificarAutoComponent {
   auto = toSignal(this.autoService.getAutoById(this.id!));
   combustiones = toSignal(this.combustionService.getCombustion(), { initialValue: [] })
   tiposAuto = toSignal(this.servicioTipoAuto.getTypeCar(), { initialValue: [] });
-  
-  router=inject(Router)
-  
+
+  router = inject(Router)
+
   constructor() {
     effect(() => {
       const a = this.auto();
@@ -37,7 +37,8 @@ export class ModificarAutoComponent {
           patente: a.patente,
           marca: a.marca,
           modelo: a.modelo,
-          precio: a.precio,
+          precioDeCompra: a.precioDeCompra,
+          precioDeVenta: a.precioDeVenta,
           color: a.color,
           anio: String(a.anio),
           kilometros: a.kilometros,
@@ -57,7 +58,8 @@ export class ModificarAutoComponent {
     patente: ["", [Validators.required, Validators.pattern("^(?:[A-Z]{2}[-\s]?[0-9]{3}[-\s]?[A-Z]{2}|[A-Z]{3}[-\s]?[0-9]{3})$")]],
     marca: ["", [Validators.required]],
     modelo: ["", [Validators.required]],
-    precio: [0, [Validators.required, Validators.min(0)]],
+    precioDeCompra: [0, [Validators.required, Validators.min(0)]],
+    precioDeVenta: [0, [Validators.required, Validators.min(0)]],
     color: ["", [Validators.required]],
     anio: ["", [Validators.required, Validators.pattern(/^\d{4}$/)]],
     kilometros: [0, [Validators.required, Validators.min(0)]],
@@ -77,13 +79,13 @@ export class ModificarAutoComponent {
       return;
     }
 
-
     const auto: Auto = {
       id: this.auto()!.id,
       patente: this.formularioModificarAuto.value.patente!,
       marca: this.formularioModificarAuto.value.marca!,
       modelo: this.formularioModificarAuto.value.modelo!,
-      precio: this.formularioModificarAuto.value.precio!,
+      precioDeCompra: this.formularioModificarAuto.value.precioDeCompra!,
+      precioDeVenta: this.formularioModificarAuto.value.precioDeVenta!,
       color: this.formularioModificarAuto.value.color!,
       anio: Number(this.formularioModificarAuto.value.anio),
       kilometros: this.formularioModificarAuto.value.kilometros!,
@@ -105,5 +107,25 @@ export class ModificarAutoComponent {
         this.router.navigate(["vehiculos"])
       },
     });
+  }
+
+  getError(campo: string) {
+    const control =this.formularioModificarAuto.get(campo)
+
+    if (!control || !control.touched || !control.errors) return null
+
+    if (control.errors['required']) return "El campo es obligatorio";
+    if (campo === 'patente' && control.errors['pattern']) return "La patente no es válida. Formato aceptado: ABC123 o AB123CD"
+    if ((campo === "precioDeCompra" || campo === "precioDeVenta") && control.errors['min']) return 'El precio no puede ser negativo'
+    if (campo === "anio" && control.errors["pattern"]) return "El año debe tener 4 digitos"
+    if (campo === "kilometros" && control.errors['min']) return "Los kilometros no pueden ser negativos"
+    if (campo === "puertas" && control.errors['min']) return "El auto debe tener al menos 3 puertas"
+    if (control.errors["min"]) return `El valor minimo es ${control.errors['min'].min}`
+
+    return null
+  }
+
+  volver(){
+    this.router.navigate(['vehiculos'])
   }
 }

@@ -1,7 +1,8 @@
-import { Component, inject, output, signal } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ClientService } from '../../../Core/Services/ClientService/client.service';
 import { User } from '../../../Core/Models/User';
+import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
+import { dniExistsValidator, emailExistsValidator } from '../../../Core/Validators/UserValidator';
 
 @Component({
   selector: 'app-modal-cliente',
@@ -12,16 +13,24 @@ import { User } from '../../../Core/Models/User';
 
 export class ModalClienteComponent {
   fb=inject(FormBuilder)
-  service=inject(ClientService)
-  
+  service=inject(UserServiceService)
+
   clienteCreado=output<User>()
   cerrarModal=output<void>()
 
   formularioClient = this.fb.nonNullable.group({
     nombre: ["", Validators.required],
     apellido: ["", Validators.required],
-    email: ["", [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
-    dni: [0, [Validators.required, Validators.min(10000000), Validators.max(99999999)]]
+    email: ["", {
+        validators: [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)],
+        asyncValidators: [emailExistsValidator(this.service)],
+        updateOn: 'blur'
+      }],
+    dni: [0, {
+        validators: [Validators.required, Validators.min(10000000), Validators.max(99999999)],
+        asyncValidators: [dniExistsValidator(this.service)],
+        updateOn: 'blur'
+      }]
   })
 
   enviar() {
@@ -30,11 +39,10 @@ export class ModalClienteComponent {
       apellido: this.formularioClient.value.apellido,
       email: this.formularioClient.value.email,
       dni: this.formularioClient.value.dni,
-      idRol: 4,
-      isLogged: false
+      idRol: "4",
     }
     
-    this.service.postClient(cliente).subscribe({
+    this.service.postUser(cliente).subscribe({
       next: (nuevoCliente:User) => { 
         this.clienteCreado.emit(nuevoCliente)
         this.cerrarModal.emit()
@@ -46,6 +54,19 @@ export class ModalClienteComponent {
 
   cerrar(){
     this.cerrarModal.emit()
+  }
+
+  getError(campo:string){
+    const control=this.formularioClient.get(campo)
+
+    if(!control || !control.touched || !control.errors) return null
+
+    if(control.errors['required']) return "El campo es obligatorio"
+    if(control.errors['pattern']) return "El email debe ser válido y terminar en .com"
+    if(control.errors["min"]) return "El DNI debe ser mayor a 10.000.000"
+    if(control.errors['max']) return "El DNI debe ser menor a 99.999.999"
+
+    return null
   }
 
 }

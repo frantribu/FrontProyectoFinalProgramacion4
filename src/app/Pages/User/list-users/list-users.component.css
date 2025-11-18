@@ -12,15 +12,16 @@ section {
     font-size: 0.95em;
     transition: all 0.3s ease;
     margin-bottom: 20px;
+    padding: 8px 16px;
 }
 
 .button_volver:hover {
     background-color: white;
-    padding: 8px 16px;
 }
 
 #grilla {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    justify-items: center;
     gap: 20px;
 }

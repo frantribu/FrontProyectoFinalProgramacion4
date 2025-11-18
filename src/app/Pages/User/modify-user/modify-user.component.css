@@ -1,0 +1,120 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    color: #4B4B4B;
+    box-sizing: border-box;
+}
+
+.button_volver {
+    align-self: flex-start;
+    background-color: transparent;
+    font-weight: 600;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.button_volver:hover {
+    background-color: white;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 92vh;
+    width: 99vw;
+    padding: 20px;
+}
+
+.errorContainer {
+    height: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #4B4B4B;
+    width: 30vw;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    color: white;
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #D8C8B6;
+    color: #4B4B4B;
+    font-size: 1em;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: 2px solid #CC7F6A;
+    background-color: #F5F5DC;
+}
+
+select {
+    padding: 13px;
+}
+
+option {
+    background-color: whitesmoke;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+button[type="submit"] {
+    margin-top: 25px;
+    padding: 10px 25px;
+    background-color: #CC7F6A;
+    color: #F5F5DC;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #d58670;
+}
+
+button[disabled] {
+    margin-top: 25px;
+    background-color: #d8c8b6;
+    color: #4B4B4B;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+small {
+    color: #FF6347;
+    margin-top: 5px;
+    font-size: 0.8em;
+    width: 100%;
+}

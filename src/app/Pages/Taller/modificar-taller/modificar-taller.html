@@ -1,24 +1,65 @@
-<form [formGroup]="formulario" (ngSubmit)="modificar()">
-    <div>
-        <label for="input_nombre">Insgrese el nombre del taller</label>
-        <input formControlName="name" type="text" id="input_nombre">
+<section class="sectionTaller">
+    <div class="volverContainer">
+        <button type="button" class="button_volver" (click)="volver()">Atrás</button>
     </div>
 
-    <div>
-        <label for="input_nombre">Ingrese el nombre del encargado (ES UN EJEMPLO Y ESTA INCOMPLETO)</label>
-        <input formControlName="encargado" type="text" id="input_nombre">
-    </div>
+    <form class="form-container" [formGroup]="formulario" (ngSubmit)="modificar()">
 
-    <div>
-        <label for="input_nombre">Ingrese la direccion del taller</label>
-        <input formControlName="direccion" type="text" id="input_nombre">
-    </div>
+        <div>
+            <label for="input_nombre" class="nombreTaller">Ingrese el nombre del taller</label>
+            <input formControlName="name" type="text" id="input_nombre">
+        </div>
 
-    <select name="" id="" formControlName="especialidad">
-        @for(especialidad of especialidades(); track especialidad.id){
-        <option [value]="especialidad.id">
-            {{especialidad.name}}
-        </option>
-        }
-    </select>
-</form>
+        <div>
+            <div class="input-con-flecha">
+                <label for="input_cliente">Encargado</label>
+                <div class="div-input" [class.input-menu-abierto]="menuAbiertoEncargado">
+                    <input type="text" placeholder="Buscar encargado" [value]="busquedaEncargado()" (input)="busquedaEncargado.set($any($event.target).value)" (click)="toggleMenu()">
+
+                    <svg (click)="toggleMenu()" class="flecha" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+
+            </div>
+
+            @if(menuAbiertoEncargado){
+            <div class="menuAbierto">
+                <ul>
+                    <li (click)="abrirModalEncargado()">Agregar encargado +</li>
+                    @if (encargadosFiltrados().length) { @for (encargado of encargadosFiltrados(); track encargado.id) {
+                    <li (click)="seleccionarEncargado(encargado)" (click)="toggleMenu()">
+                        <span>{{encargado.nombre}} {{encargado.apellido}} | {{encargado.dni}}</span>
+                    </li>
+                    } }
+                </ul>
+            </div>
+            }
+        </div>
+
+        <div>
+            <label for="input_direccion" class="direccion">Ingrese la dirección del taller</label>
+            <input formControlName="direccion" type="text" id="input_direccion">
+        </div>
+
+        <div>
+            <label for="input_especialidad" class="especialidadLabel">Seleccione la especialidad</label>
+            <select class="especialidad" formControlName="especialidad" id="input_especialidad">
+                @for(especialidad of especialidades(); track especialidad.id){
+                <option [value]="especialidad.id">
+                    {{especialidad.name}}
+                </option>
+                }
+            </select>
+        </div>
+
+        <div>
+            <button type="submit" [disabled]="formulario.invalid">Modificar</button>
+        </div>
+
+    </form>
+
+    @if (mostrarMenuModal()) {
+    <app-modal-encargado (cerrarModal)="cerrarModalEncargado()" (encargadoCreado)="agregarEncargadoALista($event)"></app-modal-encargado>
+    }
+</section>

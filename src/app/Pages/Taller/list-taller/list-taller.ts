@@ -19,4 +19,8 @@ export class ListTaller {
   detalle(id:string){
     this.router.navigate([`taller/detalle/${id}`])
   }
+
+  volver(){
+    this.router.navigate([''])
+  }
 }

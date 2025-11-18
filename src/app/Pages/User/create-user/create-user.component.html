@@ -1,14 +1,25 @@
 <section class="form-container">
+    <button type="button" class="button_volver" (click)="volver()">
+        Atras
+    </button>
+
     <h2>Cargar Usuario</h2>
+
+
     <form [formGroup]="formUser" (submit)="enviar()">
         <div class="form-group">
             <label for="name">Nombre</label>
-            <input formControlName="name" id="name" type="text">
+            <input formControlName="name" id="name" type="text"> @if (getError('name')) {
+            <small>{{getError('name')}}</small> }
         </div>
+
+
         <div class="form-group">
             <label for="lastName">Apellido</label>
-            <input formControlName="lastName" id="lastName" type="text">
+            <input formControlName="lastName" id="lastName" type="text"> @if (getError('lastName')) {
+            <small>{{getError('lastName')}}</small> }
         </div>
+
         <div class="form-group">
             <label for="desplegable">Rol</label>
             <select formControlName="rol" id="desplegable" name="desplegable">
@@ -16,21 +27,30 @@
                 @for (rol of roles(); track rol.id) {
                 <option [value]="rol.id">{{rol.name}}</option>
                 }
-            </select>
+            </select> @if (getError('rol')) {
+            <small>{{getError('rol')}}</small> }
         </div>
+
         <div class="form-group">
             <label for="email">Email</label>
-            <input formControlName="email" id="email" type="email">
+            <input formControlName="email" id="email" type="email"> @if (formUser.get('email')?.hasError('emailExists') && formUser.get('email')?.touched) {
+            <small>Este email ya está registrado</small> } @if (getError('email')) {
+            <small>{{getError('email')}}</small> }
         </div>
+
         <div class="form-group">
             <label for="dni">DNI</label>
-            <input formControlName="dni" id="dni" type="number">
+            <input formControlName="dni" id="dni" type="number"> @if (formUser.get('dni')?.hasError('dniExists') && formUser.get('dni')?.touched) {
+            <small>Este DNI ya está registrado</small> } @if (getError('dni')) {
+            <small>{{getError('dni')}}</small> }
         </div>
+
         <div class="form-group">
             <label for="contrasenia">Contraseña</label>
-            <input formControlName="contrasenia" type="password">
+            <input formControlName="contrasenia" type="password"> @if (getError('contrasenia')) {
+            <small>{{getError('contrasenia')}}</small> }
         </div>
-        <small>Todos los campos son obligatorios</small>
+
         <div class="form-actions">
             <button [disabled]="formUser.invalid" type="submit">Crear Usuario</button>
         </div>

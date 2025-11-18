@@ -3,7 +3,8 @@ export interface Vehiculo {
   patente: string;
   marca: string;
   modelo: string;
-  precio: number; // long
+  precioDeCompra: number; // long
+  precioDeVenta:number;
   color: string;
   anio: number; // long
   kilometros: number; // long

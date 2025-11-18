@@ -1,11 +1,28 @@
-.talleres{
+.talleres {
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.titulo{
+.titulo {
     display: flex;
     justify-content: center;
+}
+
+.button_volver {
+    align-self: flex-start;
+    background-color: transparent;
+    font-weight: 600;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+
+.button_volver:hover {
+    background-color: white;
 }

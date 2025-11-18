@@ -5,6 +5,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { User } from '../../../Core/Models/User';
 import { RolesService } from '../../../Core/Services/RolService/roles.service';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
+import { dniExistsValidator, emailExistsValidator } from '../../../Core/Validators/UserValidator';
 
 @Component({
   selector: 'app-modify-user',
@@ -48,9 +49,17 @@ export class ModifyUserComponent {
     name: [this.user()?.nombre, Validators.required],
     lastName: [this.user()?.apellido, Validators.required],
     rol: [this.user()?.idRol, Validators.required],
-    email: [this.user()?.email, [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)]],
-    dni: [this.user()?.dni, [Validators.required, Validators.min(10000000), Validators.max(99999999)]],
-    contrasenia: [this.user()?.contrasenia, Validators.required]
+    email: [this.user()?.email, {
+            validators: [Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z]{3,}\.com$/)],
+            asyncValidators: [emailExistsValidator(this.service, this.userId)],
+            updateOn: 'blur'
+          }],
+    dni: [this.user()?.dni, {
+            validators: [Validators.required, Validators.min(10000000), Validators.max(99999999)],
+            asyncValidators: [dniExistsValidator(this.service, this.userId)],
+            updateOn: 'blur'
+          }],
+    contrasenia: [this.user()?.contrasenia, [ Validators.pattern(/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/)]]
   })
 
   modify() {
@@ -62,19 +71,35 @@ export class ModifyUserComponent {
         idRol: this.formModifyUser.value.rol!,
         email: this.formModifyUser.value.email!,
         dni: this.formModifyUser.value.dni!,
-        isLogged: user.isLogged,
         contrasenia: this.formModifyUser.value.contrasenia!
       })
 
       this.service.patchUser(this.userId, userr).subscribe({
         next: () => {
-          console.log("Modificado con exito")
+          alert("Modificado con exito")
           this.router.navigate(["usuarios"])
         },
         error: (err) => console.log("Error al modificar el usuario", err)
       })
     })
-
-
   }
+
+  volver(){
+     this.router.navigate(["usuarios"]) 
+  }
+
+  getError(campo:string){
+    const control=this.formModifyUser.get(campo);
+
+    if(!control?.touched || !control || !control.errors) return null
+
+    if(control?.errors['required']) return "Este campo es obligatorio"
+    if(campo==="email" && control.errors['pattern']) return "El email debe ser válido y terminar en .com"
+    if(control.errors["min"]) return "El DNI debe ser mayor a 10.000.000"
+    if(control.errors['max']) return "El DNI debe ser menor a 99.999.999"
+    if(campo==="contrasenia" && control.errors['pattern']) return "La contraseña debe tener al menos una Mayuscula, un numero y 8 caracteres"
+
+    return null;
+  }
+
 }

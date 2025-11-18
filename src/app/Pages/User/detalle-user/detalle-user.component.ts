@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { UserServiceService } from '../../../Core/Services/UserService/user-service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
@@ -12,6 +12,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 export class DetalleUserComponent {
   userService = inject(UserServiceService)
   activatedRouter = inject(ActivatedRoute)
+  router = inject(Router)
 
   id = this.activatedRouter.snapshot.paramMap.get("id")
 
@@ -21,18 +22,22 @@ export class DetalleUserComponent {
 
     let role: string
     
-    if (this.user()?.idRol == 1) {
+    if (this.user()?.idRol == "1") {
       role = "ADMIN"
-    } else if (this.user()?.idRol == 2) {
+    } else if (this.user()?.idRol == "2") {
       role = "EMPLEADO"
-    } else if (this.user()?.idRol == 3) {
+    } else if (this.user()?.idRol == "3") {
       role = "ENCARGADO TALLER"
-    } else if (this.user()?.idRol == 4) {
+    } else if (this.user()?.idRol == "4") {
       role = "CLIENTE"
     } else {
       role = "error"
     }
 
     return role
+  }
+
+  volver(){
+    this.router.navigate(["usuarios"])
   }
 }

@@ -1,6 +1,15 @@
-<section>
-    <h3>{{user()?.nombre}} {{user()?.apellido}}</h3>
-    <p>{{user()?.email}}</p>
-    <p>{{user()?.dni}}</p>
-    <p>{{asignRole()}}</p>
-</section>
+<body>
+    <section class="detalle">
+        <h5><strong>Nombre</strong></h5>
+        <p>{{user()?.nombre}} {{user()?.apellido}}</p>
+        <h5><strong>Email</strong></h5>
+        <p>{{user()?.email}}</p>
+        <h5><strong>DNI</strong></h5>
+        <p>{{user()?.dni}}</p>
+        <h5><strong>Rol</strong></h5>
+        <p>{{asignRole()}}</p>
+
+        <button type="button" class="button_volver" (click)="volver()">Atras</button>
+    </section>
+
+</body>
