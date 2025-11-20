@@ -1,7 +1,4 @@
-AutoNova
-Sistema de gestión integral para concesionarias
-Descripción
-AutoNova es un sistema desarrollado para gestionar todas las operaciones de una concesionaria: vehículos, ventas, reparaciones, talleres, clientes y usuarios. 
+AutoNova es un sistema de gestión integral para concesionarias desarrollado para gestionar todas las operaciones de una concesionaria: vehículos, ventas, reparaciones, talleres, clientes y usuarios. 
 Brinda herramientas de administración completas, con pantallas claras, filtrados, historiales y operaciones de ABM.
 
 Tecnologías utilizadas
